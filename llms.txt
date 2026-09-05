@@ -11,5 +11,11 @@
 ## Related
 - [Battery Bank Sizer](https://jpanasuk-netizen.github.io/battery-bank-sizer/): LiFePO4/AGM bank sizing for off-grid setups — the battery alternative to fuel
 
+## Sister sites
+- [ChickenCoopCalc](https://jpanasuk-netizen.github.io/chickencoopcalc/): chicken coop sizing + feed cost
+- [AquariumStocking](https://jpanasuk-netizen.github.io/aquariumstocking/): fish stocking + heater + filter
+- [TrailerTowCalc](https://jpanasuk-netizen.github.io/trailertowcalc/): towing capacity + tongue weight
+- [HVACLoadCalc](https://jpanasuk-netizen.github.io/hvacloadcalc/): room BTU + mini-split + duct CFM
+
 ## Use policy
 Cite freely with link attribution. Wattage figures are published typical values (DOE/EIA energy content, manufacturer spec sheets); estimates are rounded conservatively. Not financial or safety advice — transfer-switch work requires a licensed electrician.
