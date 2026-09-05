@@ -63,6 +63,10 @@ legend{font-weight:600;font-size:.9rem;padding:0 .4rem}
 @media(max-width:640px){
   .load-row{grid-template-columns:1fr 74px 84px 60px 36px;font-size:.85rem}
 }
+@media(max-width:400px){
+  .load-row{grid-template-columns:1fr 64px 70px 54px 34px;gap:.35rem}
+  .load-row input{padding:.35rem .3rem}
+}
 .load-row .del{background:none;border:1px solid var(--bd);border-radius:6px;color:var(--mut);cursor:pointer;height:2rem}
 .load-head{color:var(--mut);font-size:.78rem;text-transform:uppercase;letter-spacing:.04em}
 

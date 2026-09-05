@@ -103,14 +103,14 @@ function sizeGenerator(){
   var hrsDay   = Math.max(1, parseFloat(el("hrsDay").value) || 8);
   var tankGal  = Math.max(0.5, parseFloat(el("tankGal").value) || 4);
 
-  var runTotal = 0, maxSurge = 0, surgeItem = "";
+  var runTotal = 0, maxSurge = 0, surgeItem = "", surgeRun = 0;
   loads.forEach(function(l){
     var r = l.run * l.qty, s = l.surge * l.qty;
     runTotal += r;
-    if(s > maxSurge){ maxSurge = s; surgeItem = l.name; }
+    if(s > maxSurge){ maxSurge = s; surgeItem = l.name; surgeRun = r; }
   });
   // Peak demand = all running loads + the extra surge draw of the single biggest starter
-  var extraSurge = Math.max(0, maxSurge - (surgeItem ? (loads.find(function(l){return l.name===surgeItem;}).run * loads.find(function(l){return l.name===surgeItem;}).qty) : 0));
+  var extraSurge = Math.max(0, maxSurge - surgeRun);
   var peak = runTotal + extraSurge;
   var rec  = ceilTo(peak * headroom, 500);
 
@@ -142,7 +142,7 @@ function sizeInverter(){
   var surgeNeed = cont * f;
   var contRec = ceilTo(cont * 1.25, 100); // 25% headroom on continuous rating
   var surgeRec = ceilTo(surgeNeed * 1.1, 100);
-  var wireLoss = cont * 0.08 / 12;        // approx DC amps drawn at 12V incl. 8% inverter loss
+  var wireLoss = cont / 0.92 / 12;        // approx DC amps drawn at 12V incl. 8% inverter loss
   var box = el("invResult"); box.hidden = false;
   box.innerHTML = '<div class="big">'+fmt(contRec)+' W <span class="unit">continuous · '+fmt(surgeRec)+' W surge</span></div>'+
     '<div class="grid2">'+
@@ -183,7 +183,7 @@ function planSwitch(){
   var total = 0, rows = "";
   text.split("\n").forEach(function(line){
     line = line.trim(); if(!line) return;
-    var m = line.match(/^(.*?)\s*[-–:]\s*([\d,]+)\s*w/i);
+    var m = line.match(/^(.*?)\s*[-–:]\s*([\d,]+)(?:\s*w(?:att)?s?)?\s*$/i);
     var name = m ? m[1] : line;
     var w = m ? parseFloat(m[2].replace(/,/g,"")) : 0;
     total += w;
