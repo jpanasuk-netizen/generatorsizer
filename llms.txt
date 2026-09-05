@@ -6,6 +6,7 @@
 - [Refrigerator & Freezer Sizing](https://generatorsizer.com/refrigerator-freezer.html): why 1,000–1,500 W is the right generator for food preservation, duty-cycle scheduling, fuel math
 - [Well Pump Watts](https://generatorsizer.com/well-pump-watts.html): wattage by horsepower, running vs starting vs locked-rotor amps, soft-start fixes, 240 V requirements
 - [Best 10 Portable Generators](https://generatorsizer.com/best-portable-generators.html): ranked by sizing math — surge rating, fuel burn at 50% load, THD, dual-fuel — matched to load classes
+- [Find a Commercial Generator Service](https://generatorsizer.com/find-a-commercial-generator-service.html): facility manager's vetting checklist — NFPA 110 testing, maintenance-contract red flags, load studies, compliance documentation
 
 ## Related
 - [Battery Bank Sizer](https://jpanasuk-netizen.github.io/battery-bank-sizer/): LiFePO4/AGM bank sizing for off-grid setups — the battery alternative to fuel
