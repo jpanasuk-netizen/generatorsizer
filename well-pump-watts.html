@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How Many Watts Does a Well Pump Use? Starting vs Running (2026)</title>
+<meta name="description" content="Well pump wattage by horsepower: 1/2 HP is 1,000 running / 2,100 starting watts. Why LRA kills undersized generators, soft-start fixes, and sizing a generator for pump plus home loads.">
+<link rel="canonical" href="https://generatorsizer.com/well-pump-watts.html">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="How Many Watts Does a Well Pump Use? Starting vs Running">
+<meta property="og:description" content="Well pump wattage by HP, the locked-rotor-amp trap, soft-start kits, and how to size a generator around your pump's startup.">
+<meta property="og:type" content="article">
+<link rel="stylesheet" href="assets/styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How many watts does a 1/2 HP well pump use?",
+      "acceptedAnswer": { "@type": "Answer", "text": "About 1,000 watts running and 2,100 watts at startup. A 3/4 HP pump needs roughly 1,500 running / 3,000 starting; a 1 HP pump about 2,000 running / 4,000 starting. Locked-rotor amps on the pump's motor plate can exceed those figures — size the generator's surge rating above the LRA figure, not the typical startup." }
+    },
+    {
+      "@type": "Question",
+      "name": "What size generator do I need to run my well pump?",
+      "acceptedAnswer": { "@type": "Answer", "text": "For a 1/2 HP pump alone, a 2,500–3,500 watt generator (2,500+ surge) is comfortable. If the pump shares the generator with a fridge, lights, and a furnace fan, step up to 4,000–5,000 watts so the pump can start while everything else runs." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does my generator stall when the well pump starts?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The pump's startup surge exceeded the generator's surge rating — common when the pump draws locked-rotor amps (3–5× running watts) on a generator already carrying other loads. Fixes: shed other loads before the pump starts, upsize the generator, or install a pump soft-start kit that cuts startup draw roughly in half." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-head">
+  <a class="brand" href="/">GeneratorSizer</a>
+  <nav aria-label="Site">
+    <a href="/#calc">Calculator</a>
+    <a href="refrigerator-freezer.html">Fridge &amp; freezer</a>
+    <a href="best-portable-generators.html">Top 10 picks</a>
+    <a href="https://jpanasuk-netizen.github.io/battery-bank-sizer/" rel="noopener">Battery bank sizer ↗</a>
+  </nav>
+</header>
+
+<main>
+<h1>How many watts does a well pump use?</h1>
+<p class="sub">Running watts are the easy part. Startup is where generators die — and the number on your pump's motor plate matters more than any chart.</p>
+
+<h2>Wattage by horsepower</h2>
+<div class="tbl-wrap">
+<table>
+<tr><th>Pump size</th><th class="num">Running watts</th><th class="num">Typical startup</th><th class="num">Locked-rotor worst case</th></tr>
+<tr><td>1/3 HP</td><td class="num">750</td><td class="num">1,500</td><td class="num">2,300</td></tr>
+<tr><td>1/2 HP</td><td class="num">1,000</td><td class="num">2,100</td><td class="num">3,200</td></tr>
+<tr><td>3/4 HP</td><td class="num">1,500</td><td class="num">3,000</td><td class="num">4,600</td></tr>
+<tr><td>1 HP</td><td class="num">2,000</td><td class="num">4,000</td><td class="num">6,100</td></tr>
+<tr><td>1.5 HP (irrigation)</td><td class="num">2,900</td><td class="num">5,800</td><td class="num">8,800</td></tr>
+</table>
+</div>
+<p class="small">Running watts ≈ HP × 746 W (1 HP = 746 W) ÷ motor efficiency (~75%). Startup is 2–3× running; locked-rotor amps (LRA) — the stall-current worst case — is 3–5× running.</p>
+
+<h2>The LRA trap</h2>
+<p>Every pump motor has a nameplate listing RLA (running load amps) and sometimes LRA (locked-rotor amps). Locked-rotor is the current a motor draws in the instant before it starts spinning — if the pump tries to start against pressure, or sits briefly stalled, it pulls that full figure. A generator sized to the "2,100 W startup" chart figure can still trip or stall on a 1/2 HP pump's 3,200 W LRA spike, especially with other loads already running. Read the plate: if it lists LRA, multiply by 240 V (or 120 V for small jet pumps) to get the true surge budget.</p>
+
+<h2>Sizing the generator around the pump</h2>
+<p>The pump is almost always the <strong>largest single surge</strong> in a home backup plan, which matters because surge budgeting only counts the biggest starter — everything else contributes running watts. So:</p>
+<ul style="margin:.6rem 0 .6rem 1.2rem">
+  <li><strong>Pump alone:</strong> 2,500–3,500 W generator covers a 1/2 HP pump with headroom.</li>
+  <li><strong>Pump + fridge + lights + furnace fan:</strong> about 1,930 W running + 1,100 W surge headroom → a 4,000–5,000 W generator (3,000+ W surge rating).</li>
+  <li><strong>Pump + central AC:</strong> two large motors — 8,000 W class or a soft-start kit on the AC.</li>
+</ul>
+<p>Run your exact list through the <a href="/#calc">generator size calculator</a> — the well pump presets are already in it.</p>
+
+<h2>Two upgrades that shrink the problem</h2>
+<p><strong>Soft-start kit (~$100–200).</strong> Cuts pump startup current roughly in half and extends motor life. The single best fix for generator-stall complaints, and it also matters if you ever run the pump off an inverter.</p>
+<p><strong>Staged startup discipline.</strong> Free: when the generator first starts, unplug everything, start the pump alone, then add loads one at a time. A 1/2 HP pump starting against zero competition rides a 2,100 W spike fine even on a modest generator.</p>
+
+<div class="affil">
+<span class="tag">Affiliate</span>
+<p class="small">4,000–5,000 W dual-fuel generators are the workhorse class for well-water homes — enough surge for the pump, quiet enough at partial load for daily run cycles. <!-- AFFILIATE SLOT: Amazon Associates — 4500W dual-fuel generator picks + pump soft-start kits --></p>
+</div>
+
+<h2>Batteries and well pumps: know the limits</h2>
+<p>A pump's 2–3× startup surge is hard on pure battery/inverter systems — you need an inverter whose surge rating clears the pump's LRA, which pushes you to a 3,000 W surge inverter for a 1/2 HP pump. It works, but it's the load that sizes the battery system, not the fridge. Our <a href="https://jpanasuk-netizen.github.io/battery-bank-sizer/" rel="noopener">battery bank sizer</a> handles the bank side once you know the surge inverter you need.</p>
+
+<h2>FAQ</h2>
+<h3>Does a submersible pump draw more than a jet pump?</h3>
+<p>Submersibles (down the well) run slightly more efficiently; the HP rating on the pump controls either way. Deep-well submersibles are commonly 1/2–1 HP; shallow jet pumps 1/3–3/4 HP.</p>
+<h3>Can I run a 240 V well pump off a portable generator?</h3>
+<p>Only if the generator has a 240 V output — most 3,500 W+ models do, via a NEMA L14-30 or 14-50 receptacle. A 120 V-only generator won't start a 240 V pump at all. Check before you buy; it's the most common well-water return.</p>
+<h3>How much does the pump cycle during an outage?</h3>
+<p>A household of four draws 200–300 gallons/day. A 1/2 HP pump moving 10 GPM needs under an hour of total run time daily — 1 kWh of energy. Run it morning and evening and one gallon of gas covers days.</p>
+</main>
+
+<footer>GeneratorSizer · <a href="/">generator size calculator</a> · <a href="refrigerator-freezer.html">fridge &amp; freezer sizing</a> · <a href="best-portable-generators.html">top 10 portable generators</a> · pages may contain affiliate links</footer>
+</body>
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Generator Size Calculator — Running vs Starting Watts, Fuel & Runtime (2026)</title>
+<meta name="description" content="Free generator sizing calculator: enter your appliances, get running vs starting watts, 20% headroom, runtime at 50% load, and gas vs propane fuel use per day. Plus inverter, battery runtime, and transfer switch tools.">
+<link rel="canonical" href="https://generatorsizer.com/">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="Generator Size Calculator — What Size Generator Do I Need?">
+<meta property="og:description" content="Enter your appliances, get the exact generator wattage you need — running watts, startup surge, runtime, and gas vs propane fuel burn.">
+<meta property="og:url" content="https://generatorsizer.com/">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="assets/styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "GeneratorSizer Generator Size Calculator",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Web",
+  "url": "https://generatorsizer.com/",
+  "description": "Free generator sizing calculator: appliance-based running and starting wattage, 20% headroom, runtime at 50% load, and gasoline vs propane daily fuel consumption. Includes inverter sizing, battery runtime, and transfer switch load planner.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What size generator do I need to run a house?",
+      "acceptedAnswer": { "@type": "Answer", "text": "For essentials only (fridge, freezer, well pump, furnace fan, lights, phone charging), a 5,000–7,500 watt portable generator covers it. To also run central AC or an electric water heater, step up to 10,000–12,000 watts. Add the running watts of everything you'll power at once, add the extra surge of the largest motor load, then buy about 20% above that total." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do starting watts differ from running watts?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Running watts are what an appliance draws continuously. Starting (surge) watts are the brief spike when a motor starts — typically 2–3× running watts for pumps and fans, up to 4× for compressors. Your generator's surge rating must cover the biggest starting load on top of everything else already running." }
+    },
+    {
+      "@type": "Question",
+      "name": "How long will a generator run on a tank of gas?",
+      "acceptedAnswer": { "@type": "Answer", "text": "At 50% load, most portable generators burn roughly 1 gallon of gasoline per 7,000 watts of rated output per hour — a 3,500 W inverter generator goes about 5 hours per gallon, and a 7,500 W model about 1.4 hours per gallon. Propane gives roughly 25% less runtime per gallon-equivalent but stores indefinitely." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need a transfer switch to run a generator?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, if you're connecting to household circuits. Code requires a manual or automatic transfer switch — back-feeding through a dryer outlet is illegal and can kill utility workers. A 30 A manual switch handles 7,200 W; a 50 A switch handles 12,000 W." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-head">
+  <a class="brand" href="/">GeneratorSizer</a>
+  <nav aria-label="Site">
+    <a href="#calc">Calculator</a>
+    <a href="refrigerator-freezer.html">Fridge &amp; freezer</a>
+    <a href="well-pump-watts.html">Well pump</a>
+    <a href="best-portable-generators.html">Top 10 picks</a>
+    <a href="https://jpanasuk-netizen.github.io/battery-bank-sizer/" rel="noopener">Battery bank sizer ↗</a>
+  </nav>
+</header>
+
+<main>
+<h1>Generator size calculator</h1>
+<p class="sub">Add your appliances. Get the wattage to buy, how long a tank lasts, and what fuel costs per day — running watts, startup surge, and headroom handled.</p>
+
+<div class="tabs" role="tablist" aria-label="Calculators">
+  <button role="tab" aria-selected="true" onclick="showTab('tab-gen', this)">Generator size</button>
+  <button role="tab" aria-selected="false" onclick="showTab('tab-inv', this)">Inverter size</button>
+  <button role="tab" aria-selected="false" onclick="showTab('tab-bat', this)">Battery runtime</button>
+  <button role="tab" aria-selected="false" onclick="showTab('tab-ts', this)">Transfer switch</button>
+</div>
+
+<!-- ============ 1. GENERATOR SIZING ============ -->
+<section id="tab-gen" class="panel active" role="tabpanel">
+  <fieldset>
+    <legend>1 · Add what you'll power</legend>
+    <div class="field">
+      <label for="presetSelect">Pick an appliance (published typical wattages — editable)</label>
+      <div style="display:flex;gap:.5rem;flex-wrap:wrap">
+        <select id="presetSelect" style="flex:1 1 260px"></select>
+        <button data-add style="background:var(--acc);color:#fff;border:none;border-radius:8px;padding:.55rem 1rem;font-size:1rem;cursor:pointer">Add</button>
+      </div>
+    </div>
+    <div id="loadRows"></div>
+  </fieldset>
+
+  <div class="row2">
+    <div class="field">
+      <label for="headroom">Headroom margin (%)</label>
+      <input type="number" id="headroom" value="20" min="0" max="100">
+    </div>
+    <div class="field">
+      <label for="hrsDay">Hours you'll run it per day</label>
+      <input type="number" id="hrsDay" value="8" min="1" max="24">
+    </div>
+    <div class="field">
+      <label for="tankGal">Fuel tank size (gallons)</label>
+      <input type="number" id="tankGal" value="4" min="0.5" step="0.5">
+    </div>
+  </div>
+
+  <button onclick="sizeGenerator()" style="background:var(--acc);color:#fff;border:none;border-radius:8px;padding:.7rem 1.4rem;font-size:1.05rem;cursor:pointer;font-weight:600">Size my generator</button>
+
+  <div id="genResult" class="ans" hidden></div>
+
+  <div class="affil">
+    <span class="tag">Affiliate</span>
+    <p class="small">Once you know your wattage, matched inverter generators on Amazon: 3,500 W class for essentials, 7,500 W+ class for whole-home backup. <!-- AFFILIATE SLOT: Amazon Associates product links keyed to recommended size class --></p>
+  </div>
+</section>
+
+<!-- ============ 2. INVERTER SIZING ============ -->
+<section id="tab-inv" class="panel" role="tabpanel">
+  <p>Off-grid or battery setups need an inverter, not a generator. Size it by load type — motors and compressors pull multiples of their running draw at startup.</p>
+  <div class="field">
+    <label for="invCont">Total continuous AC load (watts)</label>
+    <input type="number" id="invCont" placeholder="e.g. 850" min="0">
+  </div>
+  <div class="field">
+    <label for="invKind">Heaviest load type</label>
+    <select id="invKind">
+      <option value="resistive">Resistive (heater, lights, kettle — 1× surge)</option>
+      <option value="motor">Motor (pump, fan, power tools — 3× surge)</option>
+      <option value="compressor">Compressor (fridge, AC — 4× surge)</option>
+      <option value="mixed" selected>Mixed household (2× surge)</option>
+    </select>
+  </div>
+  <button onclick="sizeInverter()" style="background:var(--acc);color:#fff;border:none;border-radius:8px;padding:.7rem 1.4rem;font-size:1.05rem;cursor:pointer;font-weight:600">Size my inverter</button>
+  <div id="invResult" class="ans" hidden></div>
+</section>
+
+<!-- ============ 3. BATTERY RUNTIME ============ -->
+<section id="tab-bat" class="panel" role="tabpanel">
+  <p>Running an inverter off a battery bank instead of fuel? Here's how long it lasts — after depth-of-discharge and inverter losses.</p>
+  <div class="row2">
+    <div class="field">
+      <label for="btAh">Battery capacity (Ah)</label>
+      <input type="number" id="btAh" placeholder="e.g. 100" min="0">
+    </div>
+    <div class="field">
+      <label for="btV">System voltage</label>
+      <select id="btV"><option>12</option><option>24</option><option>48</option></select>
+    </div>
+    <div class="field">
+      <label for="btLoad">AC load (watts)</label>
+      <input type="number" id="btLoad" placeholder="e.g. 600" min="1">
+    </div>
+    <div class="field">
+      <label for="btChem">Battery chemistry</label>
+      <select id="btChem"><option value="lifepo4">LiFePO4 (80% usable)</option><option value="agm">AGM / lead-acid (50% usable)</option></select>
+    </div>
+  </div>
+  <button onclick="sizeBatteryRuntime()" style="background:var(--acc);color:#fff;border:none;border-radius:8px;padding:.7rem 1.4rem;font-size:1.05rem;cursor:pointer;font-weight:600">Calculate runtime</button>
+  <div id="btResult" class="ans" hidden></div>
+  <p class="small">Sizing a whole bank instead of testing one battery? Use the <a href="https://jpanasuk-netizen.github.io/battery-bank-sizer/" rel="noopener">battery bank sizer</a>.</p>
+</section>
+
+<!-- ============ 4. TRANSFER SWITCH ============ -->
+<section id="tab-ts" class="panel" role="tabpanel">
+  <p>List the household circuits you want on backup power, one per line, like <code>Sump pump - 800w</code>. We'll total them and match a standard manual transfer switch.</p>
+  <div class="field">
+    <label for="tsCircuits">Backup circuits</label>
+    <textarea id="tsCircuits" rows="6" style="width:100%;max-width:none;background:var(--card);color:var(--fg);border:1px solid var(--bd);border-radius:8px;padding:.6rem;font-family:inherit;font-size:1rem">Refrigerator - 150w
+Well pump - 1000w
+Furnace fan - 700w
+Lights - 80w
+TV + internet - 150w</textarea>
+  </div>
+  <button onclick="planSwitch()" style="background:var(--acc);color:#fff;border:none;border-radius:8px;padding:.7rem 1.4rem;font-size:1.05rem;cursor:pointer;font-weight:600">Plan my switch</button>
+  <div id="tsResult" class="ans" hidden></div>
+  <!-- AFFILIATE SLOT: Amazon Associates — transfer switches, generator inlet boxes, interlock kits -->
+</section>
+
+<!-- ============ CONTENT ============ -->
+<h2>How generator sizing works</h2>
+<p>Three numbers decide what you buy. <strong>Running watts</strong> — the sum of everything switched on at the same time. <strong>Starting watts</strong> — the 2–4× spike when a motor kicks on; only the <em>largest</em> one counts at any instant, because motors don't all start together. <strong>Headroom</strong> — generators hate running flat-out; at 100% load they run hot, loud, and short-lived, and fuel burn climbs faster than output. The 20% margin keeps you in the efficient zone and leaves room for the appliance you forgot.</p>
+
+<h2>Typical wattage reference</h2>
+<div class="tbl-wrap">
+<table>
+<tr><th>Appliance</th><th class="num">Running W</th><th class="num">Starting W</th></tr>
+<tr><td>Refrigerator (Energy Star, 20 cu ft)</td><td class="num">150</td><td class="num">600</td></tr>
+<tr><td>Chest freezer (10–15 cu ft)</td><td class="num">200</td><td class="num">600</td></tr>
+<tr><td>Well pump, 1/2 HP</td><td class="num">1,000</td><td class="num">2,100</td></tr>
+<tr><td>Sump pump, 1/2 HP</td><td class="num">800</td><td class="num">1,300</td></tr>
+<tr><td>Window AC, 10,000 BTU</td><td class="num">900</td><td class="num">1,400</td></tr>
+<tr><td>Central AC, 2.5 ton</td><td class="num">3,500</td><td class="num">5,000</td></tr>
+<tr><td>Furnace fan, 1/3 HP</td><td class="num">700</td><td class="num">1,400</td></tr>
+<tr><td>Space heater</td><td class="num">1,500</td><td class="num">1,500</td></tr>
+<tr><td>LED lights, whole home</td><td class="num">80</td><td class="num">80</td></tr>
+<tr><td>Microwave</td><td class="num">1,000</td><td class="num">1,000</td></tr>
+<tr><td>Electric water heater</td><td class="num">4,500</td><td class="num">4,500</td></tr>
+</table>
+</div>
+
+<h2>Gas vs propane at a glance</h2>
+<table>
+<tr><th></th><th>Gasoline</th><th>Propane</th></tr>
+<tr><td>Runtime on equal fuel volume</td><td>Baseline</td><td>~25% less</td></tr>
+<tr><td>Power output on dual-fuel models</td><td>Baseline</td><td>~10% less</td></tr>
+<tr><td>Storage life</td><td>3–12 months with stabilizer</td><td>Indefinite</td></tr>
+<tr><td>Cost per kWh (2026 U.S. averages)</td><td>~$0.45–0.60</td><td>~$0.55–0.70</td></tr>
+</table>
+<p class="small">Figures from published DOE/EIA energy content: gasoline 125,000 BTU/gal, propane 91,600 BTU/gal (4.24 lb/gal). Dual-fuel generator manufacturer spec sheets corroborate the runtime and de-rate deltas.</p>
+
+<h2>Guides</h2>
+<div class="card"><h3><a href="refrigerator-freezer.html">What size generator runs a refrigerator and freezer?</a></h3><p>The most-searched backup question, answered with real startup math — and why a 1,000 W unit beats a 4,000 W one for this job.</p></div>
+<div class="card"><h3><a href="well-pump-watts.html">How many watts does a well pump use?</a></h3><p>Starting vs running for every HP rating, plus the LRA trap that kills generators during startup.</p></div>
+<div class="card"><h3><a href="best-portable-generators.html">Best 10 portable generators for home backup</a></h3><p>Ranked by the sizing math that matters — inverter vs conventional, dual-fuel, and which class matches your load.</p></div>
+<div class="card"><h3><a href="https://jpanasuk-netizen.github.io/battery-bank-sizer/" rel="noopener">Battery bank sizer ↗</a></h3><p>If your load is small and daily, a LiFePO4 battery bank can replace fuel entirely — that tool sizes it.</p></div>
+</main>
+
+<footer>GeneratorSizer · free sizing tools for home backup and off-grid power · pages may contain affiliate links · <a href="https://jpanasuk-netizen.github.io/battery-bank-sizer/" rel="noopener">sister site: Battery Bank Sizer</a></footer>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

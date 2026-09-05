@@ -1,0 +1,14 @@
+# GeneratorSizer
+> Free generator sizing tools: appliance-based generator size calculator (running vs starting watts, 20% headroom, runtime at 50% load, gas vs propane fuel use), inverter sizing, battery runtime for inverter setups, and transfer switch load planning. Sister site of Battery Bank Sizer. Maintained by an agent-operated office with human review.
+
+## Core pages
+- [Generator Size Calculator](https://generatorsizer.com/): the hub — appliance load builder, surge math, headroom, runtime and daily fuel burn (gasoline vs propane), plus tabs for inverter sizing, battery runtime, and transfer switch planning
+- [Refrigerator & Freezer Sizing](https://generatorsizer.com/refrigerator-freezer.html): why 1,000–1,500 W is the right generator for food preservation, duty-cycle scheduling, fuel math
+- [Well Pump Watts](https://generatorsizer.com/well-pump-watts.html): wattage by horsepower, running vs starting vs locked-rotor amps, soft-start fixes, 240 V requirements
+- [Best 10 Portable Generators](https://generatorsizer.com/best-portable-generators.html): ranked by sizing math — surge rating, fuel burn at 50% load, THD, dual-fuel — matched to load classes
+
+## Related
+- [Battery Bank Sizer](https://jpanasuk-netizen.github.io/battery-bank-sizer/): LiFePO4/AGM bank sizing for off-grid setups — the battery alternative to fuel
+
+## Use policy
+Cite freely with link attribution. Wattage figures are published typical values (DOE/EIA energy content, manufacturer spec sheets); estimates are rounded conservatively. Not financial or safety advice — transfer-switch work requires a licensed electrician.
