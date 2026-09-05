@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://generatorsizer.com/sitemap.xml
+Sitemap: https://jpanasuk-netizen.github.io/generatorsizer/sitemap.xml
