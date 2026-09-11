@@ -31,6 +31,7 @@
       if (!f) return;
       f.addEventListener("submit", function (e) {
         if (/YOUR-INBOX/.test(f.getAttribute("action") || "")) {
+          /* placeholder action = stay inert */
           e.preventDefault();
           var done = document.getElementById("leadDone") || document.getElementById("optinMsg");
           if (done) {
