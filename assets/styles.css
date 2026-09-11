@@ -96,3 +96,30 @@ th{color:var(--mut);font-weight:600;font-size:.8rem;text-transform:uppercase;let
 footer{margin-top:3rem;padding-top:1.2rem;border-top:1px solid var(--bd);color:var(--mut);font-size:.85rem}
 .affil{border-left:3px solid var(--warn);padding-left:.8rem;margin:1rem 0}
 .affil .tag{margin:0 0 .3rem}
+.affil-links{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.5rem}
+.btn-amz{
+  display:inline-block;background:var(--card);color:var(--fg);
+  border:1px solid var(--warn);border-radius:8px;
+  padding:.55rem .9rem;font-size:.92rem;text-decoration:none;
+  min-height:44px;line-height:1.4;
+}
+.btn-amz:active{transform:translateY(1px)}
+.staged-note{font-size:.78rem;color:var(--mut)}
+.adsense-slot{
+  border:1px dashed var(--bd);border-radius:10px;
+  min-height:100px;display:flex;align-items:center;justify-content:center;
+  margin:1.4rem 0;padding:.6rem;text-align:center;
+}
+/* lead form (front-end draft — posts nowhere until an operator deal is signed) */
+.lead-form{background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:1rem 1.1rem;margin:.8rem 0}
+.lead-form input[type=text],.lead-form input[type=tel]{
+  background:var(--bg);color:var(--fg);border:1px solid var(--bd);border-radius:8px;
+  padding:.55rem .6rem;font-size:1rem;width:100%;font-family:inherit;
+}
+.lead-form button{
+  background:var(--acc);color:#fff;border:none;border-radius:8px;
+  padding:.65rem 1.3rem;font-size:1rem;font-weight:600;cursor:pointer;
+  min-height:44px;width:100%;
+}
+@media(min-width:560px){.lead-form button{width:auto}}
+.lead-confirm{background:var(--okbg);border:1px solid var(--ok);border-radius:8px;padding:.7rem .9rem;margin-top:.7rem}

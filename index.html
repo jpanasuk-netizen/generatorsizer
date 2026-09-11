@@ -114,7 +114,12 @@
 
   <div class="affil">
     <span class="tag">Affiliate</span>
-    <p class="small">Once you know your wattage, matched inverter generators on Amazon: 3,500 W class for essentials, 7,500 W+ class for whole-home backup. <!-- AFFILIATE SLOT: Amazon Associates product links keyed to recommended size class --></p>
+    <p class="small">Once you know your wattage, compare matched inverter generators on Amazon: 3,500 W class for essentials, 7,500 W+ class for whole-home backup.</p>
+    <div class="affil-links">
+      <a class="btn-amz" data-amz="3500 watt dual fuel inverter generator" href="https://www.amazon.com/s?k=3500+watt+dual+fuel+inverter+generator">3,500 W class on Amazon</a>
+      <a class="btn-amz" data-amz="7500 watt dual fuel portable generator" href="https://www.amazon.com/s?k=7500+watt+dual+fuel+portable+generator">7,500 W+ class on Amazon</a>
+    </div>
+    <p class="staged-note" data-amz-staged-note hidden>Staged links: plain Amazon search, no Associate ID attached yet. <!-- LAYER 1 STAGED: swap AMAZON_TAG in assets/monetization.js after Associates approval to activate tracking on all [data-amz] links site-wide --></p>
   </div>
 </section>
 
@@ -181,7 +186,13 @@ TV + internet - 150w</textarea>
     <span class="tag">Sponsor</span>
     <p class="small">Transfer switches are licensed-electrician work — code prohibits back-feeding, and an ATS install needs permits. Need a pro to install it? This slot is reserved for a vetted local generator installer. <!-- LEADGEN SLOT --></p>
   </div>
-  <!-- AFFILIATE SLOT: Amazon Associates — transfer switches, generator inlet boxes, interlock kits -->
+  <div class="affil-links">
+    <a class="btn-amz" data-amz="30 amp manual transfer switch generator" href="https://www.amazon.com/s?k=30+amp+manual+transfer+switch+generator">30 A transfer switches on Amazon</a>
+    <a class="btn-amz" data-amz="generator interlock kit" href="https://www.amazon.com/s?k=generator+interlock+kit">Interlock kits on Amazon</a>
+    <a class="btn-amz" data-amz="generator power inlet box 50 amp" href="https://www.amazon.com/s?k=generator+power+inlet+box+50+amp">Inlet boxes on Amazon</a>
+  </div>
+  <p class="staged-note" data-amz-staged-note hidden>Staged links: plain Amazon search, no Associate ID attached yet.</p>
+  <!-- LAYER 1 STAGED: transfer-switch / inlet-box / interlock-kit search templates; tracking activates via AMAZON_TAG -->
 </section>
 
 <!-- ============ LEADGEN: NEED A PRO? ============ -->
@@ -192,6 +203,42 @@ TV + internet - 150w</textarea>
 <span class="tag">Sponsor</span>
 <p class="small">Generatorsizer connects its readers — homeowners sizing backup and facility managers planning standby — with vetted installers and maintenance contractors. Operator inquiries: this space is reserved pending terms. <!-- LEADGEN SLOT --></p>
 </div>
+
+<!-- LAYER 3 STAGED: lead form DRAFT — front-end only, posts nowhere, stores nothing.
+     Fields and operator requirements documented in lead-form-fields.md.
+     Do NOT wire a backend/endpoint until Jeremy approves operator terms. -->
+<form id="proLeadForm" class="lead-form" novalidate>
+  <p><strong>Get a vetted installer quote</strong> <span class="tag">Draft — not live</span></p>
+  <p class="small">Leave your details and a local installer will contact you once the program launches. Nothing is sent anywhere today.</p>
+  <div class="row2">
+    <div class="field">
+      <label for="leadName">Name</label>
+      <input type="text" id="leadName" name="name" autocomplete="name" placeholder="Jane Doe" maxlength="80">
+    </div>
+    <div class="field">
+      <label for="leadZip">ZIP code</label>
+      <input type="text" id="leadZip" name="zip" autocomplete="postal-code" inputmode="numeric" placeholder="54757" maxlength="10">
+    </div>
+  </div>
+  <div class="field">
+    <label for="leadPhone">Phone (for the installer quote only)</label>
+    <input type="tel" id="leadPhone" name="phone" autocomplete="tel" placeholder="(715) 555-0100" maxlength="20">
+  </div>
+  <input type="hidden" id="leadContext" name="sized_kw" value="">
+  <button type="submit">Request a quote</button>
+  <div id="leadDone" class="lead-confirm" hidden></div>
+  <p class="small">By submitting (once live), you agree to be contacted about installation quotes. See <a href="privacy.html">Privacy</a>. Demo form: no data leaves your browser.</p>
+</form>
+
+<!-- LAYER 2 STAGED: AdSense responsive slot — INERT until Jeremy supplies a publisher ID.
+     To activate: replace ca-pub-YOUR-PUBLISHER-ID, uncomment the loader script in <head>. -->
+<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR-PUBLISHER-ID" crossorigin="anonymous"></script> -->
+<div class="adsense-slot" aria-hidden="true">
+  <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-YOUR-PUBLISHER-ID" data-ad-slot="YOUR-AD-SLOT-1" data-ad-format="auto" data-full-width-responsive="true"></ins> -->
+  <p class="small">Ad slot (staged — no publisher ID yet)</p>
+</div>
+
+<!-- WHOP SLOT (staged, no product): sizing-report upsell spec in whop-sizing-report.md — no on-page offer until Jeremy picks the Whop product. -->
 
 <!-- ============ CONTENT ============ -->
 <h2>How generator sizing works</h2>
@@ -234,8 +281,9 @@ TV + internet - 150w</textarea>
     <a href="https://jpanasuk-netizen.github.io/weldingcalc/" rel="noopener">WeldingCalc ↗</a></h3><p>If your load is small and daily, a LiFePO4 battery bank can replace fuel entirely — that tool sizes it.</p></div>
 </main>
 
-<footer>GeneratorSizer · free sizing tools for home backup and off-grid power · pages may contain affiliate links · <a href="https://jpanasuk-netizen.github.io/battery-bank-sizer/" rel="noopener">sister site: Battery Bank Sizer</a> · <a href="https://jpanasuk-netizen.github.io/weldingcalc/" rel="noopener">WeldingCalc</a> · <a href="https://jpanasuk-netizen.github.io/chickencoopcalc/" rel="noopener">ChickenCoopCalc</a> · <a href="https://jpanasuk-netizen.github.io/aquariumstocking/" rel="noopener">AquariumStocking</a> · <a href="https://jpanasuk-netizen.github.io/trailertowcalc/" rel="noopener">TrailerTowCalc</a> · <a href="https://jpanasuk-netizen.github.io/hvacloadcalc/" rel="noopener">HVACLoadCalc</a></footer>
+<footer>GeneratorSizer · free sizing tools for home backup and off-grid power · pages may contain affiliate links · <a href="https://jpanasuk-netizen.github.io/battery-bank-sizer/" rel="noopener">sister site: Battery Bank Sizer</a> · <a href="https://jpanasuk-netizen.github.io/weldingcalc/" rel="noopener">WeldingCalc</a> · <a href="https://jpanasuk-netizen.github.io/chickencoopcalc/" rel="noopener">ChickenCoopCalc</a> · <a href="https://jpanasuk-netizen.github.io/aquariumstocking/" rel="noopener">AquariumStocking</a> · <a href="https://jpanasuk-netizen.github.io/trailertowcalc/" rel="noopener">TrailerTowCalc</a> · <a href="https://jpanasuk-netizen.github.io/hvacloadcalc/" rel="noopener">HVACLoadCalc</a> · <a href="about.html">About</a> · <a href="privacy.html">Privacy</a></footer>
 
 <script src="assets/app.js"></script>
+<script src="assets/monetization.js"></script>
 </body>
 </html>

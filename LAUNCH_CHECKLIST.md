@@ -36,3 +36,16 @@ Source asset it expands: `github.com/jpanasuk-netizen/battery-bank-sizer` (live 
 - [ ] Rich Results Test: SoftwareApplication + FAQPage + ItemList validate
 - [ ] Lighthouse mobile ≥ 95 perf (static site, single CSS/JS — should pass clean)
 - [ ] Confirm no affiliate links ship before program approval (slots are placeholders by design)
+
+
+## 6. Create-vs-optimize check (AI-SEO doctrine — run BEFORE adding any keyword)
+For each new keyword candidate:
+1. Search `sitemap.xml` and the site folder for a page already targeting it (title, h1, meta description).
+2. Existing page → **optimization plan**: sharpen title/h1 to the exact query, deepen the section that answers it, add FAQ schema, update sitemap lastmod. Do not create a new page.
+3. No page targets it → **creation plan**: duplicate the canonical template (`refrigerator-freezer.html` in README), one keyword per page.
+4. Cadence gate: if the site has fewer impressions than pages in GSC, stop — optimize instead of create until impressions catch up.
+
+## 7. GSC cadence gate (needs Jeremy)
+- [ ] Jeremy logs into Google Search Console (or grants access) for the github.io property
+- [ ] Submit `sitemap.xml`, request indexing on all live pages
+- [ ] Record impressions/page before approving ANY new page build
