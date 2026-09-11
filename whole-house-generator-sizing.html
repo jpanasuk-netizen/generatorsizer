@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What Size Generator Runs a Whole House with Central AC? (2026)</title>
+<meta name="description" content="A 2.5-ton central AC needs 3,500 W running / 5,000 W starting. Add the rest of the house and the answer lands at 10,000–12,000 watts.">
+<link rel="canonical" href="https://generator-sizer.com/whole-house-generator-sizing.html">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="shortcut icon" href="assets/favicon.ico">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="What Size Generator Runs a Whole House with Central AC?">
+<meta property="og:description" content="A 2.5-ton central AC needs 3,500 W running / 5,000 W starting. Add the rest of the house and the answer lands at 10,000–12,000 watts.">
+<meta property="og:type" content="article">
+<link rel="stylesheet" href="assets/styles.css">
+<meta property="og:image" content="https://generator-sizer.com/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="What Size Generator Runs a Whole House with Central AC? (2026)">
+<meta name="twitter:description" content="A 2.5-ton central AC needs 3,500 W running / 5,000 W starting. Add the rest of the house and the answer lands at 10,000–12,000 watts.">
+<meta name="twitter:image" content="https://generator-sizer.com/assets/og-image.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What size generator do I need to run my whole house with central AC?",
+      "acceptedAnswer": { "@type": "Answer", "text": "For a typical 2,000–2,500 sq ft home with a 2.5-ton central AC: about 10,000–12,000 watts. The AC itself is 3,500 W running / 5,000 W starting, the rest of the house adds roughly 3,000–5,000 W running plus the biggest other motor's surge, and the 20% headroom rule lands you in the 10–12 kW class. Essentials only — no AC — drops the requirement to 5,000–7,500 watts." }
+    },
+    {
+      "@type": "Question",
+      "name": "How many watts does central air conditioning use on a generator?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A 2.5-ton central AC draws about 3,500 watts running and about 5,000 watts at compressor startup — a 4×-class surge because it's a compressor, not a plain motor. The AC's outdoor-unit nameplate lists RLA (running) and LRA (locked-rotor); LRA × 240 V is the true worst-case startup. Every ½ ton of capacity adds roughly 700 W running / 1,000 W starting." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can a portable generator run central air?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, if it clears two bars: a 240 V output (NEMA 14-50 or L14-30) to power the AC's 240 V condenser, and enough surge headroom — roughly 9,000+ rated watts once the house essentials are running too. A soft-start kit on the compressor cuts startup draw roughly in half and makes a 9,000 W generator comfortable instead of marginal." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why not just buy a bigger generator than I need?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Because generators run worst at low load: they burn proportionally more fuel, build carbon, and run louder relative to output. A 12,000 W generator loafing through an essentials-only night wastes fuel without buying anything. That's why the sizing method is loads + 20% headroom — not 'buy the biggest'." }
+    },
+    {
+      "@type": "Question",
+      "name": "How much fuel does whole-house running burn?",
+      "acceptedAnswer": { "@type": "Answer", "text": "At 50% load, most portables burn roughly 1 gallon of gasoline per 7,000 watts of rated output per hour — a 10,000 W unit goes about 1.4 hours per gallon at 5,000 W load. Two full days of alternating AC-and-essentials duty at 8 hours/day means planning on roughly 6 gallons per day, or the propane equivalent (about 25% less runtime per gallon-equivalent)." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-head">
+  <a class="brand" href="index.html">GeneratorSizer</a>
+  <nav aria-label="Site">
+    <a href="index.html#calc">Calculator</a>
+    <a href="transfer-switch-sizing.html">Transfer switch</a>
+    <a href="well-pump-watts.html">Well pump</a>
+    <a href="best-portable-generators.html">Top 10 picks</a>
+    <a href="https://jpanasuk-netizen.github.io/battery-bank-sizer/" rel="noopener">Battery bank sizer ↗</a>
+    <a href="https://jpanasuk-netizen.github.io/weldingcalc/" rel="noopener">WeldingCalc ↗</a>
+  </nav>
+</header>
+
+<main>
+<h1>What size generator to run a whole house with central AC?</h1>
+<p class="sub">One appliance changes the answer from a $500 inverter to a $1,500 workhorse: the compressor on your central AC. Here's the math, tier by tier.</p>
+
+<p>The honest answer for most homes with central air is <strong>10,000–12,000 watts</strong>. But the number isn't a guess — it falls out of the same three numbers our <a href="index.html#calc">generator size calculator</a> uses: running watts, the single biggest starting surge, and 20% headroom. Walk through it once and you'll know whether your house is the exception.</p>
+
+<h2>The 2.5-ton central AC math</h2>
+<p>A 2.5-ton unit (the most common size for a 2,000–2,500 sq ft home, roughly 30,000 BTU) is the pivot of the whole calculation:</p>
+<div class="tbl-wrap">
+<table>
+<tr><th>2.5-ton central AC</th><th class="num">Watts</th></tr>
+<tr><td>Running (compressor + fan)</td><td class="num">3,500</td></tr>
+<tr><td>Startup surge (compressor)</td><td class="num">5,000</td></tr>
+</table>
+</div>
+<p class="small">Figures from our wattage presets, drawn from manufacturer published specs and DOE/consumer-testing ranges. Compressors start at up to 4× running watts — the reason the AC and not the fridge dominates the surge budget.</p>
+<p>The compressor's startup is the trap. While the AC is already running, it's just 3,500 W of load. The moment it kicks on — which happens repeatedly, because thermostats cycle — it can spike toward 5,000 W, and the unit's nameplate LRA (locked-rotor amps) can exceed that worst case. Your generator must absorb that spike <em>while</em> everything else in the house is still running. That's why sizing to "the AC's running watts" fails in practice.</p>
+
+<h2>Tier 1: essentials only (no AC)</h2>
+<p>The board most people actually need during an outage:</p>
+<ul style="margin:.6rem 0 .6rem 1.2rem">
+  <li>Refrigerator 150 W + chest freezer 200 W (600 W surge)</li>
+  <li>Well pump ½ HP 1,000 W running / 2,100 W starting</li>
+  <li>Sump pump ½ HP 800 W running / 1,300 W starting</li>
+  <li>Furnace fan 700 W running / 1,400 W starting</li>
+  <li>Lights whole home 80 W, microwave 1,000 W, phone charging</li>
+</ul>
+<p>Total: about 3,900 W running, with the well pump's 2,100 W spike as the biggest surge. Peak demand (all running + extra surge of the largest starter) lands around 5,300 W, and 20% headroom takes it to roughly <strong>6,400 W</strong> → the 5,000–7,500 W portable class. This is the tier the calculator's presets default to, and where a dual-fuel unit from the <a href="best-portable-generators.html">best portable generators for home backup</a> list shines.</p>
+
+<h2>Tier 2: whole home + central AC</h2>
+<p>Add the AC to the essentials board:</p>
+<div class="tbl-wrap">
+<table>
+<tr><th>Whole-house + AC budget</th><th class="num">Watts</th></tr>
+<tr><td>Essentials running total</td><td class="num">3,900</td></tr>
+<tr><td>Central AC 2.5-ton running</td><td class="num">3,500</td></tr>
+<tr><td>AC startup spike (over its running draw)</td><td class="num">+1,500</td></tr>
+<tr><td>Peak demand</td><td class="num">8,900</td></tr>
+<tr><td>+ 20% headroom, rounded</td><td class="num">10,700 → 10,000–12,000 W class</td></tr>
+</table>
+</div>
+<p>Two things push this up or down. An electric water heater (4,500 W, resistive — no surge) adds a flat block if you run it during the outage; most people simply don't, or heat water in short bursts. A <a href="well-pump-watts.html">well pump on the larger side</a> competes with the AC for the surge budget. And a soft-start kit on the AC compressor cuts its startup draw roughly in half — the cheapest way to make a 9,000–10,000 W generator comfortable instead of marginal.</p>
+<p>At this tier you also need the wiring to match: a 50 A transfer switch (12,000 W capacity) and a generator with a 240 V / 50 A-class outlet. The <a href="transfer-switch-sizing.html">transfer switch sizing guide</a> covers the pairing.</p>
+
+<h2>Why not just buy bigger?</h2>
+<p>Generators run worst when lightly loaded. At low load they burn proportionally more fuel, foul up with carbon, and deliver no extra capability. A 12,000 W unit idling through an essentials-only overnight stretch costs fuel for nothing. The 20% headroom rule exists precisely to buy you the right size once, not the biggest size — sustained overload still trips the breaker or stalls the engine no matter what you bought.</p>
+
+<h2>Fuel: what 10 kW actually drinks</h2>
+<p>At 50% load, portables burn roughly 1 gallon of gasoline per 7,000 W of rated output per hour — so a 10,000 W generator at a 5,000 W load goes about 1.4 hours per gallon, around 6 gallons per 8-hour day. Propane trades ~25% of that runtime for indefinite storage. Two-day outage on AC duty: plan roughly 12 gallons of gas or the propane equivalent, and stagger loads (AC on, water heater off) to keep the burn down.</p>
+
+<div class="affil">
+<span class="tag">Affiliate</span>
+<p class="small">The 9,000–12,000 W class is the whole-house-plus-AC workhorse tier. <div class="affil-links"><a class="btn-amz" data-amz="10000 watt dual fuel portable generator" href="https://www.amazon.com/s?k=10000+watt+dual+fuel+portable+generator&tag=generatorsi0d-20" rel="sponsored nofollow noopener" target="_blank">10,000 W dual-fuel class on Amazon</a>
+<a class="btn-amz" data-amz="air conditioner soft starter" href="https://www.amazon.com/s?k=air+conditioner+soft+starter&tag=generatorsi0d-20" rel="sponsored nofollow noopener" target="_blank">AC soft-start kits on Amazon</a></div></p>
+</div>
+
+<h2>FAQ</h2>
+<h3>What size generator do I need to run my whole house with central AC?</h3>
+<p>For a typical 2,000–2,500 sq ft home with a 2.5-ton central AC: about 10,000–12,000 watts. The AC itself is 3,500 W running / 5,000 W starting, the rest of the house adds roughly 3,000–5,000 W running plus the biggest other motor's surge, and the 20% headroom rule lands you in the 10–12 kW class. Essentials only — no AC — drops the requirement to 5,000–7,500 watts.</p>
+<h3>How many watts does central air conditioning use on a generator?</h3>
+<p>A 2.5-ton central AC draws about 3,500 watts running and about 5,000 watts at compressor startup — a 4×-class surge because it's a compressor, not a plain motor. The AC's outdoor-unit nameplate lists RLA (running) and LRA (locked-rotor); LRA × 240 V is the true worst-case startup. Every ½ ton of capacity adds roughly 700 W running / 1,000 W starting.</p>
+<h3>Can a portable generator run central air?</h3>
+<p>Yes, if it clears two bars: a 240 V output (NEMA 14-50 or L14-30) to power the AC's 240 V condenser, and enough surge headroom — roughly 9,000+ rated watts once the house essentials are running too. A soft-start kit on the compressor cuts startup draw roughly in half and makes a 9,000 W generator comfortable instead of marginal.</p>
+<h3>Why not just buy a bigger generator than I need?</h3>
+<p>Because generators run worst at low load: they burn proportionally more fuel, build carbon, and run louder relative to output. A 12,000 W generator loafing through an essentials-only night wastes fuel without buying anything. That's why the sizing method is loads + 20% headroom — not 'buy the biggest'.</p>
+<h3>How much fuel does whole-house running burn?</h3>
+<p>At 50% load, most portables burn roughly 1 gallon of gasoline per 7,000 watts of rated output per hour — a 10,000 W unit goes about 1.4 hours per gallon at 5,000 W load. Two full days of alternating AC-and-essentials duty at 8 hours/day means planning on roughly 6 gallons per day, or the propane equivalent (about 25% less runtime per gallon-equivalent).</p>
+<h3>What if my AC is bigger or smaller than 2.5 tons?</h3>
+<p>Scale by half-tons: roughly 700 W running / 1,000 W starting per ½ ton. A 3-ton unit is about 4,200 W running / 6,000 W starting — which pushes the whole-house class toward 12,000+ W or makes a soft-start kit near-mandatory. A 1.5–2 ton unit can squeeze into a 9,000 W generator when essentials are modest.</p>
+</main>
+
+<footer>GeneratorSizer · <a href="index.html">generator size calculator</a> · <a href="transfer-switch-sizing.html">transfer switch sizing</a> · <a href="refrigerator-freezer.html">fridge &amp; freezer sizing</a> · <a href="sump-pump-watts.html">sump pump sizing</a> · <a href="best-portable-generators.html">top 10 portable generators</a> · pages may contain affiliate links · <a href="about.html">About</a> · <a href="privacy.html">Privacy</a></footer>
+<script src="assets/monetization.js"></script>
+</body>
+</html>

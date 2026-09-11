@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What Size Transfer Switch for a Generator? 30A vs 50A Math (2026)</title>
+<meta name="description" content="30 A switches pass 7,200 W, 50 A pass 12,000 W. Match the switch to your generator's output and the circuits you actually need.">
+<link rel="canonical" href="https://generator-sizer.com/transfer-switch-sizing.html">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="shortcut icon" href="assets/favicon.ico">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="What Size Transfer Switch for a Generator? 30A vs 50A Math">
+<meta property="og:description" content="30 A switches pass 7,200 W, 50 A pass 12,000 W. Match the switch to your generator's output and the circuits you actually need.">
+<meta property="og:type" content="article">
+<link rel="stylesheet" href="assets/styles.css">
+<meta property="og:image" content="https://generator-sizer.com/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="What Size Transfer Switch for a Generator? 30A vs 50A Math (2026)">
+<meta name="twitter:description" content="30 A switches pass 7,200 W, 50 A pass 12,000 W. Match the switch to your generator's output and the circuits you actually need.">
+<meta name="twitter:image" content="https://generator-sizer.com/assets/og-image.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What size transfer switch do I need for my generator?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Size the switch to the generator's continuous output at 240 V. A 30 A switch passes 7,200 watts (30 A × 240 V), which is the ceiling for generators up to about 7,000 rated watts. A 50 A switch passes 12,000 watts, matching generators in the 9,000–12,000 watt class. The switch can be larger than the generator, never smaller — and the generator, not the switch, is what actually limits the power." }
+    },
+    {
+      "@type": "Question",
+      "name": "How many watts can a 30 amp transfer switch handle?",
+      "acceptedAnswer": { "@type": "Answer", "text": "7,200 watts at 240 V (30 A × 240 V). Because the amperage limit is per-leg on split-phase power, the practical steady-state budget is around 3,600 W per 120 V leg — enough for a fridge, freezer, sump and well pumps, furnace fan, lights, and phone charging all at once, which is the classic essentials list." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is a manual transfer switch better than an interlock kit?",
+      "acceptedAnswer": { "@type": "Answer", "text": "They solve the same code problem — never letting the generator and the utility feed the panel at the same time — differently. A manual transfer switch moves selected circuits to generator power with one flip and enforces the generator's watt limit circuit by circuit. An interlock kit is a mechanical guard on your existing breakers: cheaper, uses the whole panel, but you manage every load yourself and can still overload the generator. Interlocks also must be listed for your specific panel brand." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I back-feed my house through a dryer outlet instead?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Back-feeding through a dryer or range receptacle (a so-called suicide cord) is illegal, can energize downed utility lines and kill linemen, and will back-energize your panel without any overcurrent protection on the connection. Every utility and code jurisdiction requires a listed transfer switch or interlock kit for generator-to-panel connections." }
+    },
+    {
+      "@type": "Question",
+      "name": "Will a 30 amp transfer switch run central air conditioning?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Electrically, a 2.5-ton central AC draws about 3,500 W running / 5,000 W starting, which fits inside a 30 A switch's 7,200 W ceiling. The catch is the rest of the house: the AC plus a fridge, furnace fan, and lights already pushes a 7,200 W switch near its limit, and the total is gated by your generator too — a 5,000 W generator trips long before the switch does. Central AC realistically wants a 50 A switch and a 9,000+ watt generator, or a soft-start kit on the compressor." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-head">
+  <a class="brand" href="index.html">GeneratorSizer</a>
+  <nav aria-label="Site">
+    <a href="index.html#calc">Calculator</a>
+    <a href="whole-house-generator-sizing.html">Whole-house sizing</a>
+    <a href="well-pump-watts.html">Well pump</a>
+    <a href="best-portable-generators.html">Top 10 picks</a>
+    <a href="https://jpanasuk-netizen.github.io/battery-bank-sizer/" rel="noopener">Battery bank sizer ↗</a>
+    <a href="https://jpanasuk-netizen.github.io/weldingcalc/" rel="noopener">WeldingCalc ↗</a>
+  </nav>
+</header>
+
+<main>
+<h1>What size transfer switch do you need for a generator?</h1>
+<p class="sub">The switch is a gateway, not a power source. Its amp rating decides how much of your generator can actually reach the panel — and the math is simpler than the sales pages make it look.</p>
+
+<p>Two numbers decide the answer: your generator's continuous output and the amperage of the switch. Watts and amps are linked by voltage, and for a residential split-phase connection that voltage is 240 V. Multiply and you get the hard ceiling:</p>
+
+<div class="tbl-wrap">
+<table>
+<tr><th>Switch rating</th><th class="num">Math</th><th class="num">Max watts passed</th><th>Matches generators up to</th></tr>
+<tr><td>30 A</td><td class="num">30 × 240 V</td><td class="num">7,200 W</td><td>~7,000 W rated output</td></tr>
+<tr><td>50 A</td><td class="num">50 × 240 V</td><td class="num">12,000 W</td><td>9,000–12,000 W class</td></tr>
+</table>
+</div>
+<p class="small">These are the same figures our <a href="index.html#calc">generator size calculator</a> uses in its transfer-switch load planner — standard manual switch ratings at 240 V with a 0.8 power-factor design margin.</p>
+
+<h2>Rule one: the switch can be bigger than the generator, never smaller</h2>
+<p>A 30 A switch on a 9,500 W generator strangles it — you can never pull more than 7,200 W through the gateway no matter what the generator can produce. That's wasted capacity, and it's the single most common sizing mistake. Going the other way is safe: a 50 A switch on a 5,000 W generator simply means the generator's own breaker becomes the limit. Buy the switch to match the generator you own <em>or</em> the one you plan to grow into.</p>
+
+<h2>Rule two: the generator still gates everything</h2>
+<p>The switch passing 7,200 W doesn't mean you can run 7,200 W. Your loads can never exceed the generator's rated watts, whatever the switch allows. The pairing that matters is: switch rating ≥ generator output, and generator output ≥ your total running watts plus the surge of your biggest motor. Our calculator does the load side of that equation — the switch side is the table above.</p>
+
+<h2>What a 30 A switch actually carries</h2>
+<p>Seven thousand two hundred watts sounds abstract, so here it is as circuits. Using the wattage table on our <a href="index.html">generator size calculator</a> page:</p>
+<ul style="margin:.6rem 0 .6rem 1.2rem">
+  <li>Refrigerator 150 W + chest freezer 200 W</li>
+  <li>Sump pump 800 W + well pump (½ HP) 1,000 W</li>
+  <li>Furnace fan 700 W</li>
+  <li>LED lights whole home 80 W, microwave 1,000 W</li>
+</ul>
+<p>That whole essentials board totals roughly 3,900 W running — comfortably inside one 120 V leg of a 30 A switch, with the well pump's 2,100 W startup spike still clearing the ceiling. It is <em>not</em> enough for an electric water heater (4,500 W by itself), an electric range, or a central AC running alongside everything else. Those are the loads that push you to 50 A.</p>
+
+<h2>What a 50 A switch carries</h2>
+<p>Twelve thousand watts covers the essentials board plus a 2.5-ton central AC (3,500 W running / 5,000 W starting), an electric water heater, and kitchen circuits — the realistic whole-house list. Pair it with a generator in the 9,000–12,000 W class; the <a href="best-portable-generators.html">best portable generators for home backup</a> guide flags which units have the 50 A outlet (NEMA 14-50) you need to feed this switch. Without that outlet, a 50 A switch needs a hardwired connection by an electrician anyway.</p>
+
+<h2>Manual transfer switch vs interlock kit</h2>
+<p>Both exist to enforce one iron rule: the generator and the utility can never be connected to your panel at the same time. They take different routes.</p>
+<p><strong>Manual transfer switch.</strong> A small sub-panel wired to the circuits you selected at installation. Flip it from LINE to GEN and those circuits switch over; every other circuit stays dead. Advantages: the load list is fixed and pre-wired, so overload risk is designed out, and flipping six circuits back on one at a time naturally staggers motor startups. Disadvantage: it only feeds the circuits wired into it — decide that list before the electrician arrives (our calculator's transfer-switch tab formats the list for you).</p>
+<p><strong>Interlock kit.</strong> A mechanical slider that lets either the main utility breaker or the generator breaker be on — never both. Cheaper, uses your whole existing panel, and any circuit can be on generator power. But discipline shifts to you: you decide what to shed, and you can still overload the generator because nothing but its own breaker (and your load math) stops you. Interlocks must be listed for your exact panel brand and model, and some jurisdictions prefer transfer switches — check locally.</p>
+<p>Automatic transfer switches (the whole-house standby kind) are the third option, but they belong to permanently installed standby generators, not portables, and are priced accordingly.</p>
+
+<h2>The connection checklist</h2>
+<ul style="margin:.6rem 0 .6rem 1.2rem">
+  <li>Never back-feed through a dryer or range outlet. It's illegal, it can kill utility workers, and the connection has no overcurrent protection. This is the one non-negotiable in the whole topic.</li>
+  <li>Match inlet and switch amperage, and match the generator outlet type (L14-30 for 30 A, 14-50 for 50 A).</li>
+  <li>Budget the install: an electrician wiring a 6–10 circuit manual switch is typically a half-day job; the interlock is faster but panel-brand-specific.</li>
+  <li>Size the generator to the loads first, the switch second. If you haven't done the load math yet, start with the <a href="index.html#calc">calculator</a>.</li>
+</ul>
+
+<div class="affil">
+<span class="tag">Affiliate</span>
+<p class="small">Switch class follows generator class: essentials boards ride 30 A, whole-house-plus-AC rides 50 A. <div class="affil-links"><a class="btn-amz" data-amz="30 amp manual transfer switch generator" href="https://www.amazon.com/s?k=30+amp+manual+transfer+switch+generator&tag=generatorsi0d-20" rel="sponsored nofollow noopener" target="_blank">30 A transfer switches on Amazon</a>
+<a class="btn-amz" data-amz="50 amp generator transfer switch" href="https://www.amazon.com/s?k=50+amp+generator+transfer+switch&tag=generatorsi0d-20" rel="sponsored nofollow noopener" target="_blank">50 A transfer switches on Amazon</a>
+<a class="btn-amz" data-amz="generator interlock kit" href="https://www.amazon.com/s?k=generator+interlock+kit&tag=generatorsi0d-20" rel="sponsored nofollow noopener" target="_blank">Interlock kits on Amazon</a></div></p>
+</div>
+
+<h2>FAQ</h2>
+<h3>What size transfer switch do I need for my generator?</h3>
+<p>Size the switch to the generator's continuous output at 240 V. A 30 A switch passes 7,200 watts (30 A × 240 V), which is the ceiling for generators up to about 7,000 rated watts. A 50 A switch passes 12,000 watts, matching generators in the 9,000–12,000 watt class. The switch can be larger than the generator, never smaller — and the generator, not the switch, is what actually limits the power.</p>
+<h3>How many watts can a 30 amp transfer switch handle?</h3>
+<p>7,200 watts at 240 V (30 A × 240 V). Because the amperage limit is per-leg on split-phase power, the practical steady-state budget is around 3,600 W per 120 V leg — enough for a fridge, freezer, sump and well pumps, furnace fan, lights, and phone charging all at once, which is the classic essentials list.</p>
+<h3>Is a manual transfer switch better than an interlock kit?</h3>
+<p>They solve the same code problem — never letting the generator and the utility feed the panel at the same time — differently. A manual transfer switch moves selected circuits to generator power with one flip and enforces the generator's watt limit circuit by circuit. An interlock kit is a mechanical guard on your existing breakers: cheaper, uses the whole panel, but you manage every load yourself and can still overload the generator. Interlocks also must be listed for your specific panel brand.</p>
+<h3>Can I back-feed my house through a dryer outlet instead?</h3>
+<p>No. Back-feeding through a dryer or range receptacle (a so-called suicide cord) is illegal, can energize downed utility lines and kill linemen, and will back-energize your panel without any overcurrent protection on the connection. Every utility and code jurisdiction requires a listed transfer switch or interlock kit for generator-to-panel connections.</p>
+<h3>Will a 30 amp transfer switch run central air conditioning?</h3>
+<p>Electrically, a 2.5-ton central AC draws about 3,500 W running / 5,000 W starting, which fits inside a 30 A switch's 7,200 W ceiling. The catch is the rest of the house: the AC plus a fridge, furnace fan, and lights already pushes a 7,200 W switch near its limit, and the total is gated by your generator too — a 5,000 W generator trips long before the switch does. Central AC realistically wants a 50 A switch and a 9,000+ watt generator, or a soft-start kit on the compressor.</p>
+<h3>Can one transfer switch work with two different generators?</h3>
+<p>Yes, as long as every generator connects through an inlet matching the switch's amperage and the outlet types line up (or you use a listed adapter cord). The switch doesn't care what's behind the cord — the smallest generator in the set becomes your load ceiling for that session.</p>
+</main>
+
+<footer>GeneratorSizer · <a href="index.html">generator size calculator</a> · <a href="whole-house-generator-sizing.html">whole-house generator sizing</a> · <a href="refrigerator-freezer.html">fridge &amp; freezer sizing</a> · <a href="sump-pump-watts.html">sump pump sizing</a> · <a href="best-portable-generators.html">top 10 portable generators</a> · pages may contain affiliate links · <a href="about.html">About</a> · <a href="privacy.html">Privacy</a></footer>
+<script src="assets/monetization.js"></script>
+</body>
+</html>
