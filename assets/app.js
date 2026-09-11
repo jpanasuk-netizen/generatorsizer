@@ -131,6 +131,7 @@ function sizeGenerator(){
     '</div>'+
     '<p class="note">Propane delivers ~10% less running wattage than gasoline on dual-fuel models, and propane never goes stale in storage. Runtime figures assume a steady 50% load — real use is cyclical, so expect longer.</p>';
   var box = el("genResult"); box.hidden = false; box.innerHTML = html;
+  if (window.updateMatchedCTA) window.updateMatchedCTA(rec);
 }
 
 /* ---------- 2. Inverter sizing ---------- */
