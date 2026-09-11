@@ -1,4 +1,4 @@
-# Monetization staging — 4 layers, ALL INERT (no IDs, no keys, nothing live)
+# Monetization — LIVE 2026-09-10: Layer 1 (Amazon tag generatorsi0d-20) + AdSense auto-ads (ca-pub-1045858506533973) live. Layers 3-4 still inert.
 
 Branch state: uncommitted working-tree edits on `master`, NOT pushed.
 Evidence: `git status --short` + `git diff --stat` in the site folder.
