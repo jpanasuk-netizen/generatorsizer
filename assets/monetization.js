@@ -52,12 +52,11 @@
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", function () { tagLinks(); wireInertForms(); });
   } else { tagLinks(); wireInertForms(); }
-})();
-
 /* Wattage-matched CTA (2026-09-11): key the calculator's Amazon buttons to the
  * recommended wattage. ≤2,500W -> inverter class; 2,501-5,000W -> dual-fuel
- * mid class; >5,000W -> 7,500W+ whole-home class. */
-window.updateMatchedCTA = function (rec) {
+ * mid class; >5,000W -> 7,500W+ whole-home class. Exposed on window so
+ * app.js can call it after a size result. */
+  window.updateMatchedCTA = function (rec) {
   var box = document.getElementById("matchedCta");
   if (!box) return;
   rec = Math.max(500, Math.round(rec || 0));
@@ -90,3 +89,4 @@ window.updateMatchedCTA = function (rec) {
     '</div>';
   box.hidden = false;
 };
+})();
