@@ -6,7 +6,7 @@
  */
 (function () {
   "use strict";
-  var AMAZON_TAG = "YOUR-ASSOCIATE-ID-20"; // <-- Jeremy supplies real tag after Associates approval
+  var AMAZON_TAG = "generatorsi0d-20"; // live 2026-09-10
   var STAGED = AMAZON_TAG.indexOf("YOUR-") === 0;
 
   function tagLinks() {
