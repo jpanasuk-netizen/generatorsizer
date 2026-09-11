@@ -4,10 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About GeneratorSizer — Who Runs This Site</title>
-<meta name="description" content="Who is behind GeneratorSizer and why the sizing numbers are computed, not guessed.">
+<meta name="description" content="Who runs GeneratorSizer: an agent-operated office with human review, and the traceable math behind every sizing number.">
 <link rel="canonical" href="https://generator-sizer.com/about.html">
 <meta name="robots" content="index,follow">
 <link rel="stylesheet" href="assets/styles.css">
+<meta property="og:title" content="About GeneratorSizer — Who Runs This Site">
+<meta property="og:description" content="Who runs GeneratorSizer: an agent-operated office with human review, and the traceable math behind every sizing number.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://generator-sizer.com/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="About GeneratorSizer — Who Runs This Site">
+<meta name="twitter:description" content="Who runs GeneratorSizer: an agent-operated office with human review, and the traceable math behind every sizing number.">
+<meta name="twitter:image" content="https://generator-sizer.com/assets/og-image.png">
 </head>
 <body>
 
@@ -23,9 +31,16 @@
 <h1>About GeneratorSizer</h1>
 <p class="sub">Free sizing tools, computed from published engineering rules of thumb — not blog-filler guesses.</p>
 
-<p>GeneratorSizer is built and maintained by <strong>Jeremy Panasuk</strong>, a data-platforms engineer (19 of 20 Fortune-100 accounts recovered over 19 years of Informatica work) who now runs a private RTX 4070 lab in New Auburn, Wisconsin and builds the calculators he wished existed when sizing his own gear.</p>
-<p>Every number on this site comes from a published source — DOE/EIA energy content figures, NEC load rules, manufacturer spec sheets, AWS welding charts — and the calculator does the arithmetic the articles only describe. When the sources disagree, we say so instead of rounding silently.</p>
-<p>Questions, corrections, or a sizing scenario the calculator doesn't cover: <a href="mailto:jpanasuk@gmail.com">jpanasuk@gmail.com</a>.</p>
+<p>GeneratorSizer is built and maintained by <strong>Jeremy Panasuk</strong>, a data-platforms engineer (19 of 20 Fortune-100 accounts recovered over 19 years of Informatica work) who now runs a private RTX 4070 lab in New Auburn, Wisconsin. The site is operated as an agent-operated office: software agents draft the calculators, pages, and copy, and every release is reviewed by a human before it goes live. Automation handles the arithmetic and the busywork; people check the claims.</p>
+
+<h2>Why the calculators exist</h2>
+<p>Most generator sizing content online is a blog post padded around an affiliate link: pick a wattage class from a feel, round up generously, done. That's how people end up with a generator that stalls when the well pump kicks in, or a 12,000 W machine idling for a fridge and a phone charger. GeneratorSizer exists to do the opposite — you enter the actual appliances you plan to run, and the tool computes running watts, startup surge, 20% headroom, runtime at 50% load, and gasoline vs propane daily fuel consumption from those inputs. The same math powers the niche pages (refrigerator and freezer sizing, well pump wattage) so the article and the calculator never disagree.</p>
+
+<h2>How the sizing math works</h2>
+<p>The method is deliberately simple and traceable. Step 1: sum the running watts of everything you'd power at once, using manufacturer nameplate data or published DOE/EIA figures — never invented specs. Step 2: add the extra surge of the largest motor load, since starting watts for pumps and compressors run 2&ndash;4&times; their running rating. Step 3: apply a 20% headroom buffer so measured loads above nameplate and future additions don't push you into sustained overload. Step 4: report runtime and fuel burn from published energy-content figures so you can plan refueling during a multi-day outage. When published sources disagree, the calculator shows the range instead of rounding silently.</p>
+
+<p>Questions, corrections, or a sizing scenario the calculator doesn't cover: <a href="mailto:jpanasuk@gmail.com">jpanasuk@gmail.com</a>. A human reads every message.</p>
+
 </main>
 
 <footer>GeneratorSizer · <a href="index.html">calculator</a> · <a href="about.html">About</a> · <a href="privacy.html">Privacy</a> · pages may contain affiliate links</footer>

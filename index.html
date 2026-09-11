@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Generator Size Calculator — Running vs Starting Watts, Fuel & Runtime (2026)</title>
-<meta name="description" content="Free generator sizing calculator: enter your appliances, get running vs starting watts, 20% headroom, runtime at 50% load, and gas vs propane fuel use per day. Plus inverter, battery runtime, and transfer switch tools.">
+<meta name="description" content="Free generator sizing calculator: enter your appliances, get running vs starting watts, 20% headroom, runtime, and fuel burn.">
 <link rel="canonical" href="https://generator-sizer.com/">
 <meta name="robots" content="index,follow">
 <meta property="og:title" content="Generator Size Calculator — What Size Generator Do I Need?">
@@ -12,6 +12,9 @@
 <meta property="og:url" content="https://generator-sizer.com/">
 <meta property="og:type" content="website">
 <link rel="stylesheet" href="assets/styles.css">
+<meta property="og:image" content="https://generator-sizer.com/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://generator-sizer.com/assets/og-image.png">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -48,6 +51,11 @@
       "@type": "Question",
       "name": "Do I need a transfer switch to run a generator?",
       "acceptedAnswer": { "@type": "Answer", "text": "Yes, if you're connecting to household circuits. Code requires a manual or automatic transfer switch — back-feeding through a dryer outlet is illegal and can kill utility workers. A 30 A manual switch handles 7,200 W; a 50 A switch handles 12,000 W." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does the calculator add 20% headroom?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The 20% buffer covers two things the wattage list can't predict: measured loads running above their nameplate rating, and future appliances you'll add later. It is headroom on the generator, not permission to exceed its rating — sustained overload still trips the breaker or stalls the engine." }
     }
   ]
 }
@@ -272,7 +280,22 @@ TV + internet - 150w</textarea>
 <div class="card"><h3><a href="https://jpanasuk-netizen.github.io/battery-bank-sizer/" rel="noopener">Battery bank sizer ↗</a>
     <a href="https://jpanasuk-netizen.github.io/weldingcalc/" rel="noopener">WeldingCalc ↗</a></h3><p>If your load is small and daily, a LiFePO4 battery bank can replace fuel entirely — that tool sizes it.</p></div>
 </main>
-  <section id="optin" class="panel" style="margin-top:1.5rem">
+  
+  <section id="faq" class="panel" style="margin-top:1.5rem">
+    <h2>Frequently asked questions</h2>
+    <h3>What size generator do I need to run a house?</h3>
+    <p>For essentials only (fridge, freezer, well pump, furnace fan, lights, phone charging), a 5,000&ndash;7,500 watt portable generator covers it. To also run central AC or an electric water heater, step up to 10,000&ndash;12,000 watts. Add the running watts of everything you'll power at once, add the extra surge of the largest motor load, then buy about 20% above that total.</p>
+    <h3>How do starting watts differ from running watts?</h3>
+    <p>Running watts are what an appliance draws continuously. Starting (surge) watts are the brief spike when a motor starts &mdash; typically 2&ndash;3&times; running watts for pumps and fans, up to 4&times; for compressors. Your generator's surge rating must cover the biggest starting load on top of everything else already running.</p>
+    <h3>How long will a generator run on a tank of gas?</h3>
+    <p>At 50% load, most portable generators burn roughly 1 gallon of gasoline per 7,000 watts of rated output per hour &mdash; a 3,500 W inverter generator goes about 5 hours per gallon, and a 7,500 W model about 1.4 hours per gallon. Propane gives roughly 25% less runtime per gallon-equivalent but stores indefinitely.</p>
+    <h3>Do I need a transfer switch to run a generator?</h3>
+    <p>Yes, if you're connecting to household circuits. Code requires a manual or automatic transfer switch &mdash; back-feeding through a dryer outlet is illegal and can kill utility workers. A 30 A manual switch handles 7,200 W; a 50 A switch handles 12,000 W.</p>
+    <h3>Why does the calculator add 20% headroom?</h3>
+    <p>The 20% buffer covers two things the wattage list can't predict: measured loads running above their nameplate rating, and future appliances you'll add later. It is headroom on the generator, not permission to exceed its rating &mdash; sustained overload still trips the breaker or stalls the engine.</p>
+  </section>
+
+<section id="optin" class="panel" style="margin-top:1.5rem">
     <h2>Free: Printable Outage &amp; Sizing Checklist</h2>
     <p class="small">One page: your load list, runtime math cheat-sheet, and the pre-storm checklist
     (fuel storage, transfer-switch safety, fridge/freezer settings). We'll send the PDF and nothing else — no drip spam.</p>
