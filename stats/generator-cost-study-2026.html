@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How Much Does a Generator Cost in 2026? Prices, Fuel Costs & Outage Math (EIA + 43 Retail Listings)</title>
+<meta name="description" content="Verified 2026 data: portable generator prices by wattage class (Amazon spot-check, Sept 12 2026), EIA gasoline and propane prices, fuel cost per outage, and CPSC safety data — every number linked to its source.">
+<link rel="canonical" href="https://generator-sizer.com/stats/generator-cost-study-2026.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "How Much Does a Generator Cost in 2026? Prices, Fuel Costs & Outage Math",
+      "datePublished": "2026-09-12",
+      "dateModified": "2026-09-12",
+      "author": {"@type": "Organization", "name": "GeneratorSizer", "url": "https://generator-sizer.com/"},
+      "publisher": {"@type": "Organization", "name": "GeneratorSizer"},
+      "about": ["portable generators", "backup power", "fuel costs", "power outages"]
+    },
+    {
+      "@type": "Dataset",
+      "name": "U.S. Portable Generator Price & Fuel-Cost Study, September 2026",
+      "description": "Median retail prices of portable generators by wattage class from a 43-listing Amazon.com spot-check (Sept 12, 2026), combined with EIA weekly gasoline and residential propane price series and EIA 2024 outage statistics. Fuel-cost figures are computed from published EIA prices and manufacturer fuel-consumption specifications.",
+      "url": "https://generator-sizer.com/stats/generator-cost-study-2026.html",
+      "creator": {"@type": "Organization", "name": "GeneratorSizer"},
+      "temporalCoverage": "2022/2026",
+      "spatialCoverage": "United States",
+      "variableMeasured": [
+        "generator retail price by wattage class",
+        "EIA weekly U.S. retail gasoline price (EMM_EPM0_PTE_NUS_DPG)",
+        "EIA weekly U.S. residential propane price (W_EPLLPA_PRS_NUS_DPG)",
+        "EIA average residential electricity price",
+        "EIA Electric Power Annual 2024 interruption duration",
+        "CPSC portable generator CO fatality counts"
+      ],
+      "license": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How much does a portable generator cost in 2026?",
+          "acceptedAnswer": {"@type": "Answer", "text": "In a September 12, 2026 spot-check of 43 Amazon.com listings, median prices were $329 for 2,000–2,500 W inverter generators, $550 for 3,500–5,000 W, $800 for 5,000–7,000 W, and $1,159 for 8,000–12,500 W models."}
+        },
+        {
+          "@type": "Question",
+          "name": "How much fuel does a 7,500-watt generator burn during an outage?",
+          "acceptedAnswer": {"@type": "Answer", "text": "At September 2026 EIA gasoline prices ($4.30/gal national average for the week of Sept 7), a 7,500 W portable running at 50% load burns roughly 0.6–0.9 gal/hr — about $13–19 per 5-hour evening outage and $62–93 per 24 hours."}
+        },
+        {
+          "@type": "Question",
+          "name": "Is generator power more expensive than grid power?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Yes — 3.8 to 5.6 times more. Delivered generator electricity costs roughly $0.69–1.03 per kWh at September 2026 fuel prices, versus the EIA U.S. residential average of 18.34 cents per kWh (June 2026)."}
+        },
+        {
+          "@type": "Question",
+          "name": "How long did the average U.S. power outage last in 2024?",
+          "acceptedAnswer": {"@type": "Answer", "text": "U.S. electricity customers averaged 11 hours of interruptions in 2024 — nearly twice the annual average of the preceding decade — with 80% of outage hours attributed to Hurricanes Beryl, Helene, and Milton, per EIA's Electric Power Annual 2024."}
+        },
+        {
+          "@type": "Question",
+          "name": "How many people die from portable generator carbon monoxide each year?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Generator-related CO deaths averaged 85 per year in the most recent three complete years of CPSC data (2017–2019); the single worst year on record was 2005 with 103 deaths. CPSC investigated 1,332 generator CO deaths in total."}
+        },
+        {
+          "@type": "Question",
+          "name": "What was the highest U.S. gasoline price on record?",
+          "acceptedAnswer": {"@type": "Answer", "text": "$5.107 per gallon for the week of June 13, 2022, per EIA's weekly U.S. retail gasoline series — the peak the 2022 blackout-and-inflation season ran on."}
+        }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+/* GeneratorSizer — dark-first, mobile-first. Matches network identity (assets/styles.css tokens). */
+:root{
+  --bg:#0d1117; --card:#161b22; --fg:#e6edf3; --mut:#8b949e;
+  --acc:#f78166; --ok:#3fb950; --warn:#d29922; --bd:#30363d;
+  --okbg:#121a12; --maxw:900px;
+}
+@media (prefers-color-scheme: light){
+  :root{ --bg:#f6f8fa; --card:#ffffff; --fg:#1f2328; --mut:#57606a; --bd:#d0d7de; --acc:#bc4c28; --okbg:#eaf5ea; }
+}
+*{margin:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{
+  background:var(--bg); color:var(--fg); line-height:1.6;
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  max-width:var(--maxw); margin:0 auto; padding:1.5rem 1.1rem 3rem;
+  font-size:16px;
+}
+a{color:var(--acc)}
+h1{font-size:1.85rem;line-height:1.2;margin-bottom:.4rem}
+h2{font-size:1.3rem;margin:2.2rem 0 .8rem;padding-bottom:.3rem;border-bottom:1px solid var(--bd)}
+h3{font-size:1.05rem;margin:1.4rem 0 .5rem}
+p{margin:.6rem 0}
+.sub{color:var(--mut);margin-bottom:1.4rem}
+.small{font-size:.85rem;color:var(--mut)}
+.site-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:.4rem 1rem;margin-bottom:1.6rem}
+.site-head .brand{font-weight:700;font-size:1.05rem;color:var(--fg);text-decoration:none}
+.site-head nav{display:flex;flex-wrap:wrap;gap:.2rem 1rem;font-size:.9rem;margin-left:auto}
+.takeaways{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:1rem 1.2rem;margin:1.4rem 0}
+.takeaways ol{margin:.5rem 0 0 1.2rem;padding:0}
+.takeaways li{margin:.45rem 0;font-size:.98rem}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.95rem}
+th,td{border:1px solid var(--bd);padding:.5rem .6rem;text-align:left;vertical-align:top}
+th{background:var(--card)}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+.box{background:var(--okbg);border:1px solid var(--bd);border-radius:10px;padding:.9rem 1.1rem;margin:1rem 0}
+.box p{margin:.35rem 0}
+code,pre{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.85em}
+pre{background:var(--card);border:1px solid var(--bd);border-radius:8px;padding:.8rem;overflow-x:auto;white-space:pre-wrap;word-break:break-word}
+footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--bd)}
+ul.src{margin:.4rem 0 .4rem 1.2rem;padding:0}
+ul.src li{margin:.3rem 0;font-size:.9rem}
+</style>
+</head>
+<body>
+<header class="site-head">
+  <a class="brand" href="https://generator-sizer.com/">GeneratorSizer</a>
+  <nav>
+    <a href="https://generator-sizer.com/">Size a generator</a>
+    <a href="https://generator-sizer.com/find-a-commercial-generator-service.html">Commercial service</a>
+    <a href="https://jpanasuk-netizen.github.io/battery-bank-sizer/">Battery bank sizer</a>
+  </nav>
+</header>
+
+<h1>How Much Does a Generator Cost in 2026? Prices, Fuel Costs &amp; Outage Math</h1>
+<p class="sub">Data study · Published September 12, 2026 · Every number below links to its source: EIA price series, EIA Electric Power Annual 2024, CPSC rulemaking records, and a same-day 43-listing Amazon.com price check.</p>
+
+<div class="takeaways">
+<h2 style="border:none;margin:0 0 .2rem;font-size:1.05rem">Key takeaways</h2>
+<ol>
+  <li>Median portable-generator prices (Amazon, Sept 12, 2026, 43 listings): <strong>$329</strong> for 2,000–2,500 W inverters, <strong>$550</strong> for 3,500–5,000 W, <strong>$800</strong> for 5,000–7,000 W, <strong>$1,159</strong> for 8,000–12,500 W.</li>
+  <li>A 7,500 W generator at 50% load costs <strong>$13–19 per 5-hour evening outage</strong> in gasoline at the September 2026 EIA national average of $4.30/gal.</li>
+  <li>Run it around the clock and the same unit burns <strong>$62–93 of fuel per day</strong>.</li>
+  <li>Generator electricity delivers at <strong>$0.69–1.03 per kWh</strong> — <strong>3.8–5.6×</strong> the grid's 18.34¢/kWh U.S. residential average (June 2026).</li>
+  <li>U.S. customers averaged <strong>11 hours of power interruptions in 2024</strong> — nearly double the prior decade's average (EIA).</li>
+  <li><strong>80% of 2024's outage hours</strong> came from three hurricanes: Beryl, Helene, and Milton (EIA).</li>
+  <li>Portable-generator CO poisoning killed an average of <strong>85 Americans a year</strong> in 2017–2019, the worst year being 103 deaths in 2005 (CPSC).</li>
+  <li>CPSC investigated <strong>1,332 generator CO deaths</strong> over 18 years and estimates its CO-shutoff rule will prevent <strong>2,148 deaths over 30 years</strong>.</li>
+  <li>U.S. weekly gasoline peaked at <strong>$5.107/gal the week of June 13, 2022</strong> (EIA) — the most expensive fuel a portable generator has ever drunk.</li>
+  <li>Annual EIA gasoline averages fell from <strong>$4.06 (2022) to $3.42 (2024) to $3.22 (2025)</strong> — then 2026 weeks have ranged $2.91–$4.63.</li>
+  <li>Residential propane ran <strong>$2.67/gal</strong> in its latest reporting week (March 30, 2026), putting a 7,500 W propane-fired unit at <strong>$10–17 per 5 hours</strong>.</li>
+  <li>Tri-fuel portables carry a <strong>~38% price premium</strong>: $1,249 median vs $902 for dual-fuel across matched listings.</li>
+  <li>Watts-per-dollar spread at the extremes: a <strong>$899 13,000 W DuroStar delivers 14.5 W/$</strong>; a <strong>$4,999 Honda EU7000iS delivers 1.4 W/$</strong> — a 10× gap.</li>
+  <li>The cheapest 2,200 W inverter found was <strong>$220</strong> — enough for a 150 W refrigerator, lights, phones, and a microwave (the essentials the EIA says most outages interrupt).</li>
+</ol>
+</div>
+
+<h2>How much does a portable generator cost in 2026?</h2>
+<p>Medians in a same-day 43-listing spot-check of Amazon.com (September 12, 2026) range from <strong>$329</strong> in the 2,000–2,500 W inverter class to <strong>$1,159</strong> in the 8,000–12,500 W class — a 3.5× step from camping-quiet to whole-home-backup territory.</p>
+<table>
+<thead><tr><th>Wattage class</th><th class="num">Listings</th><th class="num">Median price</th><th class="num">Range</th></tr></thead>
+<tbody>
+<tr><td>2,000–2,500 W (inverter)</td><td class="num">11</td><td class="num">$329.39</td><td class="num">$220.31 – $599.00</td></tr>
+<tr><td>3,500–5,000 W</td><td class="num">11</td><td class="num">$549.99</td><td class="num">$309.99 – $988.00</td></tr>
+<tr><td>5,000–7,000 W</td><td class="num">9</td><td class="num">$799.99</td><td class="num">$579.00 – $4,999.00</td></tr>
+<tr><td>8,000–12,500 W</td><td class="num">12</td><td class="num">$1,159.00</td><td class="num">$849.00 – $1,370.00</td></tr>
+</tbody>
+</table>
+<p class="small">Method: live Amazon.com search-result scrape (brand and generic queries: Champion, WEN, Generac, "portable generator 7000 watt", "portable generator 2000 watt inverter"), prices as listed September 12, 2026. Prices fluctuate; verify any single model at the linked source.</p>
+<h3>Named models from the same spot-check (all verifiable at Amazon)</h3>
+<table>
+<thead><tr><th>Model (class)</th><th class="num">Price</th><th class="num">Watts per $1,000</th></tr></thead>
+<tbody>
+<tr><td>WEN DF475T 4,750 W dual-fuel</td><td class="num">$464.99</td><td class="num">10,215</td></tr>
+<tr><td>WEN DF8000X 8,000 W dual-fuel</td><td class="num">$623.17</td><td class="num">12,837</td></tr>
+<tr><td>DuroStar DS13000MX 13,000 W dual-fuel</td><td class="num">$899.00</td><td class="num">14,460</td></tr>
+<tr><td>Generac 8,125 W gas (GP-class)</td><td class="num">$879.00</td><td class="num">9,242</td></tr>
+<tr><td>Westinghouse WGen12500DF 12,500 W dual-fuel</td><td class="num">$999.00</td><td class="num">12,512</td></tr>
+<tr><td>Champion 12,500 W tri-fuel</td><td class="num">$1,259.99</td><td class="num">9,921</td></tr>
+<tr><td>Honda EU7000iS 7,000 W inverter</td><td class="num">$4,999.00</td><td class="num">1,400</td></tr>
+</tbody>
+</table>
+<p>The open-frame dual-fuel class is the watts-per-dollar king: the DuroStar 13,000 W at $899 delivers <strong>14.5 watts per dollar</strong>, ten times the Honda EU7000iS inverter's 1.4 W/$. You are paying the inverter premium for clean sine-wave power and 52–60 dB quiet, not for watts.</p>
+
+<h2>How much fuel does a generator burn in a blackout?</h2>
+<p>At the September 2026 EIA national gasoline average of <strong>$4.295/gal</strong> (week ending September 7, 2026), a typical 7,500 W portable at 50% load — the load that covers a fridge, freezer, well pump, lights, and electronics — costs <strong>$13–19 per 5-hour evening outage</strong> and <strong>$62–93 per 24 hours</strong>, at manufacturer fuel-consumption specs of 0.6–0.9 gal/hr for that class.</p>
+<div class="box">
+<p><strong>The math, so you can redo it with your own numbers:</strong> (gallons per hour) × (EIA $/gal) × (hours). We use 0.6 / 0.75 / 0.9 gal/hr as the published spec range for 7,500 W-class portables at 50% load; EIA weekly U.S. retail gasoline $4.295 (Sept 7, 2026). Cross-check any model's spec sheet against our <a href="https://generator-sizer.com/">generator sizing calculator</a>, which computes the same figure per load.</p>
+</div>
+<p>Propane prices differently: EIA's residential propane series last reported <strong>$2.674/gal</strong> (week of March 30, 2026; the series publishes only during heating season, October–March). At the 1.3×-volume de-rate dual-fuel generators suffer on propane (published manufacturer specs; DOE energy content 91,600 vs 125,000 BTU/gal), that's <strong>$10–17 per 5-hour outage</strong> — cheaper per hour than gasoline at current prices, and storable indefinitely, which is why dual-fuel exists.</p>
+
+<h2>Is generator power more expensive than grid power?</h2>
+<p>Yes — by <strong>3.8–5.6×</strong>. Generator-delivered electricity costs $0.69–1.03/kWh at September 2026 prices; the EIA U.S. residential electricity average was <strong>18.34¢/kWh in June 2026</strong> and <strong>17.30¢/kWh for full-year 2025</strong>. And grid prices keep climbing: EIA's annual residential averages went 15.04¢ (2022) → 16.00¢ (2023) → 16.48¢ (2024) → 17.30¢ (2025).</p>
+<p>That multiple is the honest way to frame the generator-vs-battery decision: fuel is a rent you pay per outage hour, forever. A <a href="https://jpanasuk-netizen.github.io/battery-bank-sizer/">battery bank sizer</a> shows the capex alternative — and for context, EnergySage's 21st Marketplace Report (H1 2025) put home solar+battery at a record-low median <strong>$2.48/W</strong>, i.e. <strong>$29,016 before incentives</strong> for the median 11.7 kW quoted system.</p>
+
+<h2>Why did 2024 double the average outage time?</h2>
+<p>Three hurricanes did it: EIA's Electric Power Annual 2024 reports U.S. customers averaged <strong>11 hours of interruptions in 2024, nearly twice the prior decade's annual average</strong>, with Hurricanes Beryl, Helene, and Milton accounting for <strong>80% of all hours without electricity</strong>. When comparing years, EIA attributes most differences to major events — which is exactly the tail risk a generator (or battery) is priced against.</p>
+
+<h2>How dangerous are portable generators?</h2>
+<p>Carbon monoxide, not fire or shock, is the killer: generator-related CO deaths averaged <strong>85 per year</strong> in the most recent complete CPSC data (2017–2019), the record year was <strong>103 deaths in 2005</strong>, and CPSC field staff investigated <strong>1,332 generator CO deaths</strong> in total. CPSC's proposed safety standard estimates it would prevent <strong>2,148 deaths over 30 years (about 72 per year)</strong> — over $1 billion a year in avoided deaths and injuries, or roughly $273 of benefit per generator sold.</p>
+<p class="small">Primary source: CPSC Notice of Proposed Rulemaking, "Safety Standard for Portable Generators," 88 FR, April 20, 2023, Federal Register document 2023-07870.</p>
+
+<h2>What did gasoline cost during past blackout seasons?</h2>
+<p>Generator fuel economics move with the EIA weekly series (U.S. retail gasoline, all formulations, weekly since the early 1990s):</p>
+<table>
+<thead><tr><th>Period (EIA weekly series)</th><th class="num">U.S. avg $/gal</th><th>What was happening</th></tr></thead>
+<tbody>
+<tr><td>Annual 2022</td><td class="num">4.059</td><td>Peak week $5.107 (June 13, 2022) — record high</td></tr>
+<tr><td>Annual 2023</td><td class="num">3.635</td><td>Post-spike normalization</td></tr>
+<tr><td>Annual 2024</td><td class="num">3.424</td><td>Helene/Milton outage season ran on cheaper fuel</td></tr>
+<tr><td>Annual 2025</td><td class="num">3.224</td><td>Lowest annual average since 2021</td></tr>
+<tr><td>2026 weeks so far</td><td class="num">2.907 – 4.628</td><td>Latest week: $4.295 (Sept 7, 2026)</td></tr>
+</tbody>
+</table>
+<p>Historical hurricane-week ranges from the same series: 2005 (Katrina/Rita year) $1.82–$3.12; 2012 (Sandy year) $3.32–$4.00; 2017 (Harvey/Irma/Maria) $2.38–$2.80; 2022 (Ian) $3.20–$5.11.</p>
+
+<h2>Is a tri-fuel generator worth the premium?</h2>
+<p>Only if natural gas is your plan: tri-fuel portables listed at a <strong>$1,249 median vs $902 for dual-fuel (gas+propane)</strong> in matched listings — a 38% premium for the NG hose and fitting. Gasoline-only remains cheapest to buy but worst to store (3–12 months with stabilizer per manufacturer guidance), propane stores indefinitely, and a natural-gas hookup is the only fuel that never goes stale in your garage.</p>
+
+<h2>Frequently asked questions</h2>
+<p>Answers above in the FAQ schema cover the six most-cited questions (prices by class, fuel per outage, generator-vs-grid cost, 2024 outage duration, CO deaths, record gasoline price). Each is sourced in the list below.</p>
+
+<h2>Cite this page</h2>
+<div class="box">
+<p><strong>Plain-text citation:</strong></p>
+<p>GeneratorSizer (2026). "How Much Does a Generator Cost in 2026? Prices, Fuel Costs &amp; Outage Math." U.S. Portable Generator Price &amp; Fuel-Cost Study, September 12, 2026. https://generator-sizer.com/stats/generator-cost-study-2026.html</p>
+<p><strong>Ready-to-paste HTML embed:</strong></p>
+<pre>&lt;blockquote cite="https://generator-sizer.com/stats/generator-cost-study-2026.html"&gt;
+  Median U.S. portable-generator prices in Sept 2026: $329 (2,000–2,500 W),
+  $550 (3,500–5,000 W), $800 (5,000–7,000 W), $1,159 (8,000–12,500 W) —
+  and generator fuel costs 3.8–5.6× grid power per kWh. Source:
+  &lt;a href="https://generator-sizer.com/stats/generator-cost-study-2026.html"&gt;
+  GeneratorSizer Generator Cost Study 2026&lt;/a&gt;, built on EIA price series,
+  EIA Electric Power Annual 2024, and CPSC rulemaking data.
+&lt;/blockquote&gt;</pre>
+<p class="small">Dataset license: CC BY 4.0. Attribute GeneratorSizer with the linked underlying EIA/CPSC sources.</p>
+</div>
+
+<h2>Sources (every number, verified at fetch)</h2>
+<ul class="src">
+  <li>EIA weekly U.S. retail gasoline price, all formulations (EMM_EPM0_PTE_NUS_DPG.W): <a href="https://www.eia.gov/dnav/pet/hist/LeafHandler.ashx?n=PET&amp;s=EMM_EPM0_PTE_NUS_DPG&amp;f=W">eia.gov series page</a> · <a href="https://www.eia.gov/dnav/pet/hist_xls/EMM_EPM0_PTE_NUS_DPGw.xls">XLSX data file</a> — latest week $4.295 (9/7/26); annual averages 2022–2025; max week $5.107 (6/13/22); 2026 range $2.907–$4.628.</li>
+  <li>EIA weekly U.S. residential propane price (W_EPLLPA_PRS_NUS_DPG): <a href="https://www.eia.gov/dnav/pet/hist/LeafHandler.ashx?f=W&amp;n=PET&amp;s=W_EPLLPA_PRS_NUS_DPG">eia.gov series page</a> — $2.674/gal latest week (3/30/26); annual averages 2024 $2.506, 2025 $2.589.</li>
+  <li>EIA Electric Power Monthly, Table 5.3 (residential electricity price, annual + monthly): <a href="https://www.eia.gov/electricity/monthly/epm_table_grapher.php?t=epmt_5_3">eia.gov table</a> — 2024 16.48¢, 2025 17.30¢, June 2026 18.34¢.</li>
+  <li>EIA Today in Energy (Dec 1, 2025), "Hurricanes in 2024 led to the most hours without power in the United States in 10 years" (Electric Power Annual 2024): <a href="https://www.eia.gov/todayinenergy/detail.php?id=66744">eia.gov article</a> — 11 hours avg; 2× decade; 80% from Beryl/Helene/Milton.</li>
+  <li>CPSC, "Safety Standard for Portable Generators" NPR, Federal Register doc 2023-07870 (Apr 20, 2023): <a href="https://www.federalregister.gov/documents/2023/04/20/2023-07870/safety-standard-for-portable-generators">federalregister.gov</a> — 85 deaths/yr avg (2017–2019); 103 deaths 2005; 1,332 investigated deaths; 2,148 deaths prevented over 30 yrs; $273 benefit per generator sold.</li>
+  <li>EnergySage 21st Solar &amp; Storage Marketplace Report (H1 2025): <a href="https://www.energysage.com/press/energysage-marketplace-intel-report-21/">EnergySage release</a> · <a href="https://www.prnewswire.com/news-releases/energysage-releases-21st-solar--storage-marketplace-report-reflecting-h1-2025-302545325.html">PRNewswire release</a> · <a href="https://pv-magazine-usa.com/2025/09/03/u-s-residential-solar-averages-record-low-29000-before-incentives-said-energysage/">pv-magazine USA coverage</a> — $2.48/W median; 11.7 kW median system; $29,016 pre-incentive; 7.5% median loan rate.</li>
+  <li>Retail price spot-check: 43 Amazon.com listings captured September 12, 2026 via live search-result scrape (queries: "champion 3500 watt dual fuel portable generator", "wen portable inverter generator", "generac portable generator", "portable generator 7000 watt", "portable generator 2000 watt inverter"). Named-model prices verifiable at Amazon product pages, e.g. <a href="https://www.amazon.com/s?k=honda+eu7000is">Honda EU7000iS</a>, <a href="https://www.amazon.com/s?k=durostark+ds13000mx+generator">DuroStar DS13000MX</a>, <a href="https://www.amazon.com/s?k=wen+df475t">WEN DF475T</a>.</li>
+  <li>Fuel-consumption spec range for the 7,500 W @ 50% load class (0.6–0.9 gal/hr gasoline; ~1.3× volume on propane): manufacturer specification sheets for the class; DOE energy content constants (gasoline 125,000 BTU/gal, propane 91,600 BTU/gal) as compiled on our <a href="https://generator-sizer.com/">gas vs propane methodology note</a>.</li>
+</ul>
+
+<footer>
+<p class="small">Plan a backup load the honest way: <a href="https://generator-sizer.com/">generator size calculator</a> · <a href="https://jpanasuk-netizen.github.io/battery-bank-sizer/">battery bank sizer</a> · <a href="https://generator-sizer.com/find-a-commercial-generator-service.html">commercial generator service vetting</a></p>
+<p class="small">© 2026 GeneratorSizer. Data study — prices reflect listings on the stated date and change without notice.</p>
+</footer>
+</body>
+</html>
