@@ -6,7 +6,7 @@ app_file: index.html
 pinned: false
 ---
 
-Generator size calculator — live twin: https://jpanasuk-netizen.github.io/generatorsizer/
+Generator size calculator — live twin: https://generator-sizer.com/
 
 
 ## AI-SEO doctrine (NICHE_SITES_OPS.md — Dulait loop, applied 2026-09-05)

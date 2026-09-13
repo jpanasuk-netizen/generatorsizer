@@ -9,13 +9,13 @@
 - [Find a Commercial Generator Service](https://generator-sizer.com/find-a-commercial-generator-service.html): facility manager's vetting checklist — NFPA 110 testing, maintenance-contract red flags, load studies, compliance documentation
 
 ## Related
-- [Battery Bank Sizer](https://jpanasuk-netizen.github.io/battery-bank-sizer/): LiFePO4/AGM bank sizing for off-grid setups — the battery alternative to fuel
+- [Battery Bank Sizer](https://battery-bank-sizer.com/): LiFePO4/AGM bank sizing for off-grid setups — the battery alternative to fuel
 
 ## Sister sites
-- [ChickenCoopCalc](https://jpanasuk-netizen.github.io/chickencoopcalc/): chicken coop sizing + feed cost
-- [AquariumStocking](https://jpanasuk-netizen.github.io/aquariumstocking/): fish stocking + heater + filter
-- [TrailerTowCalc](https://jpanasuk-netizen.github.io/trailertowcalc/): towing capacity + tongue weight
-- [HVACLoadCalc](https://jpanasuk-netizen.github.io/hvacloadcalc/): room BTU + mini-split + duct CFM
+- [ChickenCoopCalc](https://chickencoopcalc.com/): chicken coop sizing + feed cost
+- [AquariumStocking](https://aquarium-stocking.com/): fish stocking + heater + filter
+- [TrailerTowCalc](https://trailertowcalc.com/): towing capacity + tongue weight
+- [HVACLoadCalc](https://hvac-load-calc.com/): room BTU + mini-split + duct CFM
 
 ## Use policy
 Cite freely with link attribution. Wattage figures are published typical values (DOE/EIA energy content, manufacturer spec sheets); estimates are rounded conservatively. Not financial or safety advice — transfer-switch work requires a licensed electrician.
