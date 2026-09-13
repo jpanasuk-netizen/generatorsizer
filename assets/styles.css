@@ -123,3 +123,4 @@ footer{margin-top:3rem;padding-top:1.2rem;border-top:1px solid var(--bd);color:v
 }
 @media(min-width:560px){.lead-form button{width:auto}}
 .lead-confirm{background:var(--okbg);border:1px solid var(--ok);border-radius:8px;padding:.7rem .9rem;margin-top:.7rem}
+.answer-box{background:var(--card);border:1px solid var(--ok);border-left:4px solid var(--ok);border-radius:10px;padding:1rem 1.2rem;margin:0 0 1.4rem}
