@@ -141,11 +141,11 @@
   <button onclick="sizeGenerator()" style="background:var(--acc);color:#fff;border:none;border-radius:8px;padding:.7rem 1.4rem;font-size:1.05rem;cursor:pointer;font-weight:600">Size my generator</button>
 
   <div id="genResult" class="ans" hidden></div>
+  <div id="matchedCta" hidden></div>
 
   <div class="affil">
     <span class="tag">Affiliate</span>
-    <p class="small">Size your load first — we'll match generator classes to your recommended wattage below, plus the popular classes side by side.</p>
-    <div id="matchedCta" class="affil" hidden></div>
+    <p class="small">Size your load first — we'll match generator classes to your recommended wattage above, plus the popular classes side by side.</p>
     <div class="affil-links">
       <a class="btn-amz" data-amz="3500 watt dual fuel inverter generator" href="https://www.amazon.com/s?k=3500+watt+dual+fuel+inverter+generator&tag=generatorsi0d-20" rel="sponsored nofollow noopener" target="_blank">3,500 W class on Amazon</a>
       <a class="btn-amz" data-amz="7500 watt dual fuel portable generator" href="https://www.amazon.com/s?k=7500+watt+dual+fuel+portable+generator&tag=generatorsi0d-20" rel="sponsored nofollow noopener" target="_blank">7,500 W+ class on Amazon</a>
@@ -171,6 +171,7 @@
   </div>
   <button onclick="sizeInverter()" style="background:var(--acc);color:#fff;border:none;border-radius:8px;padding:.7rem 1.4rem;font-size:1.05rem;cursor:pointer;font-weight:600">Size my inverter</button>
   <div id="invResult" class="ans" hidden></div>
+  <div id="invMatchedCta" class="matched-cta-slot" hidden></div>
 </section>
 
 <!-- ============ 3. BATTERY RUNTIME ============ -->
@@ -212,6 +213,7 @@ TV + internet - 150w</textarea>
   </div>
   <button onclick="planSwitch()" style="background:var(--acc);color:#fff;border:none;border-radius:8px;padding:.7rem 1.4rem;font-size:1.05rem;cursor:pointer;font-weight:600">Plan my switch</button>
   <div id="tsResult" class="ans" hidden></div>
+  <div id="tsMatchedCta" class="matched-cta-slot" hidden></div>
   <div class="affil" style="border-left:3px solid var(--acc)">
     <span class="tag">Sponsor</span>
     <p class="small">Transfer switches are licensed-electrician work — code prohibits back-feeding, and an ATS install needs permits. Need a pro to install it? This slot is reserved for a vetted local generator installer. <!-- LEADGEN SLOT --></p>
@@ -335,5 +337,11 @@ TV + internet - 150w</textarea>
 
 <script src="assets/app.js"></script>
 <script src="assets/monetization.js"></script>
+
+<div id="amzSticky" hidden aria-hidden="true">
+  <a id="amzStickyLink" class="btn-amz btn-amz-primary" href="https://www.amazon.com/s?k=portable+generator&tag=generatorsi0d-20" rel="sponsored nofollow noopener" target="_blank">Shop this size on Amazon</a>
+  <button type="button" class="dismiss" onclick="dismissAmzSticky()" aria-label="Dismiss">Not now</button>
+</div>
+
 </body>
 </html>
