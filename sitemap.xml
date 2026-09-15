@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://generator-sizer.com/</loc>
@@ -47,4 +47,9 @@
   </url>
   <url><loc>https://generator-sizer.com/about.html</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
   <url><loc>https://generator-sizer.com/privacy.html</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
+  <url>
+    <loc>https://generator-sizer.com/app-privacy.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
 </urlset>
