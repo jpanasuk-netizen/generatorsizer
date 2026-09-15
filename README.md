@@ -1,35 +1,93 @@
+# ⚡ Generator-Sizer Advisor (Local AI App)
+
+The offline, privacy-first AI engineering advisor for HVAC techs, electrical contractors, and MEP firms.
+
+## 🚀 Quick Start
+
+### Windows
+1. Double-click `Start-Advisor.bat`
+2. Your browser opens **`http://127.0.0.1:8080/`** automatically
+
+### macOS / Linux
+```bash
+chmod +x start_advisor.sh
+./start_advisor.sh
+```
+
+### Or run via llama-server directly (fastest)
+```bash
+llama-server -m models/qwen25-3b-slm-advisor-q4km.gguf --port 8080 --host 0.0.0.0 -c 4096 -t 8
+```
+
 ---
-title: GeneratorSizer
-emoji: 📏
-sdk: static
-app_file: index.html
-pinned: false
+
+## 📦 What's Inside
+
+- **`ui/`** — Dark engineering chat interface with example prompts
+- **`api/server.py`** — Zero-dependency local server (serves UI + OpenAI-compatible API)
+- **`models/`** — Quantized GGUF model files (`qwen25-3b-slm-advisor-q4km.gguf`, ~1.8 GB)
+- **`examples/50_prompts.md`** — 50 field-tested prompt templates
+
 ---
 
-Generator size calculator — live twin: https://jpanasuk-netizen.github.io/generatorsizer/
+## 🔌 API Integration
 
+The local server provides a drop-in OpenAI-compatible endpoint:
 
-## AI-SEO doctrine (NICHE_SITES_OPS.md — Dulait loop, applied 2026-09-05)
+```python
+import openai
 
-### Canonical template (rule: every future page copies ONE page)
-- **Template page: `refrigerator-freezer.html`** — article + real math tables + FAQ schema layout; hub page inherits its structure
-- New pages: copy this file, swap the keyword-specific h1/meta/FAQ/tables. Do not invent a new layout.
+client = openai.OpenAI(
+    base_url="http://127.0.0.1:8080/v1",
+    api_key="local"
+)
 
-### Publish cadence gate
-- Just launched 4-8 pages at once. **NO new pages until existing pages show impressions in Google Search Console.**
-- GSC property needs Jeremy's login — blocked on him (submit sitemap + request indexing too). 3-pages-a-day on a fresh site = 90% unindexed = spam signal.
+response = client.chat.completions.create(
+    model="slm-advisor",
+    messages=[
+        {"role": "user", "content": "What size wire for 100A subpanel at 200 feet?"}
+    ]
+)
+print(response.choices[0].message.content)
+```
 
-### Create-vs-optimize check (before any new keyword)
-- Check `sitemap.xml` first: existing page targets the keyword → write an optimization plan for that page; no page targets it → creation plan using the template above. Never create a competing page.
+---
 
-### Templateable keyword expansion list (next build phase — one page each, template-inherited)
-1. what size generator for an RV
-2. what size generator for a food truck
-3. what size generator for a construction site / job site
-4. what size generator for a 30 amp RV (vs 50 amp)
-5. what size generator to run a sump pump during a storm
-6. what size generator for a sump pump + furnace together (winter backup)
-7. what size generator for a window AC unit
-8. what size generator for camping (quiet inverter picks)
-9. what size generator for a home medical device (CPAP/oxygen)
-10. dual fuel generator sizing: gas vs propane wattage loss
+## 🔒 100% Private & Offline
+
+All calculations run on your hardware. No prompts or client job details ever leave your machine.
+
+---
+
+## 🔧 Technical
+
+| Layer | Choice |
+|---|---|
+| Base model | Qwen2.5-3B (Apache-2.0) |
+| Fine-tune | Unsloth LoRA, bf16, 4-bit quant |
+| Export | GGUF (Q4_K_M) + safetensors + MLX recipe |
+| Inference | llama.cpp / Ollama / TabbyAPI |
+| Hardware lab | Private RTX 4070 workstation |
+| License | MIT (personal/shop tiers) |
+
+---
+
+## 🎯 Tiers
+
+| Tier | Price | Seats | Key extras |
+|---|---|---|---|
+| **Starter** | $99 one-time | 1 | Base + LoRA, GGUF/MLX recipes, README |
+| **Pro** | $299 one-time | 5 (one site) | Pre-merged checkpoints, server config, 30 workflow pack, 12 mo quarterly refresh |
+| **Firm** | $999 / firm / year | Unlimited | Commercial redistribution, SOC-friendly profile, custom LoRA slot, 8h priority support |
+
+---
+
+## 🧪 Trained on
+
+- Residential load-calc prompts (Manual J)
+- NEC ampacity tables (Chapter 9, Table 310.16)
+- Generator kW selection & derating curves
+- Voltage-drop calculations (Copper & Aluminum, single/three phase)
+- HVAC tonnage → BTU → CFM conversions
+- Transfer-switch amperage matching
+- Fuel-economics (natural gas vs propane)
