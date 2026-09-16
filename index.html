@@ -1,339 +1,349 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Generator Size Calculator — Running vs Starting Watts, Fuel & Runtime (2026)</title>
-<meta name="description" content="Free generator sizing calculator: enter your appliances, get running vs starting watts, 20% headroom, runtime, and fuel burn. Generator sizing calculator for homeowners who need to know exactly what wattage keeps their home running during an outage.">
-<link rel="canonical" href="https://generator-sizer.com/">
-<link rel="icon" type="image/png" href="assets/favicon.png">
-<link rel="shortcut icon" href="assets/favicon.ico">
-<meta name="robots" content="index,follow">
-<meta property="og:title" content="Generator Size Calculator — What Size Generator Do I Need?">
-<meta property="og:description" content="Enter your appliances, get the exact generator wattage you need — running watts, startup surge, runtime, and gas vs propane fuel burn.">
-<meta property="og:url" content="https://generator-sizer.com/">
-<meta property="og:type" content="website">
-<link rel="stylesheet" href="assets/styles.css">
-<meta property="og:image" content="https://generator-sizer.com/assets/og-image.png">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://generator-sizer.com/assets/og-image.png">
-<meta name="twitter:title" content="Generator Size Calculator — What Size Generator Do I Need?" />
-<meta name="twitter:description" content="Enter your appliances, get the exact generator wattage you need — running watts, startup surge, and headroom." />
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "GeneratorSizer Generator Size Calculator",
-  "applicationCategory": "UtilitiesApplication",
-  "operatingSystem": "Web",
-  "url": "https://generator-sizer.com/",
-  "description": "Free generator sizing calculator: appliance-based running and starting wattage, 20% headroom, runtime at 50% load, and gasoline vs propane daily fuel consumption. Includes inverter sizing, battery runtime, and transfer switch load planner.",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What size generator do I need to run a house?",
-      "acceptedAnswer": { "@type": "Answer", "text": "For essentials only (fridge, freezer, well pump, furnace fan, lights, phone charging), a 5,000–7,500 watt portable generator covers it. To also run central AC or an electric water heater, step up to 10,000–12,000 watts. Add the running watts of everything you'll power at once, add the extra surge of the largest motor load, then buy about 20% above that total." }
-    },
-    {
-      "@type": "Question",
-      "name": "How do starting watts differ from running watts?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Running watts are what an appliance draws continuously. Starting (surge) watts are the brief spike when a motor starts — typically 2–3× running watts for pumps and fans, up to 4× for compressors. Your generator's surge rating must cover the biggest starting load on top of everything else already running." }
-    },
-    {
-      "@type": "Question",
-      "name": "How long will a generator run on a tank of gas?",
-      "acceptedAnswer": { "@type": "Answer", "text": "At 50% load, most portable generators burn roughly 1 gallon of gasoline per 7,000 watts of rated output per hour — a 3,500 W inverter generator goes about 5 hours per gallon, and a 7,500 W model about 1.4 hours per gallon. Propane gives roughly 25% less runtime per gallon-equivalent but stores indefinitely." }
-    },
-    {
-      "@type": "Question",
-      "name": "Do I need a transfer switch to run a generator?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes, if you're connecting to household circuits. Code requires a manual or automatic transfer switch — back-feeding through a dryer outlet is illegal and can kill utility workers. A 30 A manual switch handles 7,200 W; a 50 A switch handles 12,000 W." }
-    },
-    {
-      "@type": "Question",
-      "name": "Why does the calculator add 20% headroom?",
-      "acceptedAnswer": { "@type": "Answer", "text": "The 20% buffer covers two things the wattage list can't predict: measured loads running above their nameplate rating, and future appliances you'll add later. It is headroom on the generator, not permission to exceed its rating — sustained overload still trips the breaker or stalls the engine." }
-    }
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "GeneratorSizer",
-  "url": "https://generator-sizer.com/",
-  "logo": "https://generator-sizer.com/assets/og-image.png",
-  "description": "Free generator sizing calculators — running vs starting watts, fuel, and runtime.",
-  "founder": {
-    "@type": "Person",
-    "name": "Jeremy Panasuk",
-    "url": "https://generator-sizer.com/about.html"
-  },
-  "sameAs": ["https://jpanasuk-netizen.github.io/house-hub/"]
-}
-</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<title>SLM Advisor · generator-sizer addon</title>
+<meta name="description" content="A local, fine-tuned 3B small language model for HVAC, electrical, and MEP sizing — runs on your hardware, no API fees.">
+<link rel="canonical" href="https://generator-sizer.com/index.html">>
+<style>
+  :root{
+    --bg:#0a0a0f;
+    --bg-2:#11111a;
+    --bg-3:#16161f;
+    --line:#22222e;
+    --line-2:#2c2c3a;
+    --text:#e6e6ee;
+    --muted:#9a9aa8;
+    --dim:#6b6b78;
+    --cyan:#00e5ff;
+    --mint:#00ff95;
+    --warn:#ffb74d;
+    --radius:14px;
+    --gap:24px;
+    --maxw:1180px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+    font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility}
+  img{max-width:100%;display:block}
+  a{color:var(--cyan);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+  /* Header */
+  header.nav{
+    position:sticky;top:0;z-index:10;
+    background:rgba(10,10,15,.85);backdrop-filter:saturate(140%) blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:56px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:600;letter-spacing:.2px;color:var(--text)}
+  .brand-dot{width:10px;height:10px;border-radius:50%;background:var(--cyan);
+    box-shadow:0 0 12px var(--cyan)}
+  .brand-sub{color:var(--dim);font-weight:400;margin-left:6px;font-size:13px}
+  nav.links a{color:var(--muted);margin-left:18px;font-size:14px}
+  nav.links a:hover{color:var(--text);text-decoration:none}
+  /* Hero */
+  .hero{padding:64px 0 48px;border-bottom:1px solid var(--line)}
+  .eyebrow{display:inline-block;font-size:12px;letter-spacing:1.4px;text-transform:uppercase;
+    color:var(--mint);border:1px solid rgba(0,255,149,.3);padding:4px 10px;border-radius:999px;margin-bottom:18px}
+  h1{font-size:clamp(32px,5vw,52px);line-height:1.08;margin:0 0 14px;font-weight:700;letter-spacing:-.5px}
+  h1 .grad{background:linear-gradient(90deg,var(--cyan),var(--mint));
+    -webkit-background-clip:text;background-clip:text;color:transparent}
+  .lede{color:var(--muted);max-width:680px;font-size:18px;margin:0 0 22px}
+  .hero-row{display:grid;grid-template-columns:1.2fr .8fr;gap:32px;align-items:center}
+  .cta-row{display:flex;flex-wrap:gap:10px;margin-top:14px}
+  .btn{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line-2);
+    padding:10px 16px;border-radius:10px;color:var(--text);background:var(--bg-2);
+    font-size:14px;font-weight:500}
+  .btn:hover{border-color:var(--cyan);text-decoration:none}
+  .btn.primary{background:linear-gradient(180deg,#00e5ff22,#00e5ff11);
+    border-color:var(--cyan);color:#dffaff}
+  .btn.primary:hover{background:linear-gradient(180deg,#00e5ff33,#00e5ff1a)}
+  .btn.mint{border-color:var(--mint);background:linear-gradient(180deg,#00ff9522,#00ff9511);color:#daffe7}
+  /* Engineer portrait card */
+  .portrait{
+    border:1px solid var(--line);background:var(--bg-2);border-radius:var(--radius);
+    padding:18px;display:flex;gap:14px;align-items:center;
+  }
+  .portrait img{width:88px;height:88px;border-radius:12px;object-fit:cover;
+    border:1px solid var(--line-2)}
+  .portrait .who{font-size:14px;color:var(--text);font-weight:600}
+  .portrait .role{font-size:13px;color:var(--muted);margin-top:2px}
+  .portrait .note{font-size:12px;color:var(--dim);margin-top:6px;line-height:1.4}
+  .badges{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+  .badge{font-size:11px;color:var(--muted);border:1px solid var(--line-2);
+    padding:3px 8px;border-radius:999px;background:var(--bg-3)}
+  .badge.cyan{color:var(--cyan);border-color:rgba(0,229,255,.4)}
+  .badge.mint{color:var(--mint);border-color:rgba(0,255,149,.4)}
+  /* Section common */
+  section.block{padding:64px 0;border-bottom:1px solid var(--line)}
+  h2{font-size:clamp(24px,3vw,32px);margin:0 0 8px;letter-spacing:-.3px}
+  .subhead{color:var(--muted);margin:0 0 28px;max-width:680px}
+  /* Pricing grid */
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap)}
+  .card{
+    background:var(--bg-2);border:1px solid var(--line);border-radius:var(--radius);
+    padding:22px;display:flex;flex-direction:column;height:auto;
+  }
+  .card .tier{font-size:12px;letter-spacing:1.4px;text-transform:uppercase;color:var(--dim)}
+  .card .name{font-size:20px;font-weight:600;margin:6px 0 4px}
+  .card .price{font-size:36px;font-weight:700;margin:8px 0 4px;letter-spacing:-1px}
+  .card .price small{font-size:14px;color:var(--muted);font-weight:400;margin-left:4px}
+  .card .blurb{color:var(--muted);font-size:14px;margin:0 0 14px}
+  .card ul.feats{list-style:none;margin:0 0 18px;padding:0;display:flex;flex-direction:column;gap:8px}
+  .card ul.feats li{font-size:14px;color:var(--text);display:flex;gap:8px;align-items:flex-start}
+  .card ul.feats li::before{content:"✓";color:var(--mint);font-weight:700;line-height:1.3;flex-shrink:0}
+  .card .meta{font-size:12px;color:var(--dim);margin-top:auto;padding-top:10px;border-top:1px dashed var(--line)}
+  .card.featured{border-color:rgba(0,229,255,.45);
+    background:linear-gradient(180deg,#0d1620,#11111a)}
+  .card.featured .badge-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+  .card.featured .poptag{font-size:11px;color:#0a0a0f;background:var(--cyan);
+    padding:3px 8px;border-radius:999px;font-weight:700;letter-spacing:.8px}
+  /* Features */
+  .feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap)}
+  .feat{background:var(--bg-2);border:1px solid var(--line);border-radius:var(--radius);padding:22px;height:auto}
+  .feat .ic{font-size:22px;margin-bottom:10px}
+  .feat h3{margin:0 0 6px;font-size:16px}
+  .feat p{margin:0;color:var(--muted);font-size:14px}
+  .feat.full{grid-column:1 / -1}
+  /* FAQ */
+  .faq{display:flex;flex-direction:column;gap:var(--gap)}
+  .qa{background:var(--bg-2);border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px}
+  .qa h3{margin:0 0 8px;font-size:16px}
+  .qa p{margin:0;color:var(--muted);font-size:14px}
+  /* CTA strip */
+  .cta-strip{
+    background:linear-gradient(135deg,#0d1620,#11111a);
+    border:1px solid rgba(0,229,255,.3);border-radius:var(--radius);
+    padding:36px;text-align:center;margin:48px 0;
+  }
+  .cta-strip h3{margin:0 0 8px;font-size:22px}
+  .cta-strip p{margin:0;color:var(--muted);font-size:18px}
+  /* Footer */
+  footer{padding:32px 0 48px;color:var(--dim);font-size:13px;text-align:center}
+  footer a{color:var(--muted)}
+  /* Mobile */
+  @media (max-width:900px){
+    .hero-row{grid-template-columns:1fr}
+    .grid-3{grid-template-columns:1fr}
+    .feat-grid{grid-template-columns:1fr}
+    nav.links{display:none}
+  }
+  @media (max-width:520px){
+    .hero{padding:40px 0 32px}
+    section.block{padding:44px 0}
+    .card{padding:18px}
+  }
+  /* Anchor offset so sticky nav doesn't cover headings */
+  .anchor{scroll-margin-top:72px}
+</style>
 </head>
 <body>
 
-<header class="site-head">
-  <a class="brand" href="index.html">GeneratorSizer</a>
-  <nav aria-label="Site">
-    <a href="#calc">Calculator</a>
-    <a href="refrigerator-freezer.html">Fridge &amp; freezer</a>
-    <a href="well-pump-watts.html">Well pump</a>
-    <a href="whole-house-generator-sizing.html">Whole house</a>
-    <a href="transfer-switch-sizing.html">Transfer switch</a>
-    <a href="best-portable-generators.html">Top 10 picks</a>
-    <a href="find-a-commercial-generator-service.html">Find a pro</a>
-    <a href="https://battery-bank-sizer.com/" rel="noopener">Battery bank sizer ↗</a>
-  </nav>
+<header class="nav">
+  <div class="wrap nav-inner">
+    <div class="brand">
+      <span class="brand-dot"></span>
+      generator-sizer
+      <span class="brand-sub">/ SLM Advisor</span>
+    </div>
+    <nav class="links">
+      <a href="#features">Features</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+      <a href="#start">Get the addon</a>
+    </nav>
+  </div>
 </header>
 
-<main>
-<h1>Generator size calculator</h1>
-<p class="sub">Generator sizing calculator for homeowners who need to know exactly what wattage keeps their home running during an outage.</p>
-<p class="sub">Add your appliances. Get the wattage to buy, how long a tank lasts, and what fuel costs per day — running watts, startup surge, and headroom handled.</p>
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-row">
+      <div>
+        <span class="eyebrow">Whop addon · v1.0</span>
+        <h1>An HVAC & electrical sizing <span class="grad">co-pilot that runs on your own box.</span></h1>
+        <p class="lede">SLM Advisor is a 3-billion-parameter language model fine-tuned for residential HVAC, electrical, and MEP sizing work. It loads locally on a laptop or shop server, answers without per-token API fees, and ships with LoRA adapters you can re-export to GGUF or MLX for your own toolchain.</p>
+        <div class="cta-row">
+          <a class="btn primary" href="#start">Pick a tier</a>
+          <a class="btn" href="#features">See what's inside</a>
+          <a class="btn mint" href="#firm">Firm license</a>
+        </div>
+        <div class="badges">
+          <span class="badge cyan">Qwen2.5-3B base</span>
+          <span class="badge cyan">MIT licensed</span>
+          <span class="badge mint">Runs locally</span>
+          <span class="badge mint">No API fees</span>
+          <span class="badge">GGUF / MLX export</span>
+        </div>
+      </div>
+      <aside class="portrait" aria-label="About the engineer">
+        <img src="../OpenMontage/assets/avatars/jeremy_primary.jpg" alt="Engineer portrait — Jeremy Panasuk">
+        <div>
+          <div class="who">Jeremy Panasuk</div>
+          <div class="role">Builder · generator-sizer.com</div>
+          <div class="note">Mechanical background, hands-on with HVAC and electrical design. Trained this model on a private RTX 4070 lab.</div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
 
-<div class="tabs" role="tablist" aria-label="Calculators">
-  <button role="tab" aria-selected="true" onclick="showTab('tab-gen', this)">Generator size</button>
-  <button role="tab" aria-selected="false" onclick="showTab('tab-inv', this)">Inverter size</button>
-  <button role="tab" aria-selected="false" onclick="showTab('tab-bat', this)">Battery runtime</button>
-  <button role="tab" aria-selected="false" onclick="showTab('tab-ts', this)">Transfer switch</button>
-</div>
-
-<!-- ============ 1. GENERATOR SIZING ============ -->
-<section id="tab-gen" class="panel active" role="tabpanel">
-  <fieldset>
-    <legend>1 · Add what you'll power</legend>
-    <div class="field">
-      <label for="presetSelect">Pick an appliance (published typical wattages — editable)</label>
-      <div style="display:flex;gap:.5rem;flex-wrap:wrap">
-        <select id="presetSelect" style="flex:1 1 260px"></select>
-        <button data-add style="background:var(--acc);color:#fff;border:none;border-radius:8px;padding:.55rem 1rem;font-size:1rem;cursor:pointer">Add</button>
+<!-- FEATURES -->
+<section class="block" id="features">
+  <div class="wrap">
+    <h2 class="anchor">What you actually get</h2>
+    <p class="subhead">Five things this addon does that a vanilla chat model doesn't, out of the box.</p>
+    <div class="feat-grid">
+      <div class="feat">
+        <div class="ic">⚙️</div>
+        <h3>Sizing-aware reasoning</h3>
+        <p>Trained on residential load calc prompts, NEC ampacity tables, generator kW selection, and duct/pipe sizing heuristics — so it answers in the formats you already use.</p>
+      </div>
+      <div class="feat">
+        <div class="ic">🔌</div>
+        <h3>Electrical + HVAC bilingual</h3>
+        <p>Switches between AC/DC ampacity, voltage drop, OCPD selection, and refrigerant/tonnage/CFM problems without losing units.</p>
+      </div>
+      <div class="feat">
+        <div class="ic">💾</div>
+        <h3>Local-only inference</h3>
+        <p>Runs through llama.cpp, Ollama, or TabbyAPI on your hardware. No calls leave the box. No token bills. No rate limits.</p>
+      </div>
+      <div class="feat">
+        <div class="ic">🧪</div>
+        <h3>Inspectable adapters</h3>
+        <p>LoRA adapters ship in safetensors and are re-exportable to GGUF (llama.cpp) and MLX (Apple Silicon). Merge into a full checkpoint when you want.</p>
+      </div>
+      <div class="feat">
+        <div class="ic">🧰</div>
+        <h3>Drop-in to your stack</h3>
+        <p>OpenAI-compatible API mode via TabbyAPI, plus a raw llama.cpp CLI. Plug into existing field tools, terminals, or your own RAG layer.</p>
+      </div>
+      <div class="feat full">
+        <div class="ic">📜</div>
+        <h3>Honest licensing</h3>
+        <p>Base model is Qwen2.5-3B (Apache-2.0). Fine-tuned weights and LoRA adapters are released under MIT for the personal & shop tiers — commercial terms on the Firm license.</p>
       </div>
     </div>
-    <div id="loadRows"></div>
-  </fieldset>
-
-  <div class="row2">
-    <div class="field">
-      <label for="headroom">Headroom margin (%)</label>
-      <input type="number" id="headroom" value="20" min="0" max="100">
-    </div>
-    <div class="field">
-      <label for="hrsDay">Hours you'll run it per day</label>
-      <input type="number" id="hrsDay" value="8" min="1" max="24">
-    </div>
-    <div class="field">
-      <label for="tankGal">Fuel tank size (gallons)</label>
-      <input type="number" id="tankGal" value="4" min="0.5" step="0.5">
-    </div>
   </div>
+</section>
 
-  <button onclick="sizeGenerator()" style="background:var(--acc);color:#fff;border:none;border-radius:8px;padding:.7rem 1.4rem;font-size:1.05rem;cursor:pointer;font-weight:600">Size my generator</button>
+<!-- PRICING -->
+<section class="block" id="pricing">
+  <div class="wrap">
+    <h2 class="anchor">Three licenses. No subscriptions.</h2>
+    <p class="subhead">Pay once, download the weights, keep using them. Renew only if you want the next training data drop.</p>
+    <div class="grid-3">
+      <div class="card anchor" id="starter">
+        <div class="tier">Tier 01</div>
+        <div class="name">Starter</div>
+        <div class="price">$99 <small>one-time</small></div>
+        <p class="blurb">For solo techs running the model on a laptop or shop PC.</p>
+        <ul class="feats">
+          <li>Qwen2.5-3B base + LoRA adapter (safetensors)</li>
+          <li>Personal & single-seat commercial use</li>
+          <li>GGUF export recipe (Q4_K_M, Q5_K_M, Q8_0)</li>
+          <li>MLX export recipe for Apple Silicon</li>
+          <li>README + system-prompt starter kit</li>
+          <li>Email support, 72h response window</li>
+        </ul>
+        <a class="btn" href="#start">Get Starter</a>
+        <div class="meta">Best for: 1 tech · field laptop · personal projects</div>
+      </div>
 
-  <div id="genResult" class="ans" hidden></div>
+      <div class="card featured anchor" id="pro">
+        <div class="badge-row">
+          <div class="tier">Tier 02</div>
+          <span class="poptag">Most popular</span>
+        </div>
+        <div class="name">Pro</div>
+        <div class="price">$299 <small>one-time</small></div>
+        <p class="blurb">For working contractors running a small team or job-site server.</p>
+        <ul class="feats">
+          <li>Everything in Starter</li>
+          <li>Up to 5 seats at one physical site</li>
+          <li>TabbyAPI OpenAI-compatible server config</li>
+          <li>Pre-merged GGUF + MLX checkpoints (no merging on your end)</li>
+          <li>Field-prompt pack: 30 sizing workflows</li>
+          <li>Quarterly LoRA refresh drops for 12 months</li>
+          <li>Email + Discord channel, 24h response window</li>
+        </ul>
+        <a class="btn primary" href="#start">Get Pro</a>
+        <div class="meta">Best for: 2–5 person shops · job-site Mini-PC · light RAG</div>
+      </div>
 
-  <div class="affil">
-    <span class="tag">Affiliate</span>
-    <p class="small">Size your load first — we'll match generator classes to your recommended wattage below, plus the popular classes side by side.</p>
-    <div id="matchedCta" class="affil" hidden></div>
-    <div class="affil-links">
-      <a class="btn-amz" data-amz="3500 watt dual fuel inverter generator" href="https://www.amazon.com/s?k=3500+watt+dual+fuel+inverter+generator&tag=generatorsi0d-20" rel="sponsored nofollow noopener" target="_blank">3,500 W class on Amazon</a>
-      <a class="btn-amz" data-amz="7500 watt dual fuel portable generator" href="https://www.amazon.com/s?k=7500+watt+dual+fuel+portable+generator&tag=generatorsi0d-20" rel="sponsored nofollow noopener" target="_blank">7,500 W+ class on Amazon</a>
+      <div class="card anchor" id="firm">
+        <div class="tier">Tier 03</div>
+        <div class="name">Firm</div>
+        <div class="price">$999 <small>per firm / year</small></div>
+        <p class="blurb">For MEP firms that need broad internal use and integration rights.</p>
+        <ul class="feats">
+          <li>Everything in Pro</li>
+          <li>Unlimited seats within one legal entity</li>
+          <li>Commercial redistribution right inside your own product</li>
+          <li>SOC-friendly inference profile & logging recipe</li>
+          <li>Custom LoRA fine-tune slot (1 request per year)</li>
+          <li>Priority support, 8h business-hours response</li>
+          <li>Optional on-call video walkthrough (1 hr)</li>
+        </ul>
+        <a class="btn mint" href="#start">Get Firm</a>
+        <div class="meta">Best for: MEP firms · internal tools · product integrations</div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ============ 2. INVERTER SIZING ============ -->
-<section id="tab-inv" class="panel" role="tabpanel">
-  <p>Off-grid or battery setups need an inverter, not a generator. Size it by load type — motors and compressors pull multiples of their running draw at startup.</p>
-  <div class="field">
-    <label for="invCont">Total continuous AC load (watts)</label>
-    <input type="number" id="invCont" placeholder="e.g. 850" min="0">
-  </div>
-  <div class="field">
-    <label for="invKind">Heaviest load type</label>
-    <select id="invKind">
-      <option value="resistive">Resistive (heater, lights, kettle — 1× surge)</option>
-      <option value="motor">Motor (pump, fan, power tools — 3× surge)</option>
-      <option value="compressor">Compressor (fridge, AC — 4× surge)</option>
-      <option value="mixed" selected>Mixed household (2× surge)</option>
-    </select>
-  </div>
-  <button onclick="sizeInverter()" style="background:var(--acc);color:#fff;border:none;border-radius:8px;padding:.7rem 1.4rem;font-size:1.05rem;cursor:pointer;font-weight:600">Size my inverter</button>
-  <div id="invResult" class="ans" hidden></div>
-</section>
-
-<!-- ============ 3. BATTERY RUNTIME ============ -->
-<section id="tab-bat" class="panel" role="tabpanel">
-  <p>Running an inverter off a battery bank instead of fuel? Here's how long it lasts — after depth-of-discharge and inverter losses.</p>
-  <div class="row2">
-    <div class="field">
-      <label for="btAh">Battery capacity (Ah)</label>
-      <input type="number" id="btAh" placeholder="e.g. 100" min="0">
-    </div>
-    <div class="field">
-      <label for="btV">System voltage</label>
-      <select id="btV"><option>12</option><option>24</option><option>48</option></select>
-    </div>
-    <div class="field">
-      <label for="btLoad">AC load (watts)</label>
-      <input type="number" id="btLoad" placeholder="e.g. 600" min="1">
-    </div>
-    <div class="field">
-      <label for="btChem">Battery chemistry</label>
-      <select id="btChem"><option value="lifepo4">LiFePO4 (80% usable)</option><option value="agm">AGM / lead-acid (50% usable)</option></select>
+<!-- CTA STRIP -->
+<div class="wrap">
+  <div class="cta-strip" id="start">
+    <h3>Pick the tier that matches your seat count.</h3>
+    <p>You'll get a Whop checkout link with the exact deliverables listed. Downloads are signed; weights are checksum-verified.</p>
+    <div class="cta-row" style="justify-content:center">
+      <a class="btn" href="#starter">Starter · $99</a>
+      <a class="btn primary" href="#pro">Pro · $299</a>
+      <a class="btn mint" href="#firm">Firm · $999/yr</a>
     </div>
   </div>
-  <button onclick="sizeBatteryRuntime()" style="background:var(--acc);color:#fff;border:none;border-radius:8px;padding:.7rem 1.4rem;font-size:1.05rem;cursor:pointer;font-weight:600">Calculate runtime</button>
-  <div id="btResult" class="ans" hidden></div>
-  <p class="small">Sizing a whole bank instead of testing one battery? Use the <a href="https://battery-bank-sizer.com/" rel="noopener">battery bank sizer</a>.</p>
-</section>
-
-<!-- ============ 4. TRANSFER SWITCH ============ -->
-<section id="tab-ts" class="panel" role="tabpanel">
-  <p>List the household circuits you want on backup power, one per line, like <code>Sump pump - 800w</code>. We'll total them and match a standard manual transfer switch.</p>
-  <div class="field">
-    <label for="tsCircuits">Backup circuits</label>
-    <textarea id="tsCircuits" rows="6" style="width:100%;max-width:none;background:var(--card);color:var(--fg);border:1px solid var(--bd);border-radius:8px;padding:.6rem;font-family:inherit;font-size:1rem">Refrigerator - 150w
-Well pump - 1000w
-Furnace fan - 700w
-Lights - 80w
-TV + internet - 150w</textarea>
-  </div>
-  <button onclick="planSwitch()" style="background:var(--acc);color:#fff;border:none;border-radius:8px;padding:.7rem 1.4rem;font-size:1.05rem;cursor:pointer;font-weight:600">Plan my switch</button>
-  <div id="tsResult" class="ans" hidden></div>
-  <div class="affil" style="border-left:3px solid var(--acc)">
-    <span class="tag">Sponsor</span>
-    <p class="small">Transfer switches are licensed-electrician work — code prohibits back-feeding, and an ATS install needs permits. Need a pro to install it? This slot is reserved for a vetted local generator installer. <!-- LEADGEN SLOT --></p>
-  </div>
-  <div class="affil-links">
-    <a class="btn-amz" data-amz="30 amp manual transfer switch generator" href="https://www.amazon.com/s?k=30+amp+manual+transfer+switch+generator&tag=generatorsi0d-20" rel="sponsored nofollow noopener" target="_blank">30 A transfer switches on Amazon</a>
-    <a class="btn-amz" data-amz="generator interlock kit" href="https://www.amazon.com/s?k=generator+interlock+kit&tag=generatorsi0d-20" rel="sponsored nofollow noopener" target="_blank">Interlock kits on Amazon</a>
-    <a class="btn-amz" data-amz="generator power inlet box 50 amp" href="https://www.amazon.com/s?k=generator+power+inlet+box+50+amp&tag=generatorsi0d-20" rel="sponsored nofollow noopener" target="_blank">Inlet boxes on Amazon</a>
-  </div>
-</section>
-
-<!-- ============ LEADGEN: NEED A PRO? ============ -->
-<h2 id="pro">Need a pro to install it?</h2>
-<p>Everything above 5,000 W, any transfer-switch connection to household circuits, and all commercial standby work is licensed-electrician territory — permits, code, and the inspection log matter as much as the genset. This slot is reserved for a vetted local generator installation and service operator. <a href="find-a-commercial-generator-service.html">Read the facility manager's vetting checklist →</a></p>
-<!-- LEADGEN SLOT: local generator service operator sponsorship banner — pending Jeremy-approved operator deal (no live operator link yet) -->
-<div class="affil" style="border-left:3px solid var(--acc)">
-<span class="tag">Sponsor</span>
-<p class="small">Generatorsizer connects its readers — homeowners sizing backup and facility managers planning standby — with vetted installers and maintenance contractors. Operator inquiries: this space is reserved pending terms. <!-- LEADGEN SLOT --></p>
 </div>
 
-<form id="proLeadForm" class="lead-form" action="https://formsubmit.co/jpanasuk@gmail.com" method="POST">
-  <p><strong>Get a vetted installer quote</strong></p>
-  <p class="small">Leave your details and a vetted local installer will contact you with a quote.</p>
-  <div class="row2">
-    <div class="field">
-      <label for="leadName">Name</label>
-      <input type="text" id="leadName" name="name" autocomplete="name" placeholder="Jane Doe" maxlength="80">
-    </div>
-    <div class="field">
-      <label for="leadZip">ZIP code</label>
-      <input type="text" id="leadZip" name="zip" autocomplete="postal-code" inputmode="numeric" placeholder="54757" maxlength="10">
+<!-- FAQ -->
+<section class="block" id="faq">
+  <div class="wrap">
+    <h2 class="anchor">Questions buyers actually ask</h2>
+    <p class="subhead">Straight answers, no marketing fog.</p>
+    <div class="faq">
+      <div class="qa">
+        <h3>What hardware do I need to run it?</h3>
+        <p>The Q4_K_M GGUF is roughly 2.0 GB and runs on 8 GB unified memory (M1/M2/M3 Mac mini, Steam Deck, modern Mini-PCs). Q8_0 wants around 4 GB. A 6 GB consumer GPU is plenty for the full safetensors build via TabbyAPI.</p>
+      </div>
+      <div class="qa">
+        <h3>Is any of my data sent to a server?</h3>
+        <p>No. The model files run locally through llama.cpp, Ollama, or TabbyAPI on your own hardware. The only network traffic is the Whop download and optional email support.</p>
+      </div>
+      <div class="qa">
+        <h3>Can I fine-tune it further on my own data?</h3>
+        <p>Yes. The base model and LoRA adapters ship in standard formats. The README includes an Unsloth recipe so you can keep training on your own job logs, quotes, or panel schedules without losing the prior knowledge baked into the v1.0 release.</p>
+      </div>
+      <div class="qa">
+        <h3>What does "MIT licensed" actually let me do?</h3>
+        <p>For the Starter and Pro tiers: use, modify, and redistribute inside your own shop. The Firm tier extends commercial redistribution rights so you can ship the model inside a paid product you sell. Either way, keep the copyright notice.</p>
+      </div>
+      <div class="qa">
+        <h3>What happens to my access if the Whop store changes?</h3>
+        <p>Once you've downloaded the weights, they're yours. Future training-data refreshes ride alongside your existing license for the term you bought. We email a download mirror list before any infrastructure move.</p>
+      </div>
     </div>
   </div>
-  <div class="field">
-    <label for="leadPhone">Phone (for the installer quote only)</label>
-    <input type="tel" id="leadPhone" name="phone" autocomplete="tel" placeholder="(715) 555-0100" maxlength="20">
-  </div>
-  <input type="hidden" id="leadContext" name="sized_kw" value="">
-  <input type="hidden" name="_subject" value="GeneratorSizer installer lead">
-  <input type="hidden" name="_captcha" value="false">
-  <button type="submit">Request a quote</button>
-  <div id="leadDone" class="lead-confirm" hidden></div>
-  <p class="small">By submitting, you agree to be contacted about installation quotes. See <a href="privacy.html">Privacy</a>.</p>
-</form>
+</section>
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1045858506533973" crossorigin="anonymous"></script>
-<div class="adsense-slot" aria-hidden="true">
-  <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1045858506533973" data-ad-slot="TODO-SLOT-1" data-ad-format="auto" data-full-width-responsive="true"></ins> -->
-</div>
-
-<!-- ============ CONTENT ============ -->
-<h2>How generator sizing works</h2>
-<p>Three numbers decide what you buy. <strong>Running watts</strong> — the sum of everything switched on at the same time. <strong>Starting watts</strong> — the 2–4× spike when a motor kicks on; only the <em>largest</em> one counts at any instant, because motors don't all start together. <strong>Headroom</strong> — generators hate running flat-out; at 100% load they run hot, loud, and short-lived, and fuel burn climbs faster than output. The 20% margin keeps you in the efficient zone and leaves room for the appliance you forgot.</p>
-
-<h2>Typical wattage reference</h2>
-<div class="tbl-wrap">
-<table>
-<tr><th>Appliance</th><th class="num">Running W</th><th class="num">Starting W</th></tr>
-<tr><td>Refrigerator (Energy Star, 20 cu ft)</td><td class="num">150</td><td class="num">600</td></tr>
-<tr><td>Chest freezer (10–15 cu ft)</td><td class="num">200</td><td class="num">600</td></tr>
-<tr><td>Well pump, 1/2 HP</td><td class="num">1,000</td><td class="num">2,100</td></tr>
-<tr><td>Sump pump, 1/2 HP</td><td class="num">800</td><td class="num">1,300</td></tr>
-<tr><td>Window AC, 10,000 BTU</td><td class="num">900</td><td class="num">1,400</td></tr>
-<tr><td>Central AC, 2.5 ton</td><td class="num">3,500</td><td class="num">5,000</td></tr>
-<tr><td>Furnace fan, 1/3 HP</td><td class="num">700</td><td class="num">1,400</td></tr>
-<tr><td>Space heater</td><td class="num">1,500</td><td class="num">1,500</td></tr>
-<tr><td>LED lights, whole home</td><td class="num">80</td><td class="num">80</td></tr>
-<tr><td>Microwave</td><td class="num">1,000</td><td class="num">1,000</td></tr>
-<tr><td>Electric water heater</td><td class="num">4,500</td><td class="num">4,500</td></tr>
-</table>
-</div>
-
-<h2>Gas vs propane at a glance</h2>
-<table>
-<tr><th></th><th>Gasoline</th><th>Propane</th></tr>
-<tr><td>Runtime on equal fuel volume</td><td>Baseline</td><td>~25% less</td></tr>
-<tr><td>Power output on dual-fuel models</td><td>Baseline</td><td>~10% less</td></tr>
-<tr><td>Storage life</td><td>3–12 months with stabilizer</td><td>Indefinite</td></tr>
-<tr><td>Cost per kWh (2026 U.S. averages)</td><td>~$0.45–0.60</td><td>~$0.55–0.70</td></tr>
-</table>
-<p class="small">Figures from published DOE/EIA energy content: gasoline 125,000 BTU/gal, propane 91,600 BTU/gal (4.24 lb/gal). Dual-fuel generator manufacturer spec sheets corroborate the runtime and de-rate deltas. For current fuel price data, see the <a href="stats/generator-cost-study-2026.html">2026 Generator Cost Study</a>.</p>
-
-<h2>Guides</h2>
-<div class="card"><h3><a href="refrigerator-freezer.html">What size generator runs a refrigerator and freezer?</a></h3><p>The most-searched backup question, answered with real startup math — and why a 1,000 W unit beats a 4,000 W one for this job.</p></div>
-<div class="card"><h3><a href="well-pump-watts.html">How many watts does a well pump use?</a></h3><p>Starting vs running for every HP rating, plus the LRA trap that kills generators during startup.</p></div>
-<div class="card"><h3><a href="best-portable-generators.html">Best 10 portable generators for home backup</a></h3><p>Ranked by the sizing math that matters — inverter vs conventional, dual-fuel, and which class matches your load.</p></div>
-<div class="card"><h3><a href="find-a-commercial-generator-service.html">Find a commercial generator service</a></h3><p>The facility manager's vetting checklist: NFPA 110 testing schedules, contract red flags, and the seven questions to ask before signing.</p></div>
-<div class="card"><h3><a href="https://battery-bank-sizer.com/" rel="noopener">Battery bank sizer ↗</a></h3><p>If your load is small and daily, a LiFePO4 battery bank can replace fuel entirely — that tool sizes it.</p></div>
-</main>
-  
-  <section id="faq" class="panel" style="margin-top:1.5rem">
-    <h2>Frequently asked questions</h2>
-    <h3>What size generator do I need to run a house?</h3>
-    <p>For essentials only (fridge, freezer, well pump, furnace fan, lights, phone charging), a 5,000&ndash;7,500 watt portable generator covers it. To also run central AC or an electric water heater, step up to 10,000&ndash;12,000 watts. Add the running watts of everything you'll power at once, add the extra surge of the largest motor load, then buy about 20% above that total.</p>
-    <h3>How do starting watts differ from running watts?</h3>
-    <p>Running watts are what an appliance draws continuously. Starting (surge) watts are the brief spike when a motor starts &mdash; typically 2&ndash;3&times; running watts for pumps and fans, up to 4&times; for compressors. Your generator's surge rating must cover the biggest starting load on top of everything else already running.</p>
-    <h3>How long will a generator run on a tank of gas?</h3>
-    <p>At 50% load, most portable generators burn roughly 1 gallon of gasoline per 7,000 watts of rated output per hour &mdash; a 3,500 W inverter generator goes about 5 hours per gallon, and a 7,500 W model about 1.4 hours per gallon. Propane gives roughly 25% less runtime per gallon-equivalent but stores indefinitely.</p>
-    <h3>Do I need a transfer switch to run a generator?</h3>
-    <p>Yes, if you're connecting to household circuits. Code requires a manual or automatic transfer switch &mdash; back-feeding through a dryer outlet is illegal and can kill utility workers. A 30 A manual switch handles 7,200 W; a 50 A switch handles 12,000 W.</p>
-    <h3>Why does the calculator add 20% headroom?</h3>
-    <p>The 20% buffer covers two things the wattage list can't predict: measured loads running above their nameplate rating, and future appliances you'll add later. It is headroom on the generator, not permission to exceed its rating &mdash; sustained overload still trips the breaker or stalls the engine.</p>
-  </section>
-
-<section id="optin" class="panel" style="margin-top:1.5rem">
-    <h2>Free: Printable Outage &amp; Sizing Checklist</h2>
-    <p class="small">One page: your load list, runtime math cheat-sheet, and the pre-storm checklist
-    (fuel storage, transfer-switch safety, fridge/freezer settings). We'll send the PDF and nothing else — no drip spam.</p>
-    <!-- formsubmit.co delivers to jpanasuk@gmail.com; forms activate on first submission via email confirmation link -->
-    <form id="optinForm" action="https://formsubmit.co/jpanasuk@gmail.com" method="POST" style="display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.6rem">
-      <input type="email" name="email" required placeholder="you@example.com" style="flex:1;min-width:200px;padding:.6rem;border:1px solid var(--bd);border-radius:8px">
-      <input type="hidden" name="_subject" value="GeneratorSizer checklist opt-in">
-      <input type="hidden" name="_captcha" value="false">
-      <button type="submit" style="background:var(--acc);color:#fff;border:none;border-radius:8px;padding:.6rem 1.2rem;font-weight:600;cursor:pointer">Send me the PDF</button>
-    </form>
-    <p class="small" id="optinMsg" hidden>Check your inbox — the checklist is on its way.</p>
-  </section>
-
+<footer>
+  © 2026 Jeremy Panasuk · generator-sizer.com · Built on a private RTX 4070 lab
 </footer>
-<footer>GeneratorSizer · free sizing tools for home backup and off-grid power · pages may contain affiliate links · <a href="best-generator-size-for-well-pump.html">generator size for well pump</a> · <a href="best-generator-size-for-rv.html">generator size for RV</a> · <a href="portable-vs-standby-generator.html">portable vs standby</a> · <a href="https://battery-bank-sizer.com/" rel="noopener">sister site: Battery Bank Sizer</a> · <a href="about.html">About</a> · <a href="privacy.html">Privacy</a></footer>
 
-<script src="assets/app.js"></script>
-<script src="assets/monetization.js"></script>
 </body>
 </html>
