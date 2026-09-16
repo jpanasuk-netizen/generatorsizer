@@ -1,23 +1,23 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SLM Advisor — Local AI Engineering Co-Pilot | GeneratorSizer</title>
-<meta name="description" content="Offline AI assistant for HVAC, electrical, and MEP sizing. Runs locally on Qwen2.5-3B fine-tuned on NEC tables, Manual J, and generator kW selection. No API fees.">
+<title>SLM Advisor â€” Local AI Engineering Co-Pilot | GeneratorSizer</title>
+<meta name="description" content="Offline AI assistant for HVAC, electrical, and MEP sizing. Runs locally on Qwen2.5-3B with sizing computed by a built-in deterministic engine. No API fees.">
 <link rel="icon" type="image/png" href="https://generator-sizer.com/assets/favicon.png">
 <link rel="shortcut icon" href="https://generator-sizer.com/assets/favicon.ico">
 <link rel="canonical" href="https://generator-sizer.com/slm-advisor.html">
 <meta name="robots" content="index,follow">
 <link rel="stylesheet" href="assets/styles.css">
-<meta property="og:title" content="SLM Advisor — Local AI Engineering Co-Pilot">
+<meta property="og:title" content="SLM Advisor â€” Local AI Engineering Co-Pilot">
 <meta property="og:description" content="Offline AI assistant for HVAC, electrical, and MEP sizing. Fine-tuned Qwen2.5-3B running on your hardware.">
 <meta property="og:image" content="https://generator-sizer.com/assets/og-image.png">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://generator-sizer.com/slm-advisor.html">
 <meta property="og:site_name" content="GeneratorSizer">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="SLM Advisor — Local AI Engineering Co-Pilot">
+<meta name="twitter:title" content="SLM Advisor â€” Local AI Engineering Co-Pilot">
 <meta name="twitter:description" content="Offline AI co-pilot for HVAC, electrical, and MEP sizing. Fine-tuned Qwen2.5-3B that runs on your own box.">
 <meta name="twitter:image" content="https://generator-sizer.com/assets/slm-advisor-screenshot.png">
 <script type="application/ld+json">
@@ -48,7 +48,7 @@
   img{max-width:100%;display:block}
   a{color:var(--acc);text-decoration:none}a:hover{text-decoration:underline}
   .wrap{max-width:1180px;margin:0 auto;padding:0 20px}
-  /* Header — reuse generator-sizer branding */
+  /* Header â€” reuse generator-sizer branding */
   .site-head{display:flex;align-items:center;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--bd)}
   .site-head .brand{font-weight:700;font-size:1.1rem;color:var(--fg);display:flex;align-items:center;gap:.4rem}
   .site-head .brand .dot{width:10px;height:10px;border-radius:50%;background:var(--acc);box-shadow:0 0 10px var(--acc)}
@@ -93,7 +93,7 @@
   .card .blurb{color:var(--mut);font-size:15px;margin:0 0 14px}
   .card ul.feats{list-style:none;margin:0 0 16px;padding:0;display:flex;flex-direction:column;gap:7px}
   .card ul.feats li{font-size:14px;color:var(--fg);display:flex;gap:8px;align-items:flex-start}
-  .card ul.feats li::before{content:"✓";color:var(--mint);font-weight:700;line-height:1.3;flex-shrink:0}
+  .card ul.feats li::before{content:"âœ“";color:var(--mint);font-weight:700;line-height:1.3;flex-shrink:0}
   .card .meta{font-size:12px;color:var(--mut);margin-top:auto;padding-top:10px;border-top:1px dashed var(--bd)}
   .card.featured{border-color:rgba(255,182,47,.5);background:linear-gradient(180deg,#161b22,#131927)}
   .card.featured .poptag{font-size:11px;color:#0d1117;background:var(--acc);padding:3px 8px;border-radius:999px;font-weight:700;letter-spacing:.8px}
@@ -151,7 +151,7 @@
   <section class="hero">
     <div class="hero-grid">
       <div>
-        <span class="eyebrow">Local AI addon · $99 / $299 / $999</span>
+        <span class="eyebrow">Local AI addon Â· $99 / $299 / $999</span>
         <h1>An HVAC &amp; electrical sizing <span class="grad">co-pilot that runs on your own box.</span></h1>
         <p class="lede">SLM Advisor is a 3-billion-parameter language model fine-tuned for residential HVAC, electrical, and MEP sizing work. It loads locally on a laptop or shop server, answers without per-token API fees, and ships with LoRA adapters you can re-export to GGUF or MLX for your own toolchain.</p>
         <div class="cta-row">
@@ -159,14 +159,14 @@
           <a class="btn ghost" href="#features">See what's inside</a>
         </div>
         <div style="margin-top:14px">
-          <span class="badge ok">Runs offline — nothing leaves your machine</span>
-          <span class="badge">Qwen2.5-3B · Apache-2.0 base</span>
-          <span class="badge">GGUF · MLX · safetensors</span>
+          <span class="badge ok">Runs offline â€” nothing leaves your machine</span>
+          <span class="badge">Runs locally on your own hardware</span>
+          <span class="badge">GGUF Â· MLX Â· safetensors</span>
         </div>
       </div>
       <aside>
         <div class="screenshot">
-          <img src="assets/slm-advisor-screenshot.png" alt="SLM Advisor chat UI — dark engineering theme with example prompts for generator sizing, wire gauge, voltage drop, and Manual J load calc">
+          <img src="assets/slm-advisor-screenshot.png" alt="SLM Advisor chat UI â€” dark engineering theme with example prompts for generator sizing, wire gauge, voltage drop, and Manual J load calc">
         </div>
       </aside>
     </div>
@@ -177,28 +177,28 @@
     <h2 class="anchor">What you actually get</h2>
     <p class="subhead">Five things this addon does that a vanilla chat model doesn't, out of the box.</p>
     <div class="feat-grid">
-      <div class="feat"><div class="ic">⚙️</div><h3>Sizing-aware reasoning</h3><p>Trained on residential load calc prompts, NEC ampacity tables, generator kW selection, and duct/pipe sizing heuristics — so it answers in the formats you already use.</p></div>
-      <div class="feat"><div class="ic">🔌</div><h3>Electrical + HVAC bilingual</h3><p>Switches between AC/DC ampacity, voltage drop, OCPD selection, and refrigerant/tonnage/CFM problems without losing units.</p></div>
-      <div class="feat"><div class="ic">💾</div><h3>Local-only inference</h3><p>Runs through llama.cpp, Ollama, or TabbyAPI on your hardware. No calls leave the box. No token bills. No rate limits.</p></div>
-      <div class="feat"><div class="ic">🧪</div><h3>Inspectable adapters</h3><p>LoRA adapters ship in safetensors and are re-exportable to GGUF (llama.cpp) and MLX (Apple Silicon). Merge into a full checkpoint when you want.</p></div>
-      <div class="feat"><div class="ic">🧰</div><h3>Drop-in to your stack</h3><p>OpenAI-compatible API mode via TabbyAPI, plus a raw llama.cpp CLI. Plug into existing field tools, terminals, or your own RAG layer.</p></div>
-      <div class="feat full"><div class="ic">📜</div><h3>Honest licensing</h3><p>Base model is Qwen2.5-3B (Apache-2.0). Fine-tuned weights and LoRA adapters are released under MIT for the personal &amp; shop tiers — commercial terms on the Firm license.</p></div>
+      <div class="feat"><div class="ic">âš™ï¸</div><h3>Sizing-aware reasoning</h3><p>Trained on residential load calc prompts, NEC ampacity tables, generator kW selection, and duct/pipe sizing heuristics â€” so it answers in the formats you already use.</p></div>
+      <div class="feat"><div class="ic">ðŸ”Œ</div><h3>Electrical + HVAC bilingual</h3><p>Switches between AC/DC ampacity, voltage drop, OCPD selection, and refrigerant/tonnage/CFM problems without losing units.</p></div>
+      <div class="feat"><div class="ic">ðŸ’¾</div><h3>Local-only inference</h3><p>Runs through llama.cpp, Ollama, or TabbyAPI on your hardware. No calls leave the box. No token bills. No rate limits.</p></div>
+      <div class="feat"><div class="ic">ðŸ§ª</div><h3>Inspectable adapters</h3><p>LoRA adapters ship in safetensors and are re-exportable to GGUF (llama.cpp) and MLX (Apple Silicon). Merge into a full checkpoint when you want.</p></div>
+      <div class="feat"><div class="ic">ðŸ§°</div><h3>Drop-in to your stack</h3><p>OpenAI-compatible API mode via TabbyAPI, plus a raw llama.cpp CLI. Plug into existing field tools, terminals, or your own RAG layer.</p></div>
+      <div class="feat full"><div class="ic">ðŸ“œ</div><h3>Licensing</h3><p>Base model is Qwen2.5-3B. Licence terms for the fine-tuned weights are being updated; the LICENSE and NOTICE files shipped with your download are the ones that apply.</p></div>
     </div>
   </section>
 
   <!-- TECHNICAL STACK -->
   <section class="block" id="tech" style="border-top:1px solid var(--bd)">
     <h2 class="anchor">Technical stack (honest version)</h2>
-    <p class="subhead">No marketing fluff — here's exactly what you're getting under the hood.</p>
+    <p class="subhead">No marketing fluff â€” here's exactly what you're getting under the hood.</p>
     <table>
       <thead><tr><th>Layer</th><th>Choice</th><th>Notes</th></tr></thead>
       <tbody>
-        <tr><td>Base model</td><td><strong>Qwen2.5-3B</strong></td><td>Apache-2.0 upstream; small enough to run on shop hardware</td></tr>
-        <tr><td>Fine-tune</td><td><strong>Unsloth LoRA</strong></td><td>2× faster than vanilla HF, fits on a 12 GB card</td></tr>
+        <tr><td>Base model</td><td><strong>Qwen2.5-3B</strong></td><td>runs on a shop Mini-PC or laptop</td></tr>
+        <tr><td>Fine-tune</td><td><strong>Unsloth LoRA</strong></td><td>2Ã— faster than vanilla HF, fits on a 12 GB card</td></tr>
         <tr><td>Training data</td><td>HVAC + electrical corpora</td><td>Built in-house, no scraped customer data</td></tr>
-        <tr><td>Inference</td><td>llama.cpp / Ollama / TabbyAPI</td><td>Your choice — local on your hardware</td></tr>
-        <tr><td>Export format</td><td>safetensors → GGUF / MLX</td><td>Recipes in README</td></tr>
-        <tr><td>License</td><td><strong>MIT</strong> (shop tiers)</td><td>Base keeps Apache-2.0; Firm adds commercial clause</td></tr>
+        <tr><td>Inference</td><td>llama.cpp / Ollama / TabbyAPI</td><td>Your choice â€” local on your hardware</td></tr>
+        <tr><td>Export format</td><td>safetensors â†’ GGUF / MLX</td><td>Recipes in README</td></tr>
+        <tr><td>License</td><td><strong>See LICENSE</strong></td><td>Supplied with each download</td></tr>
       </tbody>
     </table>
     <p class="subhead" style="margin-top:24px">There is no hosted API. There is no telemetry collection. There is no third-party model in the loop.</p>
@@ -224,7 +224,7 @@
           <li>Email support, 72h response window</li>
         </ul>
         <a class="btn" href="https://whop.com/checkout/ch_IvZVbIxouUJ9R3Z">Get Starter</a>
-        <div class="meta">Best for: 1 tech · field laptop · personal projects</div>
+        <div class="meta">Best for: 1 tech Â· field laptop Â· personal projects</div>
       </div>
 
       <div class="card featured anchor" id="pro">
@@ -245,7 +245,7 @@
           <li>Email + Discord channel, 24h response window</li>
         </ul>
         <a class="btn primary" href="https://whop.com/checkout/ch_UG7FX5e3mYMNEEn">Get Pro</a>
-        <div class="meta">Best for: 2–5 person shops · job-site Mini-PC · light RAG</div>
+        <div class="meta">Best for: 2â€“5 person shops Â· job-site Mini-PC Â· light RAG</div>
       </div>
 
       <div class="card anchor" id="firm">
@@ -256,14 +256,14 @@
         <ul class="feats">
           <li>Everything in Pro</li>
           <li>Unlimited seats within one legal entity</li>
-          <li>Commercial redistribution right inside your own product</li>
+          <li>Use across your firm's own projects</li>
           <li>SOC-friendly inference profile &amp; logging recipe</li>
           <li>Custom LoRA fine-tune slot (1 request per year)</li>
           <li>Priority support, 8h business-hours response</li>
           <li>Optional on-call video walkthrough (1 hr)</li>
         </ul>
         <a class="btn" href="https://whop.com/checkout/ch_hKdnYFIKbtR2DK5">Get Firm</a>
-        <div class="meta">Best for: MEP firms · internal tools · product integrations</div>
+        <div class="meta">Best for: MEP firms Â· internal tools Â· product integrations</div>
       </div>
 
     </div>
@@ -274,9 +274,9 @@
     <h3>Pick the tier that matches your seat count.</h3>
     <p>You'll get a Whop checkout link with the exact deliverables listed. Downloads are signed; weights are checksum-verified.</p>
     <div class="cta-row" style="justify-content:center">
-    <a class="btn" href="https://whop.com/checkout/ch_IvZVbIxouUJ9R3Z">Starter · $99</a>
-    <a class="btn primary" href="https://whop.com/checkout/ch_UG7FX5e3mYMNEEn">Pro · $299</a>
-    <a class="btn" href="https://whop.com/checkout/ch_hKdnYFIKbtR2DK5">Firm · $999/yr</a>
+    <a class="btn" href="https://whop.com/checkout/ch_IvZVbIxouUJ9R3Z">Starter Â· $99</a>
+    <a class="btn primary" href="https://whop.com/checkout/ch_UG7FX5e3mYMNEEn">Pro Â· $299</a>
+    <a class="btn" href="https://whop.com/checkout/ch_hKdnYFIKbtR2DK5">Firm Â· $999/yr</a>
     </div>
   </div>
 
@@ -303,12 +303,12 @@
 
       <div class="qa">
         <h3>What is the difference between the tiers?</h3>
-        <p>Starter gets you the weights + recipes for personal/shop use. Pro adds pre-merged checkpoints, server configs, a 30-prompt field pack, and quarterly refresher updates for a year. Firm adds commercial redistribution rights, unlimited seats, and priority support.</p>
+        <p>Starter gets you the weights + recipes for personal/shop use. Pro adds pre-merged checkpoints, server configs, a 30-prompt field pack, and quarterly refresher updates for a year. Firm adds unlimited seats, priority support, and a custom LoRA slot.</p>
       </div>
 
       <div class="qa">
         <h3>Do I need an internet connection to use it?</h3>
-        <p>Only once — to download the model bundle from Whop after purchase. After that, everything (the model, the UI, the API) runs fully offline. Nothing is phoned home.</p>
+        <p>Only once â€” to download the model bundle from Whop after purchase. After that, everything (the model, the UI, the API) runs fully offline. Nothing is phoned home.</p>
       </div>
 
     </div>
@@ -317,7 +317,7 @@
 </main>
 
 <footer>
-  © 2026 Jeremy Panasuk · <a href="/">generator-sizer.com</a> · built on a private RTX 4070 lab
+  Â© 2026 Jeremy Panasuk Â· <a href="/">generator-sizer.com</a> Â· built on a private RTX 4070 lab
 </footer>
 
 </body>
