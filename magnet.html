@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Outage Wattage Cheat Sheet — Fridge, Well Pump, Furnace (2026)</title>
+<meta name="description" content="One-page printable: running vs starting watts for the loads that actually kill generators, plus the 20% headroom rule.">
+<link rel="canonical" href="https://generator-sizer.com/magnet.html">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="FREE: Outage wattage cheat sheet">
+<meta property="og:description" content="One-page printable: running vs starting watts for the loads that actually kill generators, plus the 20% headroom rule.">
+<meta property="og:url" content="https://generator-sizer.com/magnet.html">
+<meta property="og:type" content="article">
+<style>
+:root{--bg:#0b0d10;--card:#15181d;--line:#262b33;--fg:#e7e5e4;--muted:#8a929c;--acc:#f59e0b;--paper:#fff8e7}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--fg);font-family:Georgia,"Times New Roman",serif;line-height:1.5}
+.wrap{max-width:820px;margin:0 auto;padding:24px 18px 72px}
+.thumb{background:#111;border:3px solid var(--acc);border-radius:8px;padding:28px 22px;margin:0 0 28px;position:relative}
+.thumb .kicker{font-family:Verdana,sans-serif;font-size:12px;letter-spacing:2px;font-weight:700;color:var(--acc);text-transform:uppercase}
+.thumb h1{font-size:clamp(28px,5vw,48px);line-height:1.05;margin:10px 0 8px;letter-spacing:-.5px}
+.thumb .big{font-family:Verdana,sans-serif;font-size:clamp(42px,8vw,72px);color:var(--acc);font-weight:800;line-height:1}
+.thumb p{color:#d6d3d1;font-size:18px;max-width:36em}
+.badge{display:inline-block;background:var(--acc);color:#111;font-family:Verdana,sans-serif;font-weight:800;font-size:12px;padding:4px 10px;border-radius:3px;letter-spacing:1px}
+nav{margin:0 0 18px;font-family:Verdana,sans-serif;font-size:13px}
+nav a{color:var(--acc)}
+h2{font-size:24px;margin:28px 0 10px}
+p,li{font-size:17px}
+.muted{color:var(--muted);font-size:14px}
+table{width:100%;border-collapse:collapse;margin:12px 0 20px;font-family:Verdana,sans-serif;font-size:14px}
+th,td{border-bottom:1px solid var(--line);padding:8px 6px;text-align:left}
+th{color:var(--acc);font-size:12px;letter-spacing:.4px}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+.sheet{background:var(--card);border-left:4px solid var(--acc);padding:16px 18px;border-radius:4px;margin:16px 0}
+.cta{display:inline-block;background:var(--acc);color:#111;font-family:Verdana,sans-serif;font-weight:800;text-decoration:none;padding:14px 18px;border-radius:6px;margin:8px 8px 8px 0}
+.cta.ghost{background:transparent;color:var(--acc);border:2px solid var(--acc)}
+.kw{font-family:Verdana,sans-serif;background:#111;border:1px dashed var(--acc);padding:12px 14px;margin:18px 0;font-size:15px}
+.print{position:fixed;right:16px;bottom:16px;z-index:9}
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+@media print{
+  body{background:#fff;color:#111}
+  .thumb{border-color:#111;color:#111}
+  .thumb .big,.thumb .kicker,th,a,.cta{color:#111 !important}
+  .print,.kw,nav,.noprint{display:none !important}
+  .sheet{border-color:#111}
+  table,th,td{border-color:#ccc}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav><a href="https://generator-sizer.com/">GeneratorSizer</a> · printable cheat sheet</nav>
+<div class="thumb">
+  <span class="badge">FREE · PRINT THIS</span>
+  <div class="kicker">Home backup · one page</div>
+  <div class="big">7,500 W</div>
+  <h1>The outage cheat sheet people screenshot at 2 a.m.</h1>
+  <p>Fridge. Well pump. Furnace fan. That's the stack that decides whether you bought a generator or an expensive night-light.</p>
+</div>
+<p>Most 'what size generator' posts add every appliance in the house. Motors don't all start at once. Only the biggest surge counts on top of everything already running. Then add 20% so the machine isn't screaming at 100% load.</p>
+<div class="sheet">
+  <strong>Use it in 10 minutes.</strong> Circle the loads you'll actually run. Add running watts. Add the single largest starting-watt extra. Multiply by 1.2. That's the generator class to shop — not the brochure number.
+</div>
+<h2>Running vs starting watts (published typicals)</h2>
+<table>
+<tr><th>Appliance</th><th class="n">Running W</th><th class="n">Starting W</th></tr>
+<tr><td>Refrigerator (Energy Star, 20 cu ft)</td><td class="n">150</td><td class="n">600</td></tr>
+<tr><td>Chest freezer (10–15 cu ft)</td><td class="n">200</td><td class="n">600</td></tr>
+<tr><td>Well pump, 1/2 HP</td><td class="n">1,000</td><td class="n">2,100</td></tr>
+<tr><td>Sump pump, 1/2 HP</td><td class="n">800</td><td class="n">1,300</td></tr>
+<tr><td>Window AC, 10,000 BTU</td><td class="n">900</td><td class="n">1,400</td></tr>
+<tr><td>Central AC, 2.5 ton</td><td class="n">3,500</td><td class="n">5,000</td></tr>
+<tr><td>Furnace fan, 1/3 HP</td><td class="n">700</td><td class="n">1,400</td></tr>
+<tr><td>Space heater</td><td class="n">1,500</td><td class="n">1,500</td></tr>
+<tr><td>LED lights, whole home</td><td class="n">80</td><td class="n">80</td></tr>
+<tr><td>Microwave</td><td class="n">1,000</td><td class="n">1,000</td></tr>
+<tr><td>Electric water heater</td><td class="n">4,500</td><td class="n">4,500</td></tr>
+</table>
+<p class="muted">Same table as generator-sizer.com — manufacturer typicals, not invented. Fuel: gasoline ~1 gal per 7,000 W rated output per hour at 50% load; propane ~25% less runtime.</p>
+<h2>The 2 a.m. stack</h2>
+<p>Essentials only (fridge + freezer + well + furnace fan + lights + phones) lands around <strong>5,000–7,500 W</strong>. Add central AC or an electric water heater and you're in <strong>10,000–12,000 W</strong>. A 30 A manual transfer switch handles 7,200 W; 50 A handles 12,000 W. Back-feeding a dryer outlet is how people kill linemen.</p>
+<div class="kw noprint"><strong>Comment keyword:</strong> WATTS — that's the word we ask for on X/LinkedIn. We DM this page.</div>
+<p class="noprint">
+  <a class="cta" href="https://generator-sizer.com/">Size your actual load →</a>
+  <a class="cta ghost" href="#" onclick="window.print();return false;">Print / Save PDF</a>
+</p>
+<footer>
+GeneratorSizer · numbers from published manufacturer / extension / DOE figures already on the calculator · not a substitute for a licensed pro or a test bead / Manual J / door-sticker check.
+</footer>
+</div>
+<a class="cta print noprint" href="#" onclick="window.print();return false;">Print</a>
+</body>
+</html>

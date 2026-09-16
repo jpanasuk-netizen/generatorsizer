@@ -19,3 +19,10 @@
 
 ## Use policy
 Cite freely with link attribution. Wattage figures are published typical values (DOE/EIA energy content, manufacturer spec sheets); estimates are rounded conservatively. Not financial or safety advice — transfer-switch work requires a licensed electrician.
+
+## Topic map
+- [GeneratorSizer topic map](https://generator-sizer.com/topics.html): Generator sizing calculator for homeowners who need to know exactly what wattage keeps the house running during an outage.
+- **Load math:** [Generator size calculator](https://generator-sizer.com/), [Outage cheat sheet](https://generator-sizer.com/magnet.html), [Fridge & freezer](https://generator-sizer.com/refrigerator-freezer.html), [Well pump watts](https://generator-sizer.com/well-pump-watts.html)
+- **Machine class:** [Portable vs standby](https://generator-sizer.com/portable-vs-standby-generator.html), [Whole-house sizing](https://generator-sizer.com/whole-house-generator-sizing.html), [Best portable generators](https://generator-sizer.com/best-portable-generators.html)
+- **Hookup:** [Transfer switch sizing](https://generator-sizer.com/transfer-switch-sizing.html), [Find a pro](https://generator-sizer.com/find-a-commercial-generator-service.html)
+- **Scenario sizes:** [RV generator size](https://generator-sizer.com/best-generator-size-for-rv.html), [Generator for a well pump](https://generator-sizer.com/best-generator-size-for-well-pump.html)

@@ -131,7 +131,7 @@ function sizeGenerator(){
     '</div>'+
     '<p class="note">Propane delivers ~10% less running wattage than gasoline on dual-fuel models, and propane never goes stale in storage. Runtime figures assume a steady 50% load — real use is cyclical, so expect longer.</p>';
   var box = el("genResult"); box.hidden = false; box.innerHTML = html;
-  if (window.updateMatchedCTA) window.updateMatchedCTA(rec);
+  if (window.updateMatchedCTA) window.updateMatchedCTA(rec, 'generator');
 }
 
 /* ---------- 2. Inverter sizing ---------- */
@@ -153,6 +153,12 @@ function sizeInverter(){
       '<div class="stat"><b>≥ '+fmt(contRec*1.0)+'</b><span>Continuous inverter rating to buy</span></div>'+
     '</div>'+
     '<p class="note">Pure-sine-wave only for electronics, microwaves, and anything with a motor. Modified-sine inverters run hot and can kill compressor motors — the $40 saved is not worth it.</p>';
+  if (window.updateMatchedCTA) {
+    window.updateMatchedCTA(contRec, 'inverter');
+    var src = document.getElementById('matchedCta');
+    var dst = document.getElementById('invMatchedCta');
+    if (src && dst) { dst.innerHTML = src.innerHTML; dst.hidden = false; }
+  }
 }
 
 /* ---------- 3. Battery runtime for inverter setups ---------- */
@@ -199,6 +205,12 @@ function planSwitch(){
     '<table><tr><th>Circuit</th><th class="num">Watts</th></tr>'+rows+'</table>'+
     '<p><strong>Fits a '+recTxt+'</strong> (switch rating ÷ 1.25 safety must cover your total).</p>'+
     '<p class="note">Manual switches are ~$400–700 installed; automatic standby transfer switches add $2,000+. A hardwired transfer switch is required by code — never back-feed a dryer outlet.</p>';
+  if (window.updateMatchedCTA && rec) {
+    window.updateMatchedCTA(rec[0], 'transfer');
+    var src = document.getElementById('matchedCta');
+    var dst = document.getElementById('tsMatchedCta');
+    if (src && dst) { dst.innerHTML = src.innerHTML; dst.hidden = false; }
+  }
 }
 
 /* ---------- init ---------- */
