@@ -39,7 +39,7 @@
     {
       "@type": "Question",
       "name": "What size generator do I need to run a house?",
-      "acceptedAnswer": { "@type": "Answer", "text": "For essentials only (fridge, freezer, well pump, furnace fan, lights, phone charging), a 5,000–7,500 watt portable generator covers it. To also run central AC or an electric water heater, step up to 10,000–12,000 watts. Add the running watts of everything you'll power at once, add the extra surge of the largest motor load, then buy about 20% above that total." }
+      "acceptedAnswer": { "@type": "Answer", "text": "For essentials only (fridge, freezer, well pump, furnace fan, lights, phone charging), a 5,000–7,500 watt portable generator covers it. To also run central AC or an electric water heater, step up to 10,000–12,000 watts. Add the running watts of everything you'll power at once, add the extra surge of the largest motor load, then buy about 20% above that total. Walk the full method on the whole-house generator sizing guide, then confirm on this free calculator." }
     },
     {
       "@type": "Question",
@@ -48,18 +48,23 @@
     },
     {
       "@type": "Question",
-      "name": "How long will a generator run on a tank of gas?",
-      "acceptedAnswer": { "@type": "Answer", "text": "At 50% load, most portable generators burn roughly 1 gallon of gasoline per 7,000 watts of rated output per hour — a 3,500 W inverter generator goes about 5 hours per gallon, and a 7,500 W model about 1.4 hours per gallon. Propane gives roughly 25% less runtime per gallon-equivalent but stores indefinitely." }
+      "name": "Why does the calculator add 20% headroom?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The 20% buffer covers two things the wattage list can't predict: measured loads running above their nameplate rating, and future appliances you'll add later. It is headroom on the generator, not permission to exceed its rating — sustained overload still trips the breaker or stalls the engine." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do fridge, well pump, and sump pump affect generator size?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Fridge and freezer compressors add continuous load plus a surge at start. A well pump is often the largest motor surge on an essentials board. A sump pump may start during storms while other loads are already running. Size each with nameplate running and starting watts — see the fridge & freezer, well pump, and sump pump guides — then add them on this calculator." }
     },
     {
       "@type": "Question",
       "name": "Do I need a transfer switch to run a generator?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes, if you're connecting to household circuits. Code requires a manual or automatic transfer switch — back-feeding through a dryer outlet is illegal and can kill utility workers. A 30 A manual switch handles 7,200 W; a 50 A switch handles 12,000 W." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, if you're connecting to household circuits. Code requires a manual or automatic transfer switch — back-feeding through a dryer outlet is illegal and can kill utility workers. A 30 A manual switch handles 7,200 W; a 50 A switch handles 12,000 W. See the transfer switch sizing guide for pairing with your generator class." }
     },
     {
       "@type": "Question",
-      "name": "Why does the calculator add 20% headroom?",
-      "acceptedAnswer": { "@type": "Answer", "text": "The 20% buffer covers two things the wattage list can't predict: measured loads running above their nameplate rating, and future appliances you'll add later. It is headroom on the generator, not permission to exceed its rating — sustained overload still trips the breaker or stalls the engine." }
+      "name": "How long will a generator run on a tank of gas?",
+      "acceptedAnswer": { "@type": "Answer", "text": "At 50% load, most portable generators burn roughly 1 gallon of gasoline per 7,000 watts of rated output per hour — a 3,500 W inverter generator goes about 5 hours per gallon, and a 7,500 W model about 1.4 hours per gallon. Propane gives roughly 25% less runtime per gallon-equivalent but stores indefinitely." }
     }
   ]
 }
@@ -283,6 +288,8 @@ TV + internet - 150w</textarea>
 <div class="card"><h3><a href="refrigerator-freezer.html">What size generator runs a refrigerator and freezer?</a></h3><p>The most-searched backup question, answered with real startup math — and why a 1,000 W unit beats a 4,000 W one for this job.</p></div>
 <div class="card"><h3><a href="well-pump-watts.html">How many watts does a well pump use?</a></h3><p>Starting vs running for every HP rating, plus the LRA trap that kills generators during startup.</p></div>
 <div class="card"><h3><a href="best-portable-generators.html">Best 10 portable generators for home backup</a></h3><p>Ranked by the sizing math that matters — inverter vs conventional, dual-fuel, and which class matches your load.</p></div>
+<div class="card"><h3><a href="portable-vs-standby-generator.html">Portable vs standby generator</a></h3><p>Cost path, install, transfer switch, and when wattage sizing comes before you buy.</p></div>
+<div class="card"><h3><a href="best-generator-size-for-rv.html">What size generator for an RV?</a></h3><p>30A vs 50A, roof AC surge, and quiet inverter classes — then check your list on the calculator.</p></div>
 <div class="card"><h3><a href="find-a-commercial-generator-service.html">Find a commercial generator service</a></h3><p>The facility manager's vetting checklist: NFPA 110 testing schedules, contract red flags, and the seven questions to ask before signing.</p></div>
 <div class="card"><h3><a href="https://jpanasuk-netizen.github.io/battery-bank-sizer/" rel="noopener">Battery bank sizer ↗</a></h3><p>If your load is small and daily, a LiFePO4 battery bank can replace fuel entirely — that tool sizes it.</p></div>
 <!-- SLM Advisor upsell -->
@@ -302,6 +309,8 @@ TV + internet - 150w</textarea>
         <li><a href="https://generator-sizer.com/refrigerator-freezer.html">What size generator runs a fridge &amp; freezer?</a></li>
         <li><a href="https://generator-sizer.com/whole-house-generator-sizing.html">Whole-house generator sizing</a></li>
         <li><a href="https://generator-sizer.com/well-pump-watts.html">How many watts does a well pump use?</a></li>
+        <li><a href="https://generator-sizer.com/portable-vs-standby-generator.html">Portable vs standby generator</a></li>
+        <li><a href="https://generator-sizer.com/best-generator-size-for-rv.html">What size generator for an RV?</a></li>
       </ul>
     </div>
     <div class="card">
@@ -326,15 +335,17 @@ TV + internet - 150w</textarea>
   <section id="faq" class="panel" style="margin-top:1.5rem">
     <h2>Frequently asked questions</h2>
     <h3>What size generator do I need to run a house?</h3>
-    <p>For essentials only (fridge, freezer, well pump, furnace fan, lights, phone charging), a 5,000&ndash;7,500 watt portable generator covers it. To also run central AC or an electric water heater, step up to 10,000&ndash;12,000 watts. Add the running watts of everything you'll power at once, add the extra surge of the largest motor load, then buy about 20% above that total.</p>
+    <p>For essentials only (fridge, freezer, well pump, furnace fan, lights, phone charging), a 5,000&ndash;7,500 watt portable generator covers it. To also run central AC or an electric water heater, step up to 10,000&ndash;12,000 watts. Add the running watts of everything you&rsquo;ll power at once, add the extra surge of the largest motor load, then buy about 20% above that total. Walk the full method on the <a href="whole-house-generator-sizing.html">whole-house generator sizing guide</a>, then confirm on this <a href="#calc">free calculator</a>.</p>
     <h3>How do starting watts differ from running watts?</h3>
-    <p>Running watts are what an appliance draws continuously. Starting (surge) watts are the brief spike when a motor starts &mdash; typically 2&ndash;3&times; running watts for pumps and fans, up to 4&times; for compressors. Your generator's surge rating must cover the biggest starting load on top of everything else already running.</p>
+    <p>Running watts are what an appliance draws continuously. Starting (surge) watts are the brief spike when a motor starts &mdash; typically 2&ndash;3&times; running watts for pumps and fans, up to 4&times; for compressors. Your generator&rsquo;s surge rating must cover the biggest starting load on top of everything else already running.</p>
+    <h3>Why does the calculator add 20% headroom?</h3>
+    <p>The 20% buffer covers two things the wattage list can&rsquo;t predict: measured loads running above their nameplate rating, and future appliances you&rsquo;ll add later. It is headroom on the generator, not permission to exceed its rating &mdash; sustained overload still trips the breaker or stalls the engine.</p>
+    <h3>How do fridge, well pump, and sump pump affect generator size?</h3>
+    <p>Fridge and freezer compressors add continuous load plus a surge at start. A well pump is often the largest motor surge on an essentials board. A sump pump may start during storms while other loads are already running. Size each with nameplate running and starting watts &mdash; see <a href="refrigerator-freezer.html">fridge &amp; freezer</a>, <a href="well-pump-watts.html">well pump watts</a>, and <a href="sump-pump-watts.html">sump pump watts</a> &mdash; then add them on this calculator.</p>
+    <h3>Do I need a transfer switch to run a generator?</h3>
+    <p>Yes, if you&rsquo;re connecting to household circuits. Code requires a manual or automatic transfer switch &mdash; back-feeding through a dryer outlet is illegal and can kill utility workers. A 30 A manual switch handles 7,200 W; a 50 A switch handles 12,000 W. See the <a href="transfer-switch-sizing.html">transfer switch sizing guide</a> for pairing with your generator class.</p>
     <h3>How long will a generator run on a tank of gas?</h3>
     <p>At 50% load, most portable generators burn roughly 1 gallon of gasoline per 7,000 watts of rated output per hour &mdash; a 3,500 W inverter generator goes about 5 hours per gallon, and a 7,500 W model about 1.4 hours per gallon. Propane gives roughly 25% less runtime per gallon-equivalent but stores indefinitely.</p>
-    <h3>Do I need a transfer switch to run a generator?</h3>
-    <p>Yes, if you're connecting to household circuits. Code requires a manual or automatic transfer switch &mdash; back-feeding through a dryer outlet is illegal and can kill utility workers. A 30 A manual switch handles 7,200 W; a 50 A switch handles 12,000 W.</p>
-    <h3>Why does the calculator add 20% headroom?</h3>
-    <p>The 20% buffer covers two things the wattage list can't predict: measured loads running above their nameplate rating, and future appliances you'll add later. It is headroom on the generator, not permission to exceed its rating &mdash; sustained overload still trips the breaker or stalls the engine.</p>
   </section>
 
 <section id="optin" class="panel" style="margin-top:1.5rem">
