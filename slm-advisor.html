@@ -4,21 +4,21 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SLM Advisor â€” Local AI Engineering Co-Pilot | GeneratorSizer</title>
-<meta name="description" content="Offline AI assistant for HVAC, electrical, and MEP sizing. Runs locally on Qwen2.5-3B with sizing computed by a built-in deterministic engine. No API fees.">
+<meta name="description" content="Offline AI assistant for HVAC, electrical, and MEP sizing. Runs locally on Qwen2.5-7B with sizing computed by a built-in deterministic engine. No API fees.">
 <link rel="icon" type="image/png" href="https://generator-sizer.com/assets/favicon.png">
 <link rel="shortcut icon" href="https://generator-sizer.com/assets/favicon.ico">
 <link rel="canonical" href="https://generator-sizer.com/slm-advisor.html">
 <meta name="robots" content="index,follow">
 <link rel="stylesheet" href="assets/styles.css">
 <meta property="og:title" content="SLM Advisor â€” Local AI Engineering Co-Pilot">
-<meta property="og:description" content="Offline AI assistant for HVAC, electrical, and MEP sizing. Fine-tuned Qwen2.5-3B running on your hardware.">
+<meta property="og:description" content="Offline AI assistant for HVAC, electrical, and MEP sizing. Fine-tuned Qwen2.5-7B running on your hardware.">
 <meta property="og:image" content="https://generator-sizer.com/assets/og-image.png">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://generator-sizer.com/slm-advisor.html">
 <meta property="og:site_name" content="GeneratorSizer">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="SLM Advisor â€” Local AI Engineering Co-Pilot">
-<meta name="twitter:description" content="Offline AI co-pilot for HVAC, electrical, and MEP sizing. Fine-tuned Qwen2.5-3B that runs on your own box.">
+<meta name="twitter:description" content="Offline AI co-pilot for HVAC, electrical, and MEP sizing. Fine-tuned Qwen2.5-7B that runs on your own box.">
 <meta name="twitter:image" content="https://generator-sizer.com/assets/slm-advisor-screenshot.png">
 <script type="application/ld+json">
 {
@@ -28,7 +28,7 @@
   "applicationCategory": "UtilitiesApplication",
   "operatingSystem": "Windows, macOS, Linux (local)",
   "url": "https://generator-sizer.com/slm-advisor.html",
-  "description": "A 3-billion-parameter LLM fine-tuned for residential HVAC, electrical, and MEP sizing work. Runs locally on a laptop or shop server, answers without per-token API fees.",
+  "description": "A 7-billion-parameter LLM fine-tuned for residential HVAC, electrical, and MEP sizing work. Runs locally on a laptop or shop server, answers without per-token API fees.",
   "offers": { "@type": "Offer", "price": "99", "priceCurrency": "USD" }
 }
 </script>
@@ -151,22 +151,22 @@
   <section class="hero">
     <div class="hero-grid">
       <div>
-        <span class="eyebrow">Local AI addon Â· $99 / $299 / $999</span>
+        <span class="eyebrow">Local AI addon Â· $99</span>
         <h1>An HVAC &amp; electrical sizing <span class="grad">co-pilot that runs on your own box.</span></h1>
-        <p class="lede">SLM Advisor is a 3-billion-parameter language model fine-tuned for residential HVAC, electrical, and MEP sizing work. It loads locally on a laptop or shop server, answers without per-token API fees, and ships with LoRA adapters you can re-export to GGUF or MLX for your own toolchain.</p>
+        <p class="lede">SLM Advisor is a 7-billion-parameter language model fine-tuned for residential HVAC, electrical, and MEP sizing work. It loads locally on a laptop or shop PC, answers without per-token API fees, and ships as a ready-to-run Q4_K_M GGUF you can point at llama.cpp, Ollama, or TabbyAPI.</p>
         <div class="cta-row">
-          <a class="btn primary" href="#pricing">Pick a tier</a>
+          <a class="btn primary" href="#pricing">Get the model</a>
           <a class="btn ghost" href="#features">See what's inside</a>
         </div>
         <div style="margin-top:14px">
           <span class="badge ok">Runs offline â€” nothing leaves your machine</span>
           <span class="badge">Qwen2.5-7B &middot; Apache-2.0</span>
-          <span class="badge">GGUF Â· MLX Â· safetensors</span>
+          <span class="badge">Pre-quantised GGUF &middot; Q4_K_M &middot; 4.4 GB</span>
         </div>
       </div>
       <aside>
         <div class="screenshot">
-          <img src="assets/slm-advisor-screenshot.png" alt="SLM Advisor chat UI â€” dark engineering theme with example prompts for generator sizing, wire gauge, voltage drop, and Manual J load calc">
+          <img src="assets/slm-advisor-screenshot.png" alt="SLM Advisor chat UI - dark engineering theme showing a sizing question and a grounded answer with figures">
         </div>
       </aside>
     </div>
@@ -177,10 +177,10 @@
     <h2 class="anchor">What you actually get</h2>
     <p class="subhead">Five things this addon does that a vanilla chat model doesn't, out of the box.</p>
     <div class="feat-grid">
-      <div class="feat"><div class="ic">âš™ï¸</div><h3>Sizing-aware reasoning</h3><p>Trained on residential load calc prompts, NEC ampacity tables, generator kW selection, and duct/pipe sizing heuristics â€” so it answers in the formats you already use.</p></div>
+      <div class="feat"><div class="ic">âš™ï¸</div><h3>Sizing-aware reasoning</h3><p>Trained on residential load-calc prompts, ampacity and voltage-drop problems, generator kW selection, and duct/pipe sizing heuristics â€” so it answers in the formats you already use.</p></div>
       <div class="feat"><div class="ic">ðŸ”Œ</div><h3>Electrical + HVAC bilingual</h3><p>Switches between AC/DC ampacity, voltage drop, OCPD selection, and refrigerant/tonnage/CFM problems without losing units.</p></div>
       <div class="feat"><div class="ic">ðŸ’¾</div><h3>Local-only inference</h3><p>Runs through llama.cpp, Ollama, or TabbyAPI on your hardware. No calls leave the box. No token bills. No rate limits.</p></div>
-      <div class="feat"><div class="ic">ðŸ§ª</div><h3>Inspectable adapters</h3><p>LoRA adapters ship in safetensors and are re-exportable to GGUF (llama.cpp) and MLX (Apple Silicon). Merge into a full checkpoint when you want.</p></div>
+      <div class="feat"><div class="ic">ðŸ§ª</div><h3>Ready-to-run bundle</h3><p>You get a pre-quantised Q4_K_M GGUF that loads straight into llama.cpp, Ollama, or TabbyAPI. No merge step and no conversion toolchain to babysit.</p></div>
       <div class="feat"><div class="ic">ðŸ§°</div><h3>Drop-in to your stack</h3><p>OpenAI-compatible API mode via TabbyAPI, plus a raw llama.cpp CLI. Plug into existing field tools, terminals, or your own RAG layer.</p></div>
       <div class="feat full"><div class="ic">ðŸ“œ</div><h3>Licensing</h3><p>Base model is Qwen2.5-7B-Instruct, licensed Apache-2.0, so this bundle may be used commercially and redistributed under that licence. The full licence text and upstream attribution ship with every download.</p></div>
     </div>
@@ -193,11 +193,11 @@
     <table>
       <thead><tr><th>Layer</th><th>Choice</th><th>Notes</th></tr></thead>
       <tbody>
-        <tr><td>Base model</td><td><strong>Qwen2.5-3B</strong></td><td>Apache-2.0 upstream; runs on a 12 GB card</td></tr>
+        <tr><td>Base model</td><td><strong>Qwen2.5-7B</strong></td><td>Apache-2.0 upstream; runs on a 12 GB card</td></tr>
         <tr><td>Fine-tune</td><td><strong>Unsloth LoRA</strong></td><td>2Ã— faster than vanilla HF, fits on a 12 GB card</td></tr>
         <tr><td>Training data</td><td>HVAC + electrical corpora</td><td>Built in-house, no scraped customer data</td></tr>
         <tr><td>Inference</td><td>llama.cpp / Ollama / TabbyAPI</td><td>Your choice â€” local on your hardware</td></tr>
-        <tr><td>Export format</td><td>safetensors â†’ GGUF / MLX</td><td>Recipes in README</td></tr>
+        <tr><td>Export format</td><td>Pre-quantised GGUF (Q4_K_M, 4.4 GB)</td><td>Runs as-is; other quants covered in the README</td></tr>
         <tr><td>License</td><td><strong>Apache-2.0</strong></td><td>Full licence text ships with the download</td></tr>
       </tbody>
     </table>
@@ -206,78 +206,37 @@
 
   <!-- PRICING -->
   <section class="block" id="pricing">
-    <h2 class="anchor">Three licenses. No subscriptions.</h2>
-    <p class="subhead">Pay once, download the weights, keep using them. Renew only if you want the next training data drop.</p>
+    <h2 class="anchor">One edition. No subscription.</h2>
+    <p class="subhead">Pay once, download the model, keep using it. No renewal, no seat count, no upsell tier.</p>
 
-    <div class="grid-3">
+    <div class="grid-3" style="grid-template-columns:minmax(0,540px);justify-content:center">
 
-      <div class="card anchor" id="starter">
-        <div class="tier">Tier 01</div>
-        <div class="name">Starter</div>
-        <div class="price">$99 <small>one-time</small></div>
-        <p class="blurb">For solo techs running the model on a laptop or shop PC.</p>
-        <ul class="feats">
-          <li>Qwen2.5-3B base + LoRA adapter (safetensors)</li>
-          <li>Personal &amp; evaluation use</li>
-          <li>GGUF export recipe (Q4_K_M, Q5_K_M, Q8_0)</li>
-          <li>MLX export recipe for Apple Silicon</li>
-          <li>README + system-prompt starter kit</li>
-          <li>Email support, 72h response window</li>
-        </ul>
-        <a class="btn" href="https://whop.com/checkout/ch_IvZVbIxouUJ9R3Z">Get Starter</a>
-        <div class="meta">Best for: 1 tech Â· field laptop Â· personal projects</div>
-      </div>
-
-      <div class="card featured anchor" id="pro">
-        <div class="badge-row">
-          <div class="tier">Tier 02</div>
-          <span class="poptag">Most popular</span>
+        <div class="card anchor" id="starter">
+          <div class="tier">One edition</div>
+          <div class="name">SLM Advisor</div>
+          <div class="price">$99 <small>one-time</small></div>
+          <p class="blurb">For solo techs running the model on a laptop or shop PC.</p>
+          <ul class="feats">
+            <li>Qwen2.5-7B fine-tune, Q4_K_M GGUF (4.4 GB)</li>
+            <li>Apache-2.0 licensed &mdash; commercial use allowed</li>
+            <li>README + 50-prompt sizing kit</li>
+            <li>Full licence text + upstream NOTICE</li>
+            <li>SHA256 checksums for the download</li>
+            <li>Email support, 72h response window</li>
+          </ul>
+          <a class="btn primary" href="https://whop.com/checkout/ch_IvZVbIxouUJ9R3Z">Get the model</a>
+          <div class="meta">Best for: solo techs &middot; field laptop &middot; shop PC</div>
         </div>
-        <div class="name">Pro</div>
-        <div class="price">$299 <small>one-time</small></div>
-        <p class="blurb">For working contractors evaluating a small-team or job-site deployment.</p>
-        <ul class="feats">
-          <li>Everything in Starter</li>
-          <li>Up to 5 seats at one physical site</li>
-          <li>TabbyAPI OpenAI-compatible server config</li>
-          <li>Pre-merged GGUF + MLX checkpoints (no merging on your end)</li>
-          <li>Field-prompt pack: 30 sizing workflows</li>
-          <li>Quarterly LoRA refresh drops for 12 months</li>
-          <li>Email + Discord channel, 24h response window</li>
-        </ul>
-        <a class="btn primary" href="https://whop.com/checkout/ch_UG7FX5e3mYMNEEn">Get Pro</a>
-        <div class="meta">Best for: 2â€“5 person shops Â· job-site Mini-PC Â· light RAG</div>
-      </div>
-
-      <div class="card anchor" id="firm">
-        <div class="tier">Tier 03</div>
-        <div class="name">Firm</div>
-        <div class="price">$999 <small>per firm / year</small></div>
-        <p class="blurb">For MEP firms that need broad internal use.</p>
-        <ul class="feats">
-          <li>Everything in Pro</li>
-          <li>Unlimited seats within one legal entity</li>
-          <li>Use across your firm's own projects</li>
-          <li>SOC-friendly inference profile &amp; logging recipe</li>
-          <li>Custom LoRA fine-tune slot (1 request per year)</li>
-          <li>Priority support, 8h business-hours response</li>
-          <li>Optional on-call video walkthrough (1 hr)</li>
-        </ul>
-        <a class="btn" href="https://whop.com/checkout/ch_hKdnYFIKbtR2DK5">Get Firm</a>
-        <div class="meta">Best for: MEP firms Â· internal tools Â· product integrations</div>
-      </div>
 
     </div>
   </section>
 
   <!-- CTA STRIP -->
   <div class="cta-strip" id="start">
-    <h3>Pick the tier that matches your seat count.</h3>
-    <p>You will get a Whop checkout link with the exact deliverables listed. Downloads are signed and checksum-verified.</p>
+    <h3>One edition, one price.</h3>
+    <p>Checkout runs on Whop. You get the model bundle and its SHA256 checksums the moment you buy.</p>
     <div class="cta-row" style="justify-content:center">
-    <a class="btn" href="https://whop.com/checkout/ch_IvZVbIxouUJ9R3Z">Starter &mdash; $99</a>
-    <a class="btn primary" href="https://whop.com/checkout/ch_UG7FX5e3mYMNEEn">Pro &mdash; $299</a>
-    <a class="btn" href="https://whop.com/checkout/ch_hKdnYFIKbtR2DK5">Firm &mdash; $999/yr</a>
+    <a class="btn primary" href="https://whop.com/checkout/ch_IvZVbIxouUJ9R3Z">Get the model &mdash; $99</a>
     </div>
   </div>
 
@@ -289,7 +248,7 @@
 
       <div class="qa">
         <h3>What hardware do I need to run it?</h3>
-        <p>The Q4_K_M GGUF is roughly 2.0 GB and runs on 8 GB unified memory (M1/M2/M3 Mac mini, Steam Deck, modern Mini-PCs). Q8_0 wants around 4 GB. A 6 GB consumer GPU is plenty for the full safetensors build via TabbyAPI.</p>
+        <p>The Q4_K_M GGUF is about 4.4 GB. It runs comfortably in 8 GB of unified memory (M1/M2/M3 Mac mini, modern Mini-PC) or on any 8 GB GPU. Q8_0 is roughly 8 GB and wants a 12 GB card. CPU-only also works, just slower.</p>
       </div>
 
       <div class="qa">
@@ -299,12 +258,12 @@
 
       <div class="qa">
         <h3>Can I re-export the model to another format?</h3>
-        <p>Yes. LoRA adapters ship in standard safetensors; the README includes one-command recipes to export to GGUF (llama.cpp) and MLX (Apple Silicon). You can also request the pre-merged checkpoints on the Pro tier.</p>
+        <p>Yes. The bundle ships a Q4_K_M GGUF that runs directly in llama.cpp, Ollama, or TabbyAPI. The README covers re-quantising to Q5_K_M or Q8_0 if you want more precision.</p>
       </div>
 
       <div class="qa">
-        <h3>What is the difference between the tiers?</h3>
-        <p>Starter gets you the weights + recipes for personal evaluation use. Pro adds pre-merged checkpoints, server configs, a 30-prompt field pack, and quarterly refresher updates for a year. Firm adds unlimited seats, priority support, and a custom LoRA slot.</p>
+        <h3>Are there other editions or tiers?</h3>
+        <p>No. There is one edition: the fine-tuned Qwen2.5-7B model bundle at $99. Apache-2.0, yours to keep, no subscription and no higher tier to upgrade into.</p>
       </div>
 
       <div class="qa">
