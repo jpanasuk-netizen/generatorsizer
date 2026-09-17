@@ -160,7 +160,7 @@
         </div>
         <div style="margin-top:14px">
           <span class="badge ok">Runs offline â€” nothing leaves your machine</span>
-          <span class="badge">Runs locally on your own hardware</span>
+          <span class="badge">Qwen2.5-7B &middot; Apache-2.0</span>
           <span class="badge">GGUF Â· MLX Â· safetensors</span>
         </div>
       </div>
@@ -182,7 +182,7 @@
       <div class="feat"><div class="ic">ðŸ’¾</div><h3>Local-only inference</h3><p>Runs through llama.cpp, Ollama, or TabbyAPI on your hardware. No calls leave the box. No token bills. No rate limits.</p></div>
       <div class="feat"><div class="ic">ðŸ§ª</div><h3>Inspectable adapters</h3><p>LoRA adapters ship in safetensors and are re-exportable to GGUF (llama.cpp) and MLX (Apple Silicon). Merge into a full checkpoint when you want.</p></div>
       <div class="feat"><div class="ic">ðŸ§°</div><h3>Drop-in to your stack</h3><p>OpenAI-compatible API mode via TabbyAPI, plus a raw llama.cpp CLI. Plug into existing field tools, terminals, or your own RAG layer.</p></div>
-      <div class="feat full"><div class="ic">ðŸ“œ</div><h3>Licensing</h3><p>Base model is Qwen2.5-3B. Licence terms for the fine-tuned weights are being updated; the LICENSE and NOTICE files shipped with your download are the ones that apply.</p></div>
+      <div class="feat full"><div class="ic">ðŸ“œ</div><h3>Licensing</h3><p>Base model is Qwen2.5-7B-Instruct, licensed Apache-2.0, so this bundle may be used commercially and redistributed under that licence. The full licence text and upstream attribution ship with every download.</p></div>
     </div>
   </section>
 
@@ -193,12 +193,12 @@
     <table>
       <thead><tr><th>Layer</th><th>Choice</th><th>Notes</th></tr></thead>
       <tbody>
-        <tr><td>Base model</td><td><strong>Qwen2.5-3B</strong></td><td>runs on a shop Mini-PC or laptop</td></tr>
+        <tr><td>Base model</td><td><strong>Qwen2.5-3B</strong></td><td>Apache-2.0 upstream; runs on a 12 GB card</td></tr>
         <tr><td>Fine-tune</td><td><strong>Unsloth LoRA</strong></td><td>2Ã— faster than vanilla HF, fits on a 12 GB card</td></tr>
         <tr><td>Training data</td><td>HVAC + electrical corpora</td><td>Built in-house, no scraped customer data</td></tr>
         <tr><td>Inference</td><td>llama.cpp / Ollama / TabbyAPI</td><td>Your choice â€” local on your hardware</td></tr>
         <tr><td>Export format</td><td>safetensors â†’ GGUF / MLX</td><td>Recipes in README</td></tr>
-        <tr><td>License</td><td><strong>See LICENSE</strong></td><td>Supplied with each download</td></tr>
+        <tr><td>License</td><td><strong>Apache-2.0</strong></td><td>Full licence text ships with the download</td></tr>
       </tbody>
     </table>
     <p class="subhead" style="margin-top:24px">There is no hosted API. There is no telemetry collection. There is no third-party model in the loop.</p>
@@ -208,9 +208,7 @@
   <section class="block" id="pricing">
     <h2 class="anchor">Three licenses. No subscriptions.</h2>
     <p class="subhead">Pay once, download the weights, keep using them. Renew only if you want the next training data drop.</p>
-<div style="border:1px solid #b45309;background:rgba(180,83,9,.08);border-radius:12px;padding:14px 16px;margin:16px 0 8px">
-  <strong>Checkout is paused.</strong> We are re-basing the model onto an Apache-2.0 base so the fine-tuned weights can be licensed for commercial use. No new orders are being taken until that build ships &mdash; the buttons below are disabled, not broken.
-</div>
+
     <div class="grid-3">
 
       <div class="card anchor" id="starter">
@@ -226,7 +224,7 @@
           <li>README + system-prompt starter kit</li>
           <li>Email support, 72h response window</li>
         </ul>
-        <span class="btn is-disabled" aria-disabled="true" role="link" tabindex="-1" style="opacity:.45;pointer-events:none;cursor:not-allowed">Checkout paused</span>
+        <a class="btn" href="https://whop.com/checkout/ch_IvZVbIxouUJ9R3Z">Get Starter</a>
         <div class="meta">Best for: 1 tech Â· field laptop Â· personal projects</div>
       </div>
 
@@ -247,7 +245,7 @@
           <li>Quarterly LoRA refresh drops for 12 months</li>
           <li>Email + Discord channel, 24h response window</li>
         </ul>
-        <span class="btn primary is-disabled" aria-disabled="true" role="link" tabindex="-1" style="opacity:.45;pointer-events:none;cursor:not-allowed">Checkout paused</span>
+        <a class="btn primary" href="https://whop.com/checkout/ch_UG7FX5e3mYMNEEn">Get Pro</a>
         <div class="meta">Best for: 2â€“5 person shops Â· job-site Mini-PC Â· light RAG</div>
       </div>
 
@@ -265,7 +263,7 @@
           <li>Priority support, 8h business-hours response</li>
           <li>Optional on-call video walkthrough (1 hr)</li>
         </ul>
-        <span class="btn is-disabled" aria-disabled="true" role="link" tabindex="-1" style="opacity:.45;pointer-events:none;cursor:not-allowed">Checkout paused</span>
+        <a class="btn" href="https://whop.com/checkout/ch_hKdnYFIKbtR2DK5">Get Firm</a>
         <div class="meta">Best for: MEP firms Â· internal tools Â· product integrations</div>
       </div>
 
@@ -274,12 +272,12 @@
 
   <!-- CTA STRIP -->
   <div class="cta-strip" id="start">
-    <h3>Checkout is paused.</h3>
-    <p>SLM Advisor is being re-based onto an Apache-2.0 model so the fine-tuned weights can be licensed for commercial use. No new orders are being taken until that build ships. The tiers above are disabled, not removed, so you can still see what each one includes.</p>
+    <h3>Pick the tier that matches your seat count.</h3>
+    <p>You will get a Whop checkout link with the exact deliverables listed. Downloads are signed and checksum-verified.</p>
     <div class="cta-row" style="justify-content:center">
-    <span class="btn is-disabled" aria-disabled="true" role="link" tabindex="-1" style="opacity:.45;pointer-events:none;cursor:not-allowed">Checkout paused</span>
-    <span class="btn primary is-disabled" aria-disabled="true" role="link" tabindex="-1" style="opacity:.45;pointer-events:none;cursor:not-allowed">Checkout paused</span>
-    <span class="btn is-disabled" aria-disabled="true" role="link" tabindex="-1" style="opacity:.45;pointer-events:none;cursor:not-allowed">Checkout paused</span>
+    <a class="btn" href="https://whop.com/checkout/ch_IvZVbIxouUJ9R3Z">Starter &mdash; $99</a>
+    <a class="btn primary" href="https://whop.com/checkout/ch_UG7FX5e3mYMNEEn">Pro &mdash; $299</a>
+    <a class="btn" href="https://whop.com/checkout/ch_hKdnYFIKbtR2DK5">Firm &mdash; $999/yr</a>
     </div>
   </div>
 
