@@ -24,7 +24,7 @@ Source asset it expands: `github.com/jpanasuk-netizen/battery-bank-sizer` (live 
 ## 3. Affiliate programs (apply in this order)
 - [ ] **Amazon Associates** — generators/inverters/transfer switches; needs 3 qualifying sales in 180 days to stick. Build links only after approval; keep disclosure paragraph already on the rankings page
 - [ ] **Electrician lead-gen options** (higher payouts than retail): check ServiceTitan-affiliate style programs, HomeAdvisor/Angi partner sign-up, or local electrician sponsorship banner for the transfer-switch article — pick ONE, needs Jeremy's yes on terms
-- [ ] Later: AdSense once organic traffic exists (~20+ sessions/day)
+- [ ] Later: AdSense once organic traffic exists (~20+ sessions/day). **Site is currently NOT running AdSense** — placeholder slots removed, script tags stripped. Apply for AdSense first, THEN re-add the `adsbygoogle.js` script + real `<ins class="adsbygoogle" data-ad-client="ca-pub-1045858506533973" data-ad-slot="REAL-SLOT-ID">` elements with valid slot IDs from the AdSense UI. The `ca-pub-1045858506533973` publisher ID is reserved in `ads.txt`.
 
 ## 4. Distribution (per NICHE_SITES_PLAN 2-engine model)
 - [ ] r/preppers, r/OffGrid, r/Generator, generator forums: answer 2–3 sizing threads/week with genuinely useful replies; link the calculator only when it's actually the tool for the question
