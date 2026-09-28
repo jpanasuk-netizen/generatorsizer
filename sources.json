@@ -1,14 +1,29 @@
 {
   "sources": [
     {
-      "title": "NEC Article 220 Branch Circuits",
+      "title": "NEC Article 220 Branch-Circuit and Feeder Calculations (method context, not a PE stamp)",
       "url": "https://www.nfpa.org/nec",
-      "date": "2026-09-17"
+      "date": "2026-09-28"
     },
     {
-      "title": "AGCO Generator Load Factors",
-      "url": "https://www.agcoinc.com/powerengines/load-factors",
-      "date": "2026-09-17"
+      "title": "U.S. EIA — energy content of gasoline and propane (fuel volume math)",
+      "url": "https://www.eia.gov/energyexplained/units-and-calculators/energy-conversion-calculators.php",
+      "date": "2026-09-28"
+    },
+    {
+      "title": "CPSC — portable generator carbon monoxide and outdoor placement",
+      "url": "https://www.cpsc.gov/Safety-Education/Safety-Education-Centers/Carbon-Monoxide-Information-Center/Portable-Generator-Safety-Tips",
+      "date": "2026-09-28"
+    },
+    {
+      "title": "Inverse-square spreading for sound pressure (lot-line dBA)",
+      "url": "https://en.wikipedia.org/wiki/Inverse-square_law",
+      "date": "2026-09-28"
+    },
+    {
+      "title": "Manufacturer portable altitude/temperature derate practice (Kohler/Generac/Cummins consumer sheets, ~3.5%/1000 ft above 1000 ft)",
+      "url": "https://www.kohlerpower.com/",
+      "date": "2026-09-28"
     }
   ]
 }

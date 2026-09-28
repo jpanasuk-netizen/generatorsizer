@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Load sequencer — buy the coincidence size, not the naive sum</title>
+<meta name="description" content="Split backup loads into always-on, wait, and never-overlap. See the generator class you can drop if motors do not start with the microwave.">
+<link rel="canonical" href="https://generator-sizer.com/load-sequencer.html">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<meta name="robots" content="index,follow">
+<link rel="stylesheet" href="assets/styles.css">
+<meta property="og:title" content="Load sequencer — GeneratorSizer Lab">
+<meta property="og:url" content="https://generator-sizer.com/load-sequencer.html">
+<meta property="og:description" content="Staggered-start coincidence sizing. Always-on vs wait vs never-overlap.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://generator-sizer.com/assets/og-image.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"GeneratorSizer Load Sequencer","url":"https://generator-sizer.com/load-sequencer.html","applicationCategory":"UtilitiesApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+</head>
+<body>
+<header class="site-head">
+  <a class="brand" href="index.html">GeneratorSizer</a>
+  <nav aria-label="Site">
+    <a href="tools.html">Lab tools</a>
+    <a href="load-sequencer.html" aria-current="page">Sequencer</a>
+    <a href="methodology.html">Our math</a>
+    <a href="index.html">Wattage calculator</a>
+  </nav>
+</header>
+<main>
+<h1>Load sequencer</h1>
+<p class="sub">Last updated: September 28, 2026 (CT). This is the tool wattage clones do not ship: you decide which circuits are allowed to exist in the same second.</p>
+<p class="why-unique">A fridge + well + furnace + microwave naive sum looks like a 7,500 W purchase. If the microwave is in the “never overlap” lane, the well start never sees that 1,000 W, and the buy class often drops a step. That difference is the whole point of this page.</p>
+
+<p class="no-print">
+  <label for="stackPick"><strong>Load a worked house</strong></label>
+  <select id="stackPick"></select>
+</p>
+<div class="field no-print">
+  <label for="headroom">Headroom (%)</label>
+  <input type="number" id="headroom" value="20" min="0" max="40">
+</div>
+<p class="small no-print">Add a row, set running / starting watts, then pick a lane. Always-on stays up. Wait starts after motors settle. Never-overlap is kitchen and space heat.</p>
+<p class="no-print"><button type="button" id="addRow" style="background:var(--acc);color:#fff;border:none;border-radius:8px;padding:.55rem 1rem;cursor:pointer">Add row</button>
+<button type="button" id="runBtn" style="background:var(--acc);color:#fff;border:none;border-radius:8px;padding:.55rem 1rem;cursor:pointer;margin-left:.4rem">Sequence it</button></p>
+<div id="rows"></div>
+<div id="out" class="ans" hidden></div>
+
+<h2>Why three phases beat one sum</h2>
+<p>Motors do not all lock-rotor at once unless you designed the house that way. The sequencer assumes one motor extra at a time among the always and wait lanes, and it assumes the never lane is dark during that kick. Then it checks two quieter phases: wait-lane running (AC after the well has started) and kitchen running (microwave with pumps already at running watts). You buy the worst phase plus headroom — not the fantasy that every nameplate is simultaneous.</p>
+<p>Soft-start kits on a well or AC shrink the extra term. If you have one, lower that row’s starting watts toward ~1.4× running and re-run. Do not invent a soft-start you have not installed.</p>
+
+<h2>What this will not do</h2>
+<p>It will not tell you your well’s locked-rotor amps. Read the motor nameplate or the pump curve. It will not size a transfer switch — use the <a href="transfer-switch-sizing.html">30 A vs 50 A page</a> after you know sequenced watts. Bonding a portable to the panel is still electrician work.</p>
+</main>
+<footer class="no-print">GeneratorSizer Lab · <a href="altitude-derate.html">Next: derate the class you just picked</a> · <a href="privacy.html">Privacy</a></footer>
+<script src="assets/lab.js"></script>
+<script>
+(function(){
+  var rows = [];
+  function cloneHouse(key){
+    var h = GS.HOUSE_STACKS[key];
+    rows = h.rows.map(function(r){ return { name:r.name, run:r.run, surge:r.surge, qty:r.qty||1, lane:r.lane }; });
+    draw();
+  }
+  function draw(){
+    var html = '<div class="load-row load-head"><span>Load</span><span>Run W</span><span>Start W</span><span>Lane</span><span></span></div>';
+    rows.forEach(function(r,i){
+      html += '<div class="load-row">'+
+        '<input type="text" data-i="'+i+'" data-f="name" value="'+String(r.name).replace(/"/g,"&quot;")+'">'+
+        '<input type="number" min="0" data-i="'+i+'" data-f="run" value="'+r.run+'">'+
+        '<input type="number" min="0" data-i="'+i+'" data-f="surge" value="'+r.surge+'">'+
+        '<select data-i="'+i+'" data-f="lane"><option value="always"'+(r.lane==="always"?" selected":"")+'>Always</option><option value="wait"'+(r.lane==="wait"?" selected":"")+'>Wait</option><option value="never"'+(r.lane==="never"?" selected":"")+'>Never overlap</option></select>'+
+        '<button type="button" class="del" data-del="'+i+'">✕</button></div>';
+    });
+    document.getElementById("rows").innerHTML = html;
+  }
+  var pick = document.getElementById("stackPick");
+  pick.innerHTML = Object.keys(GS.HOUSE_STACKS).map(function(k){
+    return '<option value="'+k+'">'+GS.HOUSE_STACKS[k].title+"</option>";
+  }).join("");
+  cloneHouse(pick.value);
+  pick.onchange = function(){ cloneHouse(pick.value); };
+  document.getElementById("addRow").onclick = function(){
+    rows.push({ name:"Custom", run:0, surge:0, qty:1, lane:"always" });
+    draw();
+  };
+  document.getElementById("rows").addEventListener("input", function(e){
+    var t = e.target, i = t.getAttribute("data-i"), f = t.getAttribute("data-f");
+    if(i==null) return;
+    rows[i][f] = (f==="name"||f==="lane") ? t.value : Number(t.value);
+  });
+  document.getElementById("rows").addEventListener("click", function(e){
+    var d = e.target.getAttribute("data-del");
+    if(d==null) return;
+    rows.splice(Number(d),1);
+    draw();
+  });
+  document.getElementById("runBtn").onclick = function(){
+    var s = GS.sequenced(rows, document.getElementById("headroom").value);
+    var box = document.getElementById("out");
+    box.hidden = false;
+    box.innerHTML = "<p>Naive everything-on peak</p><div class=\"big\">"+GS.fmt(s.naive)+" <span class=\"unit\">W</span></div>"+
+      "<p style=\"margin-top:1rem\">Sequenced peak (buy this class)</p><div class=\"big\">"+GS.fmt(s.buy)+" <span class=\"unit\">W</span></div>"+
+      "<div class=\"grid2\"><div class=\"stat\"><b>"+GS.fmt(s.saved)+" W</b><span>you stop oversizing</span></div>"+
+      "<div class=\"stat\"><b>"+GS.fmt(s.phaseA)+" / "+GS.fmt(s.phaseB)+" / "+GS.fmt(s.phaseC)+"</b><span>phases A / B / C watts</span></div></div>"+
+      "<p class=\"note\">Print this page and tape it on the transfer-switch door so nobody hits the microwave during a well start.</p>";
+  };
+})();
+</script>
+</body>
+</html>

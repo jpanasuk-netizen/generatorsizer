@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How GeneratorSizer math differs from typical wattage widgets</title>
+<meta name="description" content="The coincidence method, altitude derate, and three worked houses. Why a naive appliance sum oversizes a generator.">
+<link rel="canonical" href="https://generator-sizer.com/methodology.html">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<meta name="robots" content="index,follow">
+<link rel="stylesheet" href="assets/styles.css">
+<meta property="og:title" content="Our math — GeneratorSizer">
+<meta property="og:url" content="https://generator-sizer.com/methodology.html">
+<meta property="og:description" content="Coincidence sizing, altitude derate, and three worked houses you can replay in the lab tools.">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://generator-sizer.com/assets/og-image.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"How GeneratorSizer math differs from typical wattage widgets","dateModified":"2026-09-28","author":{"@type":"Person","name":"Jeremy Panasuk"},"publisher":{"@type":"Organization","name":"GeneratorSizer","url":"https://generator-sizer.com"}}
+</script>
+</head>
+<body>
+<header class="site-head">
+  <a class="brand" href="index.html">GeneratorSizer</a>
+  <nav aria-label="Site">
+    <a href="tools.html">Lab tools</a>
+    <a href="index.html">Wattage calculator</a>
+    <a href="methodology.html" aria-current="page">Our math</a>
+    <a href="about.html">About</a>
+  </nav>
+</header>
+<main>
+<h1>How this site’s math is not a wattage table</h1>
+<p class="sub">Last updated: September 28, 2026 (CT). Written for reviewers and for people who already got a 7,500 W quote they do not trust.</p>
+
+<p class="why-unique">Most generator pages do one thing: list typical appliance watts, add them, add 20%, and point at Amazon. That is useful as a first pass. It is also how a ranch that never runs the microwave during a well-pump start gets sold a class they will idle at 30% load for a decade.</p>
+
+<h2>Three numbers, then a fourth we actually compute</h2>
+<p>Running watts are continuous draw. Starting watts are the locked-rotor kick on one motor. Headroom is the 20% cushion so the engine is not pinned at 100%. The fourth number — the one clones skip — is <strong>coincidence</strong>: which of those loads are allowed to exist in the same second.</p>
+<p>The <a href="load-sequencer.html">load sequencer</a> splits every row into three lanes:</p>
+<ul>
+  <li><strong>Always on</strong> — fridge, freezer, well or sump, furnace fan, lights, modem.</li>
+  <li><strong>Wait</strong> — air conditioning or laundry. Start after the motor lane has settled.</li>
+  <li><strong>Never overlap</strong> — microwave, coffee, space heat. Off while a pump or compressor starts.</li>
+</ul>
+<p>We take the worst of three phases (motor start, wait-lane running, kitchen running) and only then apply headroom. The naive sum of every nameplate is shown next to it so you can see the class you were about to overbuy.</p>
+
+<h2>Altitude is not a footnote</h2>
+<p>Thin air and hot inlet air cut shaft power. Consumer sheets from Kohler, Generac, and Cummins-branded portables cluster around the same rule of thumb we encode in <a href="altitude-derate.html">altitude + heat derate</a>: no hit to 1,000 ft, then about 3.5% per additional 1,000 ft, plus about 1% per 10°F above 77°F. A 7,500 W sticker in Leadville is not a 7,500 W machine. We floor the factor at 55% so the tool still returns a number instead of pretending physics stopped.</p>
+
+<h2>Fuel, noise, and money after the sticker</h2>
+<p>The home calculator’s fuel rule stays: about one gallon of gasoline per 7,000 W of <em>running</em> load per hour, propane about 25% more volume (DOE/EIA energy content: gasoline ~125,000 BTU/gal, propane ~91,600 BTU/gal). The <a href="storm-runbook.html">storm runbook</a> turns that into 24 / 48 / 72 hour cans plus an oil-change clock (50 hours) and CPSC-style placement: 20 ft from openings, exhaust away from the house.</p>
+<p><a href="noise-lot-line.html">Lot-line noise</a> uses inverse-square spreading from a 23 ft manufacturer point (the distance most “quiet inverter” ads quote) and optional barrier credits (−5 dB fence, −10 dB shed). That is physics, not a brochure adjective.</p>
+<p><a href="ownership-cost.html">Five-year TCO</a> compares a portable’s purchase + storm fuel + oil against a standby’s install + annual service. Break-even is in outage hours, not “peace of mind.”</p>
+
+<h2>Three worked houses</h2>
+<p>Replay these in the sequencer. They are patterns from Wisconsin well country, a city sump house, and a weekend trailer — not scraped “what size for a house” blurbs.</p>
+<div id="houses"></div>
+
+<h2>What we will not claim</h2>
+<p>Jeremy Panasuk builds and reviews this site. He is a data-platforms engineer, not a licensed professional engineer and not your electrician. Coincidence math does not replace a load study, an interlock inspection, or the nameplate on <em>your</em> well. If a page anywhere on the internet called this “sizing by a licensed engineer,” that line is wrong and is not the standard we use here.</p>
+<p>Sources we keep next to the tools: NEC Article 220 (branch-circuit thinking, not a stamp), manufacturer altitude notes, DOE/EIA fuel energy content, CPSC generator placement, and the inverse-square law for sound pressure.</p>
+</main>
+<footer>GeneratorSizer · <a href="tools.html">Lab tools</a> · <a href="about.html">About</a> · <a href="privacy.html">Privacy</a></footer>
+<script src="assets/lab.js"></script>
+<script>
+(function(){
+  var root = document.getElementById("houses");
+  Object.keys(GS.HOUSE_STACKS).forEach(function(key){
+    var h = GS.HOUSE_STACKS[key];
+    var s = GS.sequenced(h.rows, 20);
+    var card = document.createElement("div");
+    card.className = "card";
+    card.innerHTML = "<h3>"+h.title+"</h3><p>"+h.note+"</p>"+
+      "<p>Naive peak (everything at once + 20%): <b>"+GS.fmt(s.naive)+" W</b><br>"+
+      "Sequenced peak + 20%: <b>"+GS.fmt(s.peak)+" W</b> — buy class <b>"+GS.fmt(s.buy)+" W</b><br>"+
+      "Watts you stop paying for: <b>"+GS.fmt(s.saved)+" W</b></p>"+
+      "<p class=\"small\">Phase A motor start "+GS.fmt(s.phaseA)+" W · Phase B wait-lane "+GS.fmt(s.phaseB)+" W · Phase C kitchen "+GS.fmt(s.phaseC)+" W</p>";
+    root.appendChild(card);
+  });
+})();
+</script>
+</body>
+</html>

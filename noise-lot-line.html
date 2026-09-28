@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lot-line generator noise — dBA at the fence, not “quiet”</title>
+<meta name="description" content="Estimate generator dBA at your lot line from a 23 ft manufacturer rating, distance, and a fence or shed barrier. Inverse-square spreading.">
+<link rel="canonical" href="https://generator-sizer.com/noise-lot-line.html">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<meta name="robots" content="index,follow">
+<link rel="stylesheet" href="assets/styles.css">
+<meta property="og:title" content="Lot-line noise — GeneratorSizer Lab">
+<meta property="og:url" content="https://generator-sizer.com/noise-lot-line.html">
+<meta property="og:description" content="dBA at the fence from inverter, open-frame, or standby using inverse-square spreading.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://generator-sizer.com/assets/og-image.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Generator lot-line noise estimator","url":"https://generator-sizer.com/noise-lot-line.html","applicationCategory":"UtilitiesApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+</head>
+<body>
+<header class="site-head">
+  <a class="brand" href="index.html">GeneratorSizer</a>
+  <nav aria-label="Site">
+    <a href="tools.html">Lab tools</a>
+    <a href="noise-lot-line.html" aria-current="page">Lot-line noise</a>
+    <a href="methodology.html">Our math</a>
+  </nav>
+</header>
+<main>
+<h1>Lot-line noise</h1>
+<p class="sub">Last updated: September 28, 2026 (CT). “Quiet inverter” is a 23-foot marketing number. Your neighbor sleeps at a different distance.</p>
+<p class="why-unique">We take the class’s typical dBA at 23 ft (the distance most consumer ads use), then apply inverse-square spreading: each doubling of distance drops about 6 dB in free field. A privacy fence is a −5 dB lab credit; a shed wall in the line of sight is −10 dB. That is not an acoustic-engineer stamp. It is enough to stop you from parking a 76 dBA open-frame 12 ft from a bedroom window and calling it neighborly.</p>
+
+<div class="row2">
+  <div class="field">
+    <label for="klass">Machine class</label>
+    <select id="klass"></select>
+  </div>
+  <div class="field">
+    <label for="dist">Distance to lot line or window (ft)</label>
+    <input type="number" id="dist" value="25" min="3">
+  </div>
+  <div class="field">
+    <label for="bar">Barrier</label>
+    <select id="bar">
+      <option value="0">None (line of sight)</option>
+      <option value="5">Fence (~−5 dB)</option>
+      <option value="10">Shed / wall in the path (~−10 dB)</option>
+    </select>
+  </div>
+</div>
+<p><button type="button" id="go" style="background:var(--acc);color:#fff;border:none;border-radius:8px;padding:.6rem 1.2rem;cursor:pointer;font-weight:600">Estimate dBA</button></p>
+<div id="out" class="ans" hidden></div>
+
+<h2>What the number means in a yard</h2>
+<p>Conversation is roughly 60 dBA. A bedroom at night wants something closer to 40–45 at the pillow. An open-frame 7,500 W at 23 ft is often mid-70s — that is a jobsite, not a patio. An inverter 2,200 W in the low 50s at 23 ft can be tolerable at 40–50 ft with a shed in between. Standby enclosures are quieter than open frames at the same kW but they run automatically at 2 a.m. when a branch taps the line; budget the neighbor for that, not just the hurricane afternoon.</p>
+<p>Never box a portable in a “sound shed” without manufacturer-legal exhaust and cooling. People die of CO trying to be polite. Distance and a wall <em>beside</em> the set beat a sealed box over it. CPSC still wants 20 ft from openings. If 20 ft lands you on the lot line, you have a pad problem, not a dBA problem — move the set or buy an enclosed standby on the far side of the house.</p>
+<p>After you like the noise, derate the same unit for elevation on <a href="altitude-derate.html">altitude + heat</a> and print fuel on the <a href="storm-runbook.html">storm runbook</a>.</p>
+</main>
+<footer>GeneratorSizer Lab · <a href="tools.html">All lab tools</a> · <a href="privacy.html">Privacy</a></footer>
+<script src="assets/lab.js"></script>
+<script>
+(function(){
+  var sel = document.getElementById("klass");
+  sel.innerHTML = Object.keys(GS.NOISE_CLASS).map(function(k){
+    var c = GS.NOISE_CLASS[k];
+    return '<option value="'+k+'">'+c.label+" ("+c.dba+" dBA @ "+c.refFt+" ft)</option>";
+  }).join("");
+  document.getElementById("go").onclick = function(){
+    var c = GS.NOISE_CLASS[sel.value];
+    var d = Number(document.getElementById("dist").value);
+    var b = Number(document.getElementById("bar").value);
+    var v = GS.dbaAt(c.dba, c.refFt, d, b);
+    var box = document.getElementById("out");
+    box.hidden = false;
+    var tone = v>=70 ? "Jobsite-loud at the ear. Expect complaints." : v>=60 ? "Conversation-level. Fine for a storm afternoon, rough at 2 a.m." : "Closer to patio-tolerable. Still not a bedroom pillow number.";
+    box.innerHTML = "<p>Estimated at "+d+" ft</p><div class=\"big\">"+v.toFixed(0)+" <span class=\"unit\">dBA</span></div>"+
+      "<p class=\"note\">"+tone+" Spreading = 20·log10(distance / "+c.refFt+"). Barrier credit −"+b+" dB. Wind, snow, and reflections can swing this several dB. Measure if an HOA will fine you.</p>";
+  };
+})();
+</script>
+</body>
+</html>

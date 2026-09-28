@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>72-hour storm runbook — fuel, oil, circuit order, CO distance</title>
+<meta name="description" content="Print a 24/48/72 hour outage plan from your running watts: gasoline and propane cans, 50-hour oil clock, motor-start order, and 20 ft CO placement.">
+<link rel="canonical" href="https://generator-sizer.com/storm-runbook.html">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<meta name="robots" content="index,follow">
+<link rel="stylesheet" href="assets/styles.css">
+<meta property="og:title" content="72-hour storm runbook — GeneratorSizer Lab">
+<meta property="og:url" content="https://generator-sizer.com/storm-runbook.html">
+<meta property="og:description" content="Printable storm fuel, oil, circuit order, and CO placement from your running load.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://generator-sizer.com/assets/og-image.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"72-hour generator storm runbook","url":"https://generator-sizer.com/storm-runbook.html","applicationCategory":"UtilitiesApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+</head>
+<body>
+<header class="site-head">
+  <a class="brand" href="index.html">GeneratorSizer</a>
+  <nav aria-label="Site">
+    <a href="tools.html">Lab tools</a>
+    <a href="storm-runbook.html" aria-current="page">Runbook</a>
+    <a href="load-sequencer.html">Sequencer</a>
+    <a href="methodology.html">Our math</a>
+  </nav>
+</header>
+<main>
+<h1>72-hour storm runbook</h1>
+<p class="sub">Last updated: September 28, 2026 (CT). A wattage widget tells you what to buy. This page tells you what to stage in the garage before the county truck cannot get down the road.</p>
+<p class="why-unique">We turn running watts into cans, a 50-hour oil clock, a motor-start order, and CPSC-style placement (20 ft from doors and windows, exhaust aimed away). Print it. Tape it. Do not keep this only in a browser tab when the cell tower is dark.</p>
+
+<div class="row2 no-print">
+  <div class="field">
+    <label for="runW">Running watts (sequenced, not naive)</label>
+    <input type="number" id="runW" value="2210" min="100" step="10">
+  </div>
+  <div class="field">
+    <label for="hrs">Hours per day the set will run</label>
+    <input type="number" id="hrs" value="16" min="1" max="24">
+  </div>
+  <div class="field">
+    <label for="tank">Onboard tank (gal)</label>
+    <input type="number" id="tank" value="4" min="0.5" step="0.5">
+  </div>
+  <div class="field">
+    <label for="house">House / pad name</label>
+    <input type="text" id="house" value="Well-pump ranch">
+  </div>
+</div>
+<p class="no-print"><button type="button" id="go" style="background:var(--acc);color:#fff;border:none;border-radius:8px;padding:.6rem 1.2rem;cursor:pointer;font-weight:600">Build runbook</button>
+<button type="button" onclick="window.print()" style="margin-left:.4rem;border:1px solid var(--bd);background:var(--card);color:var(--fg);border-radius:8px;padding:.6rem 1.2rem;cursor:pointer">Print / PDF</button></p>
+<div id="out"></div>
+
+<h2 class="no-print">Why 16 hours, not 24</h2>
+<p class="no-print">Most homes do not run the generator while everyone is asleep if the fridge can ride a few hours and the sump has a charged battery backup. Sixteen hours is a Wisconsin ice-storm default — daytime water and heat fan, night shed to cut fuel. If you have medical devices, set hours to 24 and do not argue with this paragraph.</p>
+<p class="no-print">Gasoline stored in cans wants stabilizer and rotation. Propane tanks do not go stale; they just need to be full before the storm, not after the station’s generator dies. Oil: portable consumer engines usually want a change around 50 hours. A 72-hour event at 16 h/day is 48 hours — one change on the clock if the storm stacks a second week.</p>
+</main>
+<footer class="no-print">GeneratorSizer Lab · <a href="ownership-cost.html">5-year cost</a> · <a href="privacy.html">Privacy</a> · not a fire-code inspection</footer>
+<script src="assets/lab.js"></script>
+<script>
+document.getElementById("go").onclick = function(){
+  var w = Number(document.getElementById("runW").value);
+  var hrs = Number(document.getElementById("hrs").value);
+  var tank = Number(document.getElementById("tank").value);
+  var name = document.getElementById("house").value || "This house";
+  var gph = GS.galPerHour(w, "gas");
+  var pph = GS.galPerHour(w, "propane");
+  function block(h){
+    var gas = gph * hrs * (h/24);
+    // 24/48/72 are total storm hours at the daily duty cycle
+    var days = h/24;
+    gas = gph * hrs * days;
+    var prop = pph * hrs * days;
+    var refuels = tank>0 ? Math.ceil(gas/tank) : "—";
+    return { gas:gas, prop:prop, refuels:refuels };
+  }
+  var a = block(24), b = block(48), c = block(72);
+  var oilHours = hrs * 3;
+  document.getElementById("out").innerHTML =
+    "<div class=\"card\"><h3>"+name+" — storm card</h3>"+
+    "<p>Running load <b>"+GS.fmt(w)+" W</b> · "+hrs+" h/day · tank "+tank+" gal · printed "+new Date().toLocaleString("en-US",{timeZone:"America/Chicago"})+" CT</p>"+
+    "<table><thead><tr><th>Window</th><th class=\"num\">Gasoline gal</th><th class=\"num\">Propane gal-eq</th><th class=\"num\">Gas refuels</th></tr></thead><tbody>"+
+    "<tr><td>24 h</td><td class=\"num\">"+a.gas.toFixed(1)+"</td><td class=\"num\">"+a.prop.toFixed(1)+"</td><td class=\"num\">"+a.refuels+"</td></tr>"+
+    "<tr><td>48 h</td><td class=\"num\">"+b.gas.toFixed(1)+"</td><td class=\"num\">"+b.prop.toFixed(1)+"</td><td class=\"num\">"+b.refuels+"</td></tr>"+
+    "<tr><td>72 h</td><td class=\"num\">"+c.gas.toFixed(1)+"</td><td class=\"num\">"+c.prop.toFixed(1)+"</td><td class=\"num\">"+c.refuels+"</td></tr>"+
+    "</tbody></table>"+
+    "<h3>Circuit order (do this, in this order)</h3>"+
+    "<ol><li>Set outdoors, 20 ft from doors/windows, exhaust aimed away from the house and the neighbor’s intake.</li>"+
+    "<li>Start the engine with the transfer switch / interlock OFF. Let it settle 30 seconds.</li>"+
+    "<li>Close always-on: fridge, freezer, lights, modem, then the well or sump. One motor at a time.</li>"+
+    "<li>Wait lane (AC, washer) only after the last motor is at running watts.</li>"+
+    "<li>Never-overlap (microwave, coffee, space heat) only when no pump is starting. If the well pressure switch chatters, kitchen stays dark.</li></ol>"+
+    "<h3>Oil and carbon monoxide</h3>"+
+    "<p>This duty cycle is about <b>"+oilHours.toFixed(0)+" engine hours</b> in 72 hours. Change oil near 50 hours. A battery CO alarm belongs in the bedroom hallway — not as a substitute for the 20 ft rule. Never run in a garage, even with the door up.</p>"+
+    "<p class=\"small\">Fuel rule: 1 gal gasoline per 7,000 W running per hour (site standard). Propane volume ≈ gasoline ÷ 0.75. Rotate gasoline; propane stores. Not a licensed inspection.</p></div>";
+};
+</script>
+</body>
+</html>

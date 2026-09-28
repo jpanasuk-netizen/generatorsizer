@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>5-year generator cost — portable fuel vs standby install</title>
+<meta name="description" content="Compare a portable’s purchase plus storm fuel and oil against a standby install plus annual service. Break-even in outage hours, not vibes.">
+<link rel="canonical" href="https://generator-sizer.com/ownership-cost.html">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<meta name="robots" content="index,follow">
+<link rel="stylesheet" href="assets/styles.css">
+<meta property="og:title" content="5-year ownership cost — GeneratorSizer Lab">
+<meta property="og:url" content="https://generator-sizer.com/ownership-cost.html">
+<meta property="og:description" content="Portable vs standby five-year TCO from your running watts and outage hours.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://generator-sizer.com/assets/og-image.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Portable vs standby 5-year cost","url":"https://generator-sizer.com/ownership-cost.html","applicationCategory":"UtilitiesApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+</head>
+<body>
+<header class="site-head">
+  <a class="brand" href="index.html">GeneratorSizer</a>
+  <nav aria-label="Site">
+    <a href="tools.html">Lab tools</a>
+    <a href="ownership-cost.html" aria-current="page">5-year cost</a>
+    <a href="portable-vs-standby-generator.html">Portable vs standby</a>
+    <a href="methodology.html">Our math</a>
+  </nav>
+</header>
+<main>
+<h1>5-year ownership cost</h1>
+<p class="sub">Last updated: September 28, 2026 (CT). The article <a href="portable-vs-standby-generator.html">portable vs standby</a> explains the classes. This page prices them with your running load and how often the grid actually dies.</p>
+<p class="why-unique">Dealers sell standby on “never think about it.” We sell a break-even hour count. Portable cash is the machine + gasoline at the site fuel rule + oil every 50 hours. Standby cash is install + a yearly service visit. Natural-gas standby fuel is usually cheap per hour versus hauling cans; we still do not pretend NG is free — we leave that line at service-only unless you type a fuel add-on into the portable side by raising gas price.</p>
+
+<div class="row2">
+  <div class="field"><label for="runW">Typical running watts during an outage</label><input type="number" id="runW" value="2210" min="100"></div>
+  <div class="field"><label for="hours">Grid-out hours per year (your history)</label><input type="number" id="hours" value="18" min="0"></div>
+  <div class="field"><label for="gas">Gasoline $/gal</label><input type="number" id="gas" value="3.40" min="1" step="0.05"></div>
+  <div class="field"><label for="port">Portable you would actually buy ($)</label><input type="number" id="port" value="1400" min="200"></div>
+  <div class="field"><label for="stand">Standby installed ($)</label><input type="number" id="stand" value="12500" min="3000"></div>
+  <div class="field"><label for="svc">Standby service $/year</label><input type="number" id="svc" value="280" min="0"></div>
+</div>
+<p><button type="button" id="go" style="background:var(--acc);color:#fff;border:none;border-radius:8px;padding:.6rem 1.2rem;cursor:pointer;font-weight:600">Price 5 years</button></p>
+<div id="out" class="ans" hidden></div>
+
+<h2>How to pick the outage-hours input</h2>
+<p>Do not use a national average. Use your last five winters. A rural well-pump ranch that loses a day of ice every other year is ~12–24 hours/year. A city feeder that blinks 40 minutes twice a summer is ~2 hours/year — standby almost never wins that math unless you have medical loads or a $4,000 used automatic unit. A Gulf Coast house that ate 120 hours in one hurricane year should enter 120, not 20, and should also open the <a href="storm-runbook.html">storm runbook</a> for cans.</p>
+<p>This TCO ignores the value of not dragging a 200 lb open-frame through snow, and it ignores HOA noise fines. Price those with <a href="noise-lot-line.html">lot-line noise</a> and your own back. If sequenced need is over ~10 kW or you want central AC without a ritual, standby starts winning on labor even when the five-year cash still favors portable.</p>
+</main>
+<footer>GeneratorSizer Lab · <a href="find-a-commercial-generator-service.html">Vet an installer</a> · <a href="privacy.html">Privacy</a></footer>
+<script src="assets/lab.js"></script>
+<script>
+document.getElementById("go").onclick = function(){
+  var t = GS.tco({
+    runningW: document.getElementById("runW").value,
+    outageHoursYear: document.getElementById("hours").value,
+    gasPrice: document.getElementById("gas").value,
+    portablePrice: document.getElementById("port").value,
+    standbyInstall: document.getElementById("stand").value,
+    standbyService: document.getElementById("svc").value
+  });
+  var box = document.getElementById("out");
+  box.hidden = false;
+  var be = t.breakEvenHours==null ? "—" : GS.fmt(t.breakEvenHours);
+  box.innerHTML = "<p>Cheaper over 5 years</p><div class=\"big\">"+t.cheaper+"</div>"+
+    "<div class=\"grid2\"><div class=\"stat\"><b>$"+GS.fmt(t.portable5)+"</b><span>portable (unit + fuel + oil)</span></div>"+
+    "<div class=\"stat\"><b>$"+GS.fmt(t.standby5)+"</b><span>standby (install + service)</span></div></div>"+
+    "<p class=\"note\">Fuel ~"+t.galHr.toFixed(2)+" gal/h at this running load. Annual portable fuel ≈ $"+t.portableFuelYr.toFixed(0)+
+    ". Hours of portable runtime before the install gap is “paid back” in fuel: <b>"+be+"</b>. If you never reach that many hours in five years, the standby is a comfort purchase, not a cheaper one.</p>";
+};
+</script>
+</body>
+</html>

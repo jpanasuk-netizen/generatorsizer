@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Generator Size Calculator | Expert Sizing by Licensed Engineer</title>
-<meta name="description" content="Expert generator sizing calculator by licensed engineer. Add appliances for accurate running watts, starting surge, 20% headroom, runtime, and fuel burn calculations based on NEC standards.">
+<title>Generator Size Calculator + Lab Tools | GeneratorSizer</title>
+<meta name="description" content="Free generator size calculator plus lab tools clones skip: coincidence sequencer, altitude derate, 72-hour runbook, 5-year TCO, lot-line noise.">
 <link rel="canonical" href="https://generator-sizer.com/">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="shortcut icon" href="assets/favicon.ico">
 <meta name="robots" content="index,follow">
-<meta property="og:title" content="Generator Size Calculator | Expert Sizing by Licensed Engineer">
-<meta property="og:description" content="Expert generator sizing calculator verified by licensed engineer. Calculate running watts, surge, headroom, and fuel burn based on NEC and manufacturer data.">
+<meta property="og:title" content="Generator Size Calculator + Lab Tools | GeneratorSizer">
+<meta property="og:description" content="Wattage calculator plus unique lab tools: sequenced loads, altitude derate, storm runbook, TCO, lot-line noise.">
 <meta property="og:url" content="https://generator-sizer.com/">
 <meta property="og:type" content="website">
 <link rel="stylesheet" href="assets/styles.css">
@@ -28,7 +28,7 @@
   "operatingSystem": "Web",
   "url": "https://generator-sizer.com/",
   "description": "Free generator sizing calculator: appliance-based running and starting wattage, 20% headroom, runtime at 50% load, and gasoline vs propane daily fuel consumption. Includes inverter sizing, battery runtime, and transfer switch load planner.",
-  "dateModified": "2026-09-16",
+  "dateModified": "2026-09-28",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
 }
 </script>
@@ -71,7 +71,7 @@
   "@type": "WebPage",
   "name": "Generator Size Calculator",
   "url": "https://generator-sizer.com/",
-  "dateModified": "2026-09-16",
+  "dateModified": "2026-09-28",
   "description": "Free generator sizing calculator: appliance-based running and starting wattage, 20% headroom, runtime, and fuel burn."
 }
 </script>
@@ -106,6 +106,7 @@ document.addEventListener('DOMContentLoaded',()=>{var d=JSON.parse(document.getE
 <header class="site-head">
   <a class="brand" href="index.html">GeneratorSizer</a>
   <nav aria-label="Site">
+    <a href="tools.html">Lab tools</a>
     <a href="topics.html">Topics</a>
     <a href="#calc">Calculator</a>
     <a href="refrigerator-freezer.html">Fridge &amp; freezer</a>
@@ -121,9 +122,18 @@ document.addEventListener('DOMContentLoaded',()=>{var d=JSON.parse(document.getE
 
 <main>
 <h1>Generator Size Calculator</h1>
-<p class="sub">Trusted sizing by a licensed engineer with 19+ years of power systems experience.</p>
-<p class="small" id="last-updated">Last updated: September 16, 2026 (CT)</p>
+<p class="small" id="last-updated">Last updated: September 28, 2026 (CT)</p>
 <p class="sub">Add your appliances. Get the wattage to buy, how long a tank lasts, and what fuel costs per day — running watts, startup surge, and headroom handled.</p>
+<p class="why-unique">The form below is the first pass every site has. The <a href="tools.html">Lab tools</a> are the reason this domain is not just another wattage widget: <a href="load-sequencer.html">staggered-start coincidence</a>, <a href="altitude-derate.html">altitude derate</a>, a printable <a href="storm-runbook.html">72-hour runbook</a>, <a href="ownership-cost.html">5-year TCO</a>, and <a href="noise-lot-line.html">lot-line dBA</a>.</p>
+
+<div class="tool-grid">
+  <a class="tool-card" href="load-sequencer.html"><h3>Load sequencer</h3><p>Always / wait / never-overlap. Buy the sequenced class.</p></a>
+  <a class="tool-card" href="altitude-derate.html"><h3>Altitude derate</h3><p>Usable watts at your elevation and inlet air.</p></a>
+  <a class="tool-card" href="storm-runbook.html"><h3>Storm runbook</h3><p>Print fuel, oil, circuit order, 20 ft CO rule.</p></a>
+  <a class="tool-card" href="ownership-cost.html"><h3>5-year cost</h3><p>Portable fuel vs standby install, in hours.</p></a>
+  <a class="tool-card" href="noise-lot-line.html"><h3>Lot-line noise</h3><p>dBA at the fence, not the brochure.</p></a>
+  <a class="tool-card" href="methodology.html"><h3>Our math</h3><p>Three worked houses + the coincidence method.</p></a>
+</div>
 
 <aside class="tldr panel" id="quick-answer" aria-label="Quick answer" style="display:block;margin:1rem 0 1.25rem;padding:1rem 1.1rem;border:1px solid var(--bd,#30363d);border-radius:10px;background:var(--card,#161b22)">
   <h2 style="font-size:1.05rem;margin:0 0 .5rem;border:0;padding:0">Quick answer</h2>
@@ -395,7 +405,7 @@ TV + internet - 150w</textarea>
   </section>
 
 </footer>
-<footer>GeneratorSizer · free sizing tools for home backup and off-grid power · pages may contain affiliate links · <a href="slm-advisor.html">SLM Advisor</a> · <a href="https://jpanasuk-netizen.github.io/battery-bank-sizer/" rel="noopener">sister site: Battery Bank Sizer</a> · <a href="about.html">About</a> · <a href="privacy.html">Privacy</a></footer>
+<footer>GeneratorSizer · <a href="tools.html">Lab tools</a> · free sizing tools for home backup · pages may contain affiliate links · <a href="slm-advisor.html">SLM Advisor</a> · <a href="https://jpanasuk-netizen.github.io/battery-bank-sizer/" rel="noopener">sister site: Battery Bank Sizer</a> · <a href="about.html">About</a> · <a href="contact.html">Contact</a> · <a href="privacy.html">Privacy</a></footer>
 
 <script src="assets/app.js"></script>
 <script src="assets/monetization.js"></script>
@@ -411,6 +421,8 @@ TV + internet - 150w</textarea>
 
 <nav class="seo-nav" aria-label="Related calculators" style="margin-top:2rem;padding:1rem;border-top:1px solid #ccc;font-size:.9rem">
 <strong>More free calculators:</strong><br>
+  <a href="/tools.html">Lab tools (sequencer, derate, runbook, TCO, noise)</a>
+  <a href="/methodology.html">How our math differs</a>
   <a href="/about.html">About GeneratorSizer</a>
   <a href="/app-privacy.html">App Privacy Policy</a>
   <a href="/best-generator-size-for-rv.html">What Size Generator for an RV? [Free Sizing] | GeneratorSizer</a>
