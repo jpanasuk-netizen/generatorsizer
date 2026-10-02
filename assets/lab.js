@@ -82,9 +82,9 @@ GS.sequenced = function (rows, headroomPct) {
 };
 
 /**
- * Portable-engine derate used on Kohler / Generac / Cummins consumer sheets:
- * no altitude hit to 1,000 ft, then ~3.5% per additional 1,000 ft;
- * ~1% per 10°F above 77°F inlet air. Floor 55% so a mountain shop still sees a number.
+ * House curve: no altitude hit through 1,000 ft, then 3.5% per additional 1,000 ft;
+ * 1% per 10°F above 77°F inlet air. Floor 55%.
+ * Generac GP6500/GP8000E manual: 3.5% per 1,000 ft above sea level, and 1% per 10°F above 60°F.
  */
 GS.derateFactor = function (elevFt, tempF) {
   var alt = 0;

@@ -95,8 +95,9 @@ document.addEventListener("input", function(e){
 /* ---------- 1. Generator sizing ---------- */
 // Gas: a typical portable inverter generator burns roughly 1 gal/hr per 7,000 W of
 // rated output at 50% load (3,500 W class ≈ 0.5 gal/hr; 7,500 W class ≈ 1.0 gal/hr).
-// Propane: ~27% less energy per gallon than gasoline (91,600 vs 125,000 BTU/gal),
-// so consumption in gal-propane/hr ≈ gal-gas/hr × 1.37. A 20 lb tank holds 4.7 gal.
+// Propane volume uses a site factor of 1.37× gasoline gallons (not the EIA ratio).
+// EIA sample heat content is 120,214 Btu/gal gasoline and 91,452 Btu/gal propane
+// (about 1.31× volume for the same energy). A 20 lb tank holds 4.7 gal.
 function sizeGenerator(){
   if(!loads.length){ alert("Add at least one appliance first."); return; }
   var headroom = 1 + (parseFloat(el("headroom").value) || 20)/100;

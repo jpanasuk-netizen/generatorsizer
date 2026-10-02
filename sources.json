@@ -1,19 +1,19 @@
 {
   "sources": [
     {
-      "title": "NEC Article 220 Branch-Circuit and Feeder Calculations (method context, not a PE stamp)",
-      "url": "https://www.nfpa.org/nec",
-      "date": "2026-09-28"
+      "title": "NFPA: Article 220, Branch-Circuit, Feeder, and Service Load Calculations (relocated to Article 120 in the 2026 NEC; method context, not a PE stamp)",
+      "url": "https://www.nfpa.org/education-and-research/electrical/reorganization-of-the-national-electrical-code",
+      "date": "2026-10-02"
     },
     {
-      "title": "U.S. EIA — energy content of gasoline and propane (fuel volume math)",
-      "url": "https://www.eia.gov/energyexplained/units-and-calculators/energy-conversion-calculators.php",
-      "date": "2026-09-28"
+      "title": "U.S. EIA sample heat content — motor gasoline 120,214 Btu/gal and propane 91,452 Btu/gal",
+      "url": "https://www.eia.gov/energyexplained/units-and-calculators/british-thermal-units.php",
+      "date": "2026-10-02"
     },
     {
-      "title": "CPSC — portable generator carbon monoxide and outdoor placement",
-      "url": "https://www.cpsc.gov/Safety-Education/Safety-Education-Centers/Carbon-Monoxide-Information-Center/Portable-Generator-Safety-Tips",
-      "date": "2026-09-28"
+      "title": "CPSC — portable generators outdoors only, at least 20 feet from the house",
+      "url": "https://www.cpsc.gov/Newsroom/News-Releases/2026/CPSC-Issues-Winter-Weather-Safety-Tips-to-Prevent-Fires-and-Carbon-Monoxide-Poisoning",
+      "date": "2026-10-02"
     },
     {
       "title": "Inverse-square spreading for sound pressure (lot-line dBA)",
@@ -21,9 +21,9 @@
       "date": "2026-09-28"
     },
     {
-      "title": "Manufacturer portable altitude/temperature derate practice (Kohler/Generac/Cummins consumer sheets, ~3.5%/1000 ft above 1000 ft)",
-      "url": "https://www.kohlerpower.com/",
-      "date": "2026-09-28"
+      "title": "Generac GP6500/GP8000E owner's manual — about 3.5% less power per 1,000 ft above sea level, and about 1% per 10°F above 60°F",
+      "url": "https://www.generac.com/globalassets/products/residential/portable-generators/owners-manual/gp6500-gp8000e-owners-manual.pdf",
+      "date": "2026-10-02"
     }
   ]
 }

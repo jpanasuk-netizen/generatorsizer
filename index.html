@@ -83,20 +83,15 @@
 {
   "sources": [
     {
-      "title": "NEC Article 220 Branch Circuits",
-      "url": "https://www.nfpa.org/nec",
-      "date": "2026-09-17"
-    },
-    {
-      "title": "AGCO Generator Load Factors",
-      "url": "https://www.agcoinc.com/powerengines/load-factors",
-      "date": "2026-09-17"
+      "title": "NFPA: Article 220 branch-circuit, feeder, and service load calculations (2026 NEC Article 120)",
+      "url": "https://www.nfpa.org/education-and-research/electrical/reorganization-of-the-national-electrical-code",
+      "date": "2026-10-02"
     }
   ]
 }
 </script>
 <script>
-document.addEventListener('DOMContentLoaded',()=>{var d=JSON.parse(document.getElementById('sources-data').textContent);var s=document.createElement('div');s.className='sources-section';s.innerHTML='<h2 id="sources-heading">Sources & Standards</h2><p>All calculations verified against:</p><ul>'+d.sources.map(x=>'<li><a href="'+x.url+'" target="_blank">'+x.title+'</a></li>').join('')+'</ul><p><button id="cite-toggle">Show Copyable Citations</button></p><div id="cite-output" style="display:none"></div>';var t=document.querySelector('nav')||document.querySelector('footer')||document.body;t.parentNode.insertBefore(s,t);var o=s.querySelector('#cite-toggle'),c=s.querySelector('#cite-output');o.onclick=()=>{c.textContent=d.sources.map(x=>x.title+'. '+x.url+'. Accessed '+x.date).join('\n\n');c.style.display='block';o.style.display='none'};});
+document.addEventListener('DOMContentLoaded',()=>{var d=JSON.parse(document.getElementById('sources-data').textContent);var s=document.createElement('div');s.className='sources-section';s.innerHTML='<h2 id="sources-heading">Sources & Standards</h2><p>Method context (not a design stamp):</p><ul>'+d.sources.map(x=>'<li><a href="'+x.url+'" target="_blank">'+x.title+'</a></li>').join('')+'</ul><p><button id="cite-toggle">Show Copyable Citations</button></p><div id="cite-output" style="display:none"></div>';var t=document.querySelector('nav')||document.querySelector('footer')||document.body;t.parentNode.insertBefore(s,t);var o=s.querySelector('#cite-toggle'),c=s.querySelector('#cite-output');o.onclick=()=>{c.textContent=d.sources.map(x=>x.title+'. '+x.url+'. Accessed '+x.date).join('\n\n');c.style.display='block';o.style.display='none'};});
 </script>
 <meta name="llms.txt" content="https://generator-sizer.com/sources.json">
 
@@ -332,7 +327,7 @@ TV + internet - 150w</textarea>
 <tr><td>Storage life</td><td>3–12 months with stabilizer</td><td>Indefinite</td></tr>
 <tr><td>Cost per kWh (2026 U.S. averages)</td><td>~$0.45–0.60</td><td>~$0.55–0.70</td></tr>
 </table>
-<p class="small">Figures from published DOE/EIA energy content: gasoline 125,000 BTU/gal, propane 91,600 BTU/gal (4.24 lb/gal). Dual-fuel generator manufacturer spec sheets corroborate the runtime and de-rate deltas. For current fuel price data, see the <a href="stats/generator-cost-study-2026.html">2026 Generator Cost Study</a>.</p>
+<p class="small"><a href="https://www.eia.gov/energyexplained/units-and-calculators/british-thermal-units.php">EIA's sample heat contents</a> list motor gasoline at 120,214 Btu per gallon and propane at 91,452 Btu per gallon, about 24% less energy per gallon of propane. Dual-fuel wattage drop is a separate manufacturer-spec figure. For current fuel price data, see the <a href="stats/generator-cost-study-2026.html">2026 Generator Cost Study</a>.</p>
 
 <h2>Guides</h2>
 <div class="card"><h3><a href="refrigerator-freezer.html">What size generator runs a refrigerator and freezer?</a></h3><p>Direct answer: for fridge + freezer, a <strong>1,000 W</strong> class can beat a <strong>4,000 W</strong> unit once startup surge is counted — full math on the guide (same house framing already on this card).</p></div>
@@ -378,6 +373,46 @@ TV + internet - 150w</textarea>
 </section>
 
   
+
+<section id="common-questions" class="panel" style="margin-top:1.5rem">
+  <h2>Common questions</h2>
+  <p class="small">One appliance, one sizing answer. Each page names the wattage chart the number came from. Add a full load list in the calculator above.</p>
+  <h3>Home appliances</h3>
+  <ul>
+    <li><a href="what-size-generator-for-refrigerator.html">What size generator do I need to run a refrigerator?</a></li>
+    <li><a href="what-size-generator-for-chest-freezer.html">What size generator do I need to run a chest freezer?</a></li>
+    <li><a href="what-size-generator-for-refrigerator-and-freezer.html">What size generator do I need to run a refrigerator and freezer?</a></li>
+    <li><a href="what-size-generator-for-window-air-conditioner.html">What size generator do I need to run a window air conditioner?</a></li>
+    <li><a href="what-size-generator-for-central-ac-3-ton.html">What size generator do I need to run a 3-ton central air conditioner?</a></li>
+    <li><a href="what-size-generator-for-central-ac-4-ton.html">What size generator do I need to run a 4-ton central air conditioner?</a></li>
+    <li><a href="what-size-generator-for-furnace-fan.html">What size generator do I need to run a gas furnace?</a></li>
+    <li><a href="what-size-generator-for-electric-water-heater.html">What size generator do I need to run an electric water heater?</a></li>
+    <li><a href="what-size-generator-for-electric-dryer.html">What size generator do I need to run an electric clothes dryer?</a></li>
+    <li><a href="what-size-generator-for-washing-machine.html">What size generator do I need to run a washing machine?</a></li>
+    <li><a href="what-size-generator-for-dishwasher.html">What size generator do I need to run a dishwasher?</a></li>
+    <li><a href="what-size-generator-for-microwave.html">What size generator do I need to run a microwave?</a></li>
+    <li><a href="what-size-generator-for-electric-range-burner.html">What size generator do I need to run an electric range burner?</a></li>
+    <li><a href="what-size-generator-for-space-heater.html">What size generator do I need to run a space heater?</a></li>
+    <li><a href="what-size-generator-for-cpap.html">What size generator do I need to run a CPAP?</a></li>
+    <li><a href="what-size-generator-for-tv-and-router.html">What size generator do I need to run a TV and router?</a></li>
+    <li><a href="what-size-generator-for-sump-pump.html">What size generator do I need to run a sump pump?</a></li>
+    <li><a href="what-size-generator-for-well-pump.html">What size generator do I need to run a well pump?</a></li>
+    <li><a href="what-size-generator-for-garage-door-opener.html">What size generator do I need to run a garage door opener?</a></li>
+  </ul>
+  <h3>RV</h3>
+  <ul>
+    <li><a href="what-size-generator-for-rv-ac-13500-btu.html">What size generator do I need to run a 13,500 BTU RV air conditioner?</a></li>
+    <li><a href="what-size-generator-for-rv-ac-15000-btu.html">What size generator do I need to run a 15,000 BTU RV air conditioner?</a></li>
+  </ul>
+  <h3>Shop and jobsite</h3>
+  <ul>
+    <li><a href="what-size-generator-for-air-compressor.html">What size generator do I need to run an air compressor?</a></li>
+    <li><a href="what-size-generator-for-table-saw.html">What size generator do I need to run a table saw?</a></li>
+    <li><a href="what-size-generator-for-pressure-washer.html">What size generator do I need to run a pressure washer?</a></li>
+    <li><a href="what-size-generator-for-120v-welder.html">What size generator do I need to run a 120 V welder?</a></li>
+  </ul>
+</section>
+
   <section id="faq" class="panel" style="margin-top:1.5rem">
     <h2>Frequently asked questions</h2>
     <h3>What size generator do I need to run a house?</h3>
