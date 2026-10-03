@@ -15,7 +15,7 @@
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://generator-sizer.com/assets/og-image.png">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebApplication","name":"Portable vs standby 5-year cost","url":"https://generator-sizer.com/ownership-cost.html","applicationCategory":"UtilitiesApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+{"@context":"https://schema.org","@type":"WebApplication","name":"Portable vs standby 5-year cost","url":"https://generator-sizer.com/ownership-cost.html","dateModified":"2026-10-03","applicationCategory":"UtilitiesApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
 </script>
 </head>
 <body>
@@ -30,8 +30,9 @@
 </header>
 <main>
 <h1>5-year ownership cost</h1>
-<p class="sub">Last updated: September 28, 2026 (CT). The article <a href="portable-vs-standby-generator.html">portable vs standby</a> explains the classes. This page prices them with your running load and how often the grid actually dies.</p>
-<p class="why-unique">Dealers sell standby on “never think about it.” We sell a break-even hour count. Portable cash is the machine + gasoline at the site fuel rule + oil every 50 hours. Standby cash is install + a yearly service visit. Natural-gas standby fuel is usually cheap per hour versus hauling cans; we still do not pretend NG is free — we leave that line at service-only unless you type a fuel add-on into the portable side by raising gas price.</p>
+<p class="small">Updated October 3, 2026.</p>
+<p class="small">Built by <a href="/about.html">Jeremy Panasuk</a>.</p>
+<p class="sub">Use this when you already know a running load and you want five-year cash, not a watt class. The classes themselves are on <a href="portable-vs-standby-generator.html">portable vs standby</a>. Every dollar field on this form is an input you type. The defaults are not a price index.</p>
 
 <div class="row2">
   <div class="field"><label for="runW">Typical running watts during an outage</label><input type="number" id="runW" value="2210" min="100"></div>
@@ -44,10 +45,39 @@
 <p><button type="button" id="go" style="background:var(--acc);color:#fff;border:none;border-radius:8px;padding:.6rem 1.2rem;cursor:pointer;font-weight:600">Price 5 years</button></p>
 <div id="out" class="ans" hidden></div>
 
-<h2>How to pick the outage-hours input</h2>
-<p>Do not use a national average. Use your last five winters. A rural well-pump ranch that loses a day of ice every other year is ~12–24 hours/year. A city feeder that blinks 40 minutes twice a summer is ~2 hours/year — standby almost never wins that math unless you have medical loads or a $4,000 used automatic unit. A Gulf Coast house that ate 120 hours in one hurricane year should enter 120, not 20, and should also open the <a href="storm-runbook.html">storm runbook</a> for cans.</p>
-<p>This TCO ignores the value of not dragging a 200 lb open-frame through snow, and it ignores HOA noise fines. Price those with <a href="noise-lot-line.html">lot-line noise</a> and your own back. If sequenced need is over ~10 kW or you want central AC without a ritual, standby starts winning on labor even when the five-year cash still favors portable.</p>
-<p>Watts times hours, using EIA's kilowatt-hour definition, is a different unit from these dollar totals. That conversion is on the <a href="kw-to-kwh-calculator.html">kW to kWh calculator</a>.</p>
+<h2>What the button adds</h2>
+<p><code>GS.tco</code> in <code>assets/lab.js</code> always uses 5 years. It does not read a years field.</p>
+<ul>
+<li>Gasoline gal/h = running watts ÷ 7,000. Same site rule as the <a href="storm-runbook.html">storm runbook</a>, applied to running watts, not to the home calculator’s recommended watts.</li>
+<li>Annual portable fuel dollars = gal/h × outage hours per year × the $/gal you type.</li>
+<li>Oil charges = at least one, otherwise the engine hours over 5 years divided by 50 and rounded up, then times $12. Both the 50 and the $12 are the script. Honda’s EU2200i manual calls for an oil change at the first 20 hours and then on its maintenance schedule, whose columns include 50 hours and 100 hours. Generac’s GP6500/GP8000E manual says the first oil change is at 30 hours, then every 100 hours or every year. The $12 is not a quoted oil price.</li>
+<li>Portable five-year total = purchase + annual fuel × 5 + the oil charges.</li>
+<li>Standby five-year total = installed price + yearly service × 5. There is no fuel term on the standby side. Natural gas or propane for a standby is not priced here.</li>
+<li>Break-even hours = (standby install − portable purchase) ÷ ($/gal × gal/h). That is cumulative running hours, not hours per year. It does not change when you change the outage-hours field.</li>
+</ul>
+<p><a href="https://www.eia.gov/energyexplained/units-and-calculators/british-thermal-units.php">EIA</a> lists 120,214 Btu per gallon of motor gasoline. That heat content is not a price, and it is not the ÷ 7,000 rule. Kilowatt-hours, which are a different unit, are on the <a href="kw-to-kwh-calculator.html">kW to kWh calculator</a>.</p>
+
+<h2>Worked clicks</h2>
+<p>The form opens at 2,210 running watts, 18 outage hours per year, $3.40 per gallon, a $1,400 portable, a $12,500 standby install, and $280 a year of service. 2,210 W is the sequencer’s stored well-ranch always-on running sum, described on the <a href="load-sequencer.html">sequencer</a> page. The dollar figures are whatever is in the boxes.</p>
+<ul>
+<li>Gal/h = 2,210 / 7,000 = 0.3157, shown as 0.32.</li>
+<li>Annual fuel = 0.3157 × 18 × 3.40 = $19.32, shown as $19.</li>
+<li>Engine hours in five years = 18 × 5 = 90. Oil charges = ceil(90 / 50) × $12 = 2 × $12 = $24.</li>
+<li>Portable = 1,400 + 19.32 × 5 + 24 = $1,520.61, shown as $1,521. Standby = 12,500 + 280 × 5 = $13,900. The button says portable is cheaper.</li>
+<li>Break-even hours = (12,500 − 1,400) / (3.40 × 0.3157) = 10,341 hours on the rounded display. 10,341 / 18 is 574.5 years at that annual rate.</li>
+</ul>
+<p>Second click: change only the outage hours to 120 and leave the other boxes. Annual fuel becomes 2,210 / 7,000 × 120 × 3.40 = $128.81, shown as $129. Five-year engine hours = 600. Oil charges = ceil(600 / 50) × 12 = 12 × 12 = $144. Portable = 1,400 + 128.81 × 5 + 144 = $2,188.06, shown as $2,188. Standby stays $13,900. Break-even stays 10,341 hours, because that line does not use the 120. One hundred twenty hours a year for five years is 600 hours, still far under 10,341. The <a href="storm-runbook.html">runbook</a> is where those 120 hours become cans.</p>
+
+<h2>Limits and a common mistake</h2>
+<p>Reading 10,341 as “hours per year” makes a standby look cheaper than this arithmetic says. The 10,341 is total portable runtime. The outage-hours box only scales fuel and oil.</p>
+<p>The comparison leaves out labor, noise, and standby fuel. A heavier open-frame and a neighbor’s window are the <a href="noise-lot-line.html">lot-line</a> question, not a dollar in this total. A load that needs a larger machine changes the purchase prices you type; the script does not look up either price. Permanent installation of a standby takes a licensed electrician and a permit where local code requires one.</p>
+<p>Compiled with AI assistance from the sources below. Spot an error? Email <a href="mailto:jpanasuk@gmail.com">jpanasuk@gmail.com</a>.</p>
+<h2>Sources</h2>
+<ul>
+<li><a href="https://www.eia.gov/energyexplained/units-and-calculators/british-thermal-units.php">EIA, British thermal units</a> — heat per gallon, not the ÷ 7,000 rule and not a fuel price</li>
+<li><a href="https://cdn.powerequipment.honda.com/pe/pdf/manuals/00X31Z446010.pdf">Honda EU2200i owner’s manual</a> — oil schedule, which is not this script’s 50-hour clock</li>
+<li><a href="https://www.generac.com/globalassets/products/residential/portable-generators/owners-manual/gp6500-gp8000e-owners-manual.pdf">Generac GP6500/GP8000E owner’s manual</a> — first oil change at 30 hours, then every 100 hours or every year</li>
+</ul>
 </main>
 <footer>Built by Jeremy Panasuk · <a href="/about.html">About &amp; how this was made</a> · <a href="/methodology.html">Methodology</a> · <a href="/privacy.html">Privacy</a> · <a href="/contact.html">Contact</a> · pages may contain affiliate links</footer>
 <script src="assets/lab.js"></script>

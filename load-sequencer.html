@@ -15,7 +15,7 @@
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://generator-sizer.com/assets/og-image.png">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebApplication","name":"GeneratorSizer Load Sequencer","url":"https://generator-sizer.com/load-sequencer.html","applicationCategory":"UtilitiesApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+{"@context":"https://schema.org","@type":"WebApplication","name":"GeneratorSizer Load Sequencer","url":"https://generator-sizer.com/load-sequencer.html","dateModified":"2026-10-03","applicationCategory":"UtilitiesApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
 </script>
 </head>
 <body>
@@ -30,8 +30,9 @@
 </header>
 <main>
 <h1>Load sequencer</h1>
-<p class="sub">Last updated: September 28, 2026 (CT). This is the tool wattage clones do not ship: you decide which circuits are allowed to exist in the same second.</p>
-<p class="why-unique">A fridge + well + furnace + microwave naive sum looks like a 7,500 W purchase. If the microwave is in the “never overlap” lane, the well start never sees that 1,000 W, and the buy class often drops a step. That difference is the whole point of this page.</p>
+<p class="small">Updated October 3, 2026.</p>
+<p class="small">Built by <a href="/about.html">Jeremy Panasuk</a>.</p>
+<p class="sub">Use this when more than one load will be on the generator and you can keep some of them off during a motor start. The button compares that staged list with everything on at once.</p>
 
 <p class="no-print">
   <label for="stackPick"><strong>Load a worked house</strong></label>
@@ -47,12 +48,48 @@
 <div id="rows"></div>
 <div id="out" class="ans" hidden></div>
 
-<h2>Why three phases beat one sum</h2>
-<p>Motors do not all lock-rotor at once unless you designed the house that way. The sequencer assumes one motor extra at a time among the always and wait lanes, and it assumes the never lane is dark during that kick. Then it checks two quieter phases: wait-lane running (AC after the well has started) and kitchen running (microwave with pumps already at running watts). You buy the worst phase plus headroom — not the fantasy that every nameplate is simultaneous.</p>
-<p>Soft-start kits on a well or AC shrink the extra term. If you have one, lower that row’s starting watts toward ~1.4× running and re-run. Do not invent a soft-start you have not installed.</p>
+<h2>What the button computes</h2>
+<p><code>GS.sequenced</code> in <code>assets/lab.js</code> sorts each row into one lane:</p>
+<ul>
+<li><strong>Always</strong> — left on. Its running watts are in every phase.</li>
+<li><strong>Wait</strong> — allowed to run only after the motor start. It is in phase B, and its start gap can set phase A.</li>
+<li><strong>Never overlap</strong> — kitchen or heat that is off during the motor start. It is only in phase C.</li>
+</ul>
+<p>For a group of rows, extra watts = the largest (starting watts − running watts) on any one row in that group. That is the biggest gap, not the row with the biggest starting number. The <a href="index.html#calc">home calculator</a> does the other thing: it takes the single highest starting wattage and subtracts that row’s running watts. On some lists those two picks are different rows. This page does not change either script.</p>
+<ul>
+<li>Phase A = always-on running watts + the largest gap among the always rows and the wait rows. Never-overlap is off.</li>
+<li>Phase B = always running + wait running. No start gap.</li>
+<li>Phase C = always running + never-overlap running. No start gap.</li>
+<li>Sequenced peak = the worst of A, B, and C, times (1 + headroom ÷ 100). The form opens at 20. That 20 is the typed default, the same default as the home calculator. It is not a figure from NEC Article 220.</li>
+<li>Buy class = that peak rounded up to the next 500 W. The 500 W step is the script.</li>
+<li>Naive peak = (every row’s running watts + the largest gap on the whole list) times the same headroom. Savings = naive minus sequenced, and never below zero.</li>
+</ul>
+<p><a href="https://powerequipment.honda.com/generators/generator-wattage-estimation-guide">Honda’s wattage guide</a> says not to add up everything you want to power, and points at its own power-management note. The three lanes are this script’s way of doing that split. <a href="https://www.nfpa.org/education-and-research/electrical/reorganization-of-the-national-electrical-code">NEC Article 220</a> (Article 120 in the 2026 NEC) is the code article for branch-circuit, feeder, and service calculations. It is not these three lanes, and this page is not a code calculation.</p>
 
-<h2>What this will not do</h2>
-<p>It will not tell you your well’s locked-rotor amps. Read the motor nameplate or the pump curve. It will not size a transfer switch — use the <a href="transfer-switch-sizing.html">30 A vs 50 A page</a> after you know sequenced watts. Bonding a portable to the panel is still electrician work.</p>
+<h2>Worked example: Honda rows only</h2>
+<p>Type these three rows. They are on Honda’s chart. Fridge: 192 running, 1,200 starting, lane Always (192 is the top of Honda’s 132–192 running band for an Energy Star refrigerator or freezer). Furnace fan, 1/3 hp: 700 running, 1,400 starting, lane Always. Honda marks that fan 240 V. Microwave, the 650 W cooking row: 1,000 running, 1,000 starting, lane Never overlap. Headroom 20.</p>
+<ul>
+<li>Always running = 192 + 700 = 892 W. Never-overlap running = 1,000 W. Wait running = 0.</li>
+<li>Gaps: fridge 1,200 − 192 = 1,008 W. Fan 1,400 − 700 = 700 W. Microwave 0. Phase A uses the largest of the always and wait gaps, which is 1,008 W, even though 1,400 is the larger starting number. Phase A = 892 + 1,008 = 1,900 W.</li>
+<li>Phase B = 892 W. Phase C = 892 + 1,000 = 1,892 W.</li>
+<li>Worst phase × 1.20 = 1,900 × 1.20 = 2,280 W. Buy class = 2,500 W.</li>
+<li>Naive = (892 + 1,000 + 1,008) × 1.20 = 3,480 W. The script’s savings figure is 3,480 − 2,280 = 1,200 W.</li>
+</ul>
+<p>The home calculator, given the same three rows, would take the furnace’s 1,400 W start because that is the highest starting wattage, subtract 700, and add 700 to the 1,892 W running total. That is a different peak. Use the tool that matches the question you are asking.</p>
+
+<h2>What “Sequence it” prints on the stored ranch list</h2>
+<p>The menu opens on “Well-pump ranch.” Those stored watts are not all Honda rows. Fridge 150 / 600: 150 is inside Honda’s 132–192 running band, and 600 is not Honda’s 1,200 W start. Freezer 200 / 600 is not a separate Honda row. Well 1,000 / 2,100 is not on that chart. Furnace fan 700 / 1,400 matches Honda’s 1/3 hp row. Lights 160 / 160 are not on that chart. Microwave 1,000 / 1,000 matches Honda’s 650 W cooking row, and the script parks it in Never overlap.</p>
+<p>With headroom at 20, the button prints naive 5,172 W, sequenced buy class 4,000 W, savings 1,200 W, and phases 3,310 / 2,210 / 3,210. Always running is 2,210 W. The largest always-lane gap is the well, 2,100 − 1,000 = 1,100, so phase A = 2,210 + 1,100 = 3,310. Phase C adds the 1,000 W microwave to 2,210. Worst phase 3,310 × 1.20 = 3,972, which rounds up to 4,000.</p>
+
+<h2>Limits and a common mistake</h2>
+<p>Move that stored microwave from Never overlap to Always and click again. Always running becomes 3,210 W, phase A becomes 3,210 + 1,100 = 4,310 W, the worst phase times 1.20 is 5,172 W, the buy class becomes 5,500 W, and the savings figure becomes 0. The 1,000 W is Honda’s microwave row. The rest of that list is still the stored ranch rows. The lane, not a new appliance, is what changed the class.</p>
+<p>The script does not know locked-rotor amps. A soft-start that you have not installed is not a lower starting wattage. Transfer-switch amps are on <a href="transfer-switch-sizing.html">transfer switch sizing</a> after the watts are known. Connecting the generator to the building takes a licensed electrician and a permit where local code requires one.</p>
+<p>Compiled with AI assistance from the sources below. Spot an error? Email <a href="mailto:jpanasuk@gmail.com">jpanasuk@gmail.com</a>.</p>
+<h2>Sources</h2>
+<ul>
+<li><a href="https://powerequipment.honda.com/generators/generator-wattage-estimation-guide">Honda, What wattage generator do I need?</a></li>
+<li><a href="https://www.nfpa.org/education-and-research/electrical/reorganization-of-the-national-electrical-code">NFPA, reorganization of the National Electrical Code — Article 220 / Article 120, method context, not a design stamp</a></li>
+</ul>
 </main>
 <footer class="no-print">Built by Jeremy Panasuk · <a href="/about.html">About &amp; how this was made</a> · <a href="/methodology.html">Methodology</a> · <a href="/privacy.html">Privacy</a> · <a href="/contact.html">Contact</a> · pages may contain affiliate links</footer>
 <script src="assets/lab.js"></script>

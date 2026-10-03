@@ -15,7 +15,7 @@
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://generator-sizer.com/assets/og-image.png">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebApplication","name":"Generator altitude derate calculator","url":"https://generator-sizer.com/altitude-derate.html","applicationCategory":"UtilitiesApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+{"@context":"https://schema.org","@type":"WebApplication","name":"Generator altitude derate calculator","url":"https://generator-sizer.com/altitude-derate.html","dateModified":"2026-10-03","applicationCategory":"UtilitiesApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
 </script>
 </head>
 <body>
@@ -30,8 +30,9 @@
 </header>
 <main>
 <h1>Altitude + heat derate</h1>
-<p class="sub">Last updated: September 28, 2026 (CT). A 7,500 W carton in thin air is a smaller engine. This page is the correction.</p>
-<p class="why-unique">Generic sizers ignore elevation. This tool uses a house curve: no altitude penalty through 1,000 ft, then 3.5% per additional 1,000 ft, plus 1% per 10°F of inlet air above 77°F. <a href="https://www.generac.com/globalassets/products/residential/portable-generators/owners-manual/gp6500-gp8000e-owners-manual.pdf">Generac's GP6500/GP8000E owner's manual</a> states that maximum power decreases about 3.5% for each 1,000 feet above sea level and about 1% for each 10°F above 60°F. The factor never drops below 55% in this tool so a 10,000 ft shop still gets a usable figure instead of a blank.</p>
+<p class="small">Updated October 3, 2026.</p>
+<p class="small">Built by <a href="/about.html">Jeremy Panasuk</a>.</p>
+<p class="sub">Use this after you know the watts you need and before you trust a nameplate at elevation or in hot inlet air. The button applies this site’s curve. Generac’s and Honda’s sentences are next to it, and they are not the same curve.</p>
 
 <div class="row2">
   <div class="field">
@@ -54,12 +55,41 @@
 <p><button type="button" id="go" style="background:var(--acc);color:#fff;border:none;border-radius:8px;padding:.6rem 1.2rem;cursor:pointer;font-weight:600">Derate it</button></p>
 <div id="out" class="ans" hidden></div>
 
-<h2>Worked check — New Auburn vs a mountain cabin</h2>
-<p>New Auburn, Wisconsin sits near 1,050 ft. At 90°F the factor is about 98.7% — a 7,500 W unit still has ~7,400 W. Leadville, Colorado (~10,150 ft) at the same temperature is a different machine: roughly 3.5% × 9.15 extra thousand feet ≈ 32% altitude hit, plus ~1.3% heat, factor ≈ 0.67. That 7,500 W sticker becomes about 5,000 W usable. If the sequencer said you need 5,200 W, you do not “have headroom.” You buy the next class or you shed the wait lane.</p>
-<p>Turbocharged standby plants follow the manufacturer’s own curve, not this portable rule. If a dealer quotes “full power to 5,000 ft,” use their sheet and ignore this page for that unit.</p>
+<h2>The curve in the button</h2>
+<p><code>GS.derateFactor</code> in <code>assets/lab.js</code>:</p>
+<ul>
+<li>Altitude term = 0 at or below 1,000 ft. Above 1,000 ft it is 0.035 × (elevation − 1,000) / 1,000.</li>
+<li>Heat term = 0 at or below 77°F. Above 77°F it is 0.01 × (temperature − 77) / 10.</li>
+<li>Factor = 1 − altitude term − heat term, and never below 0.55.</li>
+<li>Usable watts = nameplate × factor. The page rounds that with <code>Math.round</code>.</li>
+</ul>
+<p>The 1,000 ft exemption, the 77°F start of the heat term, and the 0.55 floor are this script. They are not copied from the manuals below.</p>
+<p><a href="https://www.generac.com/globalassets/products/residential/portable-generators/owners-manual/gp6500-gp8000e-owners-manual.pdf">Generac’s GP6500/GP8000E owner’s manual</a> says maximum power decreases about 3.5% for each 1,000 feet above sea level, and about 1% for each 10°F above 60°F. The same manual says that when the generator is operated above 77°F there may be a decrease in power. That is a separate sentence from the 1%-per-10°F line, which Generac counts from 60°F. The 3.5% step is the part this tool shares. The tool starts that step after 1,000 ft, not at sea level, and it starts its 1% step at 77°F, not at 60°F.</p>
+<p>The <a href="https://cdn.powerequipment.honda.com/pe/pdf/manuals/00X31Z446010.pdf">Honda EU2200i owner’s manual</a> says that even with the high-altitude carburetor modification, engine horsepower decreases about 3.5% for each 1,000-foot increase in altitude, and that the effect is greater if the modification is not made. Honda tells you to have a dealer do that modification if you always operate above 5,000 feet. That manual’s altitude section does not give a percent per 10°F.</p>
 
-<h2>How to use it with the other lab tools</h2>
-<p>Sequence first (<a href="load-sequencer.html">load sequencer</a>), paste that buy-class into “watts you need,” then derate the unit you were about to click on Amazon. If usable &lt; need, the listing is the wrong elevation for your pad. Then check <a href="noise-lot-line.html">lot-line noise</a> — a bigger open-frame to recover derate is also a louder fence.</p>
+<h2>Worked clicks</h2>
+<p>The form opens at 7,500 W nameplate, 1,050 ft, 90°F, and 4,200 W needed. 7,500 and 4,200 are typed defaults, not a model’s rated watts. Generac’s manual lists 6.5 kW rated for the GP6500 and 8.0 kW rated for the GP8000E.</p>
+<ul>
+<li>Altitude term = 0.035 × (1,050 − 1,000) / 1,000 = 0.00175.</li>
+<li>Heat term = 0.01 × (90 − 77) / 10 = 0.013.</li>
+<li>Factor = 1 − 0.00175 − 0.013 = 0.98525, shown as 98.5%.</li>
+<li>Usable = 7,500 × 0.98525 = 7,389.375, shown as 7,389 W. Against 4,200 W needed, the button says it covers, by 3,189 W.</li>
+</ul>
+<p>Second click: 7,500 W, 5,000 ft, 60°F, need still 4,200 W. Five thousand feet is Honda’s carburetor-modification threshold, not a claim about a town. At 60°F the tool’s heat term is 0, because 60 is below 77.</p>
+<ul>
+<li>Altitude term = 0.035 × (5,000 − 1,000) / 1,000 = 0.14. Factor = 0.86, shown as 86.0%. Usable = 6,450 W, which still covers 4,200 by 2,250 W.</li>
+<li>Generac’s sentence counted from sea level, by hand, is 3.5% × 5 = 17.5% off, leaving 82.5% and 6,187.5 W. The button does not print 6,187. It skipped the first 1,000 ft.</li>
+</ul>
+
+<h2>Limits and a common mistake</h2>
+<p>The 0.55 floor binds when the uncapped factor would be lower. At 14,000 ft and 60°F the altitude term is 0.035 × 13 = 0.455, so 1 − 0.455 = 0.545, and the script returns 0.55. Usable watts on a 7,500 W nameplate are 4,125. Generac’s sea-level sentence with no floor, applied by hand to 14,000 ft, is 3.5% × 14 = 49% off, leaving 3,825 W. The button will not show 3,825.</p>
+<p>A dealer sheet that says full output to some elevation replaces this curve for that machine. A turbocharged standby is that case. Sequence the load on the <a href="load-sequencer.html">load sequencer</a> before you type “watts you need,” and check <a href="noise-lot-line.html">lot-line noise</a> if the fix for a short derate is a bigger open frame. This page does not pick a transfer switch. Permanent installation takes a licensed electrician and a permit where local code requires one.</p>
+<p>Compiled with AI assistance from the sources below. Spot an error? Email <a href="mailto:jpanasuk@gmail.com">jpanasuk@gmail.com</a>.</p>
+<h2>Sources</h2>
+<ul>
+<li><a href="https://www.generac.com/globalassets/products/residential/portable-generators/owners-manual/gp6500-gp8000e-owners-manual.pdf">Generac GP6500/GP8000E owner’s manual</a></li>
+<li><a href="https://cdn.powerequipment.honda.com/pe/pdf/manuals/00X31Z446010.pdf">Honda EU2200i owner’s manual</a></li>
+</ul>
 </main>
 <footer>Built by Jeremy Panasuk · <a href="/about.html">About &amp; how this was made</a> · <a href="/methodology.html">Methodology</a> · <a href="/privacy.html">Privacy</a> · <a href="/contact.html">Contact</a> · pages may contain affiliate links</footer>
 <script src="assets/lab.js"></script>

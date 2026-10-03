@@ -15,7 +15,7 @@
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://generator-sizer.com/assets/og-image.png">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebApplication","name":"72-hour generator storm runbook","url":"https://generator-sizer.com/storm-runbook.html","applicationCategory":"UtilitiesApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+{"@context":"https://schema.org","@type":"WebApplication","name":"72-hour generator storm runbook","url":"https://generator-sizer.com/storm-runbook.html","dateModified":"2026-10-03","applicationCategory":"UtilitiesApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
 </script>
 </head>
 <body>
@@ -30,8 +30,9 @@
 </header>
 <main>
 <h1>72-hour storm runbook</h1>
-<p class="sub">Last updated: September 28, 2026 (CT). A wattage widget tells you what to buy. This page tells you what to stage in the garage before the county truck cannot get down the road.</p>
-<p class="why-unique">We turn running watts into cans, a 50-hour oil clock, a motor-start order, and CPSC-style placement (20 ft from doors and windows, exhaust aimed away). Print it. Tape it. Do not keep this only in a browser tab when the cell tower is dark.</p>
+<p class="small">Updated October 3, 2026.</p>
+<p class="small">Built by <a href="/about.html">Jeremy Panasuk</a>.</p>
+<p class="sub">Type a running load. The button prints gasoline, propane volume, refuels, and engine hours for 24, 48, and 72 hours. The checklist under it is the pre-storm, during, and after list. Print both.</p>
 
 <div class="row2 no-print">
   <div class="field">
@@ -55,10 +56,62 @@
 <button type="button" onclick="window.print()" style="margin-left:.4rem;border:1px solid var(--bd);background:var(--card);color:var(--fg);border-radius:8px;padding:.6rem 1.2rem;cursor:pointer">Print / PDF</button></p>
 <div id="out"></div>
 
-<h2 class="no-print">Why 16 hours, not 24</h2>
-<p class="no-print">Most homes do not run the generator while everyone is asleep if the fridge can ride a few hours and the sump has a charged battery backup. Sixteen hours is a Wisconsin ice-storm default — daytime water and heat fan, night shed to cut fuel. If you have medical devices, set hours to 24 and do not argue with this paragraph.</p>
-<p class="no-print">Gasoline stored in cans wants stabilizer and rotation. Propane tanks do not go stale; they just need to be full before the storm, not after the station’s generator dies. Oil: portable consumer engines usually want a change around 50 hours. A 72-hour event at 16 h/day is 48 hours — one change on the clock if the storm stacks a second week.</p>
-<p class="no-print">Agency placement wording, kept apart from this fuel list, is on <a href="how-to-run-a-generator-safely.html">how to run a generator safely</a>. The first-hour order from Ready.gov, including the closed-fridge times, is on <a href="how-to-use-a-generator-when-the-power-goes-out.html">how to use a generator when the power goes out</a>.</p>
+<h2>Before the storm</h2>
+<ul>
+<li>Pick the outdoor spot now. <a href="https://www.cpsc.gov/Newsroom/News-Releases/2026/CPSC-Warns-of-Generator-Carbon-Monoxide-and-Fire-Hazards-Ahead-of-Hurricane-Season">CPSC</a> says never use a portable generator inside a home, garage, basement, crawlspace, shed, or other enclosed area, even if doors or windows are open. Operate it outdoors only, at least 20 feet from homes and buildings, exhaust directed away from windows, doors, and vents. Carbon monoxide is colorless and odorless and can kill within minutes.</li>
+<li><a href="https://www.osha.gov/sites/default/files/publications/OSHA3286.pdf">OSHA</a> says give the generator 3 to 4 feet of clear space on all sides and above it so it can ventilate, and do not place it where doors, windows, or vents could let CO into occupied rooms. That 3 to 4 feet is clearance around the machine. It is not a shorter substitute for CPSC’s 20 feet.</li>
+<li><a href="https://www.ready.gov/power-outages">Ready.gov</a> says install carbon monoxide detectors with battery backup on every level. Generators and fuel stay outdoors, at least 20 feet from windows, doors, and attached garages. Use heavy-duty extension cords. Keep the generator dry. Let it cool before refueling, because fuel spilled on hot engine parts can ignite.</li>
+<li><a href="https://www.fema.gov/node/generator-safety-stay-safe">FEMA</a> says never plug a generator into a wall outlet or the main electrical panel. OSHA says never attach a generator to a structure’s electrical system unless a qualified electrician installs it with a transfer switch. Permanent installation takes a licensed electrician and a permit where local code requires one. A cord into a dryer outlet is a backfeed, not a plan.</li>
+<li>Ready.gov’s food list: keep freezers and refrigerators closed. A refrigerator keeps food cold for about four hours. A full freezer keeps its temperature for about 48 hours. Use a thermometer. Throw food out at 40°F or higher. Have nonperishable food and water on hand. The longer first-hour sequence is on <a href="how-to-use-a-generator-when-the-power-goes-out.html">how to use a generator when the power goes out</a>.</li>
+<li>Fill fuel before the station is on generator power itself. The table from the button is this page’s gasoline rule, not a manufacturer’s tank test. More placement wording is on <a href="how-to-run-a-generator-safely.html">how to run a generator safely</a>.</li>
+</ul>
+
+<h2>During the outage</h2>
+<ul>
+<li>Put the generator in the outdoor spot you already picked. Rain is not an exception to CPSC’s ban on garage use, including a garage with the door open.</li>
+<li>Ready.gov: keep the refrigerator and freezer closed. Turn off or disconnect appliances and electronics so a surge when utility power returns does not damage them. Do not heat the house with a gas stove or oven.</li>
+<li>Plug appliances with heavy-duty cords, outdoors. Do not backfeed the panel. If a transfer switch is already installed, use it the way the electrician left it. The card’s “let it settle 30 seconds” line is a step in this page’s script, not a time from CPSC, Ready.gov, FEMA, or OSHA.</li>
+<li>Start one motor, then the next. The lanes for that order are on the <a href="load-sequencer.html">load sequencer</a>.</li>
+</ul>
+
+<h2>After</h2>
+<ul>
+<li>Ready.gov: when in doubt, throw it out. Throw away food that has been at 40°F or higher for two hours or more, or that has an unusual odor, color, or texture.</li>
+<li>Ready.gov: if the power is out for more than a day, discard refrigerated medicine unless the drug’s label says otherwise. Ask a doctor or pharmacist for a new supply.</li>
+<li>The <a href="https://cdn.powerequipment.honda.com/pe/pdf/manuals/00X31Z446010.pdf">Honda EU2200i owner’s manual</a> says to let the engine and exhaust cool before touching them, and to operate outside, away from open windows or doors, because of carbon monoxide. Do not run the set indoors to dry it.</li>
+</ul>
+
+<h2 class="no-print">What the fuel button is doing</h2>
+<p class="no-print">Use this after the watt class is chosen. The <a href="load-sequencer.html">sequencer</a> or the <a href="index.html#calc">home calculator</a> is the watt step. This form takes running watts, hours per day, and onboard tank gallons.</p>
+<p class="no-print"><code>GS.galPerHour</code> in <code>assets/lab.js</code> sets gasoline gallons per hour = running watts ÷ 7,000. Propane gallons per hour = that gasoline rate ÷ 0.75. For a window of 24, 48, or 72 hours, gallons = gallons per hour × hours per day × (window ÷ 24). Refuels = the gasoline gallons divided by the tank, rounded up. Engine hours printed on the card = hours per day × 3, which is the 72-hour window only.</p>
+<p class="no-print">The ÷ 7,000 rule is this site’s portable gasoline rule of thumb, applied here to the running watts you type. The home calculator applies the same 7,000 to its recommended watts instead. <a href="https://www.eia.gov/energyexplained/units-and-calculators/british-thermal-units.php">EIA</a> lists 120,214 Btu per gallon of motor gasoline and 91,452 Btu per gallon of propane. 120,214 / 91,452 is about 1.31, so the same heat needs about 31% more propane volume. The script’s ÷ 0.75 makes propane volume 1.33 times the gasoline gallons. That is the script, not EIA’s ratio.</p>
+<p class="no-print">The card says to change oil near 50 hours. That 50 is also the script. Honda’s EU2200i manual quick reference says to change the engine oil at the first 20 hours and then follow the maintenance schedule. That schedule’s columns include every 3 months or 50 hours and every 6 months or 100 hours. <a href="https://www.generac.com/globalassets/products/residential/portable-generators/owners-manual/gp6500-gp8000e-owners-manual.pdf">Generac’s GP6500/GP8000E manual</a> says to change oil after the first 30 hours, then every 100 hours or every year. Use the manual for the generator you own when it disagrees with 50.</p>
+<p class="no-print">The form opens at 16 hours per day. That is a typed default, not an agency rule. Ready.gov’s four closed-fridge hours are a reason some houses do not run a set all night. Medical equipment is a reason to type 24. Sixteen is not a Wisconsin requirement.</p>
+
+<h2 class="no-print">Worked clicks</h2>
+<p class="no-print">Default inputs, which are what the form shows before you edit them: 2,210 running watts, 16 hours per day, 4 gallon tank. 2,210 is the always-on running sum stored on the sequencer’s well-ranch list (150 + 200 + 1,000 + 700 + 160). The 700 W furnace fan matches <a href="https://powerequipment.honda.com/generators/generator-wattage-estimation-guide">Honda’s</a> 1/3 hp row. The 150 W fridge running figure sits inside Honda’s 132–192 W band. Honda’s start for that fridge row is 1,200 W, not the 600 W stored on the ranch list, and the well and the 160 W lights are not on that Honda chart. The fuel math does not use the starting watts.</p>
+<ul class="no-print">
+<li>Gasoline gal/h = 2,210 / 7,000 = 0.316. Propane gal/h = 0.316 / 0.75 = 0.421.</li>
+<li>24-hour window: 5.1 gal gasoline, 6.7 gal propane, 2 refuels of the 4 gallon tank. 48-hour window: 10.1, 13.5, and 3. 72-hour window: 15.2, 20.2, and 4.</li>
+<li>Engine hours on the card: 16 × 3 = 48. The script’s 50-hour oil line is the next hour past that 48, not a statement that Honda or Generac calls for oil at 48.</li>
+</ul>
+<p class="no-print">Second click: same 2,210 W and 4 gallon tank, hours per day set to 24. Gasoline becomes 7.6 / 15.2 / 22.7 gallons across 24 / 48 / 72 hours. Propane becomes 10.1 / 20.2 / 30.3. Refuels are 2, 4, and 6. Engine hours in the 72-hour window are 72.</p>
+
+<h2 class="no-print">Limits and a common mistake</h2>
+<p class="no-print">Typing the home calculator’s recommended watts into this running-watts box overstates the cans. The food-truck page’s recommendation is 3,500 W from a 1,792 W running total. This script would treat 3,500 as running watts: 3,500 / 7,000 = 0.5 gal/h, and 0.5 × 16 h/day × 3 days = 24.0 gallons of gasoline for 72 hours. Typing the 1,792 W running total instead is 1,792 / 7,000 × 16 × 3 = 12.3 gallons. The button cannot tell those two inputs apart.</p>
+<p class="no-print">The gallons are not a Generac or Honda fuel test. Generac’s GP6500/GP8000E manual prints 11.5 hours at 50% load on a 7.9 gallon tank for that engine section. That is a test of that machine. It is not 2,210 ÷ 7,000.</p>
+<p class="no-print">Compiled with AI assistance from the sources below. Spot an error? Email <a href="mailto:jpanasuk@gmail.com">jpanasuk@gmail.com</a>.</p>
+<h2 class="no-print">Sources</h2>
+<ul class="no-print">
+<li><a href="https://www.cpsc.gov/Newsroom/News-Releases/2026/CPSC-Warns-of-Generator-Carbon-Monoxide-and-Fire-Hazards-Ahead-of-Hurricane-Season">CPSC, generator and carbon monoxide warning ahead of the 2026 hurricane season</a></li>
+<li><a href="https://www.ready.gov/power-outages">Ready.gov, Power outages</a></li>
+<li><a href="https://www.fema.gov/node/generator-safety-stay-safe">FEMA, Generator safety — stay safe</a></li>
+<li><a href="https://www.osha.gov/sites/default/files/publications/OSHA3286.pdf">OSHA fact sheet, Using portable generators safely (OSHA 3286)</a></li>
+<li><a href="https://www.eia.gov/energyexplained/units-and-calculators/british-thermal-units.php">EIA, British thermal units</a></li>
+<li><a href="https://cdn.powerequipment.honda.com/pe/pdf/manuals/00X31Z446010.pdf">Honda EU2200i owner’s manual</a></li>
+<li><a href="https://www.generac.com/globalassets/products/residential/portable-generators/owners-manual/gp6500-gp8000e-owners-manual.pdf">Generac GP6500/GP8000E owner’s manual</a></li>
+<li><a href="https://powerequipment.honda.com/generators/generator-wattage-estimation-guide">Honda, What wattage generator do I need?</a></li>
+</ul>
 </main>
 <footer class="no-print">Built by Jeremy Panasuk · <a href="/about.html">About &amp; how this was made</a> · <a href="/methodology.html">Methodology</a> · <a href="/privacy.html">Privacy</a> · <a href="/contact.html">Contact</a> · pages may contain affiliate links</footer>
 <script src="assets/lab.js"></script>

@@ -15,7 +15,7 @@
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://generator-sizer.com/assets/og-image.png">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"CollectionPage","name":"GeneratorSizer Lab tools","url":"https://generator-sizer.com/tools.html","description":"Interactive lab tools for home backup: sequenced loads, altitude derate, storm runbook, ownership cost, lot-line noise."}
+{"@context":"https://schema.org","@type":"CollectionPage","name":"GeneratorSizer Lab tools","url":"https://generator-sizer.com/tools.html","dateModified":"2026-10-03","description":"Interactive lab tools for home backup: sequenced loads, altitude derate, storm runbook, ownership cost, lot-line noise."}
 </script>
 </head>
 <body>
@@ -29,40 +29,51 @@
   </nav>
 </header>
 <main>
-<h1>Lab tools other sizers do not run</h1>
-<p class="sub">Last updated: September 28, 2026 (CT). Every tool below uses a method you will not get from “add fridge, round up to 7,500 W.” Numbers stay on this device.</p>
-<p class="why-unique">AdSense and reviewers keep seeing the same appliance-wattage widget on a thousand domains. These five tools exist so this site does a job those clones cannot copy with a table of typical watts.</p>
+<h1>Lab tools</h1>
+<p class="small">Updated October 3, 2026.</p>
+<p class="small">Built by <a href="/about.html">Jeremy Panasuk</a>.</p>
+<p class="sub">Five calculators and a method page. Each tool page states its formula, the constants, and a worked click. This page is only the index.</p>
 
 <div class="tool-grid">
   <a class="tool-card" href="load-sequencer.html">
     <h3>Load sequencer</h3>
-    <p>Always-on vs wait vs never-overlap. Buy the sequenced class, not the naive sum.</p>
+    <p>Splits a list into always-on, wait, and never-overlap, then sizes the worst phase plus the headroom you type. Use it when a single sum assumes the microwave starts with the well.</p>
   </a>
   <a class="tool-card" href="altitude-derate.html">
     <h3>Altitude + heat derate</h3>
-    <p>Nameplate watts at your elevation and inlet air. Mountain air is not sea-level air.</p>
+    <p>Turns a nameplate into usable watts with this site’s curve. Use it after you have a watt need, and read the Generac and Honda sentences on that page before you treat the curve as their sheet.</p>
   </a>
   <a class="tool-card" href="storm-runbook.html">
     <h3>72-hour storm runbook</h3>
-    <p>Printable fuel, oil, circuit order, and CO placement for your running load.</p>
+    <p>Prints 24/48/72 hour fuel from running watts, plus a pre-storm, during, and after checklist using CPSC, Ready.gov, FEMA, and OSHA wording. Use it when you are staging cans, not while you are still picking a watt class.</p>
   </a>
   <a class="tool-card" href="ownership-cost.html">
     <h3>5-year ownership cost</h3>
-    <p>Portable fuel + oil vs standby install. Break-even outage hours, not brochure vibes.</p>
+    <p>Prices a portable’s purchase, gasoline, and the script’s oil charge against a standby’s install and yearly service. Use your own outage hours. Standby fuel is not in that total.</p>
   </a>
   <a class="tool-card" href="noise-lot-line.html">
     <h3>Lot-line noise</h3>
-    <p>dBA at the fence after distance and a shed wall. HOA math, not marketing “quiet.”</p>
+    <p>Applies free-field spreading, 20·log10 of the distance ratio, from a reference dBA. The cited reference in the menu is Generac’s 67 dB(A) at 23 ft for the 22 kW row. The other three menu levels are labels stored in the script.</p>
   </a>
   <a class="tool-card" href="methodology.html">
     <h3>Worked houses + method</h3>
-    <p>Three real stacks: well-pump ranch, city sump bungalow, RV weekend.</p>
+    <p>States the coincidence idea and replays three stored house stacks. Open it when you want the method beside the tools, not a sixth calculator.</p>
   </a>
 </div>
 
-<h2>What is still on the wattage calculator</h2>
-<p>The <a href="index.html">home calculator</a> still adds running watts, one surge, and 20% headroom. Use it to get a first number. Then run the sequencer before you buy a class up. If you live above 1,000 ft, run derate before you trust a 7,500 W sticker. If neighbors sit 25 ft from the pad, run lot-line noise before you park an open-frame unit under their bedroom window.</p>
-<p>Transfer-switch work and anything bonded to the service panel is licensed-electrician territory. These tools size and plan. They do not pull a permit.</p>
+<h2>Which one to open</h2>
+<p>Start with the <a href="index.html">home calculator</a> or the <a href="load-sequencer.html">sequencer</a> if the question is watts. Open <a href="altitude-derate.html">derate</a> when the pad is above 1,000 ft or the inlet air is above 77°F. Open the <a href="storm-runbook.html">runbook</a> when the watt number is already chosen and you need cans and the placement checklist. Open <a href="ownership-cost.html">five-year cost</a> when the question is dollars over time. Open <a href="noise-lot-line.html">lot-line noise</a> when the question is decibels at a distance you can type.</p>
+<p>Connecting a generator to a building takes a licensed electrician and a permit where local code requires one. These pages do not pull that permit.</p>
+<p>Compiled with AI assistance from the sources below. Spot an error? Email <a href="mailto:jpanasuk@gmail.com">jpanasuk@gmail.com</a>.</p>
+<h2>Sources</h2>
+<p>The formulas and the worked clicks are on the tool pages. The citations those pages use:</p>
+<ul>
+<li><a href="load-sequencer.html">Load sequencer</a> — Honda wattage guide for the rows that match it; the three lanes are the script</li>
+<li><a href="altitude-derate.html">Altitude derate</a> — Generac GP6500/GP8000E manual and Honda EU2200i manual, set next to this site’s curve</li>
+<li><a href="storm-runbook.html">Storm runbook</a> — CPSC, Ready.gov, FEMA, OSHA 3286, EIA heat content, Honda and Generac oil schedules</li>
+<li><a href="ownership-cost.html">5-year cost</a> — the same fuel rule and oil clock as the runbook</li>
+<li><a href="noise-lot-line.html">Lot-line noise</a> — OSHA Technical Manual inverse-square statement, Generac 22 kW sound row, FHWA barrier range</li>
+</ul>
 </main>
 <footer>Built by Jeremy Panasuk · <a href="/about.html">About &amp; how this was made</a> · <a href="/methodology.html">Methodology</a> · <a href="/privacy.html">Privacy</a> · <a href="/contact.html">Contact</a> · pages may contain affiliate links</footer>
 </body>
