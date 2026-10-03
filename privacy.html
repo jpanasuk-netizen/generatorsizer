@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Privacy &amp; Legal — GeneratorSizer</title>
-<meta name="description" content="Privacy, affiliate disclosure, and terms of use for GeneratorSizer. AdSense not yet active.">
+<meta name="description" content="Privacy, affiliate disclosure, and terms of use for GeneratorSizer. No advertising script is loaded.">
 <link rel="canonical" href="https://generator-sizer.com/privacy.html">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="shortcut icon" href="assets/favicon.ico">
@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="assets/styles.css">
 <meta property="og:title" content="Privacy &amp; Legal — GeneratorSizer">
 <meta property="og:url" content="https://generator-sizer.com/privacy.html">
-<meta property="og:description" content="Privacy, affiliate disclosure, and terms of use for GeneratorSizer. AdSense not yet active.">
+<meta property="og:description" content="Privacy, affiliate disclosure, and terms of use for GeneratorSizer. No advertising script is loaded.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://generator-sizer.com/assets/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -28,7 +28,7 @@
   "applicationCategory": "UtilitiesApplication",
   "operatingSystem": "Any",
   "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
-  "description": "Privacy, affiliate disclosure, and terms of use for GeneratorSizer. AdSense not yet active."
+  "description": "Privacy, affiliate disclosure, and terms of use for GeneratorSizer. No advertising script is loaded."
 }
 </script>
 <script type="application/ld+json">
@@ -68,16 +68,18 @@ document.addEventListener('DOMContentLoaded',()=>{var d=JSON.parse(document.getE
 
 <main>
 <h1>Privacy &amp; Legal</h1>
-<p class="sub">Short version: no tracking, no cookies, no data leaves your browser.</p>
+<p class="sub">What this site loads, and what it does not.</p>
 
 <h2>What we collect</h2>
-<p>Calculator inputs stay in your browser tab — nothing you type into the calculators is transmitted. Amazon links are affiliate links (we earn from qualifying purchases); they carry no extra tracking beyond Amazon's own. AdSense is not yet active on this site — once approved, Google and its partners may set advertising cookies.</p>
+<p>Calculator inputs stay in your browser. <code>assets/app.js</code> and <code>assets/lab.js</code> compute results on the page. They do not send what you type into a calculator to a server, and they do not set cookies.</p>
+<p>Two optional forms on the <a href="index.html">homepage</a> (and the same forms on <a href="upload-index.html">upload-index.html</a>) submit only if you send them. They post to formsubmit.co, which emails the form fields to jpanasuk@gmail.com. The installer form sends the name, ZIP code, phone number, and the sized-kW field. The checklist form sends the email address you type.</p>
+<p><code>assets/monetization.js</code> rewrites Amazon search links in the browser so they use the affiliate tag <code>generatorsi0d-20</code>. <code>assets/magnet-cta.js</code>, where a page loads it, adds a link to the printable cheat sheet and a TikTok link. Neither script loads analytics.</p>
 
 <h2>Affiliate disclosure</h2>
-<p>Some pages may contain affiliate links. If you buy through one, we may earn a commission at no extra cost to you. Affiliate links never change the sizing math or a ranking position — products that don't fit the computed load don't get recommended. Affiliate links carry Amazon's Associates tag and never change the sizing math or a ranking position.</p>
+<p>Some pages contain Amazon affiliate links (tag <code>generatorsi0d-20</code>). As an Amazon Associate, we earn from qualifying purchases. If you buy through one, we may earn a commission at no extra cost to you. Those links do not change the sizing math. When you follow an Amazon link, Amazon's own site may set cookies under Amazon's policy.</p>
 
 <h2>Advertising</h2>
-<p>This site is <strong>not yet running Google AdSense</strong>. Once AdSense approval is obtained (pending — site needs ~20+ organic sessions/day first, per the launch plan), ads will be served via Google AdSense (publisher ID ca-pub-1045858506533973) and Google and its partners may set advertising cookies to personalize the ads you see. You can opt out of personalized advertising at <a href="https://adssettings.google.com" rel="noopener">Google Ads Settings</a> or via <a href="https://optout.aboutads.info" rel="noopener">aboutads.info</a>. Ad slots never change the sizing math or a recommendation — the same rules apply to advertising as to affiliate links.</p>
+<p>This site does not load Google AdSense or any other advertising script. No ads run on these pages. An ads.txt file is present; it does not place ads by itself.</p>
 
 <h2>Contact</h2>
 <p>Owner: Jeremy Panasuk, New Auburn, WI · <a href="mailto:jpanasuk@gmail.com">jpanasuk@gmail.com</a></p>
@@ -86,7 +88,7 @@ document.addEventListener('DOMContentLoaded',()=>{var d=JSON.parse(document.getE
 <p>GeneratorSizer provides estimates for planning, not engineering sign-off. Verify critical loads against manufacturer spec sheets and local code before purchase or installation. Use at your own risk.</p>
 </main>
 
-<footer>GeneratorSizer · <a href="index.html">calculator</a> · <a href="about.html">About</a> · <a href="privacy.html">Privacy</a> · pages may contain affiliate links</footer>
+<footer>Built by Jeremy Panasuk · <a href="/about.html">About &amp; how this was made</a> · <a href="/methodology.html">Methodology</a> · <a href="/privacy.html">Privacy</a> · <a href="/contact.html">Contact</a> · pages may contain affiliate links</footer>
 
 
 
@@ -111,8 +113,6 @@ document.addEventListener('DOMContentLoaded',()=>{var d=JSON.parse(document.getE
   <a href="/portable-vs-standby-generator.html">Portable vs Standby Generator: Which Fits Your Home? | GeneratorSizer</a>
   <a href="/privacy.html">Privacy &amp; Legal</a>
   <a href="/refrigerator-freezer.html">What Size Generator Do I Need to Run a Refrigerator and Freezer? (2026)</a>
-  <a href="/slm-advisor-download.html">Download</a>
-  <a href="/slm-advisor.html">SLM Advisor â€” Local AI Engineering Co-Pilot | GeneratorSizer</a>
   <a href="/sump-pump-watts.html">What Size Generator for a Sump Pump? Running & Surge Watts (2026)</a>
   <a href="/topics.html">Topic map</a>
   <a href="/transfer-switch-sizing.html">What Size Transfer Switch for a Generator? 30A vs 50A Math (2026)</a>

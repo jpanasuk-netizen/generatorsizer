@@ -1,5 +1,5 @@
 # GeneratorSizer
-> Free generator sizing tools: appliance-based generator size calculator (running vs starting watts, 20% headroom, runtime at 50% load, gas vs propane fuel use), inverter sizing, battery runtime for inverter setups, and transfer switch load planning. Sister site of Battery Bank Sizer. Maintained by an agent-operated office with human review.
+> Free generator sizing tools: appliance-based generator size calculator (running vs starting watts, 20% headroom, runtime at 50% load, gas vs propane fuel use), inverter sizing, battery runtime for inverter setups, and transfer switch load planning. Sister site of Battery Bank Sizer. Built and owned by Jeremy Panasuk, New Auburn, Wisconsin (jpanasuk@gmail.com). Page text is drafted with AI agents (Cursor and local models) from the sources on each page. The site earns money from Amazon affiliate links; that does not change the math.
 
 ## Lab tools (unique)
 - [Lab hub](https://generator-sizer.com/tools.html): sequencer, altitude derate, 72-hour runbook, 5-year TCO, lot-line noise

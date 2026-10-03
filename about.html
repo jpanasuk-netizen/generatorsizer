@@ -3,47 +3,41 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About GeneratorSizer — Who runs this site</title>
-<meta name="description" content="Jeremy Panasuk builds GeneratorSizer in New Auburn, Wisconsin. Data-platforms engineer, not a PE stamp. Unique lab tools plus traceable wattage math.">
+<title>About &amp; how this site is built — GeneratorSizer</title>
+<meta name="description" content="GeneratorSizer is built and owned by Jeremy Panasuk in New Auburn, Wisconsin. Planning tools drafted with AI from published sources. Not a PE stamp.">
 <link rel="canonical" href="https://generator-sizer.com/about.html">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="shortcut icon" href="assets/favicon.ico">
 <meta name="robots" content="index,follow">
 <link rel="stylesheet" href="assets/styles.css">
-<meta property="og:title" content="About GeneratorSizer — Who runs this site">
+<meta property="og:title" content="About &amp; how this site is built — GeneratorSizer">
 <meta property="og:url" content="https://generator-sizer.com/about.html">
-<meta property="og:description" content="Jeremy Panasuk builds GeneratorSizer. Data-platforms engineer, not a PE stamp. Unique lab tools plus traceable wattage math.">
+<meta property="og:description" content="Built and owned by Jeremy Panasuk, New Auburn, Wisconsin. Planning tools, not a PE stamp.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://generator-sizer.com/assets/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="About GeneratorSizer — Who runs this site">
-<meta name="twitter:description" content="Jeremy Panasuk builds GeneratorSizer. Data-platforms engineer, not a PE stamp.">
+<meta name="twitter:title" content="About &amp; how this site is built — GeneratorSizer">
+<meta name="twitter:description" content="Built and owned by Jeremy Panasuk, New Auburn, Wisconsin. Planning tools, not a PE stamp.">
 <meta name="twitter:image" content="https://generator-sizer.com/assets/og-image.png">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Jeremy Panasuk",
-  "jobTitle": "Data-platforms engineer",
-  "description": "Builds GeneratorSizer lab tools and wattage calculators. 19 years of Informatica / Fortune-100 data work. Not a licensed PE.",
+  "@type": "AboutPage",
+  "name": "About & how this site is built",
   "url": "https://generator-sizer.com/about.html",
-  "sameAs": [
-    "https://www.linkedin.com/in/jeremy-p-34203322"
-  ]
-}
-</script>
-<script id="sources-data" type="application/json">
-{
-  "sources": [
-    {
-      "title": "NFPA: Article 220 branch-circuit, feeder, and service load calculations (2026 NEC Article 120)",
-      "url": "https://www.nfpa.org/education-and-research/electrical/reorganization-of-the-national-electrical-code",
-      "date": "2026-10-02"
+  "dateModified": "2026-10-03",
+  "mainEntity": {
+    "@type": "Person",
+    "name": "Jeremy Panasuk",
+    "email": "jpanasuk@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "New Auburn",
+      "addressRegion": "WI"
     }
-  ]
+  }
 }
 </script>
-<meta name="llms.txt" content="https://generator-sizer.com/sources.json">
 </head>
 <body>
 
@@ -52,75 +46,25 @@
   <nav aria-label="Site">
     <a href="tools.html">Lab tools</a>
     <a href="index.html">Calculator</a>
+    <a href="methodology.html">Methodology</a>
     <a href="about.html">About</a>
   </nav>
 </header>
 
 <main>
-<h1>About GeneratorSizer</h1>
-<p class="sub">Free sizing tools from published rules of thumb — not a PE stamp, not blog-filler guesses.</p>
+<h1>About &amp; how this site is built</h1>
 
-<div style="display: flex; gap: 2rem; align-items: flex-start; flex-wrap: wrap; margin: 2rem 0;">
-  <div style="flex: 1 1 300px;">
-    <img src="assets/jeremy-photo.jpg" alt="Jeremy Panasuk" style="width: 100%; max-width: 300px; border-radius: 8px; border: 2px solid var(--bd);">
-    <p class="small" style="margin-top: 0.5rem;"><em>Jeremy Panasuk — New Auburn, Wisconsin</em></p>
-  </div>
-  <div style="flex: 2 1 400px;">
-    <p>GeneratorSizer is built and maintained by <strong>Jeremy Panasuk</strong>, a data-platforms engineer (19 of 20 Fortune-100 accounts recovered over 19 years of Informatica work) who now runs a private RTX 4070 lab in New Auburn, Wisconsin. He is <strong>not</strong> a licensed professional engineer and this site is not a PE stamp. Software agents draft calculators and copy; a human reviews every release.</p>
-    <p>Questions or corrections: <a href="mailto:jpanasuk@gmail.com">jpanasuk@gmail.com</a>. A human reads every message.</p>
-  </div>
-</div>
+<h2>Who</h2>
+<p>Built and owned by Jeremy Panasuk, New Auburn, Wisconsin. Contact: <a href="mailto:jpanasuk@gmail.com">jpanasuk@gmail.com</a>. Jeremy is a data/software person, not a licensed professional engineer (PE) or electrician. He is not a licensed professional engineer and this site is not a PE stamp. These are planning tools, not professional advice.</p>
 
-<h2>Why the calculators exist</h2>
-<p>Most generator sizing content online is a blog post padded around an affiliate link: pick a wattage class from a feel, round up generously, done. That's how people end up with a generator that stalls when the well pump kicks in, or a 12,000 W machine idling for a fridge and a phone charger. GeneratorSizer exists to do the opposite — you enter the actual appliances you plan to run, and the tool computes running watts, startup surge, 20% headroom, runtime at 50% load, and gasoline vs propane daily fuel consumption from those inputs.</p>
-<p>The <a href="tools.html">Lab tools</a> go further than that first-pass sum: staggered-start coincidence, altitude/heat derate, a printable 72-hour runbook, five-year portable-vs-standby cost, and lot-line noise. Those pages are the unique work. The method is written out on <a href="methodology.html">Our math</a>.</p>
+<h2>How</h2>
+<p>The calculators use published rules of thumb from the sources listed on each page. Page text is drafted with AI agents (Cursor and local models) from those sources. Formulas are checked against the cited sources. If you spot an error, email <a href="mailto:jpanasuk@gmail.com">jpanasuk@gmail.com</a> and it gets fixed.</p>
+<p>The lab-tool method is written out on <a href="methodology.html">Methodology</a>.</p>
 
-<h2>What the numbers follow</h2>
-<ul>
-  <li><strong><a href="https://www.nfpa.org/education-and-research/electrical/reorganization-of-the-national-electrical-code">NEC Article 220</a></strong> — branch-circuit, feeder, and service load calculations (Article 120 in the 2026 NEC). Method context, not a license to design your panel</li>
-  <li><strong>Manufacturer nameplate / typical watts</strong> — editable in the calculator</li>
-  <li><strong><a href="https://www.eia.gov/energyexplained/units-and-calculators/british-thermal-units.php">EIA sample heat content</a></strong> — motor gasoline 120,214 Btu/gal, propane 91,452 Btu/gal</li>
-  <li><strong><a href="https://www.cpsc.gov/Newsroom/News-Releases/2026/CPSC-Issues-Winter-Weather-Safety-Tips-to-Prevent-Fires-and-Carbon-Monoxide-Poisoning">CPSC placement</a></strong> — outdoors only, at least 20 ft from the house</li>
-</ul>
+<h2>Why</h2>
+<p>The site earns money from Amazon affiliate links. That doesn't change the math.</p>
+</main>
 
-<h2>Experience (honest)</h2>
-<ul>
-  <li>19+ years recovering data systems for Fortune 100 enterprises</li>
-  <li>Builds and reviews these calculators; transfer-switch installs stay with a licensed electrician</li>
-</ul>
-  </main>
-
-<footer>GeneratorSizer · <a href="index.html">calculator</a> · <a href="about.html">About</a> · <a href="privacy.html">Privacy</a> · pages may contain affiliate links</footer>
-
-<section class="faq" style="max-width:760px;margin:3rem auto;padding:0 1rem">
-<h2>Frequently asked questions</h2>
-<details><summary>Is this calculator free?</summary><p>Yes — free to use, no signup, no email required.</p></details>
-<details><summary>How accurate is the estimate?</summary><p>Estimates follow industry-standard sizing rules and common safety margins. Always confirm with a licensed professional for final sizing.</p></details>
-<details><summary>Can I use this on mobile?</summary><p>Yes — the page is fully responsive and works on phones, tablets, and desktop.</p></details>
-<details><summary>Who should I contact with questions?</summary><p>Email me directly: <a href="mailto:jpanasuk@gmail.com">jpanasuk@gmail.com</a>. I read every message personally.</p></details>
-</section>
-
-<nav class="seo-nav" aria-label="Related calculators" style="margin-top:2rem;padding:1rem;border-top:1px solid #ccc;font-size:.9rem">
-<strong>More free calculators:</strong><br>
-  <a href="/about.html">About GeneratorSizer</a>
-  <a href="/app-privacy.html">App Privacy Policy</a>
-  <a href="/best-generator-size-for-rv.html">What Size Generator for an RV? [Free Sizing] | GeneratorSizer</a>
-  <a href="/best-generator-size-for-well-pump.html">Best Generator Size for a Well Pump (2026): By Horsepower + Backup Loads</a>
-  <a href="/best-portable-generators.html">Best 10 Portable Generators for Home Backup</a>
-  <a href="/find-a-commercial-generator-service.html">Find a Commercial Generator Service: Facility Manager's Checklist (2026)</a>
-  <a href="/index.html">Generator Size Calculator [Free] | GeneratorSizer</a>
-  <a href="/magnet.html">Free Outage Wattage Cheat Sheet</a>
-  <a href="/portable-vs-standby-generator.html">Portable vs Standby Generator: Which Fits Your Home? | GeneratorSizer</a>
-  <a href="/privacy.html">Privacy &amp; Legal</a>
-  <a href="/refrigerator-freezer.html">What Size Generator Do I Need to Run a Refrigerator and Freezer? (2026)</a>
-  <a href="/slm-advisor-download.html">Download</a>
-  <a href="/slm-advisor.html">SLM Advisor — Local AI Engineering Co-Pilot | GeneratorSizer</a>
-  <a href="/sump-pump-watts.html">What Size Generator for a Sump Pump? Running & Surge Watts (2026)</a>
-  <a href="/topics.html">Topic map</a>
-  <a href="/transfer-switch-sizing.html">What Size Transfer Switch for a Generator? 30A vs 50A Math (2026)</a>
-  <a href="/upload-index.html">Generator Size Calculator [Free] | GeneratorSizer</a>
-  <a href="/well-pump-watts.html">How Many Watts Does a Well Pump Use? Starting vs Running (2026)</a>
-  <a href="/whole-house-generator-sizing.html">Whole-House Generator Sizing Guide [Free Calculator] | GeneratorSizer</a>
-</nav>
+<footer>Built by Jeremy Panasuk · <a href="/about.html">About &amp; how this was made</a> · <a href="/methodology.html">Methodology</a> · <a href="/privacy.html">Privacy</a> · <a href="/contact.html">Contact</a> · pages may contain affiliate links</footer>
 </body>
 </html>

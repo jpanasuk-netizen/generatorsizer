@@ -1,0 +1,26 @@
+# GitHub Pages runs Jekyll. Files listed here stay in the repo and are
+# omitted from the published site, so they 404 on generator-sizer.com.
+# Specifying exclude replaces Jekyll's defaults, so those defaults are repeated.
+exclude:
+  - README.md
+  - LAUNCH_CHECKLIST.md
+  - MONETIZATION_STAGING.md
+  - lead-form-fields.md
+  - slm-advisor-marketing.md
+  - whop-sizing-report.md
+  - examples
+  - style.css
+  - slm-advisor.html
+  - slm-advisor-download.html
+  - assets/slm-advisor-screenshot.png
+  - config-leo-backup.yaml
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
