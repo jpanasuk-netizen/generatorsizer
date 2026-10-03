@@ -1,5 +1,5 @@
 /* GeneratorSizer Lab — methods other wattage widgets do not run.
-   Naive sizers: sum every running watt + one surge + 20%.
+   Naive sizers: sum every running watt + the extra of the highest start + 20%.
    This file: staggered-start coincidence, altitude/temp derate, lot-line dBA,
    storm fuel, and portable-vs-standby TCO. Not a substitute for a licensed electrician. */
 "use strict";
@@ -30,13 +30,20 @@ GS.sumRun = function (rows) {
   return rows.reduce(function (s, r) { return s + (Number(r.run) || 0) * (Number(r.qty) || 1); }, 0);
 };
 
+/* Same extra-surge rule as the home calculator: the row with the highest
+   starting watts (quantity already multiplied in). Extra = that row's start
+   minus its running watts. A tie keeps the first row. */
 GS.maxExtra = function (rows) {
+  var bestStart = -1;
   var extra = 0;
   rows.forEach(function (r) {
     var q = Number(r.qty) || 1;
     var run = (Number(r.run) || 0) * q;
     var surge = (Number(r.surge) || 0) * q;
-    extra = Math.max(extra, Math.max(0, surge - run));
+    if (surge > bestStart) {
+      bestStart = surge;
+      extra = Math.max(0, surge - run);
+    }
   });
   return extra;
 };
@@ -50,7 +57,7 @@ GS.naivePeak = function (rows, headroomPct) {
 /**
  * Staggered-start coincidence — the Lab difference.
  * always: stay on. wait: start after motors settle. never: kitchen/heat that must not share a motor start.
- * Phase A = always running + one motor extra (wait/never off).
+ * Phase A = always running + the extra of the highest start among always and wait.
  * Phase B = always + wait running, no extra.
  * Phase C = always + never running, no extra.
  */
@@ -100,6 +107,91 @@ GS.usableWatts = function (nameplate, elevFt, tempF) {
   return nameplate * GS.derateFactor(elevFt, tempF);
 };
 
+/* Oil intervals from the cited owner's manuals. A change uses whichever of the
+   hour limit and the calendar limit comes first, then both clocks reset.
+   Honda EU2200i maintenance schedule: engine-oil "Change" is in the
+   "first month or 20 hours" column and the "every 6 months or 100 hours" column.
+   Generac GP6500/GP8000E: change oil after the first 30 hours, then every
+   100 hours or every year. firstMonths null means the first change is hours-only.
+   The Generac heavy-load monthly footnote is not a field here. */
+GS.OIL_SCHEDULES = {
+  hondaEU2200i: {
+    label: "Honda EU2200i",
+    firstHours: 20,
+    firstMonths: 1,
+    everyHours: 100,
+    everyMonths: 6
+  },
+  generacGP: {
+    label: "Generac GP6500 / GP8000E",
+    firstHours: 30,
+    firstMonths: null,
+    everyHours: 100,
+    everyMonths: 12
+  }
+};
+
+GS.oilSchedule = function (id) {
+  return GS.OIL_SCHEDULES[id] || GS.OIL_SCHEDULES.hondaEU2200i;
+};
+
+/* New-engine window. engineHours are spread evenly across calendarMonths.
+   A change exactly at the end of the window counts. */
+GS.oilChangesInWindow = function (scheduleId, engineHours, calendarMonths) {
+  var sch = GS.oilSchedule(scheduleId);
+  engineHours = Math.max(0, Number(engineHours) || 0);
+  calendarMonths = Math.max(0, Number(calendarMonths) || 0);
+  var hpm = calendarMonths > 0 ? engineHours / calendarMonths : 0;
+  var count = 0;
+  var month = 0;
+  var first = true;
+  var guard = 0;
+  while (guard++ < 10000) {
+    var hourLimit = first ? sch.firstHours : sch.everyHours;
+    var monthLimit = first ? sch.firstMonths : sch.everyMonths;
+    var next = null;
+    if (hourLimit != null && hpm > 0) next = month + (hourLimit / hpm);
+    if (monthLimit != null) {
+      var cal = month + monthLimit;
+      next = next == null ? cal : Math.min(next, cal);
+    }
+    if (next == null || next > calendarMonths + 1e-6) break;
+    count++;
+    month = next;
+    first = false;
+  }
+  return count;
+};
+
+/* Hour column only, for a window too short for the calendar half.
+   Marks are firstHours, then every everyHours after that.
+   A mark equal to the starting meter is already done. Marks in (meter, meter+engineHours] count. */
+GS.oilHourMarks = function (scheduleId, meterHours, engineHours) {
+  var sch = GS.oilSchedule(scheduleId);
+  meterHours = Math.max(0, Number(meterHours) || 0);
+  engineHours = Math.max(0, Number(engineHours) || 0);
+  var end = meterHours + engineHours;
+  var next;
+  if (meterHours < sch.firstHours) next = sch.firstHours;
+  else {
+    var n = Math.floor((meterHours - sch.firstHours) / sch.everyHours) + 1;
+    next = sch.firstHours + n * sch.everyHours;
+  }
+  var marks = [];
+  var guard = 0;
+  while (next <= end + 1e-9 && guard++ < 10000) {
+    marks.push(next);
+    next += sch.everyHours;
+  }
+  return marks;
+};
+
+GS.oilNextHourMark = function (scheduleId, atHour) {
+  var sch = GS.oilSchedule(scheduleId);
+  var marks = GS.oilHourMarks(scheduleId, atHour, sch.firstHours + sch.everyHours);
+  return marks.length ? marks[0] : null;
+};
+
 /** Site fuel rule: ~1 gal gasoline per 7,000 W of *running* load per hour. Propane ~25% more volume. */
 GS.galPerHour = function (runningW, fuel) {
   var gas = (Number(runningW) || 0) / 7000;
@@ -122,7 +214,10 @@ GS.dbaAt = function (refDba, refFt, distFt, barrierDb) {
 
 GS.tco = function (opt) {
   var runW = Number(opt.runningW) || 2000;
-  var outageH = Number(opt.outageHoursYear) || 20;
+  var outageH = opt.outageHoursYear;
+  if (outageH === "" || outageH == null) outageH = 20;
+  else outageH = Number(outageH);
+  if (!isFinite(outageH) || outageH < 0) outageH = 0;
   var years = Number(opt.years) || 5;
   var gasPrice = Number(opt.gasPrice) || 3.4;
   var portablePrice = Number(opt.portablePrice) || 1200;
@@ -130,14 +225,25 @@ GS.tco = function (opt) {
   var standbyService = Number(opt.standbyService) || 280;
   var galHr = GS.galPerHour(runW, "gas");
   var portableFuelYr = galHr * outageH * gasPrice;
-  var oilChanges = Math.max(1, Math.ceil((outageH * years) / 50)) * 12;
-  var portable5 = portablePrice + portableFuelYr * years + oilChanges;
+  var scheduleId = GS.OIL_SCHEDULES[opt.oilSchedule] ? opt.oilSchedule : "hondaEU2200i";
+  var rawOil = opt.oilCostEach;
+  var oilEach = 0;
+  if (rawOil !== "" && rawOil != null) {
+    oilEach = Number(rawOil);
+    if (!isFinite(oilEach) || oilEach < 0) oilEach = 0;
+  }
+  var oilChanges = GS.oilChangesInWindow(scheduleId, outageH * years, years * 12);
+  var oilDollars = oilChanges * oilEach;
+  var portable5 = portablePrice + portableFuelYr * years + oilDollars;
   var standby5 = standbyInstall + standbyService * years;
   var extraPerHour = gasPrice * galHr;
   var gap = standbyInstall - portablePrice;
   return {
     galHr: galHr,
     portableFuelYr: portableFuelYr,
+    oilSchedule: scheduleId,
+    oilChanges: oilChanges,
+    oilDollars: oilDollars,
     portable5: portable5,
     standby5: standby5,
     cheaper: portable5 <= standby5 ? "portable" : "standby",

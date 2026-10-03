@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>72-hour storm runbook — fuel, oil, circuit order, CO distance</title>
-<meta name="description" content="Print a 24/48/72 hour outage plan from your running watts: gasoline and propane cans, 50-hour oil clock, motor-start order, and 20 ft CO placement.">
+<meta name="description" content="Print a 24/48/72 hour outage plan from your running watts: gasoline and propane cans, Honda or Generac oil intervals, motor-start order, and 20 ft CO placement.">
 <link rel="canonical" href="https://generator-sizer.com/storm-runbook.html">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <meta name="robots" content="index,follow">
@@ -51,6 +51,17 @@
     <label for="house">House / pad name</label>
     <input type="text" id="house" value="Well-pump ranch">
   </div>
+  <div class="field">
+    <label for="unit">Oil schedule</label>
+    <select id="unit">
+      <option value="hondaEU2200i" selected>Honda EU2200i</option>
+      <option value="generacGP">Generac GP6500 / GP8000E</option>
+    </select>
+  </div>
+  <div class="field">
+    <label for="meter">Hour meter at the start of the outage</label>
+    <input type="number" id="meter" value="0" min="0" step="1">
+  </div>
 </div>
 <p class="no-print"><button type="button" id="go" style="background:var(--acc);color:#fff;border:none;border-radius:8px;padding:.6rem 1.2rem;cursor:pointer;font-weight:600">Build runbook</button>
 <button type="button" onclick="window.print()" style="margin-left:.4rem;border:1px solid var(--bd);background:var(--card);color:var(--fg);border-radius:8px;padding:.6rem 1.2rem;cursor:pointer">Print / PDF</button></p>
@@ -85,7 +96,7 @@
 <p class="no-print">Use this after the watt class is chosen. The <a href="load-sequencer.html">sequencer</a> or the <a href="index.html#calc">home calculator</a> is the watt step. This form takes running watts, hours per day, and onboard tank gallons.</p>
 <p class="no-print"><code>GS.galPerHour</code> in <code>assets/lab.js</code> sets gasoline gallons per hour = running watts ÷ 7,000. Propane gallons per hour = that gasoline rate ÷ 0.75. For a window of 24, 48, or 72 hours, gallons = gallons per hour × hours per day × (window ÷ 24). Refuels = the gasoline gallons divided by the tank, rounded up. Engine hours printed on the card = hours per day × 3, which is the 72-hour window only.</p>
 <p class="no-print">The ÷ 7,000 rule is this site’s portable gasoline rule of thumb, applied here to the running watts you type. The home calculator applies the same 7,000 to its recommended watts instead. <a href="https://www.eia.gov/energyexplained/units-and-calculators/british-thermal-units.php">EIA</a> lists 120,214 Btu per gallon of motor gasoline and 91,452 Btu per gallon of propane. 120,214 / 91,452 is about 1.31, so the same heat needs about 31% more propane volume. The script’s ÷ 0.75 makes propane volume 1.33 times the gasoline gallons. That is the script, not EIA’s ratio. The home calculator’s 1.37 factor, applied to recommended watts, is on <a href="how-much-propane-does-a-generator-use.html">how much propane a generator uses</a>.</p>
-<p class="no-print">The card says to change oil near 50 hours. That 50 is also the script. Honda’s EU2200i manual quick reference says to change the engine oil at the first 20 hours and then follow the maintenance schedule. That schedule’s columns include every 3 months or 50 hours and every 6 months or 100 hours. <a href="https://www.generac.com/globalassets/products/residential/portable-generators/owners-manual/gp6500-gp8000e-owners-manual.pdf">Generac’s GP6500/GP8000E manual</a> says to change oil after the first 30 hours, then every 100 hours or every year. Use the manual for the generator you own when it disagrees with 50.</p>
+<p class="no-print">The oil line follows the manual you pick. The menu opens on the <a href="https://cdn.powerequipment.honda.com/pe/pdf/manuals/00X31Z446010.pdf">Honda EU2200i owner’s manual</a>. Its quick reference says to change the engine oil at the first 20 hours, then follow the maintenance schedule. On that schedule the engine-oil “Change” marks are the first month or 20 hours, and every 6 months or 100 hours, whichever comes first. The every-3-months-or-50-hours column on that page is not an engine-oil change. <a href="https://www.generac.com/globalassets/products/residential/portable-generators/owners-manual/gp6500-gp8000e-owners-manual.pdf">Generac’s GP6500/GP8000E manual</a> says to change oil every 100 hours or every year, and the footnote says to change oil after the first 30 hours, then every season. This card reads that season as the yearly half of the same row. A separate footnote says to change the oil and the oil filter every month under heavy load or in high temperatures. The card does not count that monthly footnote. A 72-hour window is shorter than one month, so the card counts the hour column only, from the hour meter you type (the box opens at 0). Later changes are every 100 hours after that first hour-column change.</p>
 <p class="no-print">The form opens at 16 hours per day. That is a typed default, not an agency rule. Ready.gov’s four closed-fridge hours are a reason some houses do not run a set all night. Medical equipment is a reason to type 24. Sixteen is not a Wisconsin requirement.</p>
 
 <h2 class="no-print">Worked clicks</h2>
@@ -93,9 +104,10 @@
 <ul class="no-print">
 <li>Gasoline gal/h = 2,210 / 7,000 = 0.316. Propane gal/h = 0.316 / 0.75 = 0.421.</li>
 <li>24-hour window: 5.1 gal gasoline, 6.7 gal propane, 2 refuels of the 4 gallon tank. 48-hour window: 10.1, 13.5, and 3. 72-hour window: 15.2, 20.2, and 4.</li>
-<li>Engine hours on the card: 16 × 3 = 48. The script’s 50-hour oil line is the next hour past that 48, not a statement that Honda or Generac calls for oil at 48.</li>
+<li>Engine hours on the card: 16 × 3 = 48. Hour meter 0. Honda EU2200i is the selected schedule. The card counts 1 oil change, at hour 20. The next hour mark, 120, is outside the window. Six months do not pass, so the calendar half of Honda’s schedule adds nothing here.</li>
 </ul>
-<p class="no-print">Second click: same 2,210 W and 4 gallon tank, hours per day set to 24. Gasoline becomes 7.6 / 15.2 / 22.7 gallons across 24 / 48 / 72 hours. Propane becomes 10.1 / 20.2 / 30.3. Refuels are 2, 4, and 6. Engine hours in the 72-hour window are 72.</p>
+<p class="no-print">Second click: same 2,210 W and 4 gallon tank, hours per day set to 24, Honda still selected, meter still 0. Gasoline becomes 7.6 / 15.2 / 22.7 gallons across 24 / 48 / 72 hours. Propane becomes 10.1 / 20.2 / 30.3. Refuels are 2, 4, and 6. Engine hours in the 72-hour window are 72. That is still 1 oil change, at hour 20. Hour 120 is still outside.</p>
+<p class="no-print">Third click: switch the oil schedule to Generac GP6500 / GP8000E, set hours per day back to 16, and leave the meter at 0. The card counts 1 oil change, at hour 30. The next hour mark is 130. At 24 hours per day the engine hours are 72, which is still that one change at hour 30.</p>
 
 <h2 class="no-print">Limits and a common mistake</h2>
 <p class="no-print">Typing the home calculator’s recommended watts into this running-watts box overstates the cans. The food-truck page’s recommendation is 3,500 W from a 1,792 W running total. This script would treat 3,500 as running watts: 3,500 / 7,000 = 0.5 gal/h, and 0.5 × 16 h/day × 3 days = 24.0 gallons of gasoline for 72 hours. Typing the 1,792 W running total instead is 1,792 / 7,000 × 16 × 3 = 12.3 gallons. The button cannot tell those two inputs apart.</p>
@@ -114,13 +126,16 @@
 </ul>
 </main>
 <footer class="no-print">Built by Jeremy Panasuk · <a href="/about.html">About &amp; how this was made</a> · <a href="/methodology.html">Methodology</a> · <a href="/privacy.html">Privacy</a> · <a href="/contact.html">Contact</a> · pages may contain affiliate links</footer>
-<script src="assets/lab.js"></script>
+<script src="assets/lab.js?v=20261003a"></script>
 <script>
 document.getElementById("go").onclick = function(){
   var w = Number(document.getElementById("runW").value);
   var hrs = Number(document.getElementById("hrs").value);
   var tank = Number(document.getElementById("tank").value);
   var name = document.getElementById("house").value || "This house";
+  var schedId = document.getElementById("unit").value;
+  var meter = Number(document.getElementById("meter").value);
+  if (!isFinite(meter) || meter < 0) meter = 0;
   var gph = GS.galPerHour(w, "gas");
   var pph = GS.galPerHour(w, "propane");
   function block(h){
@@ -134,6 +149,14 @@ document.getElementById("go").onclick = function(){
   }
   var a = block(24), b = block(48), c = block(72);
   var oilHours = hrs * 3;
+  var marks = GS.oilHourMarks(schedId, meter, oilHours);
+  var nextMark = GS.oilNextHourMark(schedId, meter + oilHours);
+  var due = marks.length
+    ? "Hour-column changes inside this window: " + marks.map(function (h) { return Math.round(h); }).join(", ") + " (" + marks.length + (marks.length === 1 ? " change" : " changes") + ")."
+    : "No hour-column oil change falls inside this window.";
+  var manual = schedId === "generacGP"
+    ? "Generac GP6500/GP8000E manual: first oil change at 30 hours, then every 100 hours or every year. The monthly heavy-load footnote is not counted on this card."
+    : "Honda EU2200i manual: first oil change at 20 hours or the first month, then every 100 hours or 6 months.";
   document.getElementById("out").innerHTML =
     "<div class=\"card\"><h3>"+name+" — storm card</h3>"+
     "<p>Running load <b>"+GS.fmt(w)+" W</b> · "+hrs+" h/day · tank "+tank+" gal · printed "+new Date().toLocaleString("en-US",{timeZone:"America/Chicago"})+" CT</p>"+
@@ -149,7 +172,7 @@ document.getElementById("go").onclick = function(){
     "<li>Wait lane (AC, washer) only after the last motor is at running watts.</li>"+
     "<li>Never-overlap (microwave, coffee, space heat) only when no pump is starting. If the well pressure switch chatters, kitchen stays dark.</li></ol>"+
     "<h3>Oil and carbon monoxide</h3>"+
-    "<p>This duty cycle is about <b>"+oilHours.toFixed(0)+" engine hours</b> in 72 hours. Change oil near 50 hours. A battery CO alarm belongs in the bedroom hallway — not as a substitute for the 20 ft rule. Never run in a garage, even with the door up.</p>"+
+    "<p>This duty cycle is about <b>"+oilHours.toFixed(0)+" engine hours</b> in 72 hours, starting from hour meter "+meter+". "+manual+" Seventy-two hours is shorter than one month, so this card counts the hour column only. "+due+" The next hour mark, "+nextMark+", is outside this window. A battery CO alarm belongs in the bedroom hallway — not as a substitute for the 20 ft rule. Never run in a garage, even with the door up.</p>"+
     "<p class=\"small\">Fuel rule: 1 gal gasoline per 7,000 W running per hour (site standard). Propane volume ≈ gasoline ÷ 0.75. Rotate gasoline; propane stores. Not a licensed inspection.</p></div>";
 };
 </script>

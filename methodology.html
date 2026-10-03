@@ -15,7 +15,7 @@
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://generator-sizer.com/assets/og-image.png">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"How GeneratorSizer math differs from typical wattage widgets","dateModified":"2026-09-28","author":{"@type":"Person","name":"Jeremy Panasuk","email":"jpanasuk@gmail.com","address":{"@type":"PostalAddress","addressLocality":"New Auburn","addressRegion":"WI"}},"publisher":{"@type":"Organization","name":"GeneratorSizer","url":"https://generator-sizer.com"}}
+{"@context":"https://schema.org","@type":"Article","headline":"How GeneratorSizer math differs from typical wattage widgets","dateModified":"2026-10-03","author":{"@type":"Person","name":"Jeremy Panasuk","email":"jpanasuk@gmail.com","address":{"@type":"PostalAddress","addressLocality":"New Auburn","addressRegion":"WI"}},"publisher":{"@type":"Organization","name":"GeneratorSizer","url":"https://generator-sizer.com"}}
 </script>
 </head>
 <body>
@@ -30,7 +30,7 @@
 </header>
 <main>
 <h1>How this site’s math is not a wattage table</h1>
-<p class="sub">Last updated: September 28, 2026 (CT). Written for reviewers and for people who already got a 7,500 W quote they do not trust.</p>
+<p class="sub">Last updated: October 3, 2026 (CT). Written for reviewers and for people who already got a 7,500 W quote they do not trust.</p>
 
 <p class="why-unique">Most generator pages do one thing: list typical appliance watts, add them, add 20%, and point at Amazon. That is useful as a first pass. It is also how a ranch that never runs the microwave during a well-pump start gets sold a class they will idle at 30% load for a decade.</p>
 
@@ -42,14 +42,14 @@
   <li><strong>Wait</strong> — air conditioning or laundry. Start after the motor lane has settled.</li>
   <li><strong>Never overlap</strong> — microwave, coffee, space heat. Off while a pump or compressor starts.</li>
 </ul>
-<p>We take the worst of three phases (motor start, wait-lane running, kitchen running) and only then apply headroom. The naive sum of every nameplate is shown next to it so you can see the class you were about to overbuy.</p>
+<p>We take the worst of three phases (motor start, wait-lane running, kitchen running) and only then apply headroom. The extra watts in a phase follow the home calculator: the single row with the highest starting watts. The naive figure beside it is every row on at once, with that same extra, so you can see the class you were about to overbuy.</p>
 <p>Coincidence is a scheduling choice. How the machine induces the current, and one fridge run through the home calculator rather than the sequencer, is on <a href="how-does-a-generator-work.html">how a generator works</a>.</p>
 
 <h2>Altitude is not a footnote</h2>
 <p>Thin air and hot inlet air cut shaft power. The <a href="altitude-derate.html">altitude + heat derate</a> tool uses a house curve: no altitude penalty through 1,000 ft, then 3.5% per additional 1,000 ft, plus about 1% per 10°F above 77°F. <a href="https://www.generac.com/globalassets/products/residential/portable-generators/owners-manual/gp6500-gp8000e-owners-manual.pdf">Generac's GP6500/GP8000E owner's manual</a> states that maximum power decreases about 3.5% for each 1,000 feet above sea level and about 1% for each 10°F above 60°F — the same 3.5% step, counted from sea level and from 60°F. A 7,500 W sticker in Leadville is not a 7,500 W machine. We floor the factor at 55% so the tool still returns a number instead of pretending physics stopped.</p>
 
 <h2>Fuel, noise, and money after the sticker</h2>
-<p>The home calculator’s fuel rule stays: about one gallon of gasoline per 7,000 W of <em>running</em> load per hour. Lab tools add about 25% more volume for propane. <a href="https://www.eia.gov/energyexplained/units-and-calculators/british-thermal-units.php">EIA's sample factors</a> are 120,214 Btu/gal for motor gasoline and 91,452 Btu/gal for propane, about 24% less energy per gallon. The <a href="storm-runbook.html">storm runbook</a> turns that into 24 / 48 / 72 hour cans plus an oil-change clock (50 hours) and CPSC-style placement: 20 ft from openings, exhaust away from the house. Converting a watt figure into kilowatt-hours with EIA's definition, a different step from these gallons, is on the <a href="kw-to-kwh-calculator.html">kW to kWh calculator</a>.</p>
+<p>The home calculator’s fuel rule stays: about one gallon of gasoline per 7,000 W of <em>running</em> load per hour. Lab tools add about 25% more volume for propane. <a href="https://www.eia.gov/energyexplained/units-and-calculators/british-thermal-units.php">EIA's sample factors</a> are 120,214 Btu/gal for motor gasoline and 91,452 Btu/gal for propane, about 24% less energy per gallon. The <a href="storm-runbook.html">storm runbook</a> turns that into 24 / 48 / 72 hour cans plus an oil-change count from the manual you pick — Honda EU2200i (first month or 20 hours, then every 6 months or 100 hours) or Generac GP6500/GP8000E (first 30 hours, then every 100 hours or every year) — and CPSC-style placement: 20 ft from openings, exhaust away from the house. Converting a watt figure into kilowatt-hours with EIA's definition, a different step from these gallons, is on the <a href="kw-to-kwh-calculator.html">kW to kWh calculator</a>.</p>
 <p><a href="noise-lot-line.html">Lot-line noise</a> uses inverse-square spreading from a 23 ft manufacturer point (the distance most “quiet inverter” ads quote) and optional barrier credits (−5 dB fence, −10 dB shed). That is physics, not a brochure adjective.</p>
 <p><a href="ownership-cost.html">Five-year TCO</a> compares a portable’s purchase + storm fuel + oil against a standby’s install + annual service. Break-even is in outage hours, not “peace of mind.”</p>
 
@@ -62,7 +62,7 @@
 <p>Sources we keep next to the tools: <a href="https://www.nfpa.org/education-and-research/electrical/reorganization-of-the-national-electrical-code">NEC Article 220</a> (branch-circuit, feeder, and service load calculations; Article 120 in the 2026 NEC — method context, not a stamp), the Generac portable altitude note linked above, EIA fuel heat content, CPSC generator placement, and the inverse-square law for sound pressure.</p>
 </main>
 <footer>Built by Jeremy Panasuk · <a href="/about.html">About &amp; how this was made</a> · <a href="/methodology.html">Methodology</a> · <a href="/privacy.html">Privacy</a> · <a href="/contact.html">Contact</a> · pages may contain affiliate links</footer>
-<script src="assets/lab.js"></script>
+<script src="assets/lab.js?v=20261003a"></script>
 <script>
 (function(){
   var root = document.getElementById("houses");

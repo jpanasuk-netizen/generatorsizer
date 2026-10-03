@@ -41,6 +41,13 @@
   <div class="field"><label for="port">Portable you would actually buy ($)</label><input type="number" id="port" value="1400" min="200"></div>
   <div class="field"><label for="stand">Standby installed ($)</label><input type="number" id="stand" value="12500" min="3000"></div>
   <div class="field"><label for="svc">Standby service $/year</label><input type="number" id="svc" value="280" min="0"></div>
+  <div class="field"><label for="oilUnit">Oil schedule</label>
+    <select id="oilUnit">
+      <option value="hondaEU2200i" selected>Honda EU2200i — first month or 20 hours, then every 6 months or 100 hours</option>
+      <option value="generacGP">Generac GP6500 / GP8000E — first 30 hours, then every 100 hours or every year</option>
+    </select>
+  </div>
+  <div class="field"><label for="oilCost">Your cost per oil change ($) — blank counts as $0</label><input type="number" id="oilCost" value="" min="0" step="0.01" placeholder="your cost, not a quoted price"></div>
 </div>
 <p><button type="button" id="go" style="background:var(--acc);color:#fff;border:none;border-radius:8px;padding:.6rem 1.2rem;cursor:pointer;font-weight:600">Price 5 years</button></p>
 <div id="out" class="ans" hidden></div>
@@ -50,7 +57,8 @@
 <ul>
 <li>Gasoline gal/h = running watts ÷ 7,000. Same site rule as the <a href="storm-runbook.html">storm runbook</a>, applied to running watts, not to the home calculator’s recommended watts.</li>
 <li>Annual portable fuel dollars = gal/h × outage hours per year × the $/gal you type.</li>
-<li>Oil charges = at least one, otherwise the engine hours over 5 years divided by 50 and rounded up, then times $12. Both the 50 and the $12 are the script. Honda’s EU2200i manual calls for an oil change at the first 20 hours and then on its maintenance schedule, whose columns include 50 hours and 100 hours. Generac’s GP6500/GP8000E manual says the first oil change is at 30 hours, then every 100 hours or every year. The $12 is not a quoted oil price.</li>
+<li>Oil changes follow the schedule you pick. Hours over the 5 years are spread evenly across 60 months. A change is whichever of the hour limit and the calendar limit comes first, and both clocks reset. The <a href="https://cdn.powerequipment.honda.com/pe/pdf/manuals/00X31Z446010.pdf">Honda EU2200i owner’s manual</a> puts the engine-oil change at the first month or 20 hours, then every 6 months or 100 hours, whichever comes first. The 50-hour column on that schedule is not an engine-oil change. <a href="https://www.generac.com/globalassets/products/residential/portable-generators/owners-manual/gp6500-gp8000e-owners-manual.pdf">Generac’s GP6500/GP8000E manual</a> says every 100 hours or every year, with a footnote to change oil after the first 30 hours, then every season. This tool reads that season as 12 months, the yearly half of that row. Generac’s other footnote, oil and filter every month under heavy load or in high temperatures, is not counted. The menu opens on Honda.</li>
+<li>Oil dollars = that change count times the per-change cost you type. The box opens blank, and a blank box is $0. There is no published oil price in this total. A number you type is your own cost.</li>
 <li>Portable five-year total = purchase + annual fuel × 5 + the oil charges.</li>
 <li>Standby five-year total = installed price + yearly service × 5. There is no fuel term on the standby side. Natural gas or propane for a standby is not priced here.</li>
 <li>Break-even hours = (standby install − portable purchase) ÷ ($/gal × gal/h). That is cumulative running hours, not hours per year. It does not change when you change the outage-hours field.</li>
@@ -58,29 +66,31 @@
 <p><a href="https://www.eia.gov/energyexplained/units-and-calculators/british-thermal-units.php">EIA</a> lists 120,214 Btu per gallon of motor gasoline. That heat content is not a price, and it is not the ÷ 7,000 rule. Kilowatt-hours, which are a different unit, are on the <a href="kw-to-kwh-calculator.html">kW to kWh calculator</a>.</p>
 
 <h2>Worked clicks</h2>
-<p>The form opens at 2,210 running watts, 18 outage hours per year, $3.40 per gallon, a $1,400 portable, a $12,500 standby install, and $280 a year of service. 2,210 W is the sequencer’s stored well-ranch always-on running sum, described on the <a href="load-sequencer.html">sequencer</a> page. The dollar figures are whatever is in the boxes.</p>
+<p>The form opens at 2,210 running watts, 18 outage hours per year, $3.40 per gallon, a $1,400 portable, a $12,500 standby install, and $280 a year of service. The oil schedule is Honda EU2200i. The oil-cost box is blank. 2,210 W is the sequencer’s stored well-ranch always-on running sum, described on the <a href="load-sequencer.html">sequencer</a> page. The dollar figures are whatever is in the boxes.</p>
 <ul>
-<li>Gal/h = 2,210 / 7,000 = 0.3157, shown as 0.32.</li>
-<li>Annual fuel = 0.3157 × 18 × 3.40 = $19.32, shown as $19.</li>
-<li>Engine hours in five years = 18 × 5 = 90. Oil charges = ceil(90 / 50) × $12 = 2 × $12 = $24.</li>
-<li>Portable = 1,400 + 19.32 × 5 + 24 = $1,520.61, shown as $1,521. Standby = 12,500 + 280 × 5 = $13,900. The button says portable is cheaper.</li>
-<li>Break-even hours = (12,500 − 1,400) / (3.40 × 0.3157) = 10,341 hours on the rounded display. 10,341 / 18 is 574.5 years at that annual rate.</li>
+<li>Gal/h = 2,210 / 7,000 = 0.315714, shown as 0.32.</li>
+<li>Annual fuel = 0.315714 × 18 × 3.40 = $19.32, shown as $19.</li>
+<li>Engine hours in five years = 18 × 5 = 90, which is 1.5 hours per month. Honda’s first change is the first month, because 1.5 hours comes before 20 hours. After that, every 6 months comes before 100 hours (6 × 1.5 = 9 hours). The changes fall at months 1, 7, 13, 19, 25, 31, 37, 43, 49, and 55. That is 10 changes. The blank oil box contributes $0.</li>
+<li>Portable = 1,400 + (2,210 / 7,000 × 18 × 3.40 × 5) = $1,496.61, shown as $1,497. Standby = 12,500 + 280 × 5 = $13,900. The button says portable is cheaper.</li>
+<li>Break-even hours = (12,500 − 1,400) / (3.40 × 0.315714) = 10,341 hours on the rounded display. That line does not use oil. 10,341 / 18 is 574.5 years at that annual rate.</li>
 </ul>
-<p>Second click: change only the outage hours to 120 and leave the other boxes. Annual fuel becomes 2,210 / 7,000 × 120 × 3.40 = $128.81, shown as $129. Five-year engine hours = 600. Oil charges = ceil(600 / 50) × 12 = 12 × 12 = $144. Portable = 1,400 + 128.81 × 5 + 144 = $2,188.06, shown as $2,188. Standby stays $13,900. Break-even stays 10,341 hours, because that line does not use the 120. One hundred twenty hours a year for five years is 600 hours, still far under 10,341. The <a href="storm-runbook.html">runbook</a> is where those 120 hours become cans.</p>
+<p>Type 12 in “Your cost per oil change” and leave the other boxes, including Honda. That 12 is a cost you typed. It is not a quoted oil price. Ten changes × $12 = $120. Portable = 1,400 + (2,210 / 7,000 × 18 × 3.40 × 5) + 120 = $1,616.61, shown as $1,617. Standby stays $13,900. Break-even stays 10,341.</p>
+<p>Second click: with 12 still in the oil-cost box and Honda still selected, change only the outage hours to 120. Annual fuel becomes 2,210 / 7,000 × 120 × 3.40 = $128.81, shown as $129. Five-year engine hours = 600, which is 10 hours per month. The first month still comes before 20 hours, and 6 months (60 hours) still comes before 100 hours, so Honda still counts 10 changes and $120 of oil. Portable = 1,400 + (2,210 / 7,000 × 120 × 3.40 × 5) + 120 = $2,164.06, shown as $2,164. Standby stays $13,900. Break-even stays 10,341 hours, because that line does not use the 120. Six hundred hours is still far under 10,341. The <a href="storm-runbook.html">runbook</a> is where those 120 hours become cans.</p>
+<p>Third click: set the outage hours back to 18, leave 12 in the oil-cost box, and switch the schedule to Generac GP6500 / GP8000E. The first change is hour 30, which is month 20 at 1.5 hours per month. After that, 12 months (18 hours) comes before 100 hours, so the changes are months 20, 32, 44, and 56. That is 4 changes × $12 = $48. Portable = 1,400 + (2,210 / 7,000 × 18 × 3.40 × 5) + 48 = $1,544.61, shown as $1,545. At 120 hours per year on the same Generac schedule the first change is month 3, and then every 100 hours (10 months) comes before 12 months: hours 30, 130, 230, 330, 430, and 530, which is 6 changes × $12 = $72. Portable = 1,400 + (2,210 / 7,000 × 120 × 3.40 × 5) + 72 = $2,116.06, shown as $2,116. Set the outage hours to 0 with 12 still in the oil-cost box. Generac counts 0 changes, because the first change is the 30-hour mark and the yearly clock starts after it, so oil dollars are $0 and the portable total is the $1,400 purchase. Honda at zero engine hours still counts 10, because the first month and every 6 months still arrive: $120 of oil, portable total $1,520. Annual fuel on that click is $0. Break-even stays 10,341.</p>
 
 <h2>Limits and a common mistake</h2>
-<p>Reading 10,341 as “hours per year” makes a standby look cheaper than this arithmetic says. The 10,341 is total portable runtime. The outage-hours box only scales fuel and oil.</p>
+<p>Reading 10,341 as “hours per year” makes a standby look cheaper than this arithmetic says. The 10,341 is total portable runtime. The outage-hours box scales fuel, and it moves the oil count only when an hour limit arrives before the calendar limit. The oil-cost box is the only oil price.</p>
 <p>The comparison leaves out labor, noise, and standby fuel. A heavier open-frame and a neighbor’s window are the <a href="noise-lot-line.html">lot-line</a> question, not a dollar in this total. A load that needs a larger machine changes the purchase prices you type; the script does not look up either price. Permanent installation of a standby takes a licensed electrician and a permit where local code requires one.</p>
 <p>Compiled with AI assistance from the sources below. Spot an error? Email <a href="mailto:jpanasuk@gmail.com">jpanasuk@gmail.com</a>.</p>
 <h2>Sources</h2>
 <ul>
 <li><a href="https://www.eia.gov/energyexplained/units-and-calculators/british-thermal-units.php">EIA, British thermal units</a> — heat per gallon, not the ÷ 7,000 rule and not a fuel price</li>
-<li><a href="https://cdn.powerequipment.honda.com/pe/pdf/manuals/00X31Z446010.pdf">Honda EU2200i owner’s manual</a> — oil schedule, which is not this script’s 50-hour clock</li>
-<li><a href="https://www.generac.com/globalassets/products/residential/portable-generators/owners-manual/gp6500-gp8000e-owners-manual.pdf">Generac GP6500/GP8000E owner’s manual</a> — first oil change at 30 hours, then every 100 hours or every year</li>
+<li><a href="https://cdn.powerequipment.honda.com/pe/pdf/manuals/00X31Z446010.pdf">Honda EU2200i owner’s manual</a> — engine oil: first month or 20 hours, then every 6 months or 100 hours, whichever comes first</li>
+<li><a href="https://www.generac.com/globalassets/products/residential/portable-generators/owners-manual/gp6500-gp8000e-owners-manual.pdf">Generac GP6500/GP8000E owner’s manual</a> — change oil every 100 hours or every year; first change at 30 hours, then every season; monthly oil and filter under heavy load or high temperature</li>
 </ul>
 </main>
 <footer>Built by Jeremy Panasuk · <a href="/about.html">About &amp; how this was made</a> · <a href="/methodology.html">Methodology</a> · <a href="/privacy.html">Privacy</a> · <a href="/contact.html">Contact</a> · pages may contain affiliate links</footer>
-<script src="assets/lab.js"></script>
+<script src="assets/lab.js?v=20261003a"></script>
 <script>
 document.getElementById("go").onclick = function(){
   var t = GS.tco({
@@ -89,7 +99,9 @@ document.getElementById("go").onclick = function(){
     gasPrice: document.getElementById("gas").value,
     portablePrice: document.getElementById("port").value,
     standbyInstall: document.getElementById("stand").value,
-    standbyService: document.getElementById("svc").value
+    standbyService: document.getElementById("svc").value,
+    oilSchedule: document.getElementById("oilUnit").value,
+    oilCostEach: document.getElementById("oilCost").value
   });
   var box = document.getElementById("out");
   box.hidden = false;
@@ -98,7 +110,8 @@ document.getElementById("go").onclick = function(){
     "<div class=\"grid2\"><div class=\"stat\"><b>$"+GS.fmt(t.portable5)+"</b><span>portable (unit + fuel + oil)</span></div>"+
     "<div class=\"stat\"><b>$"+GS.fmt(t.standby5)+"</b><span>standby (install + service)</span></div></div>"+
     "<p class=\"note\">Fuel ~"+t.galHr.toFixed(2)+" gal/h at this running load. Annual portable fuel ≈ $"+t.portableFuelYr.toFixed(0)+
-    ". Hours of portable runtime before the install gap is “paid back” in fuel: <b>"+be+"</b>. If you never reach that many hours in five years, the standby is a comfort purchase, not a cheaper one.</p>";
+    ". Oil changes on the "+GS.oilSchedule(t.oilSchedule).label+" schedule: <b>"+t.oilChanges+"</b>. Oil dollars at the cost you typed: <b>$"+GS.fmt(t.oilDollars)+"</b>."+
+    " Hours of portable runtime before the install gap is “paid back” in fuel: <b>"+be+"</b>. If you never reach that many hours in five years, the standby is a comfort purchase, not a cheaper one.</p>";
 };
 </script>
 </body>
