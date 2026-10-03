@@ -12,6 +12,7 @@ from leo.fleet import BOTS, address, display
 from leo.product import run_until_idle
 from hermes.gateway import Completion, GatewayError
 from hermes.profiles import gateway_model
+from kit.lanes import lane_for
 
 
 class EchoGateway:
@@ -27,10 +28,26 @@ class EchoGateway:
 
 
 def _token(seat: str) -> str:
-    return f"note-{seat}"
+    return f"[{seat}]"
 
 
-def _load(bus, gateway: EchoGateway) -> None:
+class EchoLane:
+    def __init__(self, lane: str, book: list) -> None:
+        self.lane = lane
+        self.book = book
+
+    def complete(self, seat: str, text: str) -> str:
+        self.book.append((self.lane, seat, text))
+        return f"echo:{seat}:{text}"
+
+
+def _lanes() -> tuple[dict, list]:
+    book: list = []
+    lanes = {name: EchoLane(name, book) for name in ("gemini", "grokbot", "grok", "freebuff", "muse", "muse-ai")}
+    return lanes, book
+
+
+def _load(bus, gateway: EchoGateway, lanes: dict | None = None) -> None:
     bus.send(from_="desk", to="*", text="house-check", topic="talk")
     for seat in BOTS:
         bus.send(
@@ -40,10 +57,10 @@ def _load(bus, gateway: EchoGateway) -> None:
             topic="talk",
         )
     bus.send(from_="desk", to="leo", text="send jeremy a message, say hello-jeremy", topic="talk")
-    run_until_idle(bus, gateway)
+    run_until_idle(bus, gateway, lanes=lanes)
 
 
-def _assert_chats(test: unittest.TestCase, bus, gateway: EchoGateway) -> None:
+def _assert_chats(test: unittest.TestCase, bus, gateway: EchoGateway, book: list) -> None:
     called = {model for model, _text in gateway.calls}
     for seat in BOTS:
         seen = texts(bus, seat)
@@ -54,10 +71,18 @@ def _assert_chats(test: unittest.TestCase, bus, gateway: EchoGateway) -> None:
             if other == seat:
                 continue
             test.assertNotIn(_token(other), blob, f"{seat} can see {other}")
-        model = gateway_model(seat)
-        if model is not None:
+        lane = lane_for(seat)
+        if lane == "hermes":
+            model = gateway_model(seat)
             test.assertIn(model, called, seat)
             test.assertTrue(any(line == f"echo:{model}:{_token(seat)}" for line in seen), seen)
+        elif lane == "grok":
+            test.assertTrue(any("usage is gone" in line for line in seen), seen)
+            test.assertFalse(any(item[0] == "grok" for item in book))
+        elif lane:
+            test.assertIn((lane, seat, _token(seat)), book, seat)
+            test.assertTrue(any(line == f"echo:{seat}:{_token(seat)}" for line in seen), seen)
+            test.assertNotIn(seat, called)
         elif seat == "mimo":
             test.assertTrue(any("file bus" in line for line in seen), seen)
             test.assertNotIn("mimo", called)
@@ -69,7 +94,7 @@ def _assert_chats(test: unittest.TestCase, bus, gateway: EchoGateway) -> None:
             any(line.startswith(f"{display(seat)} replied:") for line in desk),
             f"desk did not show {seat}: {desk}",
         )
-        if model is not None:
+        if lane == "hermes":
             test.assertTrue(any(_token(seat) in line and line.startswith(f"{display(seat)} replied:") for line in desk))
 
     jeremy = texts(bus, "jeremy")
@@ -97,7 +122,7 @@ class FleetChatTests(unittest.TestCase):
     def test_every_handler_phrase_and_seat_id_map_to_that_bot(self):
         from leo.fleet import find_seat, seat_of_sender
 
-        self.assertEqual(len(BOTS), 20)
+        self.assertEqual(len(BOTS), 24)
         for seat in BOTS:
             found, start, _end = find_seat(f"send {address(seat)} a message")
             self.assertEqual(found, seat)
@@ -107,8 +132,9 @@ class FleetChatTests(unittest.TestCase):
     def test_memory_bus_delivers_every_bot_chat(self):
         bus = MemoryBus()
         gateway = EchoGateway()
-        _load(bus, gateway)
-        _assert_chats(self, bus, gateway)
+        lanes, book = _lanes()
+        _load(bus, gateway, lanes)
+        _assert_chats(self, bus, gateway, book)
 
     def test_http_bus_delivers_every_bot_chat(self):
         served: list[dict] = []
@@ -152,8 +178,9 @@ class FleetChatTests(unittest.TestCase):
         try:
             bus = HttpBus(f"http://127.0.0.1:{server.server_address[1]}", "test-token")
             gateway = EchoGateway()
-            _load(bus, gateway)
-            _assert_chats(self, bus, gateway)
+            lanes, book = _lanes()
+            _load(bus, gateway, lanes)
+            _assert_chats(self, bus, gateway, book)
         finally:
             server.shutdown()
             server.server_close()

@@ -144,10 +144,24 @@ class BridgeTests(unittest.TestCase):
     def test_crew_fans_out_and_skips_a_profile_mimo_does_not_have(self):
         bus = MemoryBus()
         bus.send(from_="desk", to="crew", text="status", topic="talk")
-        gateway = ScriptedGateway({"muse": "muse up", "gemini-spark": "spark up", "hermes-bot": "hermes up"})
-        posted = process_new(bus, gateway, {"since": 0})
-        self.assertEqual(gateway.calls, [("muse", "status"), ("gemini-spark", "status"), ("hermes-bot", "status")])
-        self.assertEqual(posted, ["muse up", "MiMo has no Hermes profile. It stays on the file bus.", "spark up", "hermes up"])
+        gateway = ScriptedGateway({"hermes-bot": "hermes up", "muse": "should not use hermes", "gemini-spark": "should not use hermes"})
+
+        class Lane:
+            def __init__(self, name: str) -> None:
+                self.name = name
+                self.calls: list[tuple[str, str]] = []
+
+            def complete(self, seat: str, text: str) -> str:
+                self.calls.append((seat, text))
+                return f"{self.name} up"
+
+        muse = Lane("muse")
+        gemini = Lane("gemini")
+        posted = process_new(bus, gateway, {"since": 0}, lanes={"muse": muse, "gemini": gemini})
+        self.assertEqual(gateway.calls, [("hermes-bot", "status")])
+        self.assertEqual(muse.calls, [("muse", "status")])
+        self.assertEqual(gemini.calls, [("gemini-spark", "status")])
+        self.assertEqual(posted, ["muse up", "MiMo has no Hermes profile. It stays on the file bus.", "gemini up", "hermes up"])
 
     def test_leo_handoff_comes_back_as_the_gateway_reply(self):
         bus = MemoryBus()

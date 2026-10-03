@@ -9,6 +9,14 @@ ALIASES: tuple[tuple[str, str], ...] = (
     ("gemini spark", "gemini-spark"),
     ("gemini", "gemini-spark"),
     ("spark", "gemini-spark"),
+    ("muse.ai", "muse-ai"),
+    ("muse ai", "muse-ai"),
+    ("meta muse", "muse-ai"),
+    ("grok bot", "grokbot"),
+    ("grokbot", "grokbot"),
+    ("free buff", "freebuff"),
+    ("freebuff", "freebuff"),
+    ("buffy", "freebuff"),
     ("seo bot", "seo-bot"),
     ("grok build", "grok-build"),
     ("grok swarm", "grok-swarm"),
@@ -39,6 +47,7 @@ ALIASES: tuple[tuple[str, str], ...] = (
     ("jeremy", "jeremy"),
     ("leo-bot", "leo"),
     ("leo", "leo"),
+    ("grok", "grok"),
 )
 
 DISPLAY = {
@@ -59,6 +68,10 @@ DISPLAY = {
     "gaddesk": "GadDesk",
     "annie": "Annie",
     "muse": "Muse",
+    "muse-ai": "muse.ai",
+    "grok": "Grok",
+    "grokbot": "Grokbot",
+    "freebuff": "FreeBuff",
     "mimo": "MiMo",
     "btcc": "BTCC",
     "eve": "Eve",

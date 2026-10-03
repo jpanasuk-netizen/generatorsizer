@@ -13,22 +13,15 @@ PROFILES = {
     "eve": "eve",
     "freemodelsbot": "freemodelsbot",
     "gaddesk": "gaddesk",
-    "grok-build": "grok-build",
     "headshot": "headshot",
     "hermes-bot": "hermes-bot",
     "horobot": "horobot",
     "leo": "leo",
     "moneybot": "moneybot",
-    "muse": "muse",
     "proposalcloser": "proposalcloser",
     "seo-bot": "seobot",
     "taproot": "taproot",
     "thetubebot": "thetubebot",
-}
-
-# Same gateway, model id rather than a profile directory.
-GATEWAY_MODELS = {
-    "gemini-spark": "gemini-spark",
 }
 
 # Documented crew broadcast: muse, mimo, gemini-spark, hermes-bot.
@@ -58,8 +51,6 @@ def gateway_model(seat: str) -> str | None:
         return None
     if seat in PROFILES:
         return PROFILES[seat]
-    if seat in GATEWAY_MODELS:
-        return GATEWAY_MODELS[seat]
     return None
 
 
