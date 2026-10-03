@@ -42,3 +42,5 @@ The service posts as `Leo-Bot`. It does not also answer as `leo` while the talk 
 ## What this does not replace
 
 The Windows Hermes profile and the Connecture source tree stay on LightBringer. This package is the desk behavior those processes were failing to perform. It does not hold house secrets, and it does not mark work Done without a bus id.
+
+Specialist seats are answered by the Hermes bridge in `hermes/`. That bridge calls the gateway on `:8642` and posts the completion. The desk package does not speak for them.
