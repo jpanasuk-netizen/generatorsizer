@@ -64,6 +64,25 @@
 <p><button type="button" id="kwGo" style="background:var(--acc);color:#fff;border:none;border-radius:8px;padding:.6rem 1.2rem;cursor:pointer;font-weight:600">Convert to kWh</button></p>
 <div id="kwOut" class="ans" hidden></div>
 
+<h2>Three more recommendations, same definition</h2>
+<p>Each watt number below is already a recommendation on this site. Eight hours is still the calculator's default hours-per-day field, used only as EIA's "for 1 hour," repeated eight times. It is not a measured duty cycle.</p>
+<div class="tbl-wrap">
+<table>
+<tr><th>Recommendation</th><th>Where it came from</th><th class="num">8 hours</th><th class="num">Btu</th></tr>
+<tr><td>1,500 W</td><td>Fridge only: 192 W running, 1,200 W start, peak 1,200 W, 20% headroom, on <a href="generator-vs-battery-backup.html">generator vs battery backup</a></td><td class="num">12 kWh</td><td class="num">40,944</td></tr>
+<tr><td>2,000 W</td><td>Fridge at 192 / 1,200 plus a 60 W bulb at 60 / 60, on <a href="how-to-use-a-generator-when-the-power-goes-out.html">how to use a generator when the power goes out</a></td><td class="num">16 kWh</td><td class="num">54,592</td></tr>
+<tr><td>3,500 W</td><td>Food-truck list above</td><td class="num">28 kWh</td><td class="num">95,536</td></tr>
+<tr><td>11,000 W</td><td>Dryer 5,400 W running / 6,750 W start and an 8-inch range at 2,100 / 2,100, on <a href="backup-generator-installation.html">backup generator installation</a></td><td class="num">88 kWh</td><td class="num">300,256</td></tr>
+</table>
+</div>
+<p>1,500 W is 1.5 kW. 1.5 × 8 = 12 kWh. 12 × 3,412 = 40,944 Btu. 2,000 W is 2 kW. 2 × 8 = 16 kWh. 16 × 3,412 = 54,592 Btu. 11,000 W is 11 kW. 11 × 8 = 88 kWh. 88 × 3,412 = 300,256 Btu. The 3,500 W row is the one the box shows when you open the page: 3.5 × 8 = 28, and 28 × 3,412 = 95,536.</p>
+<p>The outage page's 2,000 W list is a fridge plus a bulb. <a href="which-generator-is-right-for-me.html">Which generator is right for me</a> also lands on 2,000 W, from a fridge plus a 1/3 hp furnace fan, a different pair with the same recommendation. EIA's multiplication does not care which appliances produced the watts. It also does not make those two lists the same electrical load. One of them includes a 240 V furnace-fan row. The kilowatt-hours do not record that.</p>
+
+<h2>What the box will not do</h2>
+<p>Type 1500 and 8, or 2000 and 8, or 11000 and 8, and the button prints the same products as the table. It will also accept a nameplate you did not size. That output is still watts ÷ 1,000 × hours × 3,412. It does not add the fridge's 1,008 W extra surge, and it does not apply the 20% headroom that turned 1,440 W into the 1,500 W recommendation (1,200 × 1.20 = 1,440, then the next 500 W).</p>
+<p>Gallons are a different page. The home calculator's gasoline line is recommended watts ÷ 7,000, and propane is that rate × 1.37, on <a href="how-much-propane-does-a-generator-use.html">how much propane a generator uses</a>. Turning those gallons into kilowatt-hours would need the generator's efficiency. EIA's definition of a kilowatthour does not supply that efficiency, and this page does not invent one. A standby sheet that prints its own Btu-per-hour note, such as the <a href="20kw-home-standby-generator.html">20 kW Guardian fuel table</a>, is that manufacturer's instruction. It is not 88 kWh converted backward into propane.</p>
+<p>A 10,000 W recommendation, from a 4-ton air conditioner at the top of Champion's band plus the fridge, is on <a href="10kw-generator-for-home.html">10 kW generator for a home</a>. 10 kW × 8 h = 80 kWh, and 80 × 3,412 = 272,960 Btu, by the same definition. That pair is not the dryer-and-range pair, so 80 kWh is not a substitute for the 88 kWh row.</p>
+
 <h2>A common mistake</h2>
 <p>Calling 28 kWh a 28 kW generator, or skipping the sizing steps and multiplying a single running watt by hours as if that product were the machine to buy. EIA's conversion does not add surge, and it does not apply the 20% headroom. Those happen in <code>sizeGenerator()</code> before you have a watt number worth converting. Dollar comparisons of fuel versus a standby install stay on <a href="ownership-cost.html">five-year cost</a>. That page prices outage hours. This page does not.</p>
 

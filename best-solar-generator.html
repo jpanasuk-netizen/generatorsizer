@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Best Solar Generator</title>
+<meta name="description" content="Jackery's Explorer 1000 v2 sheet: 1,070 Wh, 1,500 W AC, 3,000 W surge. This site's battery formula gives 3.9 hours at Honda's 192 W fridge.">
+<link rel="canonical" href="https://generator-sizer.com/best-solar-generator.html">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="shortcut icon" href="assets/favicon.ico">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="Best Solar Generator">
+<meta property="og:description" content="One published power station, matched to a fridge. No test ranking.">
+<meta property="og:url" content="https://generator-sizer.com/best-solar-generator.html">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://generator-sizer.com/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Best Solar Generator">
+<meta name="twitter:description" content="One published power station, matched to a fridge. No test ranking.">
+<meta name="twitter:image" content="https://generator-sizer.com/assets/og-image.png">
+<link rel="stylesheet" href="assets/styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Best Solar Generator",
+  "description": "Jackery's Explorer 1000 v2 sheet: 1,070 Wh, 1,500 W AC, 3,000 W surge. This site's battery formula gives 3.9 hours at Honda's 192 W fridge.",
+  "url": "https://generator-sizer.com/best-solar-generator.html",
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://generator-sizer.com/best-solar-generator.html"},
+  "datePublished": "2026-10-03",
+  "dateModified": "2026-10-03",
+  "author": {"@type": "Organization", "name": "GeneratorSizer"},
+  "publisher": {"@type": "Organization", "name": "GeneratorSizer"}
+}
+</script>
+</head>
+<body>
+<header class="site-head">
+  <a class="brand" href="index.html">GeneratorSizer</a>
+  <nav aria-label="Site">
+    <a href="index.html#calc">Calculator</a>
+    <a href="generator-vs-battery-backup.html">Generator vs battery</a>
+    <a href="topics.html">Topics</a>
+    <a href="about.html">About</a>
+  </nav>
+</header>
+<main>
+<h1>Best solar generator: one published sheet</h1>
+<p class="small">Published October 3, 2026.</p>
+<p class="small">Built by <a href="/about.html">Jeremy Panasuk</a>.</p>
+<p class="sub">No unit was tested for this page. The pick is a power station whose published AC rating clears one fridge, after this site's battery formula. It is not a ranked list.</p>
+<div class="answer-box"><strong>Quick answer:</strong> <a href="https://www.jackery.com/products/jackery-explorer-1000-v2">Jackery's Explorer 1000 v2</a> product page lists 30.4 Ah at 35.2 V DC (1,070 Wh), LiFePO4, and 1,500 W rated AC output with a 3,000 W surge peak, at 120 V, 60 Hz. <a href="https://faq.jackery.com/hc/en-us/articles/52303615153051-Explorer-1000-V2-Basic-Information">Jackery's FAQ</a> for model JE-1000D repeats 1,070 Wh, 1,500 W total across three ports, and 3,000 W instantaneous output. Honda's fridge start is 1,200 W, which is under both of those AC figures. <code>sizeBatteryRuntime()</code> then prints <strong>3.9 hours</strong> at 192 W running.</div>
+
+<h2>The numbers that are on the sheet</h2>
+<div class="tbl-wrap">
+<table>
+<tr><th>Item</th><th>Published figure</th></tr>
+<tr><td>Model</td><td>JE-1000D, Explorer 1000 v2</td></tr>
+<tr><td>Battery</td><td>30.4 Ah / 35.2 V DC (1,070 Wh), LiFePO4</td></tr>
+<tr><td>Cycle life</td><td>4,000 cycles to 70%+ capacity</td></tr>
+<tr><td>AC output</td><td>Three ports, 120 V, 60 Hz. 1,500 W rated total, 3,000 W surge peak. FAQ: 1,500 W max per port and 1,500 W total.</td></tr>
+<tr><td>Solar input</td><td>Two DC ports, 16–60 V. One port: 10.5 A, 200 W max. Both ports: 21 A, 400 W max. FAQ says the ports are in parallel, and two panels of different wattage at once are not supported.</td></tr>
+<tr><td>Solar charge time, SolarSaga 200</td><td>FAQ: one panel around 7.5 hours, two panels around 3.8 hours</td></tr>
+<tr><td>Weight</td><td>Product page: around 23.8 lb (10.8 kg). FAQ: around 10.8 kg.</td></tr>
+<tr><td>Fan noise</td><td>FAQ: 22 dB or less. That is the cooling fan, not a generator measured at 23 feet.</td></tr>
+<tr><td>UPS</td><td>FAQ: switches to battery within 20 ms. Not a 0 ms supply. The FAQ says not to connect devices that need a true uninterruptible supply, such as data servers.</td></tr>
+</table>
+</div>
+<p>30.4 × 35.2 = 1,070.08 Wh, which rounds to the printed 1,070 Wh. The FAQ page shows an update date of August 20, 2026. This page does not add a second brand. A unit whose watt-hours, AC watts, and solar-input watts were not on a page this site could read is not ranked here.</p>
+
+<h2>Worked example: Honda's fridge through the battery tab</h2>
+<p><a href="https://powerequipment.honda.com/generators/generator-wattage-estimation-guide">Honda</a> lists an Energy Star refrigerator or freezer at 1,200 starting watts and 132–192 running watts. This case uses 192 W, the same fridge as <a href="generator-vs-battery-backup.html">generator vs battery backup</a>. The battery function is <code>sizeBatteryRuntime()</code>: usable watt-hours = amp-hours × volts × depth of discharge × 0.88. LiFePO4 depth of discharge in that function is 0.80. The 0.88 is the script's inverter efficiency.</p>
+<ul>
+<li>Nameplate = 30.4 × 35.2 = 1,070 Wh after rounding.</li>
+<li>Usable = 30.4 × 35.2 × 0.80 × 0.88 = 753.336 Wh, which the script rounds to 753 Wh.</li>
+<li>Hours at a continuous 192 W = 753.336 / 192 = 3.9 hours, printed to one decimal.</li>
+</ul>
+<p>Enter 30.4 Ah, 35.2 V, LiFePO4, and 192 W on the battery tab of the <a href="index.html#calc">calculator</a>. Honda's 1,200 W start is under the published 1,500 W rated output and under the 3,000 W surge peak, so the AC rating on the sheet covers that start. The 3.9 hours begin only if the inverter actually passes the start. The script does not subtract the FAQ's 18 W standby consumption.</p>
+<p>The same function on a 100 Ah, 12 V LiFePO4 bank is 4.4 hours at 192 W, because that nameplate is 1,200 Wh and the factors are the same 0.80 and 0.88. The generator tab for the fridge alone recommends 1,500 W and prints 18.7 hours on 4 gallons of gasoline. Those three clocks answer three different questions. They are compared on the generator-vs-battery page. A larger bank, with its own inputs, can be built on the <a href="https://battery-bank-sizer.com/" rel="noopener">battery bank sizer</a>.</p>
+<p>Jackery's cycle line is 4,000 cycles to 70% or more. The battery tab also prints a cycle label, "~3,000" for LiFePO4. That label is the script's text. It is not this model's cycle life, so it is not the figure to quote for the Explorer 1000 v2.</p>
+
+<h2>What does not fit the 1,500 W port</h2>
+<p>The food-truck list on <a href="best-generator-for-a-food-truck.html">best generator for a food truck</a> runs at 1,792 W: fridge 192, coffee maker 600, microwave 1,000. 1,792 is above the 1,500 W total AC output. The 3,000 W surge peak does not raise the continuous total. The fridge start alone fits. The three appliances together do not.</p>
+<p>A camping list that runs at 490 W (fan, laptop, radio) is under 1,500 W. The same battery formula at 490 W is 753.336 / 490 = 1.5 hours. That is not Honda's EU2200i runtime, and it is not a claim that 490 W is what the camping page's generator burns. The fuel generator for that list is on <a href="best-portable-generator-for-camping.html">best portable generator for camping</a>.</p>
+<p>Solar recharge is the FAQ's published time, not 1,070 divided by 400. One SolarSaga 200 is around 7.5 hours. Two are around 3.8 hours. The input ceiling with both ports is 400 W, and the FAQ says not to mix panel wattages across the parallel ports.</p>
+
+<h2>A common mistake</h2>
+<p>Dividing 1,070 Wh by 192 W and calling the result the runtime. 1,070 / 192 is 5.6 hours. The battery tab applies 0.80 and 0.88 first and prints 3.9 hours. The other mistake is reading "solar generator" as a fuel generator that happens to have a panel. This unit has no engine exhaust. If you recharge it from a gasoline generator, that generator still goes outdoors, at least 20 feet from the house, on <a href="how-to-run-a-generator-safely.html">how to run a generator safely</a>.</p>
+
+<h2>Limits, and when to call a pro</h2>
+<p>Wiring this station into a panel, or treating the 20 ms switch as a house transfer switch, takes a licensed electrician and a permit where local code requires one. The FAQ's UPS note is a plug-in arrangement, and it says the switch is not zero milliseconds. The fan's 22 dB figure is not an input to the lot-line noise tool.</p>
+<p>This page does not claim the 3.9 hours were measured on a Jackery, and it does not claim a second model is worse. Check the nameplate you buy against the FAQ if the product page and the FAQ ever disagree. The product page and the FAQ agreed on 1,070 Wh, 1,500 W, and 3,000 W surge when this page was written.</p>
+<p class="small">Affiliate disclosure: as an Amazon Associate, we earn from qualifying purchases — at no cost to you.</p>
+<div class="affil">
+<span class="tag">Affiliate</span>
+<div class="affil-links">
+<a class="btn-amz" data-amz="Jackery Explorer 1000 v2" href="https://www.amazon.com/s?k=Jackery+Explorer+1000+v2&amp;tag=generatorsi0d-20" rel="sponsored nofollow noopener" target="_blank">Explorer 1000 v2 on Amazon</a>
+</div>
+</div>
+<p>Compiled with AI assistance from the sources below. Spot an error? Email <a href="mailto:jpanasuk@gmail.com">jpanasuk@gmail.com</a>.</p>
+<h2>Sources</h2>
+<ul>
+<li><a href="https://www.jackery.com/products/jackery-explorer-1000-v2">Jackery, Explorer 1000 v2 product page</a> — 30.4 Ah / 35.2 V, 1,070 Wh, 1,500 W rated, 3,000 W surge</li>
+<li><a href="https://faq.jackery.com/hc/en-us/articles/52303615153051-Explorer-1000-V2-Basic-Information">Jackery FAQ, Explorer 1000 v2 basic information</a> — model JE-1000D, solar input, charge times, UPS, fan noise</li>
+<li><a href="https://powerequipment.honda.com/generators/generator-wattage-estimation-guide">Honda, What wattage generator do I need?</a> — fridge row</li>
+<li><a href="https://generator-sizer.com/assets/app.js">GeneratorSizer calculator script</a> — <code>sizeBatteryRuntime()</code>, the 0.80 and 0.88 factors</li>
+</ul>
+</main>
+<footer>Built by Jeremy Panasuk · <a href="/about.html">About &amp; how this was made</a> · <a href="/methodology.html">Methodology</a> · <a href="/privacy.html">Privacy</a> · <a href="/contact.html">Contact</a> · pages may contain affiliate links</footer>
+<script src="assets/monetization.js"></script>
+</body>
+</html>

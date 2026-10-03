@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How Much Propane Does a Generator Use?</title>
+<meta name="description" content="The home calculator's propane rate is 1.37 times gasoline gallons. A 3,500 W recommendation on 4 gallons is 8.0 hours of gasoline and 5.8 hours of propane.">
+<link rel="canonical" href="https://generator-sizer.com/how-much-propane-does-a-generator-use.html">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="shortcut icon" href="assets/favicon.ico">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="How Much Propane Does a Generator Use?">
+<meta property="og:description" content="Runtime from the home calculator: recommended watts divided by 7,000, then 1.37 for propane volume.">
+<meta property="og:url" content="https://generator-sizer.com/how-much-propane-does-a-generator-use.html">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://generator-sizer.com/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How Much Propane Does a Generator Use?">
+<meta name="twitter:description" content="Runtime from the home calculator: recommended watts divided by 7,000, then 1.37 for propane volume.">
+<meta name="twitter:image" content="https://generator-sizer.com/assets/og-image.png">
+<link rel="stylesheet" href="assets/styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How Much Propane Does a Generator Use?",
+  "description": "The home calculator's propane rate is 1.37 times gasoline gallons. A 3,500 W recommendation on 4 gallons is 8.0 hours of gasoline and 5.8 hours of propane.",
+  "url": "https://generator-sizer.com/how-much-propane-does-a-generator-use.html",
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://generator-sizer.com/how-much-propane-does-a-generator-use.html"},
+  "datePublished": "2026-10-03",
+  "dateModified": "2026-10-03",
+  "author": {"@type": "Organization", "name": "GeneratorSizer"},
+  "publisher": {"@type": "Organization", "name": "GeneratorSizer"}
+}
+</script>
+</head>
+<body>
+<header class="site-head">
+  <a class="brand" href="index.html">GeneratorSizer</a>
+  <nav aria-label="Site">
+    <a href="index.html#calc">Calculator</a>
+    <a href="storm-runbook.html">Storm runbook</a>
+    <a href="topics.html">Topics</a>
+    <a href="about.html">About</a>
+  </nav>
+</header>
+<main>
+<h1>How much propane does a generator use?</h1>
+<p class="small">Published October 3, 2026.</p>
+<p class="small">Built by <a href="/about.html">Jeremy Panasuk</a>.</p>
+<p class="sub">This is the home calculator's runtime, for gasoline and for propane. It is not a second formula, and it is not the storm runbook's button.</p>
+<div class="answer-box"><strong>Quick answer:</strong> <code>sizeGenerator()</code> in <code>assets/app.js</code> sets gasoline gallons per hour = recommended watts ÷ 7,000, then propane gallons per hour = that gasoline rate × 1.37. A <strong>3,500 W</strong> recommendation and a 4 gallon tank print <strong>8.0 hours</strong> on gasoline and <strong>5.8 hours</strong> on propane. At 8 hours a day the propane line is <strong>23.2 lb/day</strong>, using the script's 4.24 lb/gal factor.</div>
+
+<h2>Two scripts, two propane factors</h2>
+<p>The home calculator and the <a href="storm-runbook.html">storm runbook</a> both start from one gallon of gasoline per 7,000 watts per hour. They do not apply that rule to the same watt number, and they do not use the same propane multiplier.</p>
+<div class="tbl-wrap">
+<table>
+<tr><th></th><th>Home calculator</th><th>Storm runbook</th></tr>
+<tr><td>Watts in the 7,000</td><td>Recommended watts, after surge and 20% headroom</td><td>Running watts you type</td></tr>
+<tr><td>Propane volume</td><td>Gasoline gallons × 1.37</td><td>Gasoline gallons ÷ 0.75 (1.33×)</td></tr>
+<tr><td>Pounds</td><td>Propane gal/h × hours/day × 4.24</td><td>Not printed</td></tr>
+</table>
+</div>
+<p><a href="https://www.eia.gov/energyexplained/units-and-calculators/british-thermal-units.php">EIA's sample heat contents</a> are 120,214 Btu per gallon of motor gasoline and 91,452 Btu per gallon of propane. 120,214 / 91,452 = 1.314, so the same heat needs about 31% more propane volume than gasoline. Neither 1.37 nor 1.33 is that ratio. Both are script factors. A manufacturer fuel table, such as the gallons per hour on the <a href="20kw-home-standby-generator.html">20 kW Guardian sheet</a>, is a third number and is not produced by either script.</p>
+
+<h2>Worked example: the 3,500 W food-truck recommendation</h2>
+<p>The watt input is the recommendation on <a href="best-generator-for-a-food-truck.html">best generator for a food truck</a>, not a new measurement. Honda's Energy Star fridge at 192 W running / 1,200 W start, a 4-cup coffee maker at 600 / 600, and a 650 W microwave at 1,000 / 1,000 produce a 3,500 W recommendation after surge and 20% headroom. Tank 4 gallons. Hours per day 8, which is the calculator's default, not a claim that the truck draws 3,500 W for eight hours.</p>
+<ul>
+<li>Gasoline gal/h = 3,500 / 7,000 = 0.5. Hours on 4 gallons = 4 / 0.5 = 8.0. Gallons per day = 0.5 × 8 = 4.0.</li>
+<li>Propane gal/h = 0.5 × 1.37 = 0.685. Hours on the same 4 gallons = 4 / 0.685 = 5.8, because the script prints one decimal.</li>
+<li>Pounds per day = 0.685 × 8 × 4.24 = 23.2.</li>
+</ul>
+<p>The comment above <code>sizeGenerator()</code> says a 20 lb tank holds 4.7 gallons. That 4.7 is the comment's figure (20 / 4.24 is about 4.72). It is not a tank this page weighed. Entering 4.7 gallons at the same 3,500 W prints 9.4 hours of gasoline and 6.9 hours of propane. Pounds per day stay 23.2, because that line uses hours per day, not tank size.</p>
+<p>If the 7,000 were applied to the 1,792 W running total instead of the 3,500 W recommendation, gasoline would be 1,792 / 7,000 gallons per hour and the tank would last longer. That is what the storm runbook does. Putting 3,500 into the runbook treats the recommendation as if it were running watts.</p>
+
+<h2>Runtime calculator</h2>
+<p>Type a recommended wattage, a tank in gallons, and hours per day. The button repeats the home calculator's fuel lines only. It does not add surge, and it does not apply the runbook's ÷ 0.75.</p>
+<div class="row2">
+  <div class="field"><label for="prWatts">Recommended watts</label><input type="number" id="prWatts" value="3500" min="0" step="1"></div>
+  <div class="field"><label for="prTank">Tank gallons</label><input type="number" id="prTank" value="4" min="0" step="0.1"></div>
+  <div class="field"><label for="prHours">Hours per day</label><input type="number" id="prHours" value="8" min="0" step="0.1"></div>
+</div>
+<p><button type="button" id="prGo" style="background:var(--acc);color:#fff;border:none;border-radius:8px;padding:.6rem 1.2rem;cursor:pointer;font-weight:600">Gasoline and propane runtime</button></p>
+<div id="prOut" class="ans" hidden></div>
+
+<h2>A common mistake</h2>
+<p>Reading "~25% less runtime" off a comparison table and using it in place of the button. EIA's heat ratio is about 31% more propane volume (divide by 1.314, not by 1.37). The home button is 1.37. The runbook is ÷ 0.75. Three different statements. The other mistake is dividing a 20 lb tank's pounds by 4.24 and calling the result an EIA density. EIA's page cited here publishes Btu per gallon. The 4.24 figure is the factor in the pounds-per-day line of <code>sizeGenerator()</code>.</p>
+
+<h2>Limits, and when to call a pro</h2>
+<p>These hours assume a steady load at 50% of the recommended watts. A fridge that cycles off burns less. A generator manual that prints its own hours at 50% load, such as a tested tank time on that model, is the number for that machine. Do not "correct" the manual with 1.37, and do not "correct" this button with the manual.</p>
+<p>A propane tank piped to a standby generator, a regulator, and a transfer switch are a gas-fitting and electrical installation. That takes a licensed electrician and a permit where local code requires one. Portable placement is unchanged: outdoors, at least 20 feet from the house, on <a href="how-to-run-a-generator-safely.html">how to run a generator safely</a>. Propane does not make an indoor generator safe.</p>
+<p>Replay the watt step on the <a href="index.html#calc">generator size calculator</a> before you type a recommendation into the box above. The <a href="kw-to-kwh-calculator.html">kW to kWh calculator</a> turns watts and hours into energy. It does not turn these gallons into kilowatt-hours.</p>
+<p>Compiled with AI assistance from the sources below. Spot an error? Email <a href="mailto:jpanasuk@gmail.com">jpanasuk@gmail.com</a>.</p>
+<h2>Sources</h2>
+<ul>
+<li><a href="https://www.eia.gov/energyexplained/units-and-calculators/british-thermal-units.php">EIA, British thermal units</a> — 120,214 Btu/gal motor gasoline and 91,452 Btu/gal propane</li>
+<li><a href="https://powerequipment.honda.com/generators/generator-wattage-estimation-guide">Honda, What wattage generator do I need?</a> — the appliance rows behind the 3,500 W recommendation</li>
+<li><a href="https://generator-sizer.com/assets/app.js">GeneratorSizer calculator script</a> — <code>sizeGenerator()</code>, the 7,000, 1.37, and 4.24 factors</li>
+</ul>
+</main>
+<footer>Built by Jeremy Panasuk · <a href="/about.html">About &amp; how this was made</a> · <a href="/methodology.html">Methodology</a> · <a href="/privacy.html">Privacy</a> · <a href="/contact.html">Contact</a> · pages may contain affiliate links</footer>
+<script>
+(function(){
+  function trimNum(n, digits){
+    if(!isFinite(n)) return "—";
+    var s = n.toFixed(digits);
+    if(s.indexOf(".") >= 0) s = s.replace(/0+$/, "").replace(/\.$/, "");
+    return s;
+  }
+  document.getElementById("prGo").onclick = function(){
+    var watts = parseFloat(document.getElementById("prWatts").value);
+    var tank = parseFloat(document.getElementById("prTank").value);
+    var hours = parseFloat(document.getElementById("prHours").value);
+    var box = document.getElementById("prOut");
+    if(!(watts > 0) || !(tank > 0) || !(hours >= 0)){
+      box.hidden = false;
+      box.innerHTML = "<p>Enter recommended watts and tank gallons greater than zero, and hours per day of zero or greater.</p>";
+      return;
+    }
+    var gas = watts / 7000;
+    var pro = gas * 1.37;
+    var gasH = tank / gas;
+    var proH = tank / pro;
+    var gasDay = gas * hours;
+    var lbDay = pro * hours * 4.24;
+    box.hidden = false;
+    box.innerHTML = '<div class="big">'+proH.toFixed(1)+' <span class="unit">hours of propane</span></div>'+
+      '<div class="grid2">'+
+        '<div class="stat"><b>'+gasH.toFixed(1)+' h</b><span>Gasoline, same tank</span></div>'+
+        '<div class="stat"><b>'+trimNum(gas, 3)+' gal/h</b><span>Gasoline = watts ÷ 7,000</span></div>'+
+        '<div class="stat"><b>'+trimNum(pro, 3)+' gal/h</b><span>Propane = gasoline × 1.37</span></div>'+
+        '<div class="stat"><b>'+gasDay.toFixed(1)+' gal/day</b><span>Gasoline at the hours you entered</span></div>'+
+        '<div class="stat"><b>'+lbDay.toFixed(1)+' lb/day</b><span>Propane × hours/day × 4.24</span></div>'+
+        '<div class="stat"><b>'+trimNum(tank, 1)+' gal</b><span>Tank you entered</span></div>'+
+      '</div>'+
+      '<p class="note">Home calculator factors only. EIA heat ratio is 120,214 / 91,452 = 1.314, not 1.37. The storm runbook divides by 0.75 and uses running watts, not recommended watts. 4.24 lb/gal is the script.</p>';
+  };
+})();
+</script>
+</body>
+</html>
