@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Generator vs Battery Backup</title>
+<meta name="description" content="This site's battery tab: 100 Ah at 12 V, LiFePO4, gives 844.8 usable Wh and 4.4 hours at 192 W. The generator tab on the same fridge recommends 1,500 W and 18.7 hours on 4 gallons of gasoline.">
+<link rel="canonical" href="https://generator-sizer.com/generator-vs-battery-backup.html">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="shortcut icon" href="assets/favicon.ico">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="Generator vs Battery Backup">
+<meta property="og:description" content="One fridge, two tabs in the same calculator. The hours are not the same kind of test.">
+<meta property="og:url" content="https://generator-sizer.com/generator-vs-battery-backup.html">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://generator-sizer.com/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Generator vs Battery Backup">
+<meta name="twitter:description" content="One fridge, two tabs in the same calculator. The hours are not the same kind of test.">
+<meta name="twitter:image" content="https://generator-sizer.com/assets/og-image.png">
+<link rel="stylesheet" href="assets/styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Generator vs Battery Backup",
+  "description": "This site's battery tab: 100 Ah at 12 V, LiFePO4, gives 844.8 usable Wh and 4.4 hours at 192 W. The generator tab on the same fridge recommends 1,500 W and 18.7 hours on 4 gallons of gasoline.",
+  "url": "https://generator-sizer.com/generator-vs-battery-backup.html",
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://generator-sizer.com/generator-vs-battery-backup.html"},
+  "datePublished": "2026-10-03",
+  "dateModified": "2026-10-03",
+  "author": {"@type": "Organization", "name": "GeneratorSizer"},
+  "publisher": {"@type": "Organization", "name": "GeneratorSizer"}
+}
+</script>
+</head>
+<body>
+<header class="site-head">
+  <a class="brand" href="index.html">GeneratorSizer</a>
+  <nav aria-label="Site">
+    <a href="index.html#calc">Calculator</a>
+    <a href="refrigerator-freezer.html">Fridge and freezer</a>
+    <a href="topics.html">Topics</a>
+    <a href="about.html">About</a>
+  </nav>
+</header>
+<main>
+<h1>Generator vs battery backup</h1>
+<p class="small">Published October 3, 2026.</p>
+<p class="small">Built by <a href="/about.html">Jeremy Panasuk</a>.</p>
+<p class="sub">Same fridge, two formulas already in the calculator. The battery hours are at the running watts. The generator hours are a fuel model at half the recommended watts. Comparing the two clocks as if they were one lab test is the mistake.</p>
+<div class="answer-box"><strong>Quick answer:</strong> For Honda's Energy Star fridge at 192 W running and 1,200 W start, the generator tab recommends <strong>1,500 W</strong> and, on a 4 gallon tank, <strong>18.7 hours</strong> of gasoline at 50% of that recommendation. The battery tab, given 100 Ah, 12 V, and its LiFePO4 factors, stores 844.8 usable watt-hours and runs <strong>4.4 hours</strong> at 192 W. Both numbers are the script's. Neither is a cell datasheet or a generator dyno.</div>
+
+<h2>The shared load</h2>
+<p><a href="https://powerequipment.honda.com/generators/generator-wattage-estimation-guide">Honda</a> lists an Energy Star refrigerator or freezer at 1,200 starting watts and 132–192 running watts. This comparison uses 192 W so it sits on the high end of that running band. The walk-through of the generator half alone is on <a href="how-does-a-generator-work.html">how a generator works</a>. A sump pump is a different load, with its own surge, on <a href="sump-pump-watts.html">sump pump watts</a>.</p>
+
+<h2>Battery tab, inputs shown</h2>
+<p><code>sizeBatteryRuntime()</code> in <code>assets/app.js</code> does this for LiFePO4: usable watt-hours = amp-hours × volts × 0.80 × 0.88. The 0.80 is the depth of discharge the script assigns to that chemistry menu. The 0.88 is the script's average inverter efficiency. They are factors in the page, not a laboratory result for a battery you own.</p>
+<ul>
+<li>Nameplate watt-hours = 100 Ah × 12 V = 1,200 Wh.</li>
+<li>Usable = 100 × 12 × 0.80 × 0.88 = 844.8 Wh.</li>
+<li>Hours at a continuous 192 W = 844.8 / 192 = 4.4 hours.</li>
+</ul>
+<p>Enter 100, 12 V, LiFePO4, and 192 W on the battery tab of the <a href="index.html#calc">calculator</a>. The script also prints a cycle label next to that result. That label is the script's own text. It is not a manufacturer cycle life, so it is not repeated here. A larger bank, with its own inputs, can be built on the <a href="https://battery-bank-sizer.com/" rel="noopener">battery bank sizer</a>.</p>
+
+<h2>Generator tab, same fridge</h2>
+<ul>
+<li>Running total = 192 W. Extra surge = 1,200 − 192 = 1,008 W. Peak = 1,200 W.</li>
+<li>1,200 × 1.20 = 1,440 W, rounded up to the next 500 W = <strong>1,500 W recommended</strong>.</li>
+<li>Gasoline gallons per hour = 1,500 / 7,000. A 4 gallon tank lasts 18.7 hours. Propane at 1.37 times the gasoline rate lasts 13.6 hours on those same 4 gallons.</li>
+</ul>
+<p>The 18.7 hours assumes the engine is burning fuel as if it were loaded at 50% of the 1,500 W recommendation. It does not assume the fridge draws 1,500 W, and it does not assume the fridge draws 192 W for 18.7 hours. Refueling extends it. The battery's 4.4 hours ends when the usable watt-hours are gone, unless something recharges the bank.</p>
+
+<h2>A common mistake</h2>
+<p>Dividing the 1,200 Wh nameplate by 192 W and calling that the runtime (6.25 hours). The battery tab does not do that. It applies 0.80 and 0.88 first, and the result is 4.4 hours. The other mistake is lining 4.4 hours up against 18.7 hours and declaring a winner. One clock is usable watt-hours divided by the fridge's running watts. The other is tank gallons divided by a gasoline rule of thumb. A fridge that cycles off uses fewer watt-hours than a continuous 192 W, and the generator's fuel line is not that duty cycle either.</p>
+
+<h2>Limits, and when to call a pro</h2>
+<p>Wiring an inverter and a battery into a house, or connecting a generator to the panel, takes a licensed electrician and a permit where local code requires one. A generator still runs outdoors. Placement is on <a href="how-to-run-a-generator-safely.html">how to run a generator safely</a>. This comparison does not include temperature, Peukert rate effects beyond the note already in the battery tab, or the surge an inverter must pass when the compressor starts at 1,200 W. If the inverter cannot pass that start, the 4.4 hour figure never begins.</p>
+<p>Compiled with AI assistance from the sources below. Spot an error? Email <a href="mailto:jpanasuk@gmail.com">jpanasuk@gmail.com</a>.</p>
+<h2>Sources</h2>
+<ul>
+<li><a href="https://powerequipment.honda.com/generators/generator-wattage-estimation-guide">Honda, What wattage generator do I need?</a></li>
+<li><a href="https://generator-sizer.com/assets/app.js">GeneratorSizer calculator script</a> — <code>sizeGenerator()</code> and <code>sizeBatteryRuntime()</code>, the factors used above</li>
+</ul>
+</main>
+<footer>Built by Jeremy Panasuk · <a href="/about.html">About &amp; how this was made</a> · <a href="/methodology.html">Methodology</a> · <a href="/privacy.html">Privacy</a> · <a href="/contact.html">Contact</a> · pages may contain affiliate links</footer>
+</body>
+</html>

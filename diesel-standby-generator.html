@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diesel Standby Generator</title>
+<meta name="description" content="EIA lists diesel at 137,381 Btu per gallon. This site's gasoline gallons-per-hour rule is a different fuel and does not size a diesel standby.">
+<link rel="canonical" href="https://generator-sizer.com/diesel-standby-generator.html">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="shortcut icon" href="assets/favicon.ico">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="Diesel Standby Generator">
+<meta property="og:description" content="Why the portable gasoline fuel rule does not transfer to a diesel standby, with one worked house load.">
+<meta property="og:url" content="https://generator-sizer.com/diesel-standby-generator.html">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://generator-sizer.com/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Diesel Standby Generator">
+<meta name="twitter:description" content="Why the portable gasoline fuel rule does not transfer to a diesel standby, with one worked house load.">
+<meta name="twitter:image" content="https://generator-sizer.com/assets/og-image.png">
+<link rel="stylesheet" href="assets/styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Diesel Standby Generator",
+  "description": "EIA lists diesel at 137,381 Btu per gallon. This site's gasoline gallons-per-hour rule is a different fuel and does not size a diesel standby.",
+  "url": "https://generator-sizer.com/diesel-standby-generator.html",
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://generator-sizer.com/diesel-standby-generator.html"},
+  "datePublished": "2026-10-03",
+  "dateModified": "2026-10-03",
+  "author": {"@type": "Organization", "name": "GeneratorSizer"},
+  "publisher": {"@type": "Organization", "name": "GeneratorSizer"}
+}
+</script>
+</head>
+<body>
+<header class="site-head">
+  <a class="brand" href="index.html">GeneratorSizer</a>
+  <nav aria-label="Site">
+    <a href="index.html#calc">Calculator</a>
+    <a href="kubota-standby-generator.html">Kubota GL7000</a>
+    <a href="portable-vs-standby-generator.html">Portable vs standby</a>
+    <a href="about.html">About</a>
+  </nav>
+</header>
+<main>
+<h1>Diesel standby generator</h1>
+<p class="small">Published October 3, 2026.</p>
+<p class="small">Built by <a href="/about.html">Jeremy Panasuk</a>.</p>
+<p class="sub">A diesel set can carry a standby kilowatt rating. This site's fuel line is still a gasoline portable rule. Those are not interchangeable.</p>
+<div class="answer-box"><strong>Quick answer:</strong> <a href="https://www.eia.gov/energyexplained/units-and-calculators/british-thermal-units.php">EIA</a> lists diesel fuel at 137,381 Btu per gallon, motor gasoline at 120,214, and propane at 91,452. The calculator's gasoline rate is recommended watts ÷ 7,000. Do not feed a diesel nameplate into that division and call the result diesel burn.</div>
+
+<h2>What "standby" means on a diesel set</h2>
+<p>Manufacturers publish a standby output and a prime output. They are not the same number. On Kubota's GL7000-USA sheet the standby output is 7.0 kW and the prime output is 6.5 kW. That model is worked on its own page, <a href="kubota-standby-generator.html">Kubota standby generator</a>, because the fuel table belongs to that sheet. This page is about the mistake of mixing fuels.</p>
+<p><a href="https://www.eia.gov/energyexplained/units-and-calculators/british-thermal-units.php">EIA's sample heat contents</a> put more Btu in a gallon of diesel (137,381) than in a gallon of gasoline (120,214) or propane (91,452). Heat content is not a generator's gallons-per-hour. A diesel engine's published burn comes from the manufacturer's load test, not from dividing watts by 7,000.</p>
+
+<h2>Worked example: fridge and a 1/3 hp furnace fan</h2>
+<p><a href="https://powerequipment.honda.com/generators/generator-wattage-estimation-guide">Honda</a> lists an Energy Star refrigerator or freezer at 1,200 starting watts and 132–192 running watts, and a 1/3 horsepower gas or fuel-oil furnace fan at 1,400 starting watts and 700 running watts, marked 240 V. This case uses 192 W for the fridge.</p>
+<ul>
+<li>Running total = 192 + 700 = 892 W.</li>
+<li>Largest start is the furnace fan at 1,400 W. Extra surge = 1,400 − 700 = 700 W.</li>
+<li>Peak = 892 + 700 = 1,592 W.</li>
+<li>1,592 × 1.20 = 1,910.4 W, rounded up to the next 500 W = <strong>2,000 W recommended</strong> on the portable calculator.</li>
+<li>Gasoline at 50% of that 2,000 W recommendation = 2,000 / 7,000 = 0.286 gallons per hour. A 4 gallon tank lasts 14.0 hours. Propane at ×1.37 lasts 10.2 hours on those 4 gallons.</li>
+</ul>
+<p>A 7.0 kW diesel standby rating is a larger machine than this 2,000 W portable recommendation. The 14.0 hours is gasoline math for the portable class. It is not how long the Kubota tank lasts, and it is not a diesel gallon.</p>
+
+<h2>A common mistake</h2>
+<p>Taking EIA's 137,381 / 120,214 ratio (about 1.14) and multiplying the calculator's 0.286 gal/h by that ratio, or dividing by it, to "convert" the answer into diesel. EIA published heat per gallon. The calculator published a gasoline portable rule of thumb. A diesel burn rate has to come from the generator sheet's own load rows. Half-load on the GL7000 sheet is 0.45 gal/h of diesel, which is a test of that machine, not of an 892 W house load.</p>
+
+<h2>Limits, and when to call a pro</h2>
+<p>Installing a standby set, a day tank, or an automatic transfer switch is permanent work. It takes a licensed electrician and a permit where local code requires one. Stored diesel and a residential setback are not things this calculator decides. For a service contract and load-bank testing, start with <a href="find-a-commercial-generator-service.html">finding a commercial generator service</a>. For portable versus automatic home standby in general, see <a href="portable-vs-standby-generator.html">portable vs standby</a>.</p>
+<p>Run any engine-driven set outdoors. The placement rules are on <a href="how-to-run-a-generator-safely.html">how to run a generator safely</a>.</p>
+<p>Compiled with AI assistance from the sources below. Spot an error? Email <a href="mailto:jpanasuk@gmail.com">jpanasuk@gmail.com</a>.</p>
+<h2>Sources</h2>
+<ul>
+<li><a href="https://www.eia.gov/energyexplained/units-and-calculators/british-thermal-units.php">EIA, British thermal units</a></li>
+<li><a href="https://powerequipment.honda.com/generators/generator-wattage-estimation-guide">Honda, What wattage generator do I need?</a></li>
+<li><a href="https://www.kubotaengine.com/wp-content/uploads/2026/08/26106_KEA_Generator_Spec-Sheets_2026_GL7000.pdf">Kubota Engine America, GL7000-USA spec sheet (KEAMKT-0306)</a></li>
+</ul>
+</main>
+<footer>Built by Jeremy Panasuk · <a href="/about.html">About &amp; how this was made</a> · <a href="/methodology.html">Methodology</a> · <a href="/privacy.html">Privacy</a> · <a href="/contact.html">Contact</a> · pages may contain affiliate links</footer>
+</body>
+</html>

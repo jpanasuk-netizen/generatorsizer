@@ -29,6 +29,18 @@
 ## Use policy
 Cite freely with link attribution. Wattage figures are published typical values (DOE/EIA energy content, manufacturer spec sheets); estimates are rounded conservatively. Not financial or safety advice — transfer-switch work requires a licensed electrician.
 
+## Guides
+- [How does a generator work?](https://generator-sizer.com/how-does-a-generator-work.html): Faraday induction, then one fridge through the sizing formula
+- [Best generator for a food truck](https://generator-sizer.com/best-generator-for-a-food-truck.html): fridge, 4-cup coffee maker, and a 650 W microwave row
+- [Diesel standby generator](https://generator-sizer.com/diesel-standby-generator.html): why the gasoline fuel rule is not a diesel burn rate
+- [How to run a generator safely](https://generator-sizer.com/how-to-run-a-generator-safely.html): CPSC 20-foot placement, kept separate from OSHA's 3–4 foot clearance
+- [Backup generator installation](https://generator-sizer.com/backup-generator-installation.html): transfer switch versus a cord, with one dryer-and-range example
+- [How to use a generator when the power goes out](https://generator-sizer.com/how-to-use-a-generator-when-the-power-goes-out.html): Ready.gov sequence, then a fridge and a 60 W bulb
+- [Kubota standby generator](https://generator-sizer.com/kubota-standby-generator.html): GL7000-USA sheet, prime amps versus the standby kilowatt line
+- [Best portable generator for camping](https://generator-sizer.com/best-portable-generator-for-camping.html): fan, laptop, and radio matched to the EU2200i sheet
+- [kW to kWh calculator](https://generator-sizer.com/kw-to-kwh-calculator.html): EIA's definition applied to a watt recommendation
+- [Generator vs battery backup](https://generator-sizer.com/generator-vs-battery-backup.html): one fridge through the generator tab and the battery tab
+
 ## Topic map
 - [GeneratorSizer topic map](https://generator-sizer.com/topics.html): Generator sizing calculator for homeowners who need to know exactly what wattage keeps the house running during an outage.
 - **Load math:** [Generator size calculator](https://generator-sizer.com/), [Outage cheat sheet](https://generator-sizer.com/magnet.html), [Fridge & freezer](https://generator-sizer.com/refrigerator-freezer.html), [Well pump watts](https://generator-sizer.com/well-pump-watts.html)

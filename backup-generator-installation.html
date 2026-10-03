@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Backup Generator Installation</title>
+<meta name="description" content="OSHA: do not tie a generator to a building unless a qualified electrician installs a transfer switch. One Honda dryer-plus-range list needs the 50 A class.">
+<link rel="canonical" href="https://generator-sizer.com/backup-generator-installation.html">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="shortcut icon" href="assets/favicon.ico">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="Backup Generator Installation">
+<meta property="og:description" content="A transfer switch is part of the installation. This worked list does not fit a 30 A, 7,200 W switch.">
+<meta property="og:url" content="https://generator-sizer.com/backup-generator-installation.html">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://generator-sizer.com/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Backup Generator Installation">
+<meta name="twitter:description" content="A transfer switch is part of the installation. This worked list does not fit a 30 A, 7,200 W switch.">
+<meta name="twitter:image" content="https://generator-sizer.com/assets/og-image.png">
+<link rel="stylesheet" href="assets/styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Backup Generator Installation",
+  "description": "OSHA: do not tie a generator to a building unless a qualified electrician installs a transfer switch. One Honda dryer-plus-range list needs the 50 A class.",
+  "url": "https://generator-sizer.com/backup-generator-installation.html",
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://generator-sizer.com/backup-generator-installation.html"},
+  "datePublished": "2026-10-03",
+  "dateModified": "2026-10-03",
+  "author": {"@type": "Organization", "name": "GeneratorSizer"},
+  "publisher": {"@type": "Organization", "name": "GeneratorSizer"}
+}
+</script>
+</head>
+<body>
+<header class="site-head">
+  <a class="brand" href="index.html">GeneratorSizer</a>
+  <nav aria-label="Site">
+    <a href="index.html#calc">Calculator</a>
+    <a href="transfer-switch-sizing.html">Transfer switch</a>
+    <a href="find-a-commercial-generator-service.html">Find a pro</a>
+    <a href="about.html">About</a>
+  </nav>
+</header>
+<main>
+<h1>Backup generator installation</h1>
+<p class="small">Published October 3, 2026.</p>
+<p class="small">Built by <a href="/about.html">Jeremy Panasuk</a>.</p>
+<p class="sub">Plugging a cord into an appliance is not an installation. Tying the generator to the building is, and that step is an electrician's.</p>
+<div class="answer-box"><strong>Quick answer:</strong> <a href="https://www.osha.gov/sites/default/files/publications/OSHA3286.pdf">OSHA</a> says never attach a generator directly to the electrical system of a structure unless a qualified electrician has properly installed it with a transfer switch. <a href="https://www.fema.gov/node/generator-safety-stay-safe">FEMA</a> says never plug it into a wall outlet or the main electrical panel. Permanent installation takes a licensed electrician and a permit where local code requires one.</div>
+
+<h2>What gets installed</h2>
+<p>A portable generator can feed a few appliances through the cords OSHA describes: the manufacturer's cords, or grounded extension cords rated for the load, inspected so they are not cut or frayed. That path stops at the plug.</p>
+<p>Feeding circuits inside the house is the installation. OSHA says attaching a generator to a building's electrical system without a properly installed transfer switch can energize wiring for a long distance and creates an electrocution risk for utility workers and others. The amp-class math for 30 A versus 50 A is already on <a href="transfer-switch-sizing.html">transfer switch sizing</a>: the site's planner treats 30 A as 30 × 240 V = 7,200 W and 50 A as 50 × 240 V = 12,000 W. This page uses those same thresholds on one published appliance pair.</p>
+
+<h2>Worked example: electric dryer and one range element</h2>
+<p><a href="https://powerequipment.honda.com/generators/generator-wattage-estimation-guide">Honda</a> lists an electric clothes dryer at 6,750 starting watts and 5,400 running watts, and an 8-inch electric range element at 2,100 starting watts and 2,100 running watts. Both rows are marked 240 V.</p>
+<p>Generator tab, both loads on, 20% headroom:</p>
+<ul>
+<li>Running total = 5,400 + 2,100 = 7,500 W.</li>
+<li>Largest start is the dryer at 6,750 W. Extra surge = 6,750 − 5,400 = 1,350 W.</li>
+<li>Peak = 7,500 + 1,350 = 8,850 W.</li>
+<li>8,850 × 1.20 = 10,620 W, rounded up to the next 500 W = <strong>11,000 W recommended</strong>.</li>
+<li>Gasoline at 50% of that recommendation = 11,000 / 7,000 = 1.57 gallons per hour. A 4 gallon tank lasts 2.5 hours. That short tank time is the portable formula applied to a large class. It is a reason this pair is a bad fit for a small gasoline portable, not a diesel burn rate.</li>
+</ul>
+<p>Transfer-switch planner, which adds the watts you type and does not add surge. Enter the running watts the way the script parses a line (<code>Name - watts</code>):</p>
+<ul>
+<li>Dryer - 5400</li>
+<li>Range element - 2100</li>
+</ul>
+<p>Total = 7,500 W. The first class in the planner that is at least 7,500 W is <strong>50 A / 12,000 W</strong>. The 30 A / 7,200 W class is smaller than 7,500 W, so this list does not fit it. An 11,000 W generator recommendation also sits under the 12,000 W ceiling and over the 7,200 W ceiling.</p>
+
+<h2>A common mistake</h2>
+<p>Buying the generator, then plugging it into a dryer outlet to "backfeed" the panel. FEMA's line is not to plug the generator into a wall outlet or the main panel. OSHA's line is that the transfer switch has to be installed by a qualified electrician. The 11,000 W figure does not make a suicide cord safer. It makes the cord more dangerous.</p>
+
+<h2>Limits, and when to call a pro</h2>
+<p>This page does not design a service, pick a breaker, or say your jurisdiction's permit fee. It shows one pair of Honda rows through two tools you already have. A standby set with an automatic transfer switch, a concrete pad, and a fuel line is a larger job than this cord-versus-switch distinction. Use <a href="find-a-commercial-generator-service.html">the commercial service checklist</a> when the machine is a stationary unit, and <a href="how-to-run-a-generator-safely.html">the safety page</a> for the 20-foot placement rule that still applies after the electrician leaves.</p>
+<p>Compiled with AI assistance from the sources below. Spot an error? Email <a href="mailto:jpanasuk@gmail.com">jpanasuk@gmail.com</a>.</p>
+<h2>Sources</h2>
+<ul>
+<li><a href="https://www.osha.gov/sites/default/files/publications/OSHA3286.pdf">OSHA fact sheet, Using portable generators safely (OSHA 3286)</a></li>
+<li><a href="https://www.fema.gov/node/generator-safety-stay-safe">FEMA, Generator safety — stay safe</a></li>
+<li><a href="https://powerequipment.honda.com/generators/generator-wattage-estimation-guide">Honda, What wattage generator do I need?</a></li>
+</ul>
+</main>
+<footer>Built by Jeremy Panasuk · <a href="/about.html">About &amp; how this was made</a> · <a href="/methodology.html">Methodology</a> · <a href="/privacy.html">Privacy</a> · <a href="/contact.html">Contact</a> · pages may contain affiliate links</footer>
+</body>
+</html>

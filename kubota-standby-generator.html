@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kubota Standby Generator</title>
+<meta name="description" content="Kubota's GL7000-USA sheet: 7.0 kW standby, 6.5 kW prime, 7.4 gal tank, 0.45 gal/h at half load. The 54.2 A figure matches prime, not standby.">
+<link rel="canonical" href="https://generator-sizer.com/kubota-standby-generator.html">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="shortcut icon" href="assets/favicon.ico">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="Kubota Standby Generator">
+<meta property="og:description" content="What Kubota's own GL7000-USA sheet states, and what this site's gasoline formula must not be used to invent.">
+<meta property="og:url" content="https://generator-sizer.com/kubota-standby-generator.html">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://generator-sizer.com/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kubota Standby Generator">
+<meta name="twitter:description" content="What Kubota's own GL7000-USA sheet states, and what this site's gasoline formula must not be used to invent.">
+<meta name="twitter:image" content="https://generator-sizer.com/assets/og-image.png">
+<link rel="stylesheet" href="assets/styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Kubota Standby Generator",
+  "description": "Kubota's GL7000-USA sheet: 7.0 kW standby, 6.5 kW prime, 7.4 gal tank, 0.45 gal/h at half load. The 54.2 A figure matches prime, not standby.",
+  "url": "https://generator-sizer.com/kubota-standby-generator.html",
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://generator-sizer.com/kubota-standby-generator.html"},
+  "datePublished": "2026-10-03",
+  "dateModified": "2026-10-03",
+  "author": {"@type": "Organization", "name": "GeneratorSizer"},
+  "publisher": {"@type": "Organization", "name": "GeneratorSizer"}
+}
+</script>
+</head>
+<body>
+<header class="site-head">
+  <a class="brand" href="index.html">GeneratorSizer</a>
+  <nav aria-label="Site">
+    <a href="index.html#calc">Calculator</a>
+    <a href="diesel-standby-generator.html">Diesel vs gasoline math</a>
+    <a href="topics.html">Topics</a>
+    <a href="about.html">About</a>
+  </nav>
+</header>
+<main>
+<h1>Kubota standby generator</h1>
+<p class="small">Published October 3, 2026.</p>
+<p class="small">Built by <a href="/about.html">Jeremy Panasuk</a>.</p>
+<p class="sub">One sheet, one model. "Standby" on that sheet is a kilowatt rating. It is not a claim that the set starts itself when the utility drops.</p>
+<div class="answer-box"><strong>Quick answer:</strong> Kubota Engine America's <a href="https://www.kubotaengine.com/wp-content/uploads/2026/08/26106_KEA_Generator_Spec-Sheets_2026_GL7000.pdf">GL7000-USA spec sheet</a> (KEAMKT-0306) lists standby output of 7.0 kVA (7.0 kW) and prime output of 6.5 kVA (6.5 kW) at 120/240 V, power factor 1.0. The printed amperage, 54.2 A at 120 V and 27.1 A at 240 V, matches the 6.5 kW prime rating. The sheet also says "Terminal Available." It does not describe an automatic transfer switch.</div>
+
+<h2>What the sheet separates</h2>
+<p>The GL7000-USA is a 60 Hz single-phase diesel generator with a Kubota Z482 engine, fueled with diesel fuel No. 2 (ASTM D975). The generator block prints two electrical outputs: standby 7.0 kVA (7.0 kW) and prime 6.5 kVA (6.5 kW). Farther down, under the engine, a different row says continuous rated output 8.1 kW (10.9 HP). That row sits with bore, stroke, and engine speed (3,600 rpm). It is the engine's continuous rated output on the sheet, not a third generator kilowatt to shop against the 7.0 kW line.</p>
+<p>Receptacles printed on the sheet: 5-20RA (GFCI), L5-30R, L6-30R, L14-30R, plus a ground terminal, and the words "Terminal Available." Starting system: electric, 12 volt DC, with a key switch on the control-panel callout. Nothing on the sheet says the unit senses a utility outage and transfers a house. A residential automatic standby is a different product. The portable-versus-automatic distinction is on <a href="portable-vs-standby-generator.html">portable vs standby</a>.</p>
+<div class="tbl-wrap">
+<table>
+<tr><th>Item on the GL7000-USA sheet</th><th>Printed figure</th></tr>
+<tr><td>Standby output</td><td>7.0 kVA (7.0 kW)</td></tr>
+<tr><td>Prime output</td><td>6.5 kVA (6.5 kW)</td></tr>
+<tr><td>Voltage, power factor</td><td>120/240 V, PF 1.0</td></tr>
+<tr><td>Amperage</td><td>54.2 A at 120 V, 27.1 A at 240 V</td></tr>
+<tr><td>Fuel tank</td><td>28.0 L (7.4 gal)</td></tr>
+<tr><td>Fuel use and hours at 1/2 load</td><td>1.7 L/h (0.45 gal/h), 16.5 h</td></tr>
+<tr><td>Approximate net weight</td><td>262 kg (577.6 lb)</td></tr>
+<tr><td>Sound, full load at 23 ft (7 m)</td><td>66 dB(A)</td></tr>
+</table>
+</div>
+
+<h2>The amp line is the prime rating</h2>
+<p>6,500 W / 120 V = 54.17 A, which rounds to the printed 54.2 A. 6,500 W / 240 V = 27.08 A, which rounds to the printed 27.1 A. Dividing the standby 7,000 W by those same voltages gives about 58.3 A and 29.2 A. Those currents are not on the sheet. Using 54.2 A as if it were the 7.0 kW standby current overstates what the amp row says.</p>
+
+<h2>Half-load fuel, quoted, not repaired</h2>
+<p>At 1/2 load the sheet prints 1.7 L/h (0.45 gal/h) and 16.5 continuous hours. The tank is 7.4 gal. 7.4 / 0.45 = 16.4 hours to one decimal, next to the printed 16.5 hours. The sheet does not state the wattage of that "1/2 load" row, so this page does not invent one.</p>
+<p>The full-load row does not agree with itself. It prints 3.6 L/h (0.69 gal/h) and 10.0 hours. 3.6 liters per hour is not 0.69 gallons per hour, and 7.4 / 0.69 is about 10.7 hours, not the printed 10.0. This page leaves that row as printed. It does not publish a corrected diesel rate.</p>
+<p>The oil-capacity pair on the same sheet is also internally inconsistent, so it is left off this page.</p>
+
+<h2>Worked comparison: a 2,000 W house list is not this tank</h2>
+<p>On <a href="diesel-standby-generator.html">diesel standby generator</a>, Honda's Energy Star fridge at 192 W running / 1,200 W start plus a 1/3 hp furnace fan at 700 W running / 1,400 W start produces a <strong>2,000 W</strong> recommendation from this site's portable formula, and a gasoline figure of about 0.286 gal/h at 50% of that recommendation. 2.0 kW is below the GL7000-USA prime rating of 6.5 kW and below the standby rating of 7.0 kW. That is a watt comparison only.</p>
+<p>It is not the burn of this diesel set. The sheet's half-load diesel figure is 0.45 gal/h and 16.5 hours on its own 7.4 gal tank, from Kubota's test of the GL7000-USA. It is not a test of an 892 W running house load, and it is not the calculator's gasoline line divided into diesel by EIA's Btu-per-gallon ratio. Replay the house list on the <a href="index.html#calc">calculator</a> if you want the portable gasoline number. Read the PDF if you want the diesel number.</p>
+
+<h2>A common mistake</h2>
+<p>Seeing "7 kW standby" in the sheet's opening sentence and treating the GL7000-USA as an automatic home standby that starts on its own and feeds the panel. The sheet's own hardware list is a key switch, receptacles, and a terminal. Connecting any of that to a building is the installation problem, not a feature the PDF already solved.</p>
+
+<h2>Limits, and when to call a pro</h2>
+<p>Permanent installation, a transfer switch, and a permit where local code requires one are a licensed electrician's job. A service contract and load-bank testing for a stationary set are on <a href="find-a-commercial-generator-service.html">finding a commercial generator service</a>. Placement stays outdoors. The agency distances are on <a href="how-to-run-a-generator-safely.html">how to run a generator safely</a>. This page does not weigh the set, measure the 66 dB(A), or claim a runtime for a house that was not on Kubota's test.</p>
+<p>Compiled with AI assistance from the sources below. Spot an error? Email <a href="mailto:jpanasuk@gmail.com">jpanasuk@gmail.com</a>.</p>
+<h2>Sources</h2>
+<ul>
+<li><a href="https://www.kubotaengine.com/wp-content/uploads/2026/08/26106_KEA_Generator_Spec-Sheets_2026_GL7000.pdf">Kubota Engine America, GL7000-USA spec sheet (KEAMKT-0306)</a></li>
+<li><a href="https://powerequipment.honda.com/generators/generator-wattage-estimation-guide">Honda, What wattage generator do I need?</a> — the fridge and furnace-fan rows in the comparison</li>
+</ul>
+</main>
+<footer>Built by Jeremy Panasuk · <a href="/about.html">About &amp; how this was made</a> · <a href="/methodology.html">Methodology</a> · <a href="/privacy.html">Privacy</a> · <a href="/contact.html">Contact</a> · pages may contain affiliate links</footer>
+</body>
+</html>

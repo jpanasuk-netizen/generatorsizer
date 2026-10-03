@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>kW to kWh Calculator</title>
+<meta name="description" content="EIA: 1 kWh is 1 kW used for 1 hour, equal to 3,412 Btu. A 3,500 W recommendation for 8 hours is 28 kWh, or 95,536 Btu.">
+<link rel="canonical" href="https://generator-sizer.com/kw-to-kwh-calculator.html">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="shortcut icon" href="assets/favicon.ico">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="kW to kWh Calculator">
+<meta property="og:description" content="Convert watts and hours with EIA's definition. The 3,500 W example comes from this site's food-truck sizing run.">
+<meta property="og:url" content="https://generator-sizer.com/kw-to-kwh-calculator.html">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://generator-sizer.com/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="kW to kWh Calculator">
+<meta name="twitter:description" content="Convert watts and hours with EIA's definition. The 3,500 W example comes from this site's food-truck sizing run.">
+<meta name="twitter:image" content="https://generator-sizer.com/assets/og-image.png">
+<link rel="stylesheet" href="assets/styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "kW to kWh Calculator",
+  "description": "EIA: 1 kWh is 1 kW used for 1 hour, equal to 3,412 Btu. A 3,500 W recommendation for 8 hours is 28 kWh, or 95,536 Btu.",
+  "url": "https://generator-sizer.com/kw-to-kwh-calculator.html",
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://generator-sizer.com/kw-to-kwh-calculator.html"},
+  "datePublished": "2026-10-03",
+  "dateModified": "2026-10-03",
+  "author": {"@type": "Organization", "name": "GeneratorSizer"},
+  "publisher": {"@type": "Organization", "name": "GeneratorSizer"}
+}
+</script>
+</head>
+<body>
+<header class="site-head">
+  <a class="brand" href="index.html">GeneratorSizer</a>
+  <nav aria-label="Site">
+    <a href="index.html#calc">Size calculator</a>
+    <a href="ownership-cost.html">5-year cost</a>
+    <a href="topics.html">Topics</a>
+    <a href="about.html">About</a>
+  </nav>
+</header>
+<main>
+<h1>kW to kWh calculator</h1>
+<p class="small">Published October 3, 2026.</p>
+<p class="small">Built by <a href="/about.html">Jeremy Panasuk</a>.</p>
+<p class="sub">A kilowatt is a rate. A kilowatt-hour is that rate held for time. The generator sizer outputs the rate. This box only multiplies.</p>
+<div class="answer-box"><strong>Quick answer:</strong> <a href="https://www.eia.gov/tools/glossary/index.php?id=Kilowatthour">EIA</a> defines a kilowatthour as 1 kilowatt (1,000 watts) of power expended for 1 hour. One kWh equals 3,412 Btu. A 3,500 W recommendation held for 8 hours is 3.5 kW × 8 h = <strong>28 kWh</strong>, which is 28 × 3,412 = <strong>95,536 Btu</strong>.</div>
+
+<h2>Where the 3,500 W comes from</h2>
+<p>The 3,500 W is not a new measurement. It is the recommendation on <a href="best-generator-for-a-food-truck.html">best generator for a food truck</a>: Honda's Energy Star fridge at 192 W running / 1,200 W start, a 4-cup coffee maker at 600 / 600, and a 650 W microwave at 1,000 / 1,000. Running total 1,792 W, extra surge 1,008 W, peak 2,800 W, 20% headroom, rounded up to the next 500 W. The <a href="index.html#calc">generator size calculator</a> stops at watts, gallons per hour, and hours on a tank. It does not print kilowatt-hours. EIA's definition is the step that turns those watts into energy.</p>
+<p>Eight hours is the calculator's default "hours per day" field, used here only as the time in EIA's definition. It is not a claim that the food truck draws 3,500 W for eight continuous hours. The recommendation is a size, not a measured load.</p>
+
+<h2>Convert watts and hours</h2>
+<p>The factor 3,412 Btu per kWh is EIA's. The arithmetic is watts ÷ 1,000 × hours, then × 3,412.</p>
+<div class="row2">
+  <div class="field"><label for="kwWatts">Watts</label><input type="number" id="kwWatts" value="3500" min="0" step="1"></div>
+  <div class="field"><label for="kwHours">Hours</label><input type="number" id="kwHours" value="8" min="0" step="0.1"></div>
+</div>
+<p><button type="button" id="kwGo" style="background:var(--acc);color:#fff;border:none;border-radius:8px;padding:.6rem 1.2rem;cursor:pointer;font-weight:600">Convert to kWh</button></p>
+<div id="kwOut" class="ans" hidden></div>
+
+<h2>A common mistake</h2>
+<p>Calling 28 kWh a 28 kW generator, or skipping the sizing steps and multiplying a single running watt by hours as if that product were the machine to buy. EIA's conversion does not add surge, and it does not apply the 20% headroom. Those happen in <code>sizeGenerator()</code> before you have a watt number worth converting. Dollar comparisons of fuel versus a standby install stay on <a href="ownership-cost.html">five-year cost</a>. That page prices outage hours. This page does not.</p>
+
+<h2>Limits, and when to call a pro</h2>
+<p>This conversion does not size a service, a transfer switch, or a generator. Permanent installation takes a licensed electrician and a permit where local code requires one. If the watt input is a nameplate you have not run through the sizer, the kilowatt-hours inherit that gap.</p>
+<p>Compiled with AI assistance from the sources below. Spot an error? Email <a href="mailto:jpanasuk@gmail.com">jpanasuk@gmail.com</a>.</p>
+<h2>Sources</h2>
+<ul>
+<li><a href="https://www.eia.gov/tools/glossary/index.php?id=Kilowatthour">EIA glossary, Kilowatthour</a></li>
+<li><a href="https://powerequipment.honda.com/generators/generator-wattage-estimation-guide">Honda, What wattage generator do I need?</a> — the appliance rows behind the 3,500 W example</li>
+</ul>
+</main>
+<footer>Built by Jeremy Panasuk · <a href="/about.html">About &amp; how this was made</a> · <a href="/methodology.html">Methodology</a> · <a href="/privacy.html">Privacy</a> · <a href="/contact.html">Contact</a> · pages may contain affiliate links</footer>
+<script>
+(function(){
+  function fmt(n){
+    if(!isFinite(n)) return "—";
+    var rounded = Math.round(n * 100) / 100;
+    if (Math.abs(rounded - Math.round(rounded)) < 1e-9) return Math.round(rounded).toLocaleString("en-US");
+    return rounded.toLocaleString("en-US", {minimumFractionDigits: 0, maximumFractionDigits: 2});
+  }
+  document.getElementById("kwGo").onclick = function(){
+    var watts = parseFloat(document.getElementById("kwWatts").value);
+    var hours = parseFloat(document.getElementById("kwHours").value);
+    var box = document.getElementById("kwOut");
+    if(!(watts >= 0) || !(hours >= 0)){
+      box.hidden = false;
+      box.innerHTML = "<p>Enter watts and hours as numbers that are zero or greater.</p>";
+      return;
+    }
+    var kW = watts / 1000;
+    var kWh = kW * hours;
+    var btu = kWh * 3412;
+    box.hidden = false;
+    box.innerHTML = '<div class="big">'+fmt(kWh)+' <span class="unit">kWh</span></div>'+
+      '<div class="grid2">'+
+        '<div class="stat"><b>'+fmt(kW)+' kW</b><span>Watts ÷ 1,000</span></div>'+
+        '<div class="stat"><b>'+fmt(hours)+' h</b><span>Hours you entered</span></div>'+
+        '<div class="stat"><b>'+fmt(btu)+' Btu</b><span>kWh × 3,412 (EIA)</span></div>'+
+        '<div class="stat"><b>'+fmt(watts)+' W</b><span>Input, not a new measurement</span></div>'+
+      '</div>'+
+      '<p class="note">EIA: one kilowatthour is 1 kilowatt expended for 1 hour, and one kWh equals 3,412 Btu. This box does not apply surge or the generator sizer\'s 20% headroom.</p>';
+  };
+})();
+</script>
+</body>
+</html>

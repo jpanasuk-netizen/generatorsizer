@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Use a Generator When the Power Goes Out</title>
+<meta name="description" content="Ready.gov: keep the fridge closed about 4 hours and a full freezer about 48 hours, then run the generator outdoors at least 20 feet away. A fridge plus a 60 W bulb sizes to 2,000 W.">
+<link rel="canonical" href="https://generator-sizer.com/how-to-use-a-generator-when-the-power-goes-out.html">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="shortcut icon" href="assets/favicon.ico">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="How to Use a Generator When the Power Goes Out">
+<meta property="og:description" content="The Ready.gov order for the first hours, then one small load through this site's sizing formula.">
+<meta property="og:url" content="https://generator-sizer.com/how-to-use-a-generator-when-the-power-goes-out.html">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://generator-sizer.com/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to Use a Generator When the Power Goes Out">
+<meta name="twitter:description" content="The Ready.gov order for the first hours, then one small load through this site's sizing formula.">
+<meta name="twitter:image" content="https://generator-sizer.com/assets/og-image.png">
+<link rel="stylesheet" href="assets/styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How to Use a Generator When the Power Goes Out",
+  "description": "Ready.gov: keep the fridge closed about 4 hours and a full freezer about 48 hours, then run the generator outdoors at least 20 feet away. A fridge plus a 60 W bulb sizes to 2,000 W.",
+  "url": "https://generator-sizer.com/how-to-use-a-generator-when-the-power-goes-out.html",
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://generator-sizer.com/how-to-use-a-generator-when-the-power-goes-out.html"},
+  "datePublished": "2026-10-03",
+  "dateModified": "2026-10-03",
+  "author": {"@type": "Organization", "name": "GeneratorSizer"},
+  "publisher": {"@type": "Organization", "name": "GeneratorSizer"}
+}
+</script>
+</head>
+<body>
+<header class="site-head">
+  <a class="brand" href="index.html">GeneratorSizer</a>
+  <nav aria-label="Site">
+    <a href="index.html#calc">Calculator</a>
+    <a href="how-to-run-a-generator-safely.html">Safety</a>
+    <a href="topics.html">Topics</a>
+    <a href="about.html">About</a>
+  </nav>
+</header>
+<main>
+<h1>How to use a generator when the power goes out</h1>
+<p class="small">Published October 3, 2026.</p>
+<p class="small">Built by <a href="/about.html">Jeremy Panasuk</a>.</p>
+<p class="sub">The first move is the food, not the pull cord. Ready.gov's clock on a closed refrigerator is about four hours. The generator comes after that, and it comes from outside.</p>
+<div class="answer-box"><strong>Quick answer:</strong> <a href="https://www.ready.gov/power-outages">Ready.gov</a> says keep freezers and refrigerators closed. A refrigerator keeps food cold for about four hours. A full freezer keeps its temperature for about 48 hours. Throw food out at 40°F or higher. If you then start a generator, use it outdoors, at least 20 feet from windows, doors, and attached garages.</div>
+
+<h2>The order Ready.gov actually writes</h2>
+<p>An outage page that starts with "buy a bigger generator" skips the part that does not need fuel. <a href="https://www.ready.gov/power-outages">Ready.gov</a> puts the closed-door rule in its food-storage list, and it puts the generator in a separate list. Both apply. Neither replaces the other.</p>
+<ul>
+<li>Keep freezers and refrigerators closed. The refrigerator keeps food cold for about four hours. A full freezer keeps temperature for about 48 hours. Use a thermometer. Throw food out if the temperature is 40°F or higher.</li>
+<li>Turn off or disconnect appliances and electronics. Ready.gov says power can return with surges or spikes that damage them.</li>
+<li>Do not heat the house with a gas stove or oven. Ready.gov says that raises the risk of carbon monoxide poisoning, fire, and burns, and can damage the appliance.</li>
+<li>Generators and fuel stay outdoors, at least 20 feet from windows, doors, and attached garages. Install carbon monoxide detectors. Keep the generator dry. Connect appliances with heavy-duty extension cords. Let the generator cool before refueling, because fuel spilled on hot engine parts can ignite.</li>
+</ul>
+<p>The distance and the "never in the garage" wording are quoted at more length on <a href="how-to-run-a-generator-safely.html">how to run a generator safely</a>. This page is the sequence. That page is the placement rule. The <a href="storm-runbook.html">storm runbook</a> turns a longer running load into fuel cans. It is not this first-hour list.</p>
+
+<h2>Worked example: fridge and one 60 W bulb</h2>
+<p>After the doors have stayed shut, a small first load is the fridge plus a light. <a href="https://powerequipment.honda.com/generators/generator-wattage-estimation-guide">Honda's wattage guide</a> lists an Energy Star refrigerator or freezer at 1,200 starting watts and 132–192 running watts. Incandescent lights are "as indicated on the bulb," and Honda's own example is 60 W for both start and run. This case uses 192 W running for the fridge, the top of Honda's band.</p>
+<p>Same steps as <code>sizeGenerator()</code> in <code>assets/app.js</code>, headroom 20%, 8 hours a day, 4 gallon tank:</p>
+<ul>
+<li>Running total = 192 + 60 = 252 W.</li>
+<li>The largest start is the fridge at 1,200 W. Extra surge = 1,200 − 192 = 1,008 W. The bulb adds no extra.</li>
+<li>Peak = 252 + 1,008 = 1,260 W.</li>
+<li>1,260 × 1.20 = 1,512 W, rounded up to the next 500 W = <strong>2,000 W recommended</strong>.</li>
+<li>Gasoline at 50% of that recommendation = 2,000 / 7,000 gallons per hour. A 4 gallon tank lasts 14.0 hours. Propane at 1.37 times the gasoline rate lasts 10.2 hours on the same 4 gallons. At 8 hours a day the gasoline figure is 2.3 gallons per day.</li>
+</ul>
+<p>Replay it on the <a href="index.html#calc">calculator</a> with two custom rows: 192 running / 1,200 starting, and 60 / 60. The 14.0 hours is the script's fuel model at 50% of the 2,000 W recommendation. It is not Ready.gov's four hours of cold food with the power off, and it is not a promise that the compressor draws 2,000 W the whole time.</p>
+
+<h2>A common mistake</h2>
+<p>Treating the tank's 14.0 hours as the food-safety clock, or opening the fridge every few minutes during Ready.gov's four-hour window to "check." The four hours is for a closed refrigerator. The 14.0 hours is a gasoline estimate for a recommended wattage. They answer different questions. The other mistake is rolling the set into the garage because the only loads are a fridge and a bulb. Ready.gov's 20-foot line does not have a small-load exception.</p>
+
+<h2>Limits, and when to call a pro</h2>
+<p>Plugging the fridge and the lamp into heavy-duty cords, outdoors, is the portable path Ready.gov describes. Feeding circuits inside the house needs a transfer switch installed by a licensed electrician and a permit where local code requires one. This page does not pick that switch. Medical devices and refrigerated medicine need the plan Ready.gov tells you to make with your provider, not a 60 W bulb example.</p>
+<p>Compiled with AI assistance from the sources below. Spot an error? Email <a href="mailto:jpanasuk@gmail.com">jpanasuk@gmail.com</a>.</p>
+<h2>Sources</h2>
+<ul>
+<li><a href="https://www.ready.gov/power-outages">Ready.gov, Power outages</a></li>
+<li><a href="https://powerequipment.honda.com/generators/generator-wattage-estimation-guide">Honda, What wattage generator do I need?</a></li>
+</ul>
+</main>
+<footer>Built by Jeremy Panasuk · <a href="/about.html">About &amp; how this was made</a> · <a href="/methodology.html">Methodology</a> · <a href="/privacy.html">Privacy</a> · <a href="/contact.html">Contact</a> · pages may contain affiliate links</footer>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Best Portable Generator for Camping</title>
+<meta name="description" content="A camping list from Honda's chart — fan, laptop, radio — sizes to 1,000 W. The EU2200i's published 1,800 W rated output clears that. Not a campground test.">
+<link rel="canonical" href="https://generator-sizer.com/best-portable-generator-for-camping.html">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="shortcut icon" href="assets/favicon.ico">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="Best Portable Generator for Camping">
+<meta property="og:description" content="One published inverter sheet matched to a fan, a laptop, and a radio. Weight and noise are Honda's numbers.">
+<meta property="og:url" content="https://generator-sizer.com/best-portable-generator-for-camping.html">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://generator-sizer.com/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Best Portable Generator for Camping">
+<meta name="twitter:description" content="One published inverter sheet matched to a fan, a laptop, and a radio. Weight and noise are Honda's numbers.">
+<meta name="twitter:image" content="https://generator-sizer.com/assets/og-image.png">
+<link rel="stylesheet" href="assets/styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Best Portable Generator for Camping",
+  "description": "A camping list from Honda's chart — fan, laptop, radio — sizes to 1,000 W. The EU2200i's published 1,800 W rated output clears that. Not a campground test.",
+  "url": "https://generator-sizer.com/best-portable-generator-for-camping.html",
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://generator-sizer.com/best-portable-generator-for-camping.html"},
+  "datePublished": "2026-10-03",
+  "dateModified": "2026-10-03",
+  "author": {"@type": "Organization", "name": "GeneratorSizer"},
+  "publisher": {"@type": "Organization", "name": "GeneratorSizer"}
+}
+</script>
+</head>
+<body>
+<header class="site-head">
+  <a class="brand" href="index.html">GeneratorSizer</a>
+  <nav aria-label="Site">
+    <a href="index.html#calc">Calculator</a>
+    <a href="best-portable-generators.html">Home-backup ranking</a>
+    <a href="topics.html">Topics</a>
+    <a href="about.html">About</a>
+  </nav>
+</header>
+<main>
+<h1>Best portable generator for camping</h1>
+<p class="small">Published October 3, 2026.</p>
+<p class="small">Built by <a href="/about.html">Jeremy Panasuk</a>.</p>
+<p class="sub">Camping here means a fan, a laptop, and a radio. It does not mean a roof air conditioner, and it is not the home-backup ranking.</p>
+<div class="answer-box"><strong>Quick answer:</strong> Honda's recreational chart, top of each range, through this site's formula, recommends <strong>1,000 W</strong>. Honda's <a href="https://powerequipment.honda.com/generators/models/eu2200i">EU2200i</a> sheet lists 1,800 W rated and 2,200 W maximum, dry weight 47.4 lb, and 48 to 57 dB(A). That rated wattage clears the 1,000 W recommendation. This is a spec match, not a test we ran.</div>
+
+<h2>The camping list that is on the chart</h2>
+<p><a href="https://powerequipment.honda.com/generators/generator-wattage-estimation-guide">Honda's wattage guide</a> recreational table is the source. No second brand is invented to fill out a top-ten.</p>
+<div class="tbl-wrap">
+<table>
+<tr><th>Load</th><th class="num">Running watts</th><th class="num">Starting watts</th></tr>
+<tr><td>Fan, portable</td><td class="num">40</td><td class="num">120</td></tr>
+<tr><td>Laptop computer</td><td class="num">200–250</td><td class="num">200–250</td></tr>
+<tr><td>Radio</td><td class="num">50–200</td><td class="num">50–200</td></tr>
+</table>
+</div>
+<p>The worked case uses the top of each band: fan 40 W running / 120 W start, laptop 250 / 250, radio 200 / 200. A lower laptop or radio would shrink the running total. Using the top keeps the case off the optimistic end of Honda's range.</p>
+
+<h2>Worked example</h2>
+<p>All three on, headroom 20%, tank either the calculator's 4 gallon default or the EU2200i's published 0.95 gallon tank. Steps from <code>sizeGenerator()</code>:</p>
+<ul>
+<li>Running total = 40 + 250 + 200 = 490 W.</li>
+<li>The largest start is the laptop at 250 W, and that row's running watts are also 250 W. Extra surge = 0. The fan's 120 W start is smaller than 250 W, so it is not the surge the script keeps.</li>
+<li>Peak = 490 W. 490 × 1.20 = 588 W, rounded up to the next 500 W = <strong>1,000 W recommended</strong>.</li>
+<li>On a 4 gallon tank, gasoline at 50% of that recommendation lasts 28.0 hours, and propane at ×1.37 lasts 20.4 hours.</li>
+<li>Type the EU2200i's 0.95 gallon tank into the same formula and the script prints <strong>6.7 hours</strong> on gasoline and <strong>4.9 hours</strong> on propane. That is this site's rule (recommended watts ÷ 7,000) applied to a tank volume Honda published. It is not Honda's test of the EU2200i.</li>
+</ul>
+<p>Honda's own runtime on that model is 3.2 hours at rated load and 8.1 hours at 1/4 load, on the 0.95 gallon tank. Rated load on the sheet is 1,800 W. This camping list runs at 490 W. Those are different loads, so the 3.2 hours, the 8.1 hours, and the calculator's 6.7 hours are three different statements. None of them is "how long 490 W runs on this generator" unless Honda measured that, and this page does not have that measurement.</p>
+<p>Check the rows on the <a href="index.html#calc">calculator</a>. An RV roof air conditioner is a different list; size that on <a href="best-generator-size-for-rv.html">RV generator size</a>. The home-backup classes are on <a href="best-portable-generators.html">best portable generators</a>.</p>
+
+<h2>What the EU2200i sheet contributes</h2>
+<p>The match is: a published rated output of 1,800 W (15 A) and a maximum of 2,200 W (18.3 A), both above the 1,000 W recommendation and above the 490 W peak. Dry weight 47.4 lb. Noise 57 dB(A) at rated load and 48 dB(A) at 1/4 load. Tank 0.95 gal. Dimensions 20.0 × 11.4 × 16.7 inches. Engine Honda GXR120, 121 cc. Honda also states CO-MINDER shuts the generator down before detected carbon monoxide near the generator gets dangerously high, and that the muffler meets USDA spark-arrestor standards where those are required. CO-MINDER does not move the set closer to a tent.</p>
+<p class="small">Affiliate disclosure: as an Amazon Associate, we earn from qualifying purchases — at no cost to you.</p>
+<div class="affil">
+<span class="tag">Affiliate</span>
+<div class="affil-links">
+<a class="btn-amz" data-amz="Honda EU2200i" href="https://www.amazon.com/s?k=Honda+EU2200i&amp;tag=generatorsi0d-20" rel="sponsored nofollow noopener" target="_blank">EU2200i listings on Amazon</a>
+</div>
+</div>
+
+<h2>A common mistake</h2>
+<p>Quoting Honda's 8.1 hours at 1/4 load as the runtime of this 490 W list, or quoting the calculator's 6.7 hours as if Honda had published it. The other mistake is shopping the 2,200 W maximum as if the camping list needed it. The formula's recommendation for these three rows is 1,000 W. The EU2200i's rated 1,800 W is what clears that recommendation on the sheet.</p>
+
+<h2>Limits, and when to call a pro</h2>
+<p><a href="https://www.cpsc.gov/Newsroom/News-Releases/2026/CPSC-Warns-of-Generator-Carbon-Monoxide-and-Fire-Hazards-Ahead-of-Hurricane-Season">CPSC</a> says never use a portable generator inside a home, garage, basement, crawlspace, shed, or other enclosed area, even with doors or windows open, and to operate it outdoors only, at least 20 feet from homes and buildings, exhaust away from windows, doors, and vents. A tent is an enclosed place people sleep. The 20-foot figure is not shortened because the site is a campground. More of that wording is on <a href="how-to-run-a-generator-safely.html">how to run a generator safely</a>. Hardwiring a generator into an RV is a licensed electrician's job, and a permit where local code requires one. This page did not weigh the generator or record a decibel reading.</p>
+<p>Compiled with AI assistance from the sources below. Spot an error? Email <a href="mailto:jpanasuk@gmail.com">jpanasuk@gmail.com</a>.</p>
+<h2>Sources</h2>
+<ul>
+<li><a href="https://powerequipment.honda.com/generators/generator-wattage-estimation-guide">Honda, What wattage generator do I need?</a></li>
+<li><a href="https://powerequipment.honda.com/generators/models/eu2200i">Honda EU2200i specifications</a></li>
+<li><a href="https://www.cpsc.gov/Newsroom/News-Releases/2026/CPSC-Warns-of-Generator-Carbon-Monoxide-and-Fire-Hazards-Ahead-of-Hurricane-Season">CPSC, generator and carbon monoxide warning ahead of the 2026 hurricane season</a></li>
+</ul>
+</main>
+<footer>Built by Jeremy Panasuk · <a href="/about.html">About &amp; how this was made</a> · <a href="/methodology.html">Methodology</a> · <a href="/privacy.html">Privacy</a> · <a href="/contact.html">Contact</a> · pages may contain affiliate links</footer>
+<script src="assets/monetization.js"></script>
+</body>
+</html>

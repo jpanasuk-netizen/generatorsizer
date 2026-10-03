@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How Does a Generator Work?</title>
+<meta name="description" content="A generator induces current by moving a magnetic field past coils. A worked fridge example shows why starting watts, not the nameplate story, set the size.">
+<link rel="canonical" href="https://generator-sizer.com/how-does-a-generator-work.html">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="shortcut icon" href="assets/favicon.ico">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="How Does a Generator Work?">
+<meta property="og:description" content="Faraday's induction, then one fridge run through this site's sizing formula.">
+<meta property="og:url" content="https://generator-sizer.com/how-does-a-generator-work.html">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://generator-sizer.com/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How Does a Generator Work?">
+<meta name="twitter:description" content="Faraday's induction, then one fridge run through this site's sizing formula.">
+<meta name="twitter:image" content="https://generator-sizer.com/assets/og-image.png">
+<link rel="stylesheet" href="assets/styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How Does a Generator Work?",
+  "description": "A generator induces current by moving a magnetic field past coils. A worked fridge example shows why starting watts, not the nameplate story, set the size.",
+  "url": "https://generator-sizer.com/how-does-a-generator-work.html",
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://generator-sizer.com/how-does-a-generator-work.html"},
+  "datePublished": "2026-10-03",
+  "dateModified": "2026-10-03",
+  "author": {"@type": "Organization", "name": "GeneratorSizer"},
+  "publisher": {"@type": "Organization", "name": "GeneratorSizer"}
+}
+</script>
+</head>
+<body>
+<header class="site-head">
+  <a class="brand" href="index.html">GeneratorSizer</a>
+  <nav aria-label="Site">
+    <a href="index.html#calc">Calculator</a>
+    <a href="methodology.html">Methodology</a>
+    <a href="topics.html">Topics</a>
+    <a href="about.html">About</a>
+  </nav>
+</header>
+<main>
+<h1>How does a generator work?</h1>
+<p class="small">Published October 3, 2026.</p>
+<p class="small">Built by <a href="/about.html">Jeremy Panasuk</a>.</p>
+<p class="sub">The engine only turns a shaft. The electricity is induced in the windings. Sizing starts after that, when a motor asks for a short extra current the shaft has to supply.</p>
+<div class="answer-box"><strong>Quick answer:</strong> <a href="https://www.eia.gov/energyexplained/electricity/how-electricity-is-generated.php">EIA</a> describes an electric generator as a machine that converts another form of energy into electricity, using Michael Faraday's 1831 finding that moving a magnet inside a coil of wire induces a current. On a portable set, the engine is the thing that turns the rotor. The watts you buy still come from the loads, not from that story.</div>
+
+<h2>What the machine is actually doing</h2>
+<p><a href="https://www.eia.gov/energyexplained/electricity/how-electricity-is-generated.php">EIA</a> says most electricity generation uses generators based on Faraday: moving a magnet inside a coil induces a current in the wire. A basic electromagnetic generator has insulated coils forming a stationary cylinder, the stator, around an electromagnetic shaft, the rotor. Turning the rotor makes current flow in the coils. Electromagnetic generators driven by a mechanical prime mover account for nearly all U.S. electricity generation.</p>
+<p>The <a href="https://www.energy.gov/sites/default/files/2026-04/DOE-HDBK-1011-92_VOL2.pdf">DOE Fundamentals Handbook</a> states Faraday's law the same way: a voltage is induced in a conductor when that conductor is moved through a magnetic field, or when the magnetic field moves past the conductor. If nothing is moving relative to the field, no voltage is induced. That is why a generator that is not spinning does not make usable power, and why a heavier electrical load asks the engine for more torque to keep the rotor turning at speed.</p>
+<p>Grid plants usually use a turbine as that prime mover. A portable generator uses a small engine on the same frame for the same job: spin the rotor. This page does not claim a Honda or any other portable unit is a steam turbine. The electrical half is the EIA/DOE description. The fuel half is a separate engine.</p>
+
+<h2>Worked example: one refrigerator</h2>
+<p>Induction explains where the watts come from. It does not tell you the size. <a href="https://powerequipment.honda.com/generators/generator-wattage-estimation-guide">Honda's wattage guide</a> lists an Energy Star refrigerator or freezer at 1,200 starting watts and 132–192 running watts. This example uses the top of that running range, 192 W, so the case is not sized on the low end of Honda's band.</p>
+<p>The home calculator in <code>assets/app.js</code> does this, and only this:</p>
+<ul>
+<li>Running total = 192 W.</li>
+<li>The single largest starting wattage is 1,200 W, on that same fridge. Extra surge = 1,200 − 192 = 1,008 W.</li>
+<li>Peak = 192 + 1,008 = 1,200 W.</li>
+<li>With the page's 20% headroom, 1,200 × 1.20 = 1,440 W. Rounded up to the next 500 W, the recommendation is <strong>1,500 W</strong>.</li>
+<li>Gasoline use at 50% of that recommendation is 1,500 / 7,000 = 0.214 gallons per hour. A 4 gallon tank in the calculator lasts 18.7 hours at that rate. Propane volume in the same calculator is 1.37 times the gasoline gallons per hour, so the same 4 gallons last 13.6 hours.</li>
+</ul>
+<p>Replay it on the <a href="index.html#calc">generator size calculator</a> by adding a custom row of 192 running watts and 1,200 starting watts, headroom 20, 8 hours a day, 4 gallon tank. The fuel rate uses the 1,500 W recommendation, not the 192 W the compressor actually draws while running. That is what the script does.</p>
+
+<h2>A common mistake</h2>
+<p>Adding the starting watts on top of the running watts a second time (192 + 1,200 + 1,200) treats the motor start as if it were a second appliance. The calculator adds the extra once: the difference between that motor's starting watts and its own running watts. Honda already put both numbers on one row.</p>
+
+<h2>Limits, and when to call a pro</h2>
+<p>This is a planning sketch of one published chart row through one formula. It is not a model of your fridge's nameplate, a locked-rotor amp reading, or an inverter's overload timer. Permanent connection to house wiring needs a transfer switch installed by a licensed electrician, and a permit where local code requires one. Placement is a separate rule: run the set outdoors. See <a href="how-to-run-a-generator-safely.html">how to run a generator safely</a>.</p>
+<p>The coincidence method for several motors at once is on <a href="methodology.html">methodology</a>, not on this page.</p>
+<p>Compiled with AI assistance from the sources below. Spot an error? Email <a href="mailto:jpanasuk@gmail.com">jpanasuk@gmail.com</a>.</p>
+<h2>Sources</h2>
+<ul>
+<li><a href="https://www.eia.gov/energyexplained/electricity/how-electricity-is-generated.php">EIA, How electricity is generated</a></li>
+<li><a href="https://www.energy.gov/sites/default/files/2026-04/DOE-HDBK-1011-92_VOL2.pdf">DOE Fundamentals Handbook, Electrical Science, Volume 2 (DOE-HDBK-1011/2-92)</a></li>
+<li><a href="https://powerequipment.honda.com/generators/generator-wattage-estimation-guide">Honda, What wattage generator do I need?</a></li>
+</ul>
+</main>
+<footer>Built by Jeremy Panasuk · <a href="/about.html">About &amp; how this was made</a> · <a href="/methodology.html">Methodology</a> · <a href="/privacy.html">Privacy</a> · <a href="/contact.html">Contact</a> · pages may contain affiliate links</footer>
+</body>
+</html>
