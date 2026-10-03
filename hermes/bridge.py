@@ -21,8 +21,8 @@ _GATE = "That needs Jeremy's yes before I send, spend, or publish. I did not cal
 def process_new(bus: Bus, gateway: Gateway, state: dict, config: dict | None = None) -> list[str]:
     since = int(state.get("since") or 0)
     posted: list[str] = []
-    for message in bus.read(since=since, limit=50):
-        state["since"] = max(int(state["since"]), int(message["id"]))
+    batch = bus.read(since=since, limit=50)
+    for message in batch:
         payload = message.get("payload") if isinstance(message.get("payload"), dict) else {}
         if payload.get("via") == VIA:
             continue
@@ -35,11 +35,13 @@ def process_new(bus: Bus, gateway: Gateway, state: dict, config: dict | None = N
         topic = str(message.get("topic") or "talk")
         blocked = _blocked(text, config)
         if blocked is not None:
-            posted.append(_post(bus, state, seats[0], owner, blocked, topic, ""))
+            posted.append(_post(bus, seats[0], owner, blocked, topic, ""))
             continue
         for seat in seats:
             reply, model = _answer(seat, text, gateway)
-            posted.append(_post(bus, state, seat, owner, reply, topic, model))
+            posted.append(_post(bus, seat, owner, reply, topic, model))
+    if batch:
+        state["since"] = max(int(message["id"]) for message in batch)
     return posted
 
 
@@ -69,13 +71,12 @@ def _answer(seat: str, text: str, gateway: Gateway) -> tuple[str, str]:
     return (completion.text, completion.model or model)
 
 
-def _post(bus: Bus, state: dict, seat: str, owner: str, text: str, topic: str, model: str) -> str:
-    sent = bus.send(
+def _post(bus: Bus, seat: str, owner: str, text: str, topic: str, model: str) -> str:
+    bus.send(
         from_=seat,
         to=owner,
         text=text,
         topic=topic,
         payload={"via": VIA, "model": model, "seat": seat},
     )
-    state["since"] = max(int(state["since"]), int(sent["id"]))
     return text

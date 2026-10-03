@@ -68,6 +68,18 @@ DISPLAY = {
 
 SELF_SEATS = frozenset({"leo"})
 LEO_NAMES = frozenset({"leo", "leo-bot"})
+BOTS = tuple(seat for seat in DISPLAY if seat not in {"leo", "jeremy"})
+
+
+def address(seat: str) -> str:
+    """A handler phrase the desk router maps back to this seat."""
+    phrases = [alias for alias, mapped in ALIASES if mapped == seat]
+    phrases.sort(key=len, reverse=True)
+    for phrase in phrases:
+        found, start, end = find_seat(phrase)
+        if found == seat and start == 0 and end == len(phrase):
+            return phrase
+    raise KeyError(seat)
 
 
 def display(seat: str) -> str:
@@ -91,6 +103,9 @@ def find_seat(text: str) -> tuple[str | None, int, int]:
 
 
 def seat_of_sender(name: str) -> str | None:
+    key = name.strip().lower()
+    if key in DISPLAY:
+        return key
     seat, start, _end = find_seat(name.strip())
     if start != 0:
         return None

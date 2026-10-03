@@ -210,6 +210,7 @@ class HttpGatewayTests(unittest.TestCase):
             self.assertNotIn("secret-token-value", str(caught.exception))
         finally:
             server.shutdown()
+            server.server_close()
             thread.join(timeout=2)
 
 

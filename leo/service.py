@@ -24,9 +24,9 @@ def process_new(bus: Bus, state: dict) -> list[str]:
     sessions: dict[str, Session] = state.setdefault("sessions", {})
     posted: list[str] = []
     me = identity()
+    batch = bus.read(since=since, limit=50)
 
-    for message in bus.read(since=since, limit=50):
-        state["since"] = max(int(state["since"]), int(message["id"]))
+    for message in batch:
         sender = str(message.get("from") or "")
         target = str(message.get("to") or "")
         if sender.lower() == me.lower() or sender.lower() in LEO_NAMES:
@@ -41,8 +41,7 @@ def process_new(bus: Bus, state: dict) -> list[str]:
             noted = session.note_reply(seat, str(message.get("text") or ""))
             if noted is not None:
                 reply = f"{display(seat)} replied: {noted.reply}"
-                sent = bus.send(from_=me, to=owner, text=reply, topic=str(message.get("topic") or "talk"))
-                state["since"] = max(int(state["since"]), int(sent["id"]))
+                bus.send(from_=me, to=owner, text=reply, topic=str(message.get("topic") or "talk"))
                 posted.append(reply)
                 continue
 
@@ -53,17 +52,17 @@ def process_new(bus: Bus, state: dict) -> list[str]:
         result = handle(session, str(message.get("text") or ""))
         topic = str(message.get("topic") or "talk")
         for action in result.actions:
-            sent = bus.send(
+            bus.send(
                 from_=me,
                 to=action.to,
                 text=action.text,
                 topic="talk",
                 payload={"dispatch": action.dispatch_id, "for": sender},
             )
-            state["since"] = max(int(state["since"]), int(sent["id"]))
-        sent = bus.send(from_=me, to=sender, text=result.reply, topic=topic)
-        state["since"] = max(int(state["since"]), int(sent["id"]))
+        bus.send(from_=me, to=sender, text=result.reply, topic=topic)
         posted.append(result.reply)
+    if batch:
+        state["since"] = max(int(message["id"]) for message in batch)
     return posted
 
 

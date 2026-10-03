@@ -38,7 +38,7 @@ Connecture bus :8789
 |---|---|
 | `ports` | Default the bus to 8789 and refuse the ports that already belong to something else. |
 | `configcheck` | Name the hybrid-primary bugs. `repaired_primary` sets the FCC wire and leaves fallbacks alone. |
-| `profiles` | Map a fleet seat onto a gateway profile. `seo-bot` is the directory `seobot`. `gemini-spark` is a model id on the same gateway. `mimo` has no profile. |
+| `profiles` | Map a fleet seat onto a gateway profile. `seo-bot` is the directory `seobot`. `gemini-spark` is a model id on the same gateway. `mimo` stays on the file bus. `grok-swarm` has no profile, so the note still lands in that chat and the reply says so. Jeremy is not answered. |
 | `gateway` | `GET /health` and `POST /v1/chat/completions`. A missing gateway raises. It does not fill in a reply. |
 | `bridge` | Read the bus. For each seat this bridge owns, post one reply: the completion, the config block, the file-bus line, or `Hermes gateway did not answer`. |
 

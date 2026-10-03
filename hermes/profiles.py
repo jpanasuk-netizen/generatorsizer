@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from leo.fleet import find_seat
+from leo.fleet import DISPLAY, seat_of_sender
 
 # Profile directory names on the multiplexed gateway. seo-bot's directory is seobot.
 PROFILES = {
@@ -37,6 +37,9 @@ CREW = ("muse", "mimo", "gemini-spark", "hermes-bot")
 # Desk routing owns these names. The gateway must not also answer them.
 DESK = frozenset({"leo", "leo-bot"})
 
+# A person, not a profile. The note is delivered. Nobody answers as them.
+SILENT = frozenset({"jeremy"})
+
 FILE_BUS_ONLY = frozenset({"mimo"})
 
 # The gateway directory is seobot. The fleet seat is seo-bot.
@@ -47,10 +50,7 @@ def seat_of(name: str) -> str | None:
     key = name.strip().lower()
     if key in _DIRECTORY_NAMES:
         return _DIRECTORY_NAMES[key]
-    seat, start, _end = find_seat(name.strip())
-    if start != 0:
-        return None
-    return seat
+    return seat_of_sender(name)
 
 
 def gateway_model(seat: str) -> str | None:
@@ -71,8 +71,8 @@ def targets_for(name: str) -> list[str] | None:
     if cleaned == "crew":
         return list(CREW)
     seat = seat_of(name)
-    if seat is None or seat in DESK:
+    if seat is None or seat in DESK or seat in SILENT:
         return None
-    if gateway_model(seat) is not None or seat in FILE_BUS_ONLY:
+    if seat in DISPLAY:
         return [seat]
     return None
