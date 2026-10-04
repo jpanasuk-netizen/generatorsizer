@@ -39,8 +39,10 @@ p{margin:.6rem 0}
 .tabs button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, button:focus-visible{
   outline:2px solid var(--acc); outline-offset:2px;
 }
-.panel{display:none}
-.panel.active{display:block}
+.panel[role="tabpanel"]{display:none}
+.panel[role="tabpanel"].active{display:block}
+/* Offer rail and email opt-in stay hidden until switched on deliberately. */
+#soft-rail.panel,#optin.panel{display:none}
 
 /* forms */
 .field{margin:.9rem 0}
