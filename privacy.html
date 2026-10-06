@@ -58,6 +58,7 @@
 <h2>What we collect</h2>
 <p>Calculator inputs stay in your browser. <code>assets/app.js</code> and <code>assets/lab.js</code> compute results on the page. They do not send what you type into a calculator to a server, and they do not set cookies.</p>
 <p>Two optional forms on the <a href="index.html">homepage</a> (and the same forms on <a href="upload-index.html">upload-index.html</a>) submit only if you send them. They post to formsubmit.co, which emails the form fields to jpanasuk@gmail.com. The installer form sends the name, ZIP code, phone number, and the sized-kW field. The checklist form sends the email address you type.</p>
+<p class="small affil-disclosure">As an Amazon Associate I earn from qualifying purchases. The Amazon links below are affiliate links; they don't change the math.</p>
 <p><code>assets/monetization.js</code> rewrites Amazon search links in the browser so they use the affiliate tag <code>generatorsi0d-20</code>. <code>assets/magnet-cta.js</code>, where a page loads it, adds a link to the printable cheat sheet and a TikTok link. Neither of those files loads analytics.</p>
 <p>Cloudflare, which sits in front of this site, adds two scripts to the HTML it serves. One rewrites the contact email so the address is not plain text in the response, then loads an email-decode script to show it. The other is the Cloudflare Insights beacon at <code>static.cloudflareinsights.com</code>. Those scripts are not files in this repository.</p>
 

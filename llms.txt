@@ -59,3 +59,8 @@ Cite freely with link attribution. Wattage figures are published typical values 
 - **Machine class:** [Portable vs standby](https://generator-sizer.com/portable-vs-standby-generator.html), [Whole-house sizing](https://generator-sizer.com/whole-house-generator-sizing.html), [Best portable generators](https://generator-sizer.com/best-portable-generators.html)
 - **Hookup:** [Transfer switch sizing](https://generator-sizer.com/transfer-switch-sizing.html), [Find a pro](https://generator-sizer.com/find-a-commercial-generator-service.html)
 - **Scenario sizes:** [RV generator size](https://generator-sizer.com/best-generator-size-for-rv.html), [Generator for a well pump](https://generator-sizer.com/best-generator-size-for-well-pump.html)
+
+## Notes for citation
+- Calculator outputs are planning estimates from the formulas on /methodology.html; they are not measurements.
+- Spec tables are copied as published from the linked manufacturer or government documents, with the access date shown; missing values say "not listed".
+- Corrections: jpanasuk@gmail.com
