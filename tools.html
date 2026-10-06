@@ -8,7 +8,7 @@
 <link rel="canonical" href="https://generator-sizer.com/tools.html">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <meta name="robots" content="index,follow">
-<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="assets/styles.css?v=20261006">
 <meta property="og:title" content="Lab tools — GeneratorSizer">
 <meta property="og:url" content="https://generator-sizer.com/tools.html">
 <meta property="og:description" content="Staggered-start coincidence, altitude derate, storm runbook, TCO, and lot-line noise — not another wattage form.">
@@ -16,6 +16,26 @@
 <meta property="og:image" content="https://generator-sizer.com/assets/og-image.png">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"CollectionPage","name":"GeneratorSizer Lab tools","url":"https://generator-sizer.com/tools.html","dateModified":"2026-10-03","description":"Interactive lab tools for home backup: sequenced loads, altitude derate, storm runbook, ownership cost, lot-line noise."}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "name": "Generator Sizer",
+   "item": "https://generator-sizer.com/"
+  },
+  {
+   "@type": "ListItem",
+   "position": 2,
+   "name": "Lab tools",
+   "item": "https://generator-sizer.com/tools.html"
+  }
+ ]
+}
 </script>
 </head>
 <body>
@@ -30,34 +50,40 @@
 </header>
 <main>
 <h1>Lab tools</h1>
-<p class="small">Updated October 3, 2026.</p>
+<p class="small">Updated October 6, 2026.</p>
 <p class="small">Built by <a href="/about.html">Jeremy Panasuk</a>.</p>
 <p class="sub">Five calculators and a method page. Each tool page states its formula, the constants, and a worked click. This page is only the index.</p>
 
 <div class="tool-grid">
-  <a class="tool-card" href="load-sequencer.html">
-    <h3>Load sequencer</h3>
-    <p>Splits a list into always-on, wait, and never-overlap, then sizes the worst phase plus the headroom you type. Use it when a single sum assumes the microwave starts with the well.</p>
+  <a class="tool-card" href="load-sequencer.html#worked">
+    <p class="tool-name">Load sequencer</p>
+    <p>Open this when one sum assumes the microwave starts in the same second as the well pump. The form splits rows into always-on, wait, and never-overlap, then sizes the worst phase plus the headroom you type.</p>
+    <p>The worked click uses Honda rows only, so the saved watts are the script's coincidence rule, not a second wattage chart.</p>
   </a>
-  <a class="tool-card" href="altitude-derate.html">
-    <h3>Altitude + heat derate</h3>
-    <p>Turns a nameplate into usable watts with this site’s curve. Use it after you have a watt need, and read the Generac and Honda sentences on that page before you treat the curve as their sheet.</p>
+  <a class="tool-card" href="altitude-derate.html#worked">
+    <p class="tool-name">Altitude + heat derate</p>
+    <p>Open this after you already have a watt need and the pad is above 1,000 ft or the inlet air is above 77°F. The button uses this site's curve, which starts later than Generac's sea-level sentence.</p>
+    <p>Read the manual section on that page before you treat the percent as Honda's or Generac's. The worked clicks show the opening form, 5,000 ft, and a 2,000 ft / 100°F case.</p>
   </a>
   <a class="tool-card" href="storm-runbook.html">
-    <h3>72-hour storm runbook</h3>
-    <p>Prints 24/48/72 hour fuel from running watts, plus a pre-storm, during, and after checklist using CPSC, Ready.gov, FEMA, and OSHA wording. Use it when you are staging cans, not while you are still picking a watt class.</p>
+    <p class="tool-name">72-hour storm runbook</p>
+    <p>Open this when the watt class is already chosen and you are staging cans, oil, and the outdoor spot. The button prints 24/48/72 hour fuel from running watts. The checklist under it is what you print.</p>
+    <p>The method and the worked clicks are marked so they stay off the printed page. Nav and the footer stay off that page too.</p>
   </a>
-  <a class="tool-card" href="ownership-cost.html">
-    <h3>5-year ownership cost</h3>
-    <p>Prices a portable’s purchase and gasoline, plus oil changes on the Honda or Generac schedule at a per-change cost you type, against a standby’s install and yearly service. Use your own outage hours. Standby fuel is not in that total.</p>
+  <a class="tool-card" href="ownership-cost.html#worked">
+    <p class="tool-name">5-year ownership cost</p>
+    <p>Open this when the question is dollars over time, not a watt class. You type the purchase, the outage hours, and the per-change oil cost. Blank oil cost counts as $0.</p>
+    <p>The worked clicks follow the Honda EU2200i oil schedule or the Generac GP6500/GP8000E schedule, not a 50-hour clock. Standby fuel is not in that total.</p>
   </a>
-  <a class="tool-card" href="noise-lot-line.html">
-    <h3>Lot-line noise</h3>
-    <p>Applies free-field spreading, 20·log10 of the distance ratio, from a reference dBA. The cited reference in the menu is Generac’s 67 dB(A) at 23 ft for the 22 kW row. The other three menu levels are labels stored in the script.</p>
+  <a class="tool-card" href="noise-lot-line.html#worked">
+    <p class="tool-name">Lot-line noise</p>
+    <p>Open this when you have a dB(A) figure that already names its distance and load, and you want free-field spreading to a farther point. The menu item with a cited sheet is Generac's 67 dB(A) at 23 ft.</p>
+    <p>The other three menu levels are labels stored in the script. The worked clicks double the distance and, separately, subtract a 5 dB barrier credit. Honda's 57 and 48 dB(A) stay out because that page does not state the distance.</p>
   </a>
   <a class="tool-card" href="methodology.html">
-    <h3>Worked houses + method</h3>
-    <p>States the coincidence idea and replays three stored house stacks. Open it when you want the method beside the tools, not a sixth calculator.</p>
+    <p class="tool-name">Worked houses + method</p>
+    <p>Open this when you want the coincidence idea beside the tools, not a sixth calculator. It replays three stored house stacks and points at the same running-versus-starting rule as the home calculator.</p>
+    <p>Use it to see why a naive appliance sum oversizes a set. Then take the watt need back to the sequencer or the altitude page.</p>
   </a>
 </div>
 

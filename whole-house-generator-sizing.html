@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Whole-House Generator Sizing Guide [Free Calculator]</title>
+<title>Whole House Generator Sizing Calculator &amp; Guide</title>
 <meta name="description" content="Walk through critical loads, starting watts, headroom, and portable vs whole-house paths — then size your list with the free calculator.">
 <link rel="canonical" href="https://generator-sizer.com/whole-house-generator-sizing.html">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="shortcut icon" href="assets/favicon.ico">
 <meta name="robots" content="index,follow">
-<meta property="og:title" content="Whole-House Generator Sizing Guide [Free Calculator] | GeneratorSizer">
+<meta property="og:title" content="Whole House Generator Sizing Calculator &amp; Guide | GeneratorSizer">
 <meta property="og:description" content="Walk through critical loads, starting watts, headroom, and portable vs whole-house paths — then size your list with the free calculator.">
 <meta property="og:type" content="article">
-<link rel="stylesheet" href="assets/styles.css?v=20261003b">
+<link rel="stylesheet" href="assets/styles.css?v=20261006">
 <meta property="og:image" content="https://generator-sizer.com/assets/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Whole-House Generator Sizing Guide [Free Calculator] | GeneratorSizer">
+<meta name="twitter:title" content="Whole House Generator Sizing Calculator &amp; Guide | GeneratorSizer">
 <meta name="twitter:description" content="Walk through critical loads, starting watts, headroom, and portable vs whole-house paths — then size your list with the free calculator.">
 <meta name="twitter:image" content="https://generator-sizer.com/assets/og-image.png">
 <script type="application/ld+json">
@@ -29,6 +29,8 @@
     "@type": "WebPage",
     "@id": "https://generator-sizer.com/whole-house-generator-sizing.html"
   },
+  "datePublished": "2026-09-11",
+  "dateModified": "2026-10-06",
   "author": { "@type": "Organization", "name": "GeneratorSizer" },
   "publisher": { "@type": "Organization", "name": "GeneratorSizer" }
 }
@@ -62,21 +64,26 @@
 }
 </script>
 
-<script id="sources-data" type="application/json">
+<script type="application/ld+json">
 {
-  "sources": [
-    {
-      "title": "NFPA: Article 220 branch-circuit, feeder, and service load calculations (2026 NEC Article 120)",
-      "url": "https://www.nfpa.org/education-and-research/electrical/reorganization-of-the-national-electrical-code",
-      "date": "2026-10-02"
-    }
-  ]
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "name": "Generator Sizer",
+   "item": "https://generator-sizer.com/"
+  },
+  {
+   "@type": "ListItem",
+   "position": 2,
+   "name": "Whole-house generator sizing guide",
+   "item": "https://generator-sizer.com/whole-house-generator-sizing.html"
+  }
+ ]
 }
 </script>
-<script>
-document.addEventListener('DOMContentLoaded',()=>{var d=JSON.parse(document.getElementById('sources-data').textContent);var s=document.createElement('div');s.className='sources-section';s.innerHTML='<h2 id="sources-heading">Sources & Standards</h2><p>Method context (not a design stamp):</p><ul>'+d.sources.map(x=>'<li><a href="'+x.url+'" target="_blank">'+x.title+'</a></li>').join('')+'</ul><p><button id="cite-toggle">Show Copyable Citations</button></p><div id="cite-output" style="display:none"></div>';var t=[].slice.call(document.querySelectorAll('nav')).find(function(n){return !n.closest('header')})||document.querySelector('footer');if(t){t.parentNode.insertBefore(s,t)}else{document.body.appendChild(s)}var o=s.querySelector('#cite-toggle'),c=s.querySelector('#cite-output');o.onclick=()=>{c.textContent=d.sources.map(x=>x.title+'. '+x.url+'. Accessed '+x.date).join('\n\n');c.style.display='block';o.style.display='none'};});
-</script>
-<meta name="llms.txt" content="https://generator-sizer.com/sources.json">
 </head>
 <body>
 
@@ -167,6 +174,12 @@ document.addEventListener('DOMContentLoaded',()=>{var d=JSON.parse(document.getE
 <p>A correctly sized portable plus a transfer switch can cover critical circuits. Standby (or a large portable class with 240 V) is the usual path when you want automatic whole-house coverage including central AC. Compare install and use cases on the <a href="portable-vs-standby-generator.html">portable vs standby guide</a>, then size watts on the free calculator.</p>
 <h3>Do I need a transfer switch for whole-house generator sizing?</h3>
 <p>Yes to feed household circuits safely. Match switch amperage to generator output (commonly 30 A or 50 A class), and plan inlet box and cords with the same rating. Never back-feed through a dryer outlet. See <a href="transfer-switch-sizing.html">transfer switch sizing</a>.</p>
+
+<section class="sources-section" aria-labelledby="sources-heading">
+<h2 id="sources-heading">Sources & Standards</h2>
+<p>Method context (not a design stamp):</p>
+<ul><li><a href="https://www.nfpa.org/education-and-research/electrical/reorganization-of-the-national-electrical-code" rel="noopener" target="_blank">NFPA: Article 220 branch-circuit, feeder, and service load calculations (2026 NEC Article 120)</a></li></ul>
+</section>
 </main>
 
 <section id="soft-rail" class="panel" aria-label="Related guides and offers" style="margin:1.5rem auto;max-width:920px;padding:0 1rem 1.5rem">
@@ -193,7 +206,7 @@ document.addEventListener('DOMContentLoaded',()=>{var d=JSON.parse(document.getE
 </section>
 
 <footer>Built by Jeremy Panasuk · <a href="/about.html">About &amp; how this was made</a> · <a href="/methodology.html">Methodology</a> · <a href="/privacy.html">Privacy</a> · <a href="/contact.html">Contact</a> · pages may contain affiliate links</footer>
-<script src="assets/monetization.js"></script>
+<script src="assets/monetization.js" defer></script>
 
 
 <section class="faq" style="max-width:760px;margin:3rem auto;padding:0 1rem">
@@ -211,7 +224,7 @@ document.addEventListener('DOMContentLoaded',()=>{var d=JSON.parse(document.getE
   <a href="/best-generator-size-for-well-pump.html">Best Generator Size for a Well Pump (2026): By Horsepower + Backup Loads</a>
   <a href="/best-portable-generators.html">Best 10 Portable Generators for Home Backup</a>
   <a href="/find-a-commercial-generator-service.html">Find a Commercial Generator Service: Facility Manager's Checklist (2026)</a>
-  <a href="/index.html">Generator Size Calculator [Free] | GeneratorSizer</a>
+  <a href="/index.html">Generator Size Calculator (Home &amp; Standby) | GeneratorSizer</a>
   <a href="/magnet.html">Free Outage Wattage Cheat Sheet</a>
   <a href="/portable-vs-standby-generator.html">Portable vs Standby Generator: Which Fits Your Home? | GeneratorSizer</a>
   <a href="/privacy.html">Privacy &amp; Legal</a>
@@ -219,9 +232,9 @@ document.addEventListener('DOMContentLoaded',()=>{var d=JSON.parse(document.getE
   <a href="/sump-pump-watts.html">What Size Generator for a Sump Pump? Running & Surge Watts (2026)</a>
   <a href="/topics.html">Topic map</a>
   <a href="/transfer-switch-sizing.html">What Size Transfer Switch for a Generator? 30A vs 50A Math (2026)</a>
-  <a href="/upload-index.html">Generator Size Calculator [Free] | GeneratorSizer</a>
+  <a href="/upload-index.html">Generator Size Calculator (Home &amp; Standby) | GeneratorSizer</a>
   <a href="/well-pump-watts.html">How Many Watts Does a Well Pump Use? Starting vs Running (2026)</a>
-  <a href="/whole-house-generator-sizing.html">Whole-House Generator Sizing Guide [Free Calculator] | GeneratorSizer</a>
+  <a href="/whole-house-generator-sizing.html">Whole House Generator Sizing Calculator &amp; Guide | GeneratorSizer</a>
 </nav>
 
 </body>

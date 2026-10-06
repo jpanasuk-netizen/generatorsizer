@@ -3,22 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Generator Size Calculator + Lab Tools | GeneratorSizer</title>
-<meta name="description" content="Use this free generator size calculator to add appliances, get running vs starting watts, 20% headroom, runtime, and fuel burn.">
+<title>Generator Size Calculator (Home &amp; Standby) | GeneratorSizer</title>
+<meta name="description" content="Free generator sizing calculator: add your appliances to get running and starting watts, headroom, runtime and fuel burn for a portable or home standby unit.">
 <link rel="canonical" href="https://generator-sizer.com/">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="shortcut icon" href="assets/favicon.ico">
 <meta name="robots" content="index,follow">
-<meta property="og:title" content="Generator Size Calculator + Lab Tools | GeneratorSizer">
-<meta property="og:description" content="Wattage calculator plus unique lab tools: sequenced loads, altitude derate, storm runbook, TCO, lot-line noise.">
+<meta property="og:title" content="Generator Size Calculator (Home &amp; Standby) | GeneratorSizer">
+<meta property="og:description" content="Free generator sizing calculator: add your appliances to get running and starting watts, headroom, runtime and fuel burn for a portable or home standby unit.">
 <meta property="og:url" content="https://generator-sizer.com/">
 <meta property="og:type" content="website">
-<link rel="stylesheet" href="assets/styles.css?v=20261003b">
+<link rel="stylesheet" href="assets/styles.css?v=20261006">
 <meta property="og:image" content="https://generator-sizer.com/assets/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://generator-sizer.com/assets/og-image.png">
-<meta name="twitter:title" content="Generator Size Calculator [Free] | GeneratorSizer">
-<meta name="twitter:description" content="Use this free generator size calculator to add appliances, get running vs starting watts, 20% headroom, runtime, and fuel burn.">
+<meta name="twitter:title" content="Generator Size Calculator (Home &amp; Standby) | GeneratorSizer">
+<meta name="twitter:description" content="Free generator sizing calculator: add your appliances to get running and starting watts, headroom, runtime and fuel burn for a portable or home standby unit.">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -28,7 +28,7 @@
   "operatingSystem": "Web",
   "url": "https://generator-sizer.com/",
   "description": "Free generator sizing calculator: appliance-based running and starting wattage, 20% headroom, runtime at 50% load, and gasoline vs propane daily fuel consumption. Includes inverter sizing, battery runtime, and transfer switch load planner.",
-  "dateModified": "2026-09-28",
+  "dateModified": "2026-10-06",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
 }
 </script>
@@ -71,7 +71,7 @@
   "@type": "WebPage",
   "name": "Generator Size Calculator",
   "url": "https://generator-sizer.com/",
-  "dateModified": "2026-09-28",
+  "dateModified": "2026-10-06",
   "description": "Free generator sizing calculator: appliance-based running and starting wattage, 20% headroom, runtime, and fuel burn."
 }
 </script>
@@ -79,22 +79,14 @@
 {"@context":"https://schema.org","@type":"Organization","name":"Generator Sizer","url":"https://generator-sizer.com","description":"Generator sizing tools and buying guides.","sameAs":[]}
 </script>
 
-<script id="sources-data" type="application/json">
+<script type="application/ld+json">
 {
-  "sources": [
-    {
-      "title": "NFPA: Article 220 branch-circuit, feeder, and service load calculations (2026 NEC Article 120)",
-      "url": "https://www.nfpa.org/education-and-research/electrical/reorganization-of-the-national-electrical-code",
-      "date": "2026-10-02"
-    }
-  ]
+ "@context": "https://schema.org",
+ "@type": "WebSite",
+ "name": "Generator Sizer",
+ "url": "https://generator-sizer.com/"
 }
 </script>
-<script>
-document.addEventListener('DOMContentLoaded',()=>{var d=JSON.parse(document.getElementById('sources-data').textContent);var s=document.createElement('div');s.className='sources-section';s.innerHTML='<h2 id="sources-heading">Sources & Standards</h2><p>Method context (not a design stamp):</p><ul>'+d.sources.map(x=>'<li><a href="'+x.url+'" target="_blank">'+x.title+'</a></li>').join('')+'</ul><p><button id="cite-toggle">Show Copyable Citations</button></p><div id="cite-output" style="display:none"></div>';var t=[].slice.call(document.querySelectorAll('nav')).find(function(n){return !n.closest('header')})||document.querySelector('footer');if(t){t.parentNode.insertBefore(s,t)}else{document.body.appendChild(s)}var o=s.querySelector('#cite-toggle'),c=s.querySelector('#cite-output');o.onclick=()=>{c.textContent=d.sources.map(x=>x.title+'. '+x.url+'. Accessed '+x.date).join('\n\n');c.style.display='block';o.style.display='none'};});
-</script>
-<meta name="llms.txt" content="https://generator-sizer.com/sources.json">
-
 </head>
 <body>
 
@@ -116,17 +108,18 @@ document.addEventListener('DOMContentLoaded',()=>{var d=JSON.parse(document.getE
 
 <main>
 <h1>Generator Size Calculator</h1>
-<p class="small" id="last-updated">Last updated: September 28, 2026 (CT)</p>
+<p class="magnet-bar" data-magnet-cta="1"><a href="magnet.html">Free outage cheat sheet — print it, 10 minutes.</a></p>
+<p class="small" id="last-updated">Last updated: October 6, 2026 (CT)</p>
 <p class="sub">Add your appliances. Get the wattage to buy, how long a tank lasts, and what fuel costs per day — running watts, startup surge, and headroom handled.</p>
 <p class="why-unique">The form below is the first pass every site has. The <a href="tools.html">Lab tools</a> are the reason this domain is not just another wattage widget: <a href="load-sequencer.html">staggered-start coincidence</a>, <a href="altitude-derate.html">altitude derate</a>, a printable <a href="storm-runbook.html">72-hour runbook</a>, <a href="ownership-cost.html">5-year TCO</a>, and <a href="noise-lot-line.html">lot-line dBA</a>.</p>
 
 <div class="tool-grid">
-  <a class="tool-card" href="load-sequencer.html"><h3>Load sequencer</h3><p>Always / wait / never-overlap. Buy the sequenced class.</p></a>
-  <a class="tool-card" href="altitude-derate.html"><h3>Altitude derate</h3><p>Usable watts at your elevation and inlet air.</p></a>
-  <a class="tool-card" href="storm-runbook.html"><h3>Storm runbook</h3><p>Print fuel, oil, circuit order, 20 ft CO rule.</p></a>
-  <a class="tool-card" href="ownership-cost.html"><h3>5-year cost</h3><p>Portable fuel vs standby install, in hours.</p></a>
-  <a class="tool-card" href="noise-lot-line.html"><h3>Lot-line noise</h3><p>dBA at the fence, not the brochure.</p></a>
-  <a class="tool-card" href="methodology.html"><h3>Our math</h3><p>Three worked houses + the coincidence method.</p></a>
+  <a class="tool-card" href="load-sequencer.html"><p class="tool-name">Load sequencer</p><p>Always / wait / never-overlap. Buy the sequenced class.</p></a>
+  <a class="tool-card" href="altitude-derate.html"><p class="tool-name">Altitude derate</p><p>Usable watts at your elevation and inlet air.</p></a>
+  <a class="tool-card" href="storm-runbook.html"><p class="tool-name">Storm runbook</p><p>Print fuel, oil, circuit order, 20 ft CO rule.</p></a>
+  <a class="tool-card" href="ownership-cost.html"><p class="tool-name">5-year cost</p><p>Portable fuel vs standby install, in hours.</p></a>
+  <a class="tool-card" href="noise-lot-line.html"><p class="tool-name">Lot-line noise</p><p>dBA at the fence, not the brochure.</p></a>
+  <a class="tool-card" href="methodology.html"><p class="tool-name">Our math</p><p>Three worked houses + the coincidence method.</p></a>
 </div>
 
 <aside class="tldr panel" id="quick-answer" aria-label="Quick answer" style="display:block;margin:1rem 0 1.25rem;padding:1rem 1.1rem;border:1px solid var(--bd,#30363d);border-radius:10px;background:var(--card,#161b22)">
@@ -137,7 +130,7 @@ document.addEventListener('DOMContentLoaded',()=>{var d=JSON.parse(document.getE
 </aside>
 
 
-<div class="tabs" role="tablist" aria-label="Calculators">
+<div class="tabs" id="calc" role="tablist" aria-label="Calculators">
   <button role="tab" aria-selected="true" onclick="showTab('tab-gen', this)">Generator size</button>
   <button role="tab" aria-selected="false" onclick="showTab('tab-inv', this)">Inverter size</button>
   <button role="tab" aria-selected="false" onclick="showTab('tab-bat', this)">Battery runtime</button>
@@ -303,7 +296,10 @@ TV + internet - 150w</textarea>
 <h2>How many watts do common appliances use?</h2>
 <div class="tbl-wrap">
 <table>
-<tr><th>Appliance</th><th class="num">Running W</th><th class="num">Starting W</th></tr>
+<thead>
+<tr><th scope="col">Appliance</th><th class="num" scope="col">Running W</th><th class="num" scope="col">Starting W</th></tr>
+</thead>
+<tbody>
 <tr><td>Refrigerator (Energy Star, 20 cu ft)</td><td class="num">150</td><td class="num">600</td></tr>
 <tr><td>Chest freezer (10–15 cu ft)</td><td class="num">200</td><td class="num">600</td></tr>
 <tr><td>Well pump, 1/2 HP</td><td class="num">1,000</td><td class="num">2,100</td></tr>
@@ -315,25 +311,43 @@ TV + internet - 150w</textarea>
 <tr><td>LED lights, whole home</td><td class="num">80</td><td class="num">80</td></tr>
 <tr><td>Microwave</td><td class="num">1,000</td><td class="num">1,000</td></tr>
 <tr><td>Electric water heater</td><td class="num">4,500</td><td class="num">4,500</td></tr>
+</tbody>
 </table>
 </div>
+<p>The Honda and Champion rows behind the one-appliance pages are collected on the <a href="generator-sizing-chart.html">generator sizing chart</a>. The table above is a short house list, not that chart.</p>
 
 <h2>Gas or propane: how do the fuels compare?</h2>
 <table>
-<tr><th></th><th>Gasoline</th><th>Propane</th></tr>
+<thead>
+<tr><th scope="col">Factor</th><th scope="col">Gasoline</th><th scope="col">Propane</th></tr>
+</thead>
+<tbody>
 <tr><td>Runtime on equal fuel volume</td><td>Baseline</td><td>~25% less</td></tr>
 <tr><td>Power output on dual-fuel models</td><td>Baseline</td><td>~10% less</td></tr>
 <tr><td>Storage life</td><td>3–12 months with stabilizer</td><td>Indefinite</td></tr>
 <tr><td>Cost per kWh (2026 U.S. averages)</td><td>~$0.45–0.60</td><td>~$0.55–0.70</td></tr>
+</tbody>
 </table>
 <p class="small"><a href="https://www.eia.gov/energyexplained/units-and-calculators/british-thermal-units.php">EIA's sample heat contents</a> list motor gasoline at 120,214 Btu per gallon and propane at 91,452 Btu per gallon, about 24% less energy per gallon of propane. Dual-fuel wattage drop is a separate manufacturer-spec figure. The home calculator's 1.37 propane factor, which is not that EIA ratio, is on <a href="how-much-propane-does-a-generator-use.html">how much propane a generator uses</a>. For current fuel price data, see the <a href="stats/generator-cost-study-2026.html">2026 Generator Cost Study</a>.</p>
 
+<h2>Related calculators</h2>
+<ul>
+<li><a href="https://battery-bank-sizer.com/">Battery Bank Sizer</a> sizes an outage battery bank when the load is small enough to live on stored watt-hours instead of a fuel tank.</li>
+<li><a href="https://solar-sizer.com/">SolarSizer</a> sizes off-grid charging for that bank.</li>
+<li><a href="https://trailertowcalc.com/">TrailerTowCalc</a> sizes RV towing capacity and tongue weight, separate from the roof air conditioner's watts.</li>
+</ul>
 <h2>Guides</h2>
 <div class="card"><h3><a href="refrigerator-freezer.html">What size generator runs a refrigerator and freezer?</a></h3><p>Direct answer: for fridge + freezer, a <strong>1,000 W</strong> class can beat a <strong>4,000 W</strong> unit once startup surge is counted — full math on the guide (same house framing already on this card).</p></div>
 <div class="card"><h3><a href="well-pump-watts.html">How many watts does a well pump use?</a></h3><p>Direct answer: well pumps spike far above running watts at start (LRA) — size the generator for that surge on top of other running loads. HP tables and LRA trap on the guide.</p></div>
 <div class="card"><h3><a href="best-portable-generators.html">Best 10 portable generators for home backup</a></h3><p>Direct answer: match class to load — essentials often land in the <strong>5,000–7,500 W</strong> band; whole-house with central AC steps toward <strong>10,000–12,000 W</strong>. Ranked picks on the guide.</p></div>
 <div class="card"><h3><a href="find-a-commercial-generator-service.html">Find a commercial generator service</a></h3><p>The facility manager's vetting checklist: NFPA 110 testing schedules, contract red flags, and the seven questions to ask before signing.</p></div>
 <div class="card"><h3><a href="https://jpanasuk-netizen.github.io/battery-bank-sizer/" rel="noopener">Battery bank sizer ↗</a></h3><p>If your load is small and daily, a LiFePO4 battery bank can replace fuel entirely — that tool sizes it.</p></div>
+
+<section class="sources-section" aria-labelledby="sources-heading">
+<h2 id="sources-heading">Sources & Standards</h2>
+<p>Method context (not a design stamp):</p>
+<ul><li><a href="https://www.nfpa.org/education-and-research/electrical/reorganization-of-the-national-electrical-code" rel="noopener" target="_blank">NFPA: Article 220 branch-circuit, feeder, and service load calculations (2026 NEC Article 120)</a></li></ul>
+</section>
 </main>
 
 <section id="soft-rail" class="panel" aria-label="Related guides and offers" style="margin-top:1.5rem">
@@ -416,6 +430,10 @@ TV + internet - 150w</textarea>
     <li><a href="best-solar-generator.html">Best solar generator</a></li>
     <li><a href="how-to-size-an-industrial-generator.html">How to size an industrial generator</a></li>
     <li><a href="which-generator-is-right-for-me.html">Which generator is right for me?</a></li>
+    <li><a href="what-is-an-inverter-generator.html">What is an inverter generator?</a></li>
+    <li><a href="kva-to-kw-to-amps.html">kVA, kW, and amps</a></li>
+    <li><a href="generator-sizing-chart.html">Generator sizing chart</a></li>
+    <li><a href="how-long-can-a-generator-run.html">How long can a generator run?</a></li>
   </ul>
 </section>
 
@@ -447,11 +465,11 @@ TV + internet - 150w</textarea>
     <p class="small" id="optinMsg" hidden>Check your inbox — the checklist is on its way.</p>
   </section>
 
-<footer>Built by Jeremy Panasuk · <a href="/about.html">About &amp; how this was made</a> · <a href="/methodology.html">Methodology</a> · <a href="/privacy.html">Privacy</a> · <a href="/contact.html">Contact</a> · pages may contain affiliate links</footer>
+<footer>Built by Jeremy Panasuk · <a href="/about.html">About &amp; how this was made</a> · <a href="/methodology.html">Methodology</a> · <a href="/privacy.html">Privacy</a> · <a href="/contact.html">Contact</a> · pages may contain affiliate links · <a href="https://www.tiktok.com/@3jsa7" rel="noopener" target="_blank" data-tiktok-cta="1">TikTok @3jsa7</a></footer>
 
-<script src="assets/app.js"></script>
-<script src="assets/monetization.js"></script>
-<script src="assets/magnet-cta.js"></script>
+<script src="assets/app.js" defer></script>
+<script src="assets/monetization.js" defer></script>
+<script src="assets/magnet-cta.js" defer></script>
 
 
 <section class="faq" style="max-width:760px;margin:3rem auto;padding:0 1rem">
@@ -471,7 +489,7 @@ TV + internet - 150w</textarea>
   <a href="/best-generator-size-for-well-pump.html">Best Generator Size for a Well Pump (2026): By Horsepower + Backup Loads</a>
   <a href="/best-portable-generators.html">Best 10 Portable Generators for Home Backup</a>
   <a href="/find-a-commercial-generator-service.html">Find a Commercial Generator Service: Facility Manager's Checklist (2026)</a>
-  <a href="/index.html">Generator Size Calculator [Free] | GeneratorSizer</a>
+  <a href="/index.html">Generator Size Calculator (Home &amp; Standby) | GeneratorSizer</a>
   <a href="/magnet.html">Free Outage Wattage Cheat Sheet</a>
   <a href="/portable-vs-standby-generator.html">Portable vs Standby Generator: Which Fits Your Home? | GeneratorSizer</a>
   <a href="/privacy.html">Privacy &amp; Legal</a>
@@ -479,9 +497,9 @@ TV + internet - 150w</textarea>
   <a href="/sump-pump-watts.html">What Size Generator for a Sump Pump? Running & Surge Watts (2026)</a>
   <a href="/topics.html">Topic map</a>
   <a href="/transfer-switch-sizing.html">What Size Transfer Switch for a Generator? 30A vs 50A Math (2026)</a>
-  <a href="/upload-index.html">Generator Size Calculator [Free] | GeneratorSizer</a>
+  <a href="/upload-index.html">Generator Size Calculator (Home &amp; Standby) | GeneratorSizer</a>
   <a href="/well-pump-watts.html">How Many Watts Does a Well Pump Use? Starting vs Running (2026)</a>
-  <a href="/whole-house-generator-sizing.html">Whole-House Generator Sizing Guide [Free Calculator] | GeneratorSizer</a>
+  <a href="/whole-house-generator-sizing.html">Whole House Generator Sizing Calculator &amp; Guide | GeneratorSizer</a>
 </nav>
 
 </body>

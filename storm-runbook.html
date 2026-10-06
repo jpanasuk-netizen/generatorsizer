@@ -8,14 +8,34 @@
 <link rel="canonical" href="https://generator-sizer.com/storm-runbook.html">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <meta name="robots" content="index,follow">
-<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="assets/styles.css?v=20261006">
 <meta property="og:title" content="72-hour storm runbook — GeneratorSizer Lab">
 <meta property="og:url" content="https://generator-sizer.com/storm-runbook.html">
 <meta property="og:description" content="Printable storm fuel, oil, circuit order, and CO placement from your running load.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://generator-sizer.com/assets/og-image.png">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebApplication","name":"72-hour generator storm runbook","url":"https://generator-sizer.com/storm-runbook.html","dateModified":"2026-10-03","applicationCategory":"UtilitiesApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+{"@context":"https://schema.org","@type":"WebApplication","name":"72-hour generator storm runbook","url":"https://generator-sizer.com/storm-runbook.html","dateModified":"2026-10-06","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "name": "Generator Sizer",
+   "item": "https://generator-sizer.com/"
+  },
+  {
+   "@type": "ListItem",
+   "position": 2,
+   "name": "72-hour storm runbook",
+   "item": "https://generator-sizer.com/storm-runbook.html"
+  }
+ ]
+}
 </script>
 </head>
 <body>
@@ -30,7 +50,7 @@
 </header>
 <main>
 <h1>72-hour storm runbook</h1>
-<p class="small">Updated October 3, 2026.</p>
+<p class="small">Updated October 6, 2026.</p>
 <p class="small">Built by <a href="/about.html">Jeremy Panasuk</a>.</p>
 <p class="sub">Type a running load. The button prints gasoline, propane volume, refuels, and engine hours for 24, 48, and 72 hours. The checklist under it is the pre-storm, during, and after list. Print both.</p>
 
@@ -99,7 +119,7 @@
 <p class="no-print">The oil line follows the manual you pick. The menu opens on the <a href="https://cdn.powerequipment.honda.com/pe/pdf/manuals/00X31Z446010.pdf">Honda EU2200i owner’s manual</a>. Its quick reference says to change the engine oil at the first 20 hours, then follow the maintenance schedule. On that schedule the engine-oil “Change” marks are the first month or 20 hours, and every 6 months or 100 hours, whichever comes first. The every-3-months-or-50-hours column on that page is not an engine-oil change. <a href="https://www.generac.com/globalassets/products/residential/portable-generators/owners-manual/gp6500-gp8000e-owners-manual.pdf">Generac’s GP6500/GP8000E manual</a> says to change oil every 100 hours or every year, and the footnote says to change oil after the first 30 hours, then every season. This card reads that season as the yearly half of the same row. A separate footnote says to change the oil and the oil filter every month under heavy load or in high temperatures. The card does not count that monthly footnote. A 72-hour window is shorter than one month, so the card counts the hour column only, from the hour meter you type (the box opens at 0). Later changes are every 100 hours after that first hour-column change.</p>
 <p class="no-print">The form opens at 16 hours per day. That is a typed default, not an agency rule. Ready.gov’s four closed-fridge hours are a reason some houses do not run a set all night. Medical equipment is a reason to type 24. Sixteen is not a Wisconsin requirement.</p>
 
-<h2 class="no-print">Worked clicks</h2>
+<h2 id="worked" class="no-print">Worked clicks</h2>
 <p class="no-print">Default inputs, which are what the form shows before you edit them: 2,210 running watts, 16 hours per day, 4 gallon tank. 2,210 is the always-on running sum stored on the sequencer’s well-ranch list (150 + 200 + 1,000 + 700 + 160). The 700 W furnace fan matches <a href="https://powerequipment.honda.com/generators/generator-wattage-estimation-guide">Honda’s</a> 1/3 hp row. The 150 W fridge running figure sits inside Honda’s 132–192 W band. Honda’s start for that fridge row is 1,200 W, not the 600 W stored on the ranch list, and the well and the 160 W lights are not on that Honda chart. The fuel math does not use the starting watts.</p>
 <ul class="no-print">
 <li>Gasoline gal/h = 2,210 / 7,000 = 0.316. Propane gal/h = 0.316 / 0.75 = 0.421.</li>
@@ -111,7 +131,7 @@
 
 <h2 class="no-print">Limits and a common mistake</h2>
 <p class="no-print">Typing the home calculator’s recommended watts into this running-watts box overstates the cans. The food-truck page’s recommendation is 3,500 W from a 1,792 W running total. This script would treat 3,500 as running watts: 3,500 / 7,000 = 0.5 gal/h, and 0.5 × 16 h/day × 3 days = 24.0 gallons of gasoline for 72 hours. Typing the 1,792 W running total instead is 1,792 / 7,000 × 16 × 3 = 12.3 gallons. The button cannot tell those two inputs apart.</p>
-<p class="no-print">The gallons are not a Generac or Honda fuel test. Generac’s GP6500/GP8000E manual prints 11.5 hours at 50% load on a 7.9 gallon tank for that engine section. That is a test of that machine. It is not 2,210 ÷ 7,000.</p>
+<p class="no-print">The gallons are not a Generac or Honda fuel test. Generac’s GP6500/GP8000E manual prints 11.5 hours at 50% load on a 7.9 gallon tank for that engine section. That is a test of that machine. It is not 2,210 ÷ 7,000. How that 11.5-hour tank sits against the first oil change is on <a href="how-long-can-a-generator-run.html">how long a generator can run</a>.</p>
 <p class="no-print">Compiled with AI assistance from the sources below. Spot an error? Email <a href="mailto:jpanasuk@gmail.com">jpanasuk@gmail.com</a>.</p>
 <h2 class="no-print">Sources</h2>
 <ul class="no-print">

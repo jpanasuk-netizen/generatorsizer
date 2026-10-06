@@ -5,7 +5,7 @@
   --okbg:#121a12; --maxw:900px;
 }
 @media (prefers-color-scheme: light){
-  :root{ --bg:#f6f8fa; --card:#ffffff; --fg:#1f2328; --mut:#57606a; --bd:#d0d7de; --acc:#bc4c28; --okbg:#eaf5ea; }
+  :root{ --bg:#f6f8fa; --card:#ffffff; --fg:#1f2328; --mut:#57606a; --bd:#d0d7de; --acc:#b04522; --warn:#8a5a00; --okbg:#eaf5ea; }
 }
 *{margin:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -155,8 +155,11 @@ a.tool-card, .tool-card{
   padding:.9rem 1rem;color:inherit;text-decoration:none;display:block;
 }
 a.tool-card:hover{border-color:var(--acc)}
-.tool-card h3{margin:.1rem 0 .35rem;border:0;padding:0;font-size:1.02rem}
+.tool-card h3,.tool-card .tool-name{margin:.1rem 0 .35rem;border:0;padding:0;font-size:1.02rem;font-weight:700}
 .tool-card p{margin:0;color:var(--mut);font-size:.9rem}
+.tool-card p + p{margin-top:.45rem}
+.magnet-bar{margin:.6rem 0 1.1rem;padding:.7rem .9rem;border-left:4px solid #f59e0b;background:rgba(245,158,11,.08);font-size:1.02rem}
+.magnet-bar a{font-weight:700}
 .lane-grid{display:grid;grid-template-columns:1fr;gap:.7rem}
 @media(min-width:720px){.lane-grid{grid-template-columns:1fr 1fr 1fr}}
 .lane{border:1px dashed var(--bd);border-radius:10px;padding:.7rem .8rem;min-height:6rem}
@@ -164,8 +167,13 @@ a.tool-card:hover{border-color:var(--acc)}
 .delta{font-size:1.35rem;font-weight:700;font-variant-numeric:tabular-nums}
 .why-unique{border-left:3px solid var(--acc);padding:.2rem 0 .2rem .85rem;margin:1rem 0}
 @media print{
-  .site-head, footer, .seo-nav, .no-print, .adsense-slot, #amzSticky{display:none!important}
-  body{background:#fff;color:#111;max-width:none;padding:0;font-size:12pt}
+  .site-head, footer, .seo-nav, .no-print, .adsense-slot, #amzSticky, .magnet-bar{display:none!important}
+  body{background:#fff;color:#111;max-width:none;padding:0;font-size:11pt}
   a{color:#111}
-  .ans,.card,.lane{break-inside:avoid;border-color:#333}
+  h1{font-size:16pt;margin:0 0 .25rem}
+  h2{font-size:12.5pt;margin:.55rem 0 .2rem;page-break-after:avoid}
+  h3{font-size:11pt;margin:.35rem 0 .15rem}
+  p,li{font-size:11pt;margin:.2rem 0}
+  ul,ol{margin:.15rem 0 .35rem}
+  .ans,.card,.lane{break-inside:avoid;border-color:#333;margin:.35rem 0}
 }

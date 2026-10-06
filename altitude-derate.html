@@ -8,14 +8,34 @@
 <link rel="canonical" href="https://generator-sizer.com/altitude-derate.html">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <meta name="robots" content="index,follow">
-<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="assets/styles.css?v=20261006">
 <meta property="og:title" content="Altitude + heat derate — GeneratorSizer Lab">
 <meta property="og:url" content="https://generator-sizer.com/altitude-derate.html">
 <meta property="og:description" content="Nameplate is sea-level marketing. This tool applies a house derate curve, with Generac's 3.5% step cited beside it.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://generator-sizer.com/assets/og-image.png">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebApplication","name":"Generator altitude derate calculator","url":"https://generator-sizer.com/altitude-derate.html","dateModified":"2026-10-03","applicationCategory":"UtilitiesApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+{"@context":"https://schema.org","@type":"WebApplication","name":"Generator altitude derate calculator","url":"https://generator-sizer.com/altitude-derate.html","dateModified":"2026-10-06","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "name": "Generator Sizer",
+   "item": "https://generator-sizer.com/"
+  },
+  {
+   "@type": "ListItem",
+   "position": 2,
+   "name": "Altitude + heat derate",
+   "item": "https://generator-sizer.com/altitude-derate.html"
+  }
+ ]
+}
 </script>
 </head>
 <body>
@@ -30,7 +50,7 @@
 </header>
 <main>
 <h1>Altitude + heat derate</h1>
-<p class="small">Updated October 3, 2026.</p>
+<p class="small">Updated October 6, 2026.</p>
 <p class="small">Built by <a href="/about.html">Jeremy Panasuk</a>.</p>
 <p class="sub">Use this after you know the watts you need and before you trust a nameplate at elevation or in hot inlet air. The button applies this site’s curve. Generac’s and Honda’s sentences are next to it, and they are not the same curve.</p>
 
@@ -67,7 +87,7 @@
 <p><a href="https://www.generac.com/globalassets/products/residential/portable-generators/owners-manual/gp6500-gp8000e-owners-manual.pdf">Generac’s GP6500/GP8000E owner’s manual</a> says maximum power decreases about 3.5% for each 1,000 feet above sea level, and about 1% for each 10°F above 60°F. The same manual says that when the generator is operated above 77°F there may be a decrease in power. That is a separate sentence from the 1%-per-10°F line, which Generac counts from 60°F. The 3.5% step is the part this tool shares. The tool starts that step after 1,000 ft, not at sea level, and it starts its 1% step at 77°F, not at 60°F.</p>
 <p>The <a href="https://cdn.powerequipment.honda.com/pe/pdf/manuals/00X31Z446010.pdf">Honda EU2200i owner’s manual</a> says that even with the high-altitude carburetor modification, engine horsepower decreases about 3.5% for each 1,000-foot increase in altitude, and that the effect is greater if the modification is not made. Honda tells you to have a dealer do that modification if you always operate above 5,000 feet. That manual’s altitude section does not give a percent per 10°F.</p>
 
-<h2>Worked clicks</h2>
+<h2 id="worked">Worked clicks</h2>
 <p>The form opens at 7,500 W nameplate, 1,050 ft, 90°F, and 4,200 W needed. 7,500 and 4,200 are typed defaults, not a model’s rated watts. Generac’s manual lists 6.5 kW rated for the GP6500 and 8.0 kW rated for the GP8000E.</p>
 <ul>
 <li>Altitude term = 0.035 × (1,050 − 1,000) / 1,000 = 0.00175.</li>
@@ -81,6 +101,9 @@
 <li>Generac’s sentence counted from sea level, by hand, is 3.5% × 5 = 17.5% off, leaving 82.5% and 6,187.5 W. The button does not print 6,187. It skipped the first 1,000 ft.</li>
 </ul>
 
+<h2>How to read the derate table</h2>
+<p>Read the percent, the starting elevation, and the starting temperature as three separate sentences. <a href="https://www.generac.com/globalassets/products/residential/portable-generators/owners-manual/gp6500-gp8000e-owners-manual.pdf">Generac's GP6500/GP8000E manual</a> starts the 3.5% step at sea level and the 1% per 10°F step at 60°F. A separate sentence says power may drop when the generator is operated above 77°F. That sentence does not replace the 60°F line. The <a href="https://cdn.powerequipment.honda.com/pe/pdf/manuals/00X31Z446010.pdf">Honda EU2200i manual</a> says engine horsepower decreases about 3.5% for each 1,000-foot increase in altitude even with the high-altitude carburetor modification, and it tells you to have a dealer do that modification if you always operate above 5,000 feet. Honda's altitude section does not give a percent per 10°F. Do not borrow Generac's temperature line and call it Honda's.</p>
+<p>Third click on this page's curve, which is not Generac's sea-level sentence: 7,500 W nameplate, 2,000 ft, 100°F, need 4,200 W. Altitude term = 0.035 × (2,000 − 1,000) / 1,000 = 0.035. Heat term = 0.01 × (100 − 77) / 10 = 0.023. Factor = 1 − 0.035 − 0.023 = 0.942, shown as 94.2%. Usable = 7,500 × 0.942 = 7,065 W, which still covers 4,200. Generac's sentence counted from sea level and from 60°F, by hand, is 3.5% × 2 = 7% for altitude plus 1% × (100 − 60) / 10 = 4% for temperature, 11% off, leaving 7,500 × 0.89 = 6,675 W. The button does not print 6,675.</p>
 <h2>Limits and a common mistake</h2>
 <p>The 0.55 floor binds when the uncapped factor would be lower. At 14,000 ft and 60°F the altitude term is 0.035 × 13 = 0.455, so 1 − 0.455 = 0.545, and the script returns 0.55. Usable watts on a 7,500 W nameplate are 4,125. Generac’s sea-level sentence with no floor, applied by hand to 14,000 ft, is 3.5% × 14 = 49% off, leaving 3,825 W. The button will not show 3,825.</p>
 <p>A dealer sheet that says full output to some elevation replaces this curve for that machine. A turbocharged standby is that case. Sequence the load on the <a href="load-sequencer.html">load sequencer</a> before you type “watts you need,” and check <a href="noise-lot-line.html">lot-line noise</a> if the fix for a short derate is a bigger open frame. This page does not pick a transfer switch. Permanent installation takes a licensed electrician and a permit where local code requires one.</p>

@@ -8,14 +8,34 @@
 <link rel="canonical" href="https://generator-sizer.com/load-sequencer.html">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <meta name="robots" content="index,follow">
-<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="assets/styles.css?v=20261006">
 <meta property="og:title" content="Load sequencer — GeneratorSizer Lab">
 <meta property="og:url" content="https://generator-sizer.com/load-sequencer.html">
 <meta property="og:description" content="Staggered-start coincidence sizing. Always-on vs wait vs never-overlap.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://generator-sizer.com/assets/og-image.png">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebApplication","name":"GeneratorSizer Load Sequencer","url":"https://generator-sizer.com/load-sequencer.html","dateModified":"2026-10-03","applicationCategory":"UtilitiesApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+{"@context":"https://schema.org","@type":"WebApplication","name":"GeneratorSizer Load Sequencer","url":"https://generator-sizer.com/load-sequencer.html","dateModified":"2026-10-03","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "name": "Generator Sizer",
+   "item": "https://generator-sizer.com/"
+  },
+  {
+   "@type": "ListItem",
+   "position": 2,
+   "name": "Load sequencer",
+   "item": "https://generator-sizer.com/load-sequencer.html"
+  }
+ ]
+}
 </script>
 </head>
 <body>
@@ -66,7 +86,7 @@
 </ul>
 <p><a href="https://powerequipment.honda.com/generators/generator-wattage-estimation-guide">Honda’s wattage guide</a> says not to add up everything you want to power, and points at its own power-management note. The three lanes are this script’s way of doing that split. <a href="https://www.nfpa.org/education-and-research/electrical/reorganization-of-the-national-electrical-code">NEC Article 220</a> (Article 120 in the 2026 NEC) is the code article for branch-circuit, feeder, and service calculations. It is not these three lanes, and this page is not a code calculation.</p>
 
-<h2>Worked example: Honda rows only</h2>
+<h2 id="worked">Worked example: Honda rows only</h2>
 <p>Type these three rows. They are on Honda’s chart. Fridge: 192 running, 1,200 starting, lane Always (192 is the top of Honda’s 132–192 running band for an Energy Star refrigerator or freezer). Furnace fan, 1/3 hp: 700 running, 1,400 starting, lane Always. Honda marks that fan 240 V. Microwave, the 650 W cooking row: 1,000 running, 1,000 starting, lane Never overlap. Headroom 20.</p>
 <ul>
 <li>Always running = 192 + 700 = 892 W. Never-overlap running = 1,000 W. Wait running = 0.</li>

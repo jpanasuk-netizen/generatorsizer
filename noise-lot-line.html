@@ -8,14 +8,34 @@
 <link rel="canonical" href="https://generator-sizer.com/noise-lot-line.html">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <meta name="robots" content="index,follow">
-<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="assets/styles.css?v=20261006">
 <meta property="og:title" content="Lot-line noise — GeneratorSizer Lab">
 <meta property="og:url" content="https://generator-sizer.com/noise-lot-line.html">
 <meta property="og:description" content="dBA at the fence from inverter, open-frame, or standby using inverse-square spreading.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://generator-sizer.com/assets/og-image.png">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebApplication","name":"Generator lot-line noise estimator","url":"https://generator-sizer.com/noise-lot-line.html","dateModified":"2026-10-03","applicationCategory":"UtilitiesApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+{"@context":"https://schema.org","@type":"WebApplication","name":"Generator lot-line noise estimator","url":"https://generator-sizer.com/noise-lot-line.html","dateModified":"2026-10-06","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "name": "Generator Sizer",
+   "item": "https://generator-sizer.com/"
+  },
+  {
+   "@type": "ListItem",
+   "position": 2,
+   "name": "Lot-line noise",
+   "item": "https://generator-sizer.com/noise-lot-line.html"
+  }
+ ]
+}
 </script>
 </head>
 <body>
@@ -29,7 +49,7 @@
 </header>
 <main>
 <h1>Lot-line noise</h1>
-<p class="small">Updated October 3, 2026.</p>
+<p class="small">Updated October 6, 2026.</p>
 <p class="small">Built by <a href="/about.html">Jeremy Panasuk</a>.</p>
 <p class="sub">Use this when you have a published sound level at a stated distance and you want that level at a different distance. The button does not measure your yard.</p>
 
@@ -66,7 +86,7 @@
 <p>The other three menu levels — 53, 58, and 76 dBA at 23 ft — are numbers stored in <code>GS.NOISE_CLASS</code>. This page does not have a manufacturer sheet for those three. Honda’s EU2200i product page lists 57 dB(A) at rated load and 48 dB(A) at quarter load and does not state the measurement distance, so those Honda figures are not run through this distance formula here. Kubota’s GL7000-USA sheet lists 66 dB(A) at full load at 23 ft (7 m). That 66 is not one of the menu items. The same function, given 66, 23 ft, and double the distance, is the second example below.</p>
 <p><a href="https://www.fhwa.dot.gov/ENVIRONMENT/noise/noise_barriers/design_construction/keepdown.cfm">FHWA</a> says effective highway noise barriers typically reduce noise levels by 5 to 10 dB, and that a barrier tall enough to break the line of sight from the road to the receiver can achieve a 5 dB reduction. The menu’s −5 and −10 are those two ends, applied as flat credits. FHWA is writing about highway barriers, not a test of a backyard fence in front of a generator.</p>
 
-<h2>Worked clicks</h2>
+<h2 id="worked">Worked clicks</h2>
 <p>Select “Enclosed standby ~22 kW,” leave distance at 25 ft, barrier None. Reference 67 dB(A) at 23 ft is Generac’s normal-load row.</p>
 <ul>
 <li>20 × log10(25 / 23) = 0.72 dB.</li>
@@ -75,6 +95,9 @@
 <p>Change only the distance to 46 ft, which is twice the 23 ft reference. 20 × log10(2) = 6.02. Then 67 − 6.02 = 60.98, and the button prints 61 dBA. OSHA’s free-field statement is a 6 dB drop for a doubling. The button rounds 60.98 to 61.</p>
 <p>Kubota’s 66 dB(A) at 23 ft, through the same function at 46 ft and no barrier: 66 − 6.02 = 59.98, which rounds to 60 dBA the way the button rounds. You cannot pick 66 in the menu. The arithmetic is the function.</p>
 
+<h2>How to read a decibel line</h2>
+<p>Use a dB(A) figure only with the distance and the load printed next to it. <a href="https://www.generac.com/globalassets/products/residential/standby-generators/spec-sheets/16-22kw-guardian-standby-generator-specsheet.pdf">Generac's 16/20/22 kW sheet</a> lists 67 dB(A) at 23 ft with the generator at normal load, and Quiet-Test at 55, 55, and 57 dB(A) at the same 23 ft. Those rows are not interchangeable. <a href="https://powerequipment.honda.com/generators/models/eu2200i">Honda's EU2200i page</a> lists 57 dB(A) at rated load and 48 dB(A) at quarter load and does not state the distance, so those two stay out of this formula.</p>
+<p>Third click you can actually make from the menu: 67 dBA at 23 ft, distance 46 ft, barrier −5. Spreading is 20 × log10(2) = 6.02. Then 67 − 6.02 − 5 = 55.98, and the button prints 56 dBA. <a href="https://www.fhwa.dot.gov/ENVIRONMENT/noise/noise_barriers/design_construction/keepdown.cfm">FHWA</a> says a barrier tall enough to break the line of sight can achieve a 5 dB reduction, and that effective highway barriers typically reduce noise by 5 to 10 dB. The 10 dB end is that highway range, not a test of a backyard fence.</p>
 <h2>Limits and a common mistake</h2>
 <p>Treating the opening menu item, 53 dBA, as a Honda rating. At the form’s default 25 ft and no barrier, that stored 53 prints 52 dBA. Fifty-three is the script’s label. It is not the EU2200i’s 57 or 48.</p>
 <p>A fence credit does not move the generator closer to a door. <a href="https://www.cpsc.gov/Newsroom/News-Releases/2026/CPSC-Warns-of-Generator-Carbon-Monoxide-and-Fire-Hazards-Ahead-of-Hurricane-Season">CPSC</a> still says outdoors only, at least 20 feet from homes and buildings, never in an enclosed area even with the door open. Building a box over the set to chase a lower dBA fights that rule. OSHA’s reflected-sound warning means a yard can be louder than this free-field line. If a fine depends on a measurement, measure. This estimate is not that measurement.</p>

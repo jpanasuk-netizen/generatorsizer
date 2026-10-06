@@ -46,6 +46,10 @@ Cite freely with link attribution. Wattage figures are published typical values 
 - [Best solar generator](https://generator-sizer.com/best-solar-generator.html): Jackery Explorer 1000 v2 sheet matched to a 192 W fridge
 - [How to size an industrial generator](https://generator-sizer.com/how-to-size-an-industrial-generator.html): Honda table saw and pressure washer at 7,000 W; a building needs an engineer
 - [Which generator is right for me?](https://generator-sizer.com/which-generator-is-right-for-me.html): fridge plus furnace fan at 2,000 W, then the branches that leave that class
+- [What is an inverter generator?](https://generator-sizer.com/what-is-an-inverter-generator.html): Honda's AC to DC to AC description, no numeric THD, TV and router at 500 W
+- [kVA, kW, and amps](https://generator-sizer.com/kva-to-kw-to-amps.html): Generac GP6500 at power factor 1.0, single-phase amps, no three-phase formula
+- [Generator sizing chart](https://generator-sizer.com/generator-sizing-chart.html): Honda and Champion rows from the appliance pages, garage door at 2,000 W
+- [How long can a generator run?](https://generator-sizer.com/how-long-can-a-generator-run.html): EU2200i tank times, GP6500 25% and 50% tests, oil clocks
 
 ## Topic map
 - [GeneratorSizer topic map](https://generator-sizer.com/topics.html): Generator sizing calculator for homeowners who need to know exactly what wattage keeps the house running during an outage.
