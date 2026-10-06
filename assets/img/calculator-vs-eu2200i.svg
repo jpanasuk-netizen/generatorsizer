@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 200" width="720" height="200" role="img" aria-label="Calculator peak 680 watts and 1,000 watt recommendation, beside Honda EU2200i 1800W rated and 2200W max.">
+  <rect width="720" height="200" fill="#f6f8fa"/>
+  <g font-family="system-ui,Segoe UI,sans-serif" fill="#1f2328">
+    <rect x="20" y="28" width="330" height="148" rx="8" fill="#fff" stroke="#d0d7de"/>
+    <text x="185" y="56" text-anchor="middle" font-size="13" font-weight="700">This site's calculator</text>
+    <text x="185" y="84" text-anchor="middle" font-size="13">Peak 680 W</text>
+    <text x="185" y="108" text-anchor="middle" font-size="13">680 × 1.20 = 816</text>
+    <text x="185" y="140" text-anchor="middle" font-size="16" font-weight="700" fill="#b04522">1,000 W recommended</text>
+    <rect x="370" y="28" width="330" height="148" rx="8" fill="#fff" stroke="#b04522" stroke-width="2"/>
+    <text x="535" y="56" text-anchor="middle" font-size="13" font-weight="700">Honda EU2200i spec table</text>
+    <text x="535" y="92" text-anchor="middle" font-size="15">1800W rated</text>
+    <text x="535" y="120" text-anchor="middle" font-size="15">2200W max</text>
+    <text x="535" y="150" text-anchor="middle" font-size="12" fill="#57606a">both above 680 W and 1,000 W</text>
+  </g>
+</svg>

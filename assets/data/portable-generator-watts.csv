@@ -1,0 +1,20 @@
+manufacturer,model,fuel,rated_running_watts,starting_peak_watts,fuel_tank,run_time,load_stated,source_url
+Honda,"EU1000i — EU1000T1AG (50 state), EU1000T1AN (49 state)",not listed,900W,1000W,0.55 gal,"3.0 hr @ rated load. 6.8 hr @ 1/4 load",rated load; 1/4 load,https://powerequipment.honda.com/generators/models/eu1000i
+Honda,EU2200i — EU2200ITAN,not listed,1800W,2200W,.95 gal,3.2hr @ rated load 8.1 hrs @ 1/4 load,rated load; 1/4 load,https://powerequipment.honda.com/generators/models/eu2200i
+Honda,EU2200i Companion — EU2200ITAN1,not listed,1800W,2200W,.95 gal.,3.2hr @ rated load 8.1 hrs @ 1/4 load,rated load; 1/4 load,https://powerequipment.honda.com/generators/models/eu2200i-companion
+Honda,EB2200i — EB2200ITAN,not listed,1800W,2200W,.95 gal,3.2hr @ rated load 8.1 hrs @ 1/4 load,rated load; 1/4 load,https://powerequipment.honda.com/generators/models/eb2200i
+Honda,"EU3200i — EU3200IAN (49 State), EU3200IAC (50 State)",not listed,2600W,3200W,1.2 gal.,"3.3 hr. @ rated load, 8.6 hrs @ 1/4 load",rated load; 1/4 load,https://powerequipment.honda.com/generators/models/eu3200i
+Honda,EU3000iS — EU3000IS1AN,not listed,2800W,3000W,3.4 gal.,6.9 hr @ rated load 19.6 hr @ 1/4 load,rated load; 1/4 load,https://powerequipment.honda.com/generators/models/eu3000is
+Honda,EU7000iS — EU7000ISNAN (49 State); EU7000iSNAC (50 State),not listed,5500W,7000W,5.1 gal.,"6.4 hrs.@ rated load, 16.0 hrs. @ 1/4 load",rated load; 1/4 load,https://powerequipment.honda.com/generators/models/eu7000is
+Champion,201318 4500W Inverter,Gasoline,3500W,4500W,2.25 gal.,14 h.,1/4 load,https://www.championpowerequipment.com/product/201318-4500w-inverter/
+Champion,201176 9000W Tri Fuel Open Frame Inverter,Gasoline,7250W,9000W,4.32 gal.,14 h.,1/4 load,https://www.championpowerequipment.com/product/201176-9000w-electric-start-tri-fuel-open-frame-inverter/
+Champion,201176 9000W Tri Fuel Open Frame Inverter,Propane (LPG),6525W,9000W,20-pound propane tank,12 h.,1/4 load,https://www.championpowerequipment.com/product/201176-9000w-electric-start-tri-fuel-open-frame-inverter/
+Champion,201176 9000W Tri Fuel Open Frame Inverter,Natural Gas (NG),5875W,9000W,not listed,not listed,not listed,https://www.championpowerequipment.com/product/201176-9000w-electric-start-tri-fuel-open-frame-inverter/
+Generac,GP8000E 7686-3 / 7686-4 / 7715-0,not listed,8000,10000,7.9 gal (29.9 L),15 hours at 25% of rated load; 10 hours at 50% of rated load,25% of rated load; 50% of rated load,https://www.generac.com/globalassets/products/residential/portable-generators/spec-sheets/7715-gp8000e-cosense-portable-generator-spec-sheet.pdf
+Generac,GP8000E 8929-0 (sheet header G008929-0),gasoline,8000,10000,7.9 gal (29.9 L),15.5 hours at 25%; 12 hours at 50%,25%; 50%,https://www.generac.com/globalassets/products/residential/portable-generators/products/8929/8929-gp8000e-spec-sheet.pdf
+Westinghouse,WGen3600cv,Gasoline,3600,4650,4 gal. (15 L),14 hrs. at 25%; 10.5 hrs. at 50%,25%; 50%,https://westinghouseoutdoorpower.com/products/wgen3600cv-generator-with-co-sensor
+Westinghouse,WGen9500DF,Gasoline,9500,12500,6.6 gal. (25 L),12 hrs. at 25%; 8 hrs. at 50%,25%; 50%,https://westinghouseoutdoorpower.com/products/wgen9500df-generator-dual-fuel
+Westinghouse,WGen9500DF,Propane,8500,11200,20 lb. propane tank,7 hrs.,50%,https://westinghouseoutdoorpower.com/products/wgen9500df-generator-dual-fuel
+Westinghouse,WGen11500DFc,Gasoline,11500,14500,9.5 gal. (36 L),19 hrs. at 25%; 9.5 hrs. at 50%,25%; 50%,https://westinghouseoutdoorpower.com/products/wgen11500dfc-dual-fuel-with-co-sensor
+Westinghouse,WGen11500DFc,Propane,10500,13500,20 lb. propane tank,7 hrs.,50%,https://westinghouseoutdoorpower.com/products/wgen11500dfc-dual-fuel-with-co-sensor
+"Predator (Harbor Freight)",71358 3500 watt portable inverter,unleaded gasoline,3000,3500,2.64 Gallon / 10.00 Liter,11 hr.,25% load with full tank,https://manuals.harborfreight.com/manuals/71000-71999/71358-193175546272.pdf

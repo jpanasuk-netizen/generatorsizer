@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 180" width="720" height="180" role="img" aria-label="30 amps times 240 volts is 7,200 watts. 50 amps times 240 volts is 12,000 watts.">
+  <rect width="720" height="180" fill="#f6f8fa"/>
+  <g font-family="system-ui,Segoe UI,sans-serif" fill="#1f2328">
+    <rect x="24" y="28" width="320" height="124" rx="8" fill="#fff" stroke="#d0d7de"/>
+    <text x="184" y="64" text-anchor="middle" font-size="16" font-weight="700">30 A switch</text>
+    <text x="184" y="96" text-anchor="middle" font-size="15">30 × 240 V</text>
+    <text x="184" y="128" text-anchor="middle" font-size="18" font-weight="700" fill="#b04522">7,200 W</text>
+    <rect x="376" y="28" width="320" height="124" rx="8" fill="#fff" stroke="#d0d7de"/>
+    <text x="536" y="64" text-anchor="middle" font-size="16" font-weight="700">50 A switch</text>
+    <text x="536" y="96" text-anchor="middle" font-size="15">50 × 240 V</text>
+    <text x="536" y="128" text-anchor="middle" font-size="18" font-weight="700" fill="#b04522">12,000 W</text>
+  </g>
+</svg>

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 210" width="720" height="210" role="img" aria-label="Third click: 7,500 watt nameplate at 2,000 feet and 100 degrees F leaves 7,065 usable watts.">
+  <rect width="720" height="210" fill="#f6f8fa"/>
+  <g font-family="system-ui,Segoe UI,sans-serif" fill="#1f2328">
+    <text x="24" y="32" font-size="14" font-weight="700">Third click on this page</text>
+    <text x="24" y="54" font-size="13" fill="#57606a">7,500 W nameplate · 2,000 ft · 100°F · need 4,200 W</text>
+    <rect x="24" y="74" width="210" height="112" rx="8" fill="#fff" stroke="#d0d7de"/>
+    <text x="129" y="104" text-anchor="middle" font-size="13" font-weight="700">Altitude 0.035</text>
+    <text x="129" y="128" text-anchor="middle" font-size="12">0.035 × (2,000  1,000)</text>
+    <text x="129" y="148" text-anchor="middle" font-size="12">/ 1,000</text>
+    <rect x="254" y="74" width="210" height="112" rx="8" fill="#fff" stroke="#d0d7de"/>
+    <text x="359" y="104" text-anchor="middle" font-size="13" font-weight="700">Heat 0.023</text>
+    <text x="359" y="128" text-anchor="middle" font-size="12">0.01 × (100  77) / 10</text>
+    <rect x="484" y="74" width="212" height="112" rx="8" fill="#fff" stroke="#b04522" stroke-width="2"/>
+    <text x="590" y="104" text-anchor="middle" font-size="13" font-weight="700">Factor 0.942</text>
+    <text x="590" y="128" text-anchor="middle" font-size="12">7,500 × 0.942</text>
+    <text x="590" y="156" text-anchor="middle" font-size="16" font-weight="700" fill="#b04522">7,065 W usable</text>
+  </g>
+</svg>

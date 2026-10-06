@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Embed the Generator Size Calculator on Your Site</title>
+<meta name="description" content="Free iframe for the GeneratorSizer size calculator. Same math as the homepage. Keep the credit link.">
+<link rel="canonical" href="https://generator-sizer.com/embed-calculator.html">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="shortcut icon" href="assets/favicon.ico">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="Embed the Generator Size Calculator on Your Site">
+<meta property="og:description" content="Free iframe for the GeneratorSizer size calculator. Same math as the homepage. Keep the credit link.">
+<meta property="og:url" content="https://generator-sizer.com/embed-calculator.html">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://generator-sizer.com/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Embed the Generator Size Calculator on Your Site">
+<meta name="twitter:description" content="Free iframe for the GeneratorSizer size calculator. Same math as the homepage. Keep the credit link.">
+<meta name="twitter:image" content="https://generator-sizer.com/assets/og-image.png">
+<link rel="stylesheet" href="assets/styles.css?v=20261006">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Generator Sizer", "item": "https://generator-sizer.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Embed the calculator", "item": "https://generator-sizer.com/embed-calculator.html"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I embed this calculator for free?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Yes. The snippet on this page is free. Keep the credit link on the page that frames it."}
+    },
+    {
+      "@type": "Question",
+      "name": "Does the embed use the same math as the homepage?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Yes. The frame loads the same sizeGenerator function as the homepage. With the refrigerator and LED presets the form adds on open, and with headroom at 20%, the button prints 1,000 watts recommended."}
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-head">
+  <a class="brand" href="index.html">GeneratorSizer</a>
+  <nav aria-label="Site">
+    <a href="index.html#calc">Calculator</a>
+    <a href="topics.html">Topics</a>
+    <a href="about.html">About</a>
+  </nav>
+</header>
+<main>
+<h1>Embed the Generator Size Calculator on Your Site</h1>
+<p class="small">Published October 6, 2026.</p>
+<p class="small">Built by <a href="/about.html">Jeremy Panasuk</a>.</p>
+<p class="sub">The frame below is the homepage generator-size form. It loads the same <code>sizeGenerator</code> function. It does not include ads, affiliate buttons, or the outage cheat-sheet bar.</p>
+<div class="answer-box"><strong>Quick answer:</strong> Paste the snippet. The calculator is free. Keep the credit link.</div>
+
+<h2>Live preview</h2>
+<iframe src="/embed/" title="Generator size calculator" style="width:100%;height:560px;border:1px solid var(--bd);border-radius:8px;background:var(--card)"></iframe>
+
+<h2>Copy this snippet</h2>
+<p>The box includes the frame and a credit line under it. The credit link is a normal link. Do not add <code>nofollow</code> and do not hide it.</p>
+<textarea id="embed-snippet" rows="8" readonly style="width:100%;max-width:none;background:var(--card);color:var(--fg);border:1px solid var(--bd);border-radius:8px;padding:.6rem;font-family:ui-monospace,monospace;font-size:.85rem">&lt;iframe src="https://generator-sizer.com/embed/" title="Generator size calculator" style="width:100%;height:560px;border:0"&gt;&lt;/iframe&gt;
+&lt;p&gt;Calculator by &lt;a href="https://generator-sizer.com/"&gt;GeneratorSizer&lt;/a&gt;&lt;/p&gt;</textarea>
+<p><button type="button" id="copy-snippet" style="background:var(--acc);color:#fff;border:none;border-radius:8px;padding:.55rem 1rem;cursor:pointer;font-weight:600">Copy snippet</button> <span id="copy-status" class="small" role="status"></span></p>
+<p>Calculator by <a href="https://generator-sizer.com/">GeneratorSizer</a></p>
+
+<h2>Terms</h2>
+<p>You can put this frame on your site for free. Leave the credit link where visitors can see it and follow it. The frame page itself asks search engines not to index it. This page is the public explanation.</p>
+
+<h2>Frequently asked questions</h2>
+<h3>Can I embed this calculator for free?</h3>
+<p>Yes. The snippet on this page is free. Keep the credit link on the page that frames it.</p>
+<h3>Does the embed use the same math as the homepage?</h3>
+<p>Yes. The frame loads the same sizeGenerator function as the homepage. With the refrigerator and LED presets the form adds on open, and with headroom at 20%, the button prints 1,000 watts recommended.</p>
+<p>Compiled with AI assistance from the calculator on this site. Spot an error? Email <a href="mailto:jpanasuk@gmail.com">jpanasuk@gmail.com</a>.</p>
+</main>
+<footer>Built by Jeremy Panasuk · <a href="/about.html">About &amp; how this was made</a> · <a href="/methodology.html">Methodology</a> · <a href="/privacy.html">Privacy</a> · <a href="/contact.html">Contact</a> · pages may contain affiliate links</footer>
+<script>
+document.getElementById("copy-snippet").addEventListener("click", function(){
+  var box = document.getElementById("embed-snippet");
+  var status = document.getElementById("copy-status");
+  var text = box.value;
+  function done(){ status.textContent = "Copied."; }
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(done, function(){ box.focus(); box.select(); status.textContent = "Select the box and copy it."; });
+  } else {
+    box.focus();
+    box.select();
+    status.textContent = "Select the box and copy it.";
+  }
+});
+</script>
+</body>
+</html>

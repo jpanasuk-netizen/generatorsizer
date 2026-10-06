@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 200" width="720" height="200" role="img" aria-label="67 dBA at 23 feet, doubled to 46 feet with a 5 dB barrier credit, prints 56 dBA.">
+  <rect width="720" height="200" fill="#f6f8fa"/>
+  <g font-family="system-ui,Segoe UI,sans-serif" fill="#1f2328">
+    <rect x="20" y="40" width="150" height="120" rx="8" fill="#fff" stroke="#d0d7de"/>
+    <text x="95" y="88" text-anchor="middle" font-size="16" font-weight="700">67 dBA</text>
+    <text x="95" y="112" text-anchor="middle" font-size="12" fill="#57606a">at 23 ft</text>
+    <text x="184" y="104" font-size="14" fill="#b04522"> 6.02</text>
+    <rect x="240" y="40" width="170" height="120" rx="8" fill="#fff" stroke="#d0d7de"/>
+    <text x="325" y="84" text-anchor="middle" font-size="14" font-weight="700">46 ft</text>
+    <text x="325" y="108" text-anchor="middle" font-size="12">20 × log10(2)</text>
+    <text x="325" y="130" text-anchor="middle" font-size="12" fill="#57606a">= 6.02</text>
+    <text x="424" y="104" font-size="14" fill="#b04522"> 5</text>
+    <rect x="470" y="40" width="226" height="120" rx="8" fill="#fff" stroke="#b04522" stroke-width="2"/>
+    <text x="583" y="84" text-anchor="middle" font-size="13">67  6.02  5</text>
+    <text x="583" y="108" text-anchor="middle" font-size="13">= 55.98</text>
+    <text x="583" y="136" text-anchor="middle" font-size="16" font-weight="700" fill="#b04522">button prints 56 dBA</text>
+  </g>
+</svg>

@@ -49,6 +49,8 @@ Cite freely with link attribution. Wattage figures are published typical values 
 - [What is an inverter generator?](https://generator-sizer.com/what-is-an-inverter-generator.html): Honda's AC to DC to AC description, no numeric THD, TV and router at 500 W
 - [kVA, kW, and amps](https://generator-sizer.com/kva-to-kw-to-amps.html): Generac GP6500 at power factor 1.0, single-phase amps, no three-phase formula
 - [Generator sizing chart](https://generator-sizer.com/generator-sizing-chart.html): Honda and Champion rows from the appliance pages, garage door at 2,000 W
+- [Portable generator watts chart](https://generator-sizer.com/portable-generator-watts-chart.html): manufacturer spec rows for rated watts, starting watts, tank, and run time at a stated load
+- [Embed the calculator](https://generator-sizer.com/embed-calculator.html): iframe snippet for the homepage size calculator, with a credit link
 - [How long can a generator run?](https://generator-sizer.com/how-long-can-a-generator-run.html): EU2200i tank times, GP6500 25% and 50% tests, oil clocks
 
 ## Topic map
