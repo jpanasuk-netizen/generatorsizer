@@ -4,19 +4,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>How Many Watts Does a Well Pump Use?</title>
-<meta name="description" content="Well pump wattage by horsepower: 1/2 HP is 1,000 running / 2,100 starting watts. Why LRA kills undersized generators, and fixes.">
+<meta name="description" content="A well pump's locked-rotor start, not its running watts, stalls an undersized generator. Read the motor plate, then the sourced well-pump page.">
 <link rel="canonical" href="https://generator-sizer.com/well-pump-watts.html">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="shortcut icon" href="assets/favicon.ico">
 <meta name="robots" content="index,follow">
 <meta property="og:title" content="How Many Watts Does a Well Pump Use? Starting vs Running">
-<meta property="og:description" content="Well pump wattage by HP, the locked-rotor-amp trap, soft-start kits, and how to size a generator around your pump's startup.">
+<meta property="og:description" content="A well pump's locked-rotor start, not its running watts, stalls an undersized generator. Read the motor plate, then the sourced well-pump page.">
 <meta property="og:type" content="article">
 <link rel="stylesheet" href="assets/styles.css?v=20261006">
 <meta property="og:image" content="https://generator-sizer.com/assets/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="How Many Watts Does a Well Pump Use? Starting vs Running (2026)">
-<meta name="twitter:description" content="Well pump wattage by horsepower: 1/2 HP is 1,000 running / 2,100 starting watts. Why LRA kills undersized generators, and fixes.">
+<meta name="twitter:description" content="A well pump's locked-rotor start, not its running watts, stalls an undersized generator. Read the motor plate, then the sourced well-pump page.">
 <meta name="twitter:image" content="https://generator-sizer.com/assets/og-image.png">
 <script type="application/ld+json">
 {
@@ -28,7 +28,7 @@
       "name": "Does a submersible pump draw more than a jet pump?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Submersibles (down the well) run slightly more efficiently; the HP rating on the pump controls either way. Deep-well submersibles are commonly 1/2–1 HP; shallow jet pumps 1/3–3/4 HP."
+        "text": "The horsepower on the motor plate controls the draw either way. A submersible and a jet pump with the same nameplate are sized from that plate, not from which one sits down the well."
       }
     },
     {
@@ -36,7 +36,7 @@
       "name": "Can I run a 240 V well pump off a portable generator?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Only if the generator has a 240 V output — most 3,500 W+ models do, via a NEMA L14-30 or 14-50 receptacle. A 120 V-only generator won't start a 240 V pump at all. Check before you buy; it's the most common well-water return."
+        "text": "Only if the generator has a 240 V output. A generator with only a 120 V receptacle will not start a 240 V pump. Check the receptacle before you buy."
       }
     },
     {
@@ -44,7 +44,7 @@
       "name": "How much does the pump cycle during an outage?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A household of four draws 200–300 gallons/day. A 1/2 HP pump moving 10 GPM needs under an hour of total run time daily — 1 kWh of energy. Run it morning and evening and one gallon of gas covers days."
+        "text": "The pump runs when the pressure tank calls for water, not continuously. Cycle it in sessions rather than idling the generator all day. How much water you use, and how long that takes, is on the pump curve and your own use, not on this page."
       }
     }
   ]
@@ -86,56 +86,47 @@
 
 <main>
 <h1>How many watts does a well pump use?</h1>
-<p class="sub">Running watts are the easy part. Startup is where generators die — and the number on your pump's motor plate matters more than any chart.</p>
+<p class="sub">Running watts are the easy part. Startup is where generators stall — and the motor plate matters more than a chart that does not cite a manufacturer.</p>
 <p>Quick sizing question: <a href="what-size-generator-for-well-pump.html">what size generator for a well pump</a>.</p>
 
-<div class="answer-box"><strong>Quick answer:</strong> A 1/2 HP well pump draws about 1,000 W running and 2,100 W at startup — a 2,500–3,500 W generator covers it alone, or 4,000–5,000 W with household essentials sharing. Size the surge rating above the pump&#x27;s locked-rotor figure, not the typical startup.</div>
+<div class="answer-box"><strong>Quick answer:</strong> Read running amps and locked-rotor amps on the pump plate. Manufacturer watt bands are on the <a href="what-size-generator-for-well-pump.html">sourced well-pump page</a>. Add the rest of the house in the <a href="index.html#calc">calculator</a>.</div>
 
-<h2>Wattage by horsepower</h2>
-<div class="tbl-wrap">
-<table>
-<tr><th>Pump size</th><th class="num">Running watts</th><th class="num">Typical startup</th><th class="num">Locked-rotor worst case</th></tr>
-<tr><td>1/3 HP</td><td class="num">750</td><td class="num">1,500</td><td class="num">2,300</td></tr>
-<tr><td>1/2 HP</td><td class="num">1,000</td><td class="num">2,100</td><td class="num">3,200</td></tr>
-<tr><td>3/4 HP</td><td class="num">1,500</td><td class="num">3,000</td><td class="num">4,600</td></tr>
-<tr><td>1 HP</td><td class="num">2,000</td><td class="num">4,000</td><td class="num">6,100</td></tr>
-<tr><td>1.5 HP (irrigation)</td><td class="num">2,900</td><td class="num">5,800</td><td class="num">8,800</td></tr>
-</table>
-</div>
-<p class="small">Running watts ≈ HP × 746 W (1 HP = 746 W) ÷ motor efficiency (~75%). Startup is 2–3× running; locked-rotor amps (LRA) — the stall-current worst case — is 3–5× running.</p>
+<h2>What to read on the plate</h2>
+<p>Horsepower, voltage, running load amps, and locked-rotor amps (when the plate lists them) are the sizing inputs. This page does not convert horsepower into watts. Champion's published bands for common well pumps are on the <a href="what-size-generator-for-well-pump.html">well pump sizing page</a>.</p>
 
 <h2>The LRA trap</h2>
-<p>Every pump motor has a nameplate listing RLA (running load amps) and sometimes LRA (locked-rotor amps). Locked-rotor is the current a motor draws in the instant before it starts spinning — if the pump tries to start against pressure, or sits briefly stalled, it pulls that full figure. A generator sized to the "2,100 W startup" chart figure can still trip or stall on a 1/2 HP pump's 3,200 W LRA spike, especially with other loads already running. Read the plate: if it lists LRA, multiply by 240 V (or 120 V for small jet pumps) to get the true surge budget.</p>
+<p>Locked-rotor amps are the current a motor draws in the instant before it spins. If the pump starts against pressure, or sits briefly stalled, it pulls that figure. A generator sized only to a typical startup can still trip when the plate's locked-rotor value is higher, especially with other loads already running. If the plate lists LRA, multiply those amps by the nameplate voltage. That product is the surge budget.</p>
 
 <h2>Sizing the generator around the pump</h2>
-<p>The pump is almost always the <strong>largest single surge</strong> in a home backup plan, which matters because surge budgeting only counts the biggest starter — everything else contributes running watts. So:</p>
+<p>The pump is often the largest single surge in a home backup plan. Surge budgeting counts that one start; everything else contributes running watts.</p>
 <ul style="margin:.6rem 0 .6rem 1.2rem">
-  <li><strong>Pump alone:</strong> 2,500–3,500 W generator covers a 1/2 HP pump with headroom.</li>
-  <li><strong>Pump + fridge + lights + furnace fan:</strong> about 1,930 W running + 1,100 W surge headroom → a 4,000–5,000 W generator (3,000+ W surge rating).</li>
-  <li><strong>Pump + central AC:</strong> two large motors — 8,000 W class or a soft-start kit on the AC.</li>
+  <li><strong>Pump alone:</strong> size the surge rating to the plate, then confirm on the sourced well-pump page.</li>
+  <li><strong>Pump plus the rest of the house:</strong> add those running watts in the calculator. Do not add a second motor's surge on top of the pump's.</li>
+  <li><strong>Pump plus central air:</strong> two large motors. A soft-start kit on the larger one is an electrician's question, not a watt guess.</li>
 </ul>
-<p>Run your exact list through the <a href="index.html#calc">generator size calculator</a> — the well pump presets are already in it.</p>
+<p>Run the list through the <a href="index.html#calc">generator size calculator</a>.</p>
 
 <h2>Two upgrades that shrink the problem</h2>
-<p><strong>Soft-start kit (~$100–200).</strong> Cuts pump startup current roughly in half and extends motor life. The single best fix for generator-stall complaints, and it also matters if you ever run the pump off an inverter.</p>
-<p><strong>Staged startup discipline.</strong> Free: when the generator first starts, unplug everything, start the pump alone, then add loads one at a time. A 1/2 HP pump starting against zero competition rides a 2,100 W spike fine even on a modest generator.</p>
+<p><strong>Soft-start kit.</strong> It reduces startup current. Price it from the current listing. It is the usual fix when the generator stalls on the pump, and it matters if you later run the pump from an inverter.</p>
+<p><strong>Staged startup.</strong> When the generator first starts, unplug everything, start the pump alone, then add loads one at a time.</p>
 
 <div class="affil">
 <span class="tag">Affiliate</span>
-<p class="small">4,000–5,000 W dual-fuel generators are the workhorse class for well-water homes — enough surge for the pump, quiet enough at partial load for daily run cycles. <div class="affil-links"><a class="btn-amz" data-amz="4500 watt dual fuel portable generator" href="https://www.amazon.com/s?k=4500+watt+dual+fuel+portable+generator&tag=generatorsi0d-20" rel="sponsored nofollow noopener" target="_blank">4,500 W dual-fuel class on Amazon</a>
+<p class="small">After the calculator names a class, compare a dual-fuel portable in that class, and a soft-start kit if the plate's surge is the problem. <div class="affil-links"><a class="btn-amz" data-amz="4500 watt dual fuel portable generator" href="https://www.amazon.com/s?k=4500+watt+dual+fuel+portable+generator&tag=generatorsi0d-20" rel="sponsored nofollow noopener" target="_blank">4,500 W dual-fuel class on Amazon</a>
 <a class="btn-amz" data-amz="well pump soft starter" href="https://www.amazon.com/s?k=well+pump+soft+starter&tag=generatorsi0d-20" rel="sponsored nofollow noopener" target="_blank">Pump soft-start kits on Amazon</a></div></p>
 </div>
 
-<h2>Batteries and well pumps: know the limits</h2>
-<p>A pump's 2–3× startup surge is hard on pure battery/inverter systems — you need an inverter whose surge rating clears the pump's LRA, which pushes you to a 3,000 W surge inverter for a 1/2 HP pump. It works, but it's the load that sizes the battery system, not the fridge. Our <a href="https://battery-bank-sizer.com/" rel="noopener">battery bank sizer</a> handles the bank side once you know the surge inverter you need.</p>
+<h2>Batteries and well pumps</h2>
+<p>The pump's startup is hard on a battery inverter. The inverter's surge rating has to clear the plate's locked-rotor figure. That surge, not the fridge, is what sizes the battery system. The <a href="https://battery-bank-sizer.com/" rel="noopener">battery bank sizer</a> handles the bank once you know the inverter.</p>
 
 <h2>FAQ</h2>
 <h3>Does a submersible pump draw more than a jet pump?</h3>
-<p>Submersibles (down the well) run slightly more efficiently; the HP rating on the pump controls either way. Deep-well submersibles are commonly 1/2–1 HP; shallow jet pumps 1/3–3/4 HP.</p>
+<p>The horsepower on the motor plate controls the draw either way. A submersible and a jet pump with the same nameplate are sized from that plate, not from which one sits down the well.</p>
 <h3>Can I run a 240 V well pump off a portable generator?</h3>
-<p>Only if the generator has a 240 V output — most 3,500 W+ models do, via a NEMA L14-30 or 14-50 receptacle. A 120 V-only generator won't start a 240 V pump at all. Check before you buy; it's the most common well-water return.</p>
+<p>Only if the generator has a 240 V output. A generator with only a 120 V receptacle will not start a 240 V pump. Check the receptacle before you buy.</p>
 <h3>How much does the pump cycle during an outage?</h3>
-<p>A household of four draws 200–300 gallons/day. A 1/2 HP pump moving 10 GPM needs under an hour of total run time daily — 1 kWh of energy. Run it morning and evening and one gallon of gas covers days.<!-- AdSense ad slot: activate after ca-pub approval + real data-ad-slot -->
+<p>The pump runs when the pressure tank calls for water, not continuously. Cycle it in sessions rather than idling the generator all day. How much water you use, and how long that takes, is on the pump curve and your own use, not on this page.</p>
+<!-- AdSense ad slot: activate after ca-pub approval + real data-ad-slot -->
 
 <section class="sources-section" aria-labelledby="sources-heading">
 <h2 id="sources-heading">Sources & Standards</h2>

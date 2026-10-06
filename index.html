@@ -27,7 +27,7 @@
   "applicationCategory": "UtilitiesApplication",
   "operatingSystem": "Web",
   "url": "https://generator-sizer.com/",
-  "description": "Free generator sizing calculator: appliance-based running and starting wattage, 20% headroom, runtime at 50% load, and gasoline vs propane daily fuel consumption. Includes inverter sizing, battery runtime, and transfer switch load planner.",
+  "description": "Free generator sizing calculator: appliance-based running and starting wattage, with 20% headroom filled in on the form. Includes inverter sizing, battery runtime, and a transfer switch load planner.",
   "dateModified": "2026-10-06",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
 }
@@ -40,27 +40,27 @@
     {
       "@type": "Question",
       "name": "What size generator do I need to run a house?",
-      "acceptedAnswer": { "@type": "Answer", "text": "For essentials only (fridge, freezer, well pump, furnace fan, lights, phone charging), a 5,000–7,500 watt portable generator covers it. To also run central AC or an electric water heater, step up to 10,000–12,000 watts. Add the running watts of everything you'll power at once, add the extra surge of the largest motor load, then buy about 20% above that total." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Add the running watts of everything you will power at once, add the extra surge of the largest motor load, then buy about 20% above that total. The 20% is the headroom already filled in on the calculator form on this page. Which appliances stay on decides the class. Put nameplate watts in the form." }
     },
     {
       "@type": "Question",
       "name": "How do starting watts differ from running watts?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Running watts are what an appliance draws continuously. Starting (surge) watts are the brief spike when a motor starts — typically 2–3× running watts for pumps and fans, up to 4× for compressors. Your generator's surge rating must cover the biggest starting load on top of everything else already running." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Running watts are what an appliance draws continuously. Starting (surge) watts are the brief spike when a motor starts. Your generator's surge rating must cover the biggest starting load on top of everything else already running. Read starting watts on the nameplate or on a page that cites the manufacturer, not from a blanket multiple." }
     },
     {
       "@type": "Question",
       "name": "How long will a generator run on a tank of gas?",
-      "acceptedAnswer": { "@type": "Answer", "text": "At 50% load, most portable generators burn roughly 1 gallon of gasoline per 7,000 watts of rated output per hour — a 3,500 W inverter generator goes about 5 hours per gallon, and a 7,500 W model about 1.4 hours per gallon. Propane gives roughly 25% less runtime per gallon-equivalent but stores indefinitely." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Runtime depends on the tank and the load. The calculator on this page applies its own fuel rule and prints the result after you size the list. EIA gasoline and propane heat contents are in the fuel section on this page. The calculator's propane volume factor is on the propane guide." }
     },
     {
       "@type": "Question",
       "name": "Do I need a transfer switch to run a generator?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes, if you're connecting to household circuits. Code requires a manual or automatic transfer switch — back-feeding through a dryer outlet is illegal and can kill utility workers. A 30 A manual switch handles 7,200 W; a 50 A switch handles 12,000 W." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, if you are connecting to household circuits. Code requires a manual or automatic transfer switch. Back-feeding through a dryer outlet is illegal and can kill utility workers. The watt ceiling for a 30 A or 50 A switch, shown as amps times 240 V, is on the transfer-switch guide." }
     },
     {
       "@type": "Question",
       "name": "Why does the calculator add 20% headroom?",
-      "acceptedAnswer": { "@type": "Answer", "text": "The 20% buffer covers two things the wattage list can't predict: measured loads running above their nameplate rating, and future appliances you'll add later. It is headroom on the generator, not permission to exceed its rating — sustained overload still trips the breaker or stalls the engine." }
+      "acceptedAnswer": { "@type": "Answer", "text": "The 20% buffer covers two things the wattage list can't predict: measured loads running above their nameplate rating, and future appliances you will add later. It is headroom on the generator, not permission to exceed its rating. Sustained overload still trips the breaker or stalls the engine." }
     }
   ]
 }
@@ -72,7 +72,7 @@
   "name": "Generator Size Calculator",
   "url": "https://generator-sizer.com/",
   "dateModified": "2026-10-06",
-  "description": "Free generator sizing calculator: appliance-based running and starting wattage, 20% headroom, runtime, and fuel burn."
+  "description": "Free generator sizing calculator: appliance-based running and starting wattage, with 20% headroom filled in on the form."
 }
 </script>
 <script type="application/ld+json">
@@ -108,7 +108,7 @@
 
 <main>
 <h1>Generator Size Calculator</h1>
-<p class="magnet-bar" data-magnet-cta="1"><a href="magnet.html">Free outage cheat sheet — print it, 10 minutes.</a></p>
+<p class="magnet-bar" data-magnet-cta="1"><a href="magnet.html">Free outage cheat sheet — print it.</a></p>
 <p class="small" id="last-updated">Last updated: October 6, 2026 (CT)</p>
 <p class="sub">Add your appliances. Get the wattage to buy, how long a tank lasts, and what fuel costs per day — running watts, startup surge, and headroom handled.</p>
 <p class="why-unique">The form below is the first pass every site has. The <a href="tools.html">Lab tools</a> are the reason this domain is not just another wattage widget: <a href="load-sequencer.html">staggered-start coincidence</a>, <a href="altitude-derate.html">altitude derate</a>, a printable <a href="storm-runbook.html">72-hour runbook</a>, <a href="ownership-cost.html">5-year TCO</a>, and <a href="noise-lot-line.html">lot-line dBA</a>.</p>
@@ -116,7 +116,7 @@
 <div class="tool-grid">
   <a class="tool-card" href="load-sequencer.html"><p class="tool-name">Load sequencer</p><p>Always / wait / never-overlap. Buy the sequenced class.</p></a>
   <a class="tool-card" href="altitude-derate.html"><p class="tool-name">Altitude derate</p><p>Usable watts at your elevation and inlet air.</p></a>
-  <a class="tool-card" href="storm-runbook.html"><p class="tool-name">Storm runbook</p><p>Print fuel, oil, circuit order, 20 ft CO rule.</p></a>
+  <a class="tool-card" href="storm-runbook.html"><p class="tool-name">Storm runbook</p><p>Print fuel, oil, circuit order, and CO distance.</p></a>
   <a class="tool-card" href="ownership-cost.html"><p class="tool-name">5-year cost</p><p>Portable fuel vs standby install, in hours.</p></a>
   <a class="tool-card" href="noise-lot-line.html"><p class="tool-name">Lot-line noise</p><p>dBA at the fence, not the brochure.</p></a>
   <a class="tool-card" href="methodology.html"><p class="tool-name">Our math</p><p>Three worked houses + the coincidence method.</p></a>
@@ -124,9 +124,8 @@
 
 <aside class="tldr panel" id="quick-answer" aria-label="Quick answer" style="display:block;margin:1rem 0 1.25rem;padding:1rem 1.1rem;border:1px solid var(--bd,#30363d);border-radius:10px;background:var(--card,#161b22)">
   <h2 style="font-size:1.05rem;margin:0 0 .5rem;border:0;padding:0">Quick answer</h2>
-  <p style="margin:0 0 .45rem"><strong>Running watts</strong> are continuous draw; <strong>starting watts</strong> are the brief motor surge (often 2–4×). Size for the sum of running loads plus the largest single surge, then buy about <strong>20% headroom</strong>.</p>
-  <p style="margin:0 0 .45rem">For essentials only (fridge, freezer, well pump, furnace fan, lights, phone charging), a <strong>5,000–7,500 W</strong> portable covers it. Central AC or an electric water heater usually needs <strong>10,000–12,000 W</strong> — that is whole-house territory, not a 5–7.5 kW unit.</p>
-  <p style="margin:0">Use the calculator below to add your appliances; the FAQ repeats the same house math.</p>
+  <p style="margin:0 0 .45rem"><strong>Running watts</strong> are continuous draw; <strong>starting watts</strong> are the brief motor surge. Size for the sum of running loads plus the largest single surge, then buy about <strong>20% headroom</strong> — the margin already filled in on the form below.</p>
+  <p style="margin:0">Which loads you keep on at once decides the class. Add nameplate watts in the calculator. The FAQ below uses that same method.</p>
 </aside>
 
 
@@ -229,14 +228,14 @@
 
 <!-- ============ 4. TRANSFER SWITCH ============ -->
 <section id="tab-ts" class="panel" role="tabpanel">
-  <p>List the household circuits you want on backup power, one per line, like <code>Sump pump - 800w</code>. We'll total them and match a standard manual transfer switch.</p>
+  <p>List the household circuits you want on backup power, one per line. When you know the watts from the nameplate, write them after a dash, as <code>Circuit name - watts</code>. The planner totals those watts and matches a switch class.</p>
   <div class="field">
     <label for="tsCircuits">Backup circuits</label>
-    <textarea id="tsCircuits" rows="6" style="width:100%;max-width:none;background:var(--card);color:var(--fg);border:1px solid var(--bd);border-radius:8px;padding:.6rem;font-family:inherit;font-size:1rem">Refrigerator - 150w
-Well pump - 1000w
-Furnace fan - 700w
-Lights - 80w
-TV + internet - 150w</textarea>
+    <textarea id="tsCircuits" rows="6" style="width:100%;max-width:none;background:var(--card);color:var(--fg);border:1px solid var(--bd);border-radius:8px;padding:.6rem;font-family:inherit;font-size:1rem">Refrigerator
+Well pump
+Furnace fan
+Lights
+TV and internet</textarea>
   </div>
   <button onclick="planSwitch()" style="background:var(--acc);color:#fff;border:none;border-radius:8px;padding:.7rem 1.4rem;font-size:1.05rem;cursor:pointer;font-weight:600">Plan my switch</button>
   <div id="tsResult" class="ans" hidden></div>
@@ -253,7 +252,7 @@ TV + internet - 150w</textarea>
 
 <!-- ============ LEADGEN: NEED A PRO? ============ -->
 <h2 id="pro">Need a pro to install it?</h2>
-<p>Everything above 5,000 W, any transfer-switch connection to household circuits, and all commercial standby work is licensed-electrician territory — permits, code, and the inspection log matter as much as the genset. This slot is reserved for a vetted local generator installation and service operator. <a href="find-a-commercial-generator-service.html">Read the facility manager's vetting checklist →</a></p>
+<p>A hardwired connection to household circuits, and all commercial standby work, is licensed-electrician territory — permits, code, and the inspection log matter as much as the genset. This slot is reserved for a vetted local generator installation and service operator. <a href="find-a-commercial-generator-service.html">Read the facility manager's vetting checklist →</a></p>
 <!-- LEADGEN SLOT: local generator service operator sponsorship banner — pending Jeremy-approved operator deal (no live operator link yet) -->
 <div class="affil" style="border-left:3px solid var(--acc)">
 <span class="tag">Sponsor</span>
@@ -289,32 +288,12 @@ TV + internet - 150w</textarea>
 
 <!-- ============ CONTENT ============ -->
 <h2>How does generator sizing work?</h2>
-<p>Three numbers decide what you buy. <strong>Running watts</strong> — the sum of everything switched on at the same time. <strong>Starting watts</strong> — the 2–4× spike when a motor kicks on; only the <em>largest</em> one counts at any instant, because motors don't all start together. <strong>Headroom</strong> — generators hate running flat-out; at 100% load they run hot, loud, and short-lived, and fuel burn climbs faster than output. The 20% margin keeps you in the efficient zone and leaves room for the appliance you forgot.</p>
+<p>Three numbers decide what you buy. <strong>Running watts</strong> — the sum of everything switched on at the same time. <strong>Starting watts</strong> — the brief spike when a motor kicks on; only the <em>largest</em> one counts at any instant, because motors don't all start together. <strong>Headroom</strong> — the 20% margin on the form, so the generator is not pinned at its rated output, and so a load you forgot still fits.</p>
 
 <p class="small" id="methodology-note">Full method, three worked houses, and how our math differs: <a href="methodology.html">GeneratorSizer methodology</a>. Amazon links on this site are affiliate links; they do not change the math.</p>
 
 <h2>How many watts do common appliances use?</h2>
-<div class="tbl-wrap">
-<table>
-<thead>
-<tr><th scope="col">Appliance</th><th class="num" scope="col">Running W</th><th class="num" scope="col">Starting W</th></tr>
-</thead>
-<tbody>
-<tr><td>Refrigerator (Energy Star, 20 cu ft)</td><td class="num">150</td><td class="num">600</td></tr>
-<tr><td>Chest freezer (10–15 cu ft)</td><td class="num">200</td><td class="num">600</td></tr>
-<tr><td>Well pump, 1/2 HP</td><td class="num">1,000</td><td class="num">2,100</td></tr>
-<tr><td>Sump pump, 1/2 HP</td><td class="num">800</td><td class="num">1,300</td></tr>
-<tr><td>Window AC, 10,000 BTU</td><td class="num">900</td><td class="num">1,400</td></tr>
-<tr><td>Central AC, 2.5 ton</td><td class="num">3,500</td><td class="num">5,000</td></tr>
-<tr><td>Furnace fan, 1/3 HP</td><td class="num">700</td><td class="num">1,400</td></tr>
-<tr><td>Space heater</td><td class="num">1,500</td><td class="num">1,500</td></tr>
-<tr><td>LED lights, whole home</td><td class="num">80</td><td class="num">80</td></tr>
-<tr><td>Microwave</td><td class="num">1,000</td><td class="num">1,000</td></tr>
-<tr><td>Electric water heater</td><td class="num">4,500</td><td class="num">4,500</td></tr>
-</tbody>
-</table>
-</div>
-<p>The Honda and Champion rows behind the one-appliance pages are collected on the <a href="generator-sizing-chart.html">generator sizing chart</a>. The table above is a short house list, not that chart.</p>
+<p>Read the running and starting watts on the appliance nameplate, then add that list in the calculator. Honda and Champion rows for one-appliance questions are on the <a href="generator-sizing-chart.html">generator sizing chart</a>.</p>
 
 <h2>Gas or propane: how do the fuels compare?</h2>
 <table>
@@ -322,13 +301,11 @@ TV + internet - 150w</textarea>
 <tr><th scope="col">Factor</th><th scope="col">Gasoline</th><th scope="col">Propane</th></tr>
 </thead>
 <tbody>
-<tr><td>Runtime on equal fuel volume</td><td>Baseline</td><td>~25% less</td></tr>
-<tr><td>Power output on dual-fuel models</td><td>Baseline</td><td>~10% less</td></tr>
-<tr><td>Storage life</td><td>3–12 months with stabilizer</td><td>Indefinite</td></tr>
-<tr><td>Cost per kWh (2026 U.S. averages)</td><td>~$0.45–0.60</td><td>~$0.55–0.70</td></tr>
+<tr><td>Energy per gallon</td><td colspan="2">EIA sample heat contents, in the note under this table</td></tr>
+<tr><td>Storage</td><td>A short-storage fuel; rotate what you keep</td><td>Does not share gasoline's storage limit</td></tr>
 </tbody>
 </table>
-<p class="small"><a href="https://www.eia.gov/energyexplained/units-and-calculators/british-thermal-units.php">EIA's sample heat contents</a> list motor gasoline at 120,214 Btu per gallon and propane at 91,452 Btu per gallon, about 24% less energy per gallon of propane. Dual-fuel wattage drop is a separate manufacturer-spec figure. The home calculator's 1.37 propane factor, which is not that EIA ratio, is on <a href="how-much-propane-does-a-generator-use.html">how much propane a generator uses</a>. For current fuel price data, see the <a href="stats/generator-cost-study-2026.html">2026 Generator Cost Study</a>.</p>
+<p class="small"><a href="https://www.eia.gov/energyexplained/units-and-calculators/british-thermal-units.php">EIA's sample heat contents</a> list motor gasoline at 120,214 Btu per gallon and propane at 91,452 Btu per gallon, about 24% less energy per gallon of propane. A dual-fuel wattage drop is a separate manufacturer-spec figure, not this EIA ratio. The home calculator's propane volume factor is explained on <a href="how-much-propane-does-a-generator-use.html">how much propane a generator uses</a>. For current fuel price data, see the <a href="stats/generator-cost-study-2026.html">2026 Generator Cost Study</a>.</p>
 
 <h2>Related calculators</h2>
 <ul>
@@ -337,10 +314,10 @@ TV + internet - 150w</textarea>
 <li><a href="https://trailertowcalc.com/">TrailerTowCalc</a> sizes RV towing capacity and tongue weight, separate from the roof air conditioner's watts.</li>
 </ul>
 <h2>Guides</h2>
-<div class="card"><h3><a href="refrigerator-freezer.html">What size generator runs a refrigerator and freezer?</a></h3><p>Direct answer: for fridge + freezer, a <strong>1,000 W</strong> class can beat a <strong>4,000 W</strong> unit once startup surge is counted — full math on the guide (same house framing already on this card).</p></div>
-<div class="card"><h3><a href="well-pump-watts.html">How many watts does a well pump use?</a></h3><p>Direct answer: well pumps spike far above running watts at start (LRA) — size the generator for that surge on top of other running loads. HP tables and LRA trap on the guide.</p></div>
-<div class="card"><h3><a href="best-portable-generators.html">Best 10 portable generators for home backup</a></h3><p>Direct answer: match class to load — essentials often land in the <strong>5,000–7,500 W</strong> band; whole-house with central AC steps toward <strong>10,000–12,000 W</strong>. Ranked picks on the guide.</p></div>
-<div class="card"><h3><a href="find-a-commercial-generator-service.html">Find a commercial generator service</a></h3><p>The facility manager's vetting checklist: NFPA 110 testing schedules, contract red flags, and the seven questions to ask before signing.</p></div>
+<div class="card"><h3><a href="refrigerator-freezer.html">What size generator runs a refrigerator and freezer?</a></h3><p>Read the nameplate, then the sourced refrigerator-and-freezer page. The calculator adds the list.</p></div>
+<div class="card"><h3><a href="well-pump-watts.html">How many watts does a well pump use?</a></h3><p>Startup, not the running figure, is what stalls a generator. Size it from the nameplate and the sourced well-pump page.</p></div>
+<div class="card"><h3><a href="best-portable-generators.html">Best 10 portable generators for home backup</a></h3><p>Match a class to the load list from the calculator, then compare the manufacturer's current spec sheet.</p></div>
+<div class="card"><h3><a href="find-a-commercial-generator-service.html">Find a commercial generator service</a></h3><p>The facility manager's vetting checklist: contract red flags, and the seven questions to ask before signing.</p></div>
 <div class="card"><h3><a href="https://jpanasuk-netizen.github.io/battery-bank-sizer/" rel="noopener">Battery bank sizer ↗</a></h3><p>If your load is small and daily, a LiFePO4 battery bank can replace fuel entirely — that tool sizes it.</p></div>
 
 <section class="sources-section" aria-labelledby="sources-heading">
@@ -440,15 +417,15 @@ TV + internet - 150w</textarea>
   <section id="faq" class="panel" style="margin-top:1.5rem">
     <h2>Frequently asked questions</h2>
     <h3>What size generator do I need to run a house?</h3>
-    <p>For essentials only (fridge, freezer, well pump, furnace fan, lights, phone charging), a 5,000&ndash;7,500 watt portable generator covers it. To also run central AC or an electric water heater, step up to 10,000&ndash;12,000 watts. Add the running watts of everything you'll power at once, add the extra surge of the largest motor load, then buy about 20% above that total.</p>
+    <p>Add the running watts of everything you will power at once, add the extra surge of the largest motor load, then buy about 20% above that total. The 20% is the headroom already filled in on the calculator form on this page. Which appliances stay on decides the class. Put nameplate watts in the form.</p>
     <h3>How do starting watts differ from running watts?</h3>
-    <p>Running watts are what an appliance draws continuously. Starting (surge) watts are the brief spike when a motor starts &mdash; typically 2&ndash;3&times; running watts for pumps and fans, up to 4&times; for compressors. Your generator's surge rating must cover the biggest starting load on top of everything else already running.</p>
+    <p>Running watts are what an appliance draws continuously. Starting (surge) watts are the brief spike when a motor starts. Your generator's surge rating must cover the biggest starting load on top of everything else already running. Read starting watts on the nameplate or on a page that cites the manufacturer, not from a blanket multiple.</p>
     <h3>How long will a generator run on a tank of gas?</h3>
-    <p>At 50% load, most portable generators burn roughly 1 gallon of gasoline per 7,000 watts of rated output per hour &mdash; a 3,500 W inverter generator goes about 5 hours per gallon, and a 7,500 W model about 1.4 hours per gallon. Propane gives roughly 25% less runtime per gallon-equivalent but stores indefinitely.</p>
+    <p>Runtime depends on the tank and the load. The calculator on this page applies its own fuel rule and prints the result after you size the list. EIA gasoline and propane heat contents are in the fuel section on this page. The calculator's propane volume factor is on the propane guide.</p>
     <h3>Do I need a transfer switch to run a generator?</h3>
-    <p>Yes, if you're connecting to household circuits. Code requires a manual or automatic transfer switch &mdash; back-feeding through a dryer outlet is illegal and can kill utility workers. A 30 A manual switch handles 7,200 W; a 50 A switch handles 12,000 W.</p>
+    <p>Yes, if you are connecting to household circuits. Code requires a manual or automatic transfer switch. Back-feeding through a dryer outlet is illegal and can kill utility workers. The watt ceiling for a 30 A or 50 A switch, shown as amps times 240 V, is on the transfer-switch guide.</p>
     <h3>Why does the calculator add 20% headroom?</h3>
-    <p>The 20% buffer covers two things the wattage list can't predict: measured loads running above their nameplate rating, and future appliances you'll add later. It is headroom on the generator, not permission to exceed its rating &mdash; sustained overload still trips the breaker or stalls the engine.</p>
+    <p>The 20% buffer covers two things the wattage list can't predict: measured loads running above their nameplate rating, and future appliances you will add later. It is headroom on the generator, not permission to exceed its rating. Sustained overload still trips the breaker or stalls the engine.</p>
   </section>
 
 <section id="optin" class="panel" style="margin-top:1.5rem">

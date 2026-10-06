@@ -43,12 +43,12 @@
     {
       "@type": "Question",
       "name": "What critical loads should I size first for whole-house backup?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Start with fridge and freezer, well pump if you have one, sump pump, furnace or heat source fan, lights, and any medical loads. Add central AC only if you truly need it during an outage — it often doubles the generator class. Use nameplate running and starting watts, not guesses." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Start with fridge and freezer, well pump if you have one, sump pump, furnace or heat source fan, lights, and any medical loads. Add central AC only if you truly need it during an outage. It often drives the generator class up. Use nameplate running and starting watts, not guesses." }
     },
     {
       "@type": "Question",
-      "name": "How do running watts, starting watts, and 20% headroom work together?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sum the running watts of everything that will run at once. Add only the extra surge of the single largest motor start (not every motor). Then buy about 20% above that peak so nameplate variance and a future appliance do not push you into overload. Diversity helps: not every load starts at the same second." }
+      "name": "How do running watts, starting watts, and headroom work together?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sum the running watts of everything that will run at once. Add only the extra surge of the single largest motor start (not every motor). Then apply the headroom you set on the calculator so nameplate variance and a future appliance do not push you into overload. Diversity helps: not every load starts at the same second." }
     },
     {
       "@type": "Question",
@@ -58,7 +58,7 @@
     {
       "@type": "Question",
       "name": "Do I need a transfer switch for whole-house generator sizing?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes to feed household circuits safely. Match switch amperage to generator output (commonly 30 A or 50 A class), and plan inlet box and cords with the same rating. Never back-feed through a dryer outlet." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes to feed household circuits safely. Match switch amperage to generator output (commonly 30 A or 50 A class), and plan inlet box and cords with the same rating. Never back-feed through a dryer outlet. See transfer switch sizing." }
     }
   ]
 }
@@ -103,7 +103,7 @@
 <h1>Whole-house generator sizing guide</h1>
 <p class="sub">Critical loads → running vs starting → headroom → portable vs standby path — then size your list on the free calculator.</p>
 
-<div class="answer-box"><strong>Quick answer:</strong> List the loads you will run at once (fridge, well, sump, heat, lights — AC only if required). Add running watts, add the biggest motor surge, then buy ~20% headroom. Essentials-only homes often land in a mid portable class; whole-house plus central AC usually needs a larger portable or standby path. Confirm with the <a href="index.html#calc">free generator size calculator</a>.</div>
+<div class="answer-box"><strong>Quick answer:</strong> List the loads you will run at once (fridge, well, sump, heat, lights, and air conditioning only if required). Add running watts, add the biggest motor surge, then apply the headroom you set on the calculator. Essentials-only homes often land in a mid portable class; whole-house plus central air usually needs a larger portable or standby path. Confirm with the <a href="index.html#calc">free generator size calculator</a>.</div>
 
 <h2>Start with critical loads</h2>
 <p>Build the board before you shop:</p>
@@ -117,12 +117,12 @@
 </ul>
 <p>Use nameplate running and starting watts (or LRA × volts for locked-rotor motors). Do not invent measured demos — if you only have estimates, treat them as placeholders until you verify on the appliance.</p>
 
-<h2>Running vs starting, diversity, and 20% headroom</h2>
-<p><strong>Running watts</strong> are continuous draw. <strong>Starting (surge) watts</strong> are the brief spike when a motor or compressor starts — often 2–3× running for pumps and fans, higher for compressors. Method:</p>
+<h2>Running vs starting, diversity, and headroom</h2>
+<p><strong>Running watts</strong> are continuous draw. <strong>Starting (surge) watts</strong> are the brief spike when a motor or compressor starts. Read that spike on the nameplate. Method:</p>
 <ol style="margin:.6rem 0 .6rem 1.2rem">
   <li>Sum running watts for everything that will be on at once.</li>
   <li>Add only the <em>extra</em> surge of the single largest starter (diversity: not every motor starts together).</li>
-  <li>Buy about <strong>20% headroom</strong> above that peak — buffer for nameplate variance and a future load, not permission to overload.</li>
+  <li>Apply the <strong>headroom you set on the calculator</strong> above that peak. It is a buffer for nameplate variance and a future load, not permission to overload.</li>
 </ol>
 <p>Generators run poorly when chronically underloaded and trip or stall when overloaded. Right-size once.</p>
 
@@ -139,7 +139,7 @@
 <tr><td>Sump pump</td><td>NEEDS_HOUSE_PROOF</td><td>May start during storms while other loads run</td></tr>
 <tr><td>Furnace fan / heat</td><td>NEEDS_HOUSE_PROOF</td><td>Motor start on top of running board</td></tr>
 <tr><td>Central AC (optional)</td><td>NEEDS_HOUSE_PROOF</td><td>Compressor LRA often dominates whole-house class</td></tr>
-<tr><td>Peak method</td><td colspan="2">Σ running + largest extra surge + ~20% headroom → generator class</td></tr>
+<tr><td>Peak method</td><td colspan="2">Running sum + largest extra surge + the headroom you set on the calculator</td></tr>
 </table>
 </div>
 <p>Enter the same list in the <a href="index.html#calc">calculator</a> — presets help, nameplates win.</p>
@@ -155,21 +155,21 @@
   <li><a href="sump-pump-watts.html">Sump pump watts</a></li>
   <li><a href="best-portable-generators.html">Best portable generators</a> (class matching after sizing)</li>
   <li><a href="portable-vs-standby-generator.html">Portable vs standby</a></li>
-  <li><a href="10kw-generator-for-home.html">10 kW generator for a home</a> — one 4-ton-plus-fridge list at 10,000 W</li>
+  <li><a href="10kw-generator-for-home.html">10 kW generator for a home</a></li>
   <li><a href="which-generator-is-right-for-me.html">Which generator is right for me?</a></li>
 </ul>
 
 <div class="affil">
 <span class="tag">Affiliate</span>
-<p class="small">After you size watts, the 9,000–12,000 W class is a common whole-house-plus-AC portable tier — only if your calculator peak says so. <div class="affil-links"><a class="btn-amz" data-amz="10000 watt dual fuel portable generator" href="https://www.amazon.com/s?k=10000+watt+dual+fuel+portable+generator&tag=generatorsi0d-20" rel="sponsored nofollow noopener" target="_blank">10,000 W dual-fuel class on Amazon</a>
+<p class="small">After the calculator names a class, compare a dual-fuel portable in that class. <div class="affil-links"><a class="btn-amz" data-amz="10000 watt dual fuel portable generator" href="https://www.amazon.com/s?k=10000+watt+dual+fuel+portable+generator&tag=generatorsi0d-20" rel="sponsored nofollow noopener" target="_blank">10,000 W dual-fuel class on Amazon</a>
 <a class="btn-amz" data-amz="air conditioner soft starter" href="https://www.amazon.com/s?k=air+conditioner+soft+starter&tag=generatorsi0d-20" rel="sponsored nofollow noopener" target="_blank">AC soft-start kits on Amazon</a></div></p>
 </div>
 
 <h2>FAQ</h2>
 <h3>What critical loads should I size first for whole-house backup?</h3>
-<p>Start with fridge and freezer, well pump if you have one, sump pump, furnace or heat source fan, lights, and any medical loads. Add central AC only if you truly need it during an outage — it often doubles the generator class. Use nameplate running and starting watts, not guesses.</p>
-<h3>How do running watts, starting watts, and 20% headroom work together?</h3>
-<p>Sum the running watts of everything that will run at once. Add only the extra surge of the single largest motor start (not every motor). Then buy about 20% above that peak so nameplate variance and a future appliance do not push you into overload. Diversity helps: not every load starts at the same second.</p>
+<p>Start with fridge and freezer, well pump if you have one, sump pump, furnace or heat source fan, lights, and any medical loads. Add central AC only if you truly need it during an outage. It often drives the generator class up. Use nameplate running and starting watts, not guesses.</p>
+<h3>How do running watts, starting watts, and headroom work together?</h3>
+<p>Sum the running watts of everything that will run at once. Add only the extra surge of the single largest motor start (not every motor). Then apply the headroom you set on the calculator so nameplate variance and a future appliance do not push you into overload. Diversity helps: not every load starts at the same second.</p>
 <h3>Should I use a portable or a standby generator for whole-house backup?</h3>
 <p>A correctly sized portable plus a transfer switch can cover critical circuits. Standby (or a large portable class with 240 V) is the usual path when you want automatic whole-house coverage including central AC. Compare install and use cases on the <a href="portable-vs-standby-generator.html">portable vs standby guide</a>, then size watts on the free calculator.</p>
 <h3>Do I need a transfer switch for whole-house generator sizing?</h3>
