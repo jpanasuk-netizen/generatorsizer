@@ -19,7 +19,38 @@ var PRESETS = [
   { name:"Washing machine",                      run:1150, surge:2300 },
   { name:"Electric water heater",                run:4500, surge:4500 },
   { name:"Coffee maker",                         run:1000, surge:1000 },
-  { name:"Electric skillet / hot plate",         run:1200, surge:1200 }
+  { name:"Electric skillet / hot plate",         run:1200, surge:1200 },
+  // Computers & devices: manufacturer-published watts only (TGP/TDP, PSU rating, max power
+  // consumption, or charger rating, as named in each item). Not rounded. Starting watts = running
+  // watts because none of these has a motor start. Sources are listed on the homepage table.
+  { name:"NVIDIA DGX Spark — power supply rating", run:240, surge:240 }, // https://www.nvidia.com/en-us/products/workstations/dgx-spark/
+  { name:"NVIDIA GeForce RTX 5090 card — total graphics power", run:575, surge:575 }, // https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5090/
+  { name:"NVIDIA GeForce RTX 5080 card — total graphics power", run:360, surge:360 }, // https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5080/
+  { name:"NVIDIA GeForce RTX 4090 card — total graphics power", run:450, surge:450 }, // https://www.nvidia.com/en-us/geforce/graphics-cards/40-series/rtx-4090/
+  { name:"NVIDIA GeForce RTX 4080 card — total graphics power", run:320, surge:320 }, // https://www.nvidia.com/en-us/geforce/graphics-cards/40-series/rtx-4080-family/
+  { name:"NVIDIA GeForce RTX 4070 card — total graphics power", run:200, surge:200 }, // https://www.nvidia.com/en-us/geforce/graphics-cards/40-series/rtx-4070-family/
+  { name:"AMD Radeon RX 9070 XT card — typical board power", run:304, surge:304 }, // https://www.amd.com/en/products/graphics/desktops/radeon/9000-series/amd-radeon-rx-9070xt.html
+  { name:"AMD Radeon RX 9070 card — typical board power", run:220, surge:220 }, // https://www.amd.com/en/products/graphics/desktops/radeon/9000-series/amd-radeon-rx-9070.html
+  { name:"AMD Radeon RX 9060 XT card — typical board power", run:160, surge:160 }, // https://www.amd.com/en/products/graphics/desktops/radeon/9000-series/amd-radeon-rx-9060xt.html
+  { name:"AMD Radeon RX 7900 XTX card — typical board power", run:355, surge:355 }, // https://www.amd.com/en/products/graphics/desktops/radeon/7000-series/amd-radeon-rx-7900xtx.html
+  { name:"AMD Ryzen 9 9950X3D CPU — default TDP", run:170, surge:170 }, // https://www.amd.com/en/products/processors/desktops/ryzen/9000-series/amd-ryzen-9-9950x3d.html
+  { name:"AMD Ryzen 9 9950X CPU — default TDP", run:170, surge:170 }, // https://www.amd.com/en/products/processors/desktops/ryzen/9000-series/amd-ryzen-9-9950x.html
+  { name:"AMD Ryzen 7 9800X3D CPU — default TDP", run:120, surge:120 }, // https://www.amd.com/en/products/processors/desktops/ryzen/9000-series/amd-ryzen-7-9800x3d.html
+  { name:"AMD Ryzen 7 9700X CPU — default TDP", run:65, surge:65 }, // https://www.amd.com/en/products/processors/desktops/ryzen/9000-series/amd-ryzen-7-9700x.html
+  { name:"AMD Ryzen 5 9600X CPU — default TDP", run:65, surge:65 }, // https://www.amd.com/en/products/processors/desktops/ryzen/9000-series/amd-ryzen-5-9600x.html
+  { name:"MacBook Air (M5) — charger rating", run:60, surge:60 }, // https://www.apple.com/macbook-air/specs/
+  { name:"MacBook Pro 14-inch (M5) — charger rating", run:70, surge:70 }, // https://www.apple.com/macbook-pro/specs/
+  { name:"MacBook Pro 14-inch (M5 Pro 18-core or M5 Max) — charger rating", run:96, surge:96 }, // https://www.apple.com/macbook-pro/specs/
+  { name:"MacBook Pro 16-inch (M5 Pro or M5 Max) — charger rating", run:140, surge:140 }, // https://www.apple.com/macbook-pro/specs/
+  { name:"iMac 24-inch (M4, four ports) — max power consumption", run:105, surge:105 }, // https://support.apple.com/en-us/109513
+  { name:"Mac mini (M6) — max power consumption", run:70, surge:70 }, // https://support.apple.com/en-us/103253
+  { name:"Mac mini (M5 Pro) — max power consumption", run:145, surge:145 }, // https://support.apple.com/en-us/103253
+  { name:"Mac Studio (M5 Max) — max power consumption", run:200, surge:200 }, // https://support.apple.com/en-us/102027
+  { name:"Mac Studio (M5 Ultra) — max power consumption", run:385, surge:385 }, // https://support.apple.com/en-us/102027
+  { name:"Mac Pro (2023, M2 Ultra) — max power consumption", run:330, surge:330 }, // https://support.apple.com/en-us/102839
+  { name:"iPhone 18 Pro or Pro Max (fast-charge adapter) — charger rating", run:60, surge:60 }, // https://www.apple.com/iphone-18-pro/specs/
+  { name:"iPhone 17 (fast-charge adapter) — charger rating", run:40, surge:40 }, // https://www.apple.com/iphone-17/specs/
+  { name:"iPad (included 20W adapter) — charger rating", run:20, surge:20 } // https://www.apple.com/ipad-11/specs/
 ];
 // Appliance items the user has added: {name, run, surge, qty}
 var loads = [];
