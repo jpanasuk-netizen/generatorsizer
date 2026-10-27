@@ -146,7 +146,8 @@ function sizeGenerator(){
   var peak = runTotal + extraSurge;
   var rec  = ceilTo(peak * headroom, 500);
 
-  var galHr50 = rec / 7000;           // gasoline gal/hr at 50% load
+  var load50  = rec * 0.5;            // 50% of the recommended generator size, in watts
+  var galHr50 = load50 / 3500;        // gasoline gal/hr at that 50% load (same 1 gal/hr per 7,000 W rated rule)
   var runtime = tankGal / galHr50;    // hours at 50% load
   var proGalHr = galHr50 * 1.37;
   var runtimePro = (tankGal / proGalHr);
