@@ -18,12 +18,12 @@
   <url><loc>https://generator-sizer.com/best-generator-size-for-well-pump.html</loc><lastmod>2026-10-06</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://generator-sizer.com/best-portable-generators.html</loc><lastmod>2026-10-06</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://generator-sizer.com/find-a-commercial-generator-service.html</loc><lastmod>2026-10-06</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://generator-sizer.com/portable-vs-standby-generator.html</loc><lastmod>2026-10-06</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://generator-sizer.com/portable-vs-standby-generator.html</loc><lastmod>2026-11-17</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://generator-sizer.com/refrigerator-freezer.html</loc><lastmod>2026-10-06</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://generator-sizer.com/sump-pump-watts.html</loc><lastmod>2026-10-06</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://generator-sizer.com/transfer-switch-sizing.html</loc><lastmod>2026-10-06</lastmod><changefreq>monthly</changefreq><priority>0.6</priority><image:image><image:loc>https://generator-sizer.com/assets/img/transfer-switch-240v.svg</image:loc></image:image></url>
+  <url><loc>https://generator-sizer.com/transfer-switch-sizing.html</loc><lastmod>2026-11-17</lastmod><changefreq>monthly</changefreq><priority>0.6</priority><image:image><image:loc>https://generator-sizer.com/assets/img/transfer-switch-240v.svg</image:loc></image:image></url>
   <url><loc>https://generator-sizer.com/well-pump-watts.html</loc><lastmod>2026-10-06</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://generator-sizer.com/whole-house-generator-sizing.html</loc><lastmod>2026-10-06</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://generator-sizer.com/whole-house-generator-sizing.html</loc><lastmod>2026-11-17</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://generator-sizer.com/what-size-generator-for-120v-welder.html</loc><lastmod>2026-10-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://generator-sizer.com/what-size-generator-for-air-compressor.html</loc><lastmod>2026-10-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://generator-sizer.com/what-size-generator-for-central-ac-3-ton.html</loc><lastmod>2026-10-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -60,8 +60,8 @@
   <url><loc>https://generator-sizer.com/kw-to-kwh-calculator.html</loc><lastmod>2026-10-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://generator-sizer.com/generator-vs-battery-backup.html</loc><lastmod>2026-10-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://generator-sizer.com/how-much-propane-does-a-generator-use.html</loc><lastmod>2026-10-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://generator-sizer.com/20kw-home-standby-generator.html</loc><lastmod>2026-10-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://generator-sizer.com/10kw-generator-for-home.html</loc><lastmod>2026-10-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://generator-sizer.com/20kw-home-standby-generator.html</loc><lastmod>2026-11-17</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://generator-sizer.com/10kw-generator-for-home.html</loc><lastmod>2026-11-17</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://generator-sizer.com/best-solar-generator.html</loc><lastmod>2026-10-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://generator-sizer.com/how-to-size-an-industrial-generator.html</loc><lastmod>2026-10-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://generator-sizer.com/which-generator-is-right-for-me.html</loc><lastmod>2026-10-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -93,6 +93,12 @@
   <url>
     <loc>https://generator-sizer.com/what-size-generator-for-gaming-pc-rtx-5090.html</loc>
     <lastmod>2026-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://generator-sizer.com/what-size-generator-for-200-amp-service.html</loc>
+    <lastmod>2026-11-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
